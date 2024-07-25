@@ -89,4 +89,4 @@ if __name__ == "__main__":
     accuracy_oov = (correct_oov / total_oov) * 100
     print("Accuracy on OOV {}: {:0.2f} ({}/{})".format(args.col_name_tag,
                                                  accuracy_oov,
-                                                 correct_oov, total_oov))
+                                                 correct_oov, total_oov)) 
