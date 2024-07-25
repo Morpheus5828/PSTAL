@@ -1,0 +1,8 @@
+*.pt
+*.pred
+*.acc
+*__pycache__/
+*.aux
+*.log
+*.out
+*.synctex.gz
