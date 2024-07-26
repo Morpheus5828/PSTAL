@@ -3,6 +3,9 @@
 import sys
 import conllu
 import collections
+from torch.utils.data import TensorDataset, DataLoader
+import torch
+import random
 import pdb
 
 ########################################################################
@@ -23,6 +26,12 @@ class Util(object):
 ########################################################################
 
   @staticmethod
+  def warn(msg, *kwargs):
+    print("WARNING:", msg.format(*kwargs), file=sys.stderr)    
+
+########################################################################
+
+  @staticmethod
   def debug(msg, *kwargs):
     if Util.DEBUG_FLAG:
       print(msg.format(*kwargs), file=sys.stderr)
@@ -31,6 +40,20 @@ class Util(object):
   def rev_vocab(vocab):
     rev_dict = {y: x for x, y in vocab.items()}
     return [rev_dict[k] for k in range(len(rev_dict))]
+
+  @staticmethod
+  def dataloader(inputs, outputs, batch_size=16, shuffle=True):
+    data_set = TensorDataset(inputs, outputs)
+    return DataLoader(data_set, batch_size, shuffle=shuffle)   
+
+  @staticmethod
+  def count_params(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+  @staticmethod
+  def init_seed(seed):
+    random.seed(seed)
+    torch.manual_seed(seed)
 
 ########################################################################
 # CONLLU FUNCTIONS 
