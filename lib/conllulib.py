@@ -119,6 +119,7 @@ class CoNLLUReader(object):
         # Simple access to undefined dict key creates new ID (dict length)
         vocab[col_name][special_token]       
     for s in self.readConllu():
+      # IMPORTANT : only works if "col_name" is the same as in lambda function definition!
       for col_name in col_name_dict.keys():
         int_list[col_name].append([vocab[col_name][tok[col_name]] for tok in s])    
     # vocabs cannot be saved if they have lambda function: erase default_factory

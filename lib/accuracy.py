@@ -60,6 +60,7 @@ def process_args(parser):
  
 if __name__ == "__main__":
   args, gold_corpus, pred_corpus, train_vocab = process_args(parser)
+  prf = collections.defaultdict(lambda:{'tp':0,'t':0, 'p':0})
   total_tokens = correct_tokens = 0
   total_oov = correct_oov = 0
   for (sent_gold, sent_pred) in zip(gold_corpus.readConllu(),
@@ -78,7 +79,20 @@ if __name__ == "__main__":
           if train_vocab and oov :
             correct_oov = correct_oov + 1
         total_tokens += 1
-  
+        if args.col_name_tag == 'feats':
+          pred_feats = tok_pred['feats'] if tok_pred['feats'] else {}
+          gold_feats = tok_gold['feats'] if tok_gold['feats'] else {}          
+          for key in pred_feats.keys():
+            tp_inc = int(gold_feats.get(key,None) == pred_feats[key])
+            prf[key]['tp'] = prf[key]['tp'] + tp_inc
+            prf['micro-average']['tp'] = prf['micro-average']['tp'] + tp_inc
+            p_inc = int(pred_feats.get(key,None) != None)
+            prf[key]['p'] = prf[key]['p'] + p_inc
+            prf['micro-average']['p'] = prf['micro-average']['p'] + p_inc
+          for key in gold_feats.keys():
+            t_inc = int(gold_feats.get(key,None) != None)
+            prf[key]['t'] = prf[key]['t'] + t_inc
+            prf['micro-average']['t'] = prf['micro-average']['t'] + t_inc
   print("Pred file: {}".format(pred_corpus.name()))
   if args.upos_filter :
     print("Results focus only on following UPOS: {}".format(" ".join(args.upos_filter)))
@@ -90,3 +104,23 @@ if __name__ == "__main__":
     print("Accuracy on OOV {}: {:0.2f} ({}/{})".format(args.col_name_tag,
                                                  accuracy_oov,
                                                  correct_oov, total_oov))
+  if prf:
+    print("Metrics per feature:")
+    macro = {"precis":0.0,"recall":0.0}
+    for key in sorted(prf.keys()):
+      precis = prf[key]['tp'] / max(1,prf[key]['p']) # max prevents zero-division
+      recall = prf[key]['tp'] / max(1,prf[key]['t'])
+      fscore = (2*precis*recall)/max(1,precis+recall)
+      if key != 'micro-average':
+        macro['precis'] = macro['precis'] + precis
+        macro['recall'] = macro['recall'] + recall
+      else:
+        print()
+      templ = "{:13}: P={:6.2f} ({:5}/{:5}) / R={:6.2f} ({:5}/{:5}) / F={:6.2f}"      
+      print(templ.format(key,precis*100,prf[key]['tp'],prf[key]['p'],recall*100, 
+                         prf[key]['tp'],prf[key]['t'], fscore*100))
+    templ = "{:13}: P={:6.2f}               / R={:6.2f}               / F={:6.2f}"    
+    ma_precis = macro['precis'] / (len(prf.keys())-1)
+    ma_recall = macro['recall'] / (len(prf.keys())-1)
+    ma_fscore = (2*ma_precis*ma_recall)/max(1,ma_precis+ma_recall)
+    print(templ.format("macro-average",ma_precis*100,ma_recall*100, ma_fscore*100))
