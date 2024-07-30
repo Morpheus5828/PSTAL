@@ -55032,7 +55032,7 @@
 12	enlisement	enlisement	NOUN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Event	1
 13	,	,	PUNCT	_	_	2	punct	_	_	*	*	1
 14	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	15	det	_	_	*	*	1
-15	humiliation	humiliation	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Felling	1
+15	humiliation	humiliation	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Feeling	1
 16	,	,	PUNCT	_	_	2	punct	_	_	*	*	1
 17	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	18	det	_	_	*	*	1
 18	aventure	aventure	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	1

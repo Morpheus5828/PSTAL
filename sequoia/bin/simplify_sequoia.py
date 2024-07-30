@@ -65,6 +65,8 @@ def simplify_supersense(sent):
         mod_ssense_counter = mod_ssense_counter + 1
       else:
         token["frsemcor:noun"] = ssense_tag
+    if token["frsemcor:noun"] == "Felling" : # Correct typos in one SSense tag
+      token["frsemcor:noun"] = "Feeling" 
   return del_ssense_counter, mod_ssense_counter
 
 #########################################
