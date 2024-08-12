@@ -35,7 +35,13 @@ import sys
 import conllu
 import re
 import pdb
-import parseme.cupt as cupt
+import subprocess
+try :
+  import parseme.cupt as cupt
+except ImportError:
+  print("""Please install cuptlib before running this script\n\n  git clone \
+  https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
+  sys.exit(-1)
 
 #########################################
 

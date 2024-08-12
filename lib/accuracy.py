@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+
 import sys
 import argparse
-import collections
+from collections import defaultdict, Counter
 import pdb
 from conllulib import CoNLLUReader, Util
 
@@ -23,10 +24,10 @@ parser.add_argument('-g', "--gold", metavar="FILENAME.conllu", required=True,\
 parser.add_argument('-t', "--train", metavar="FILENAME.conllu", required=False,\
         dest="train_filename", type=argparse.FileType('r', encoding='UTF-8'), \
         help="""Training corpus in CoNLL-U, from which tagger was learnt.""")        
-parser.add_argument('-c', "--tagcolumn", metavar="NAME", dest="col_name_tag",
+parser.add_argument('-c', "--tagcolumn", metavar="NAME", dest="name_tag",
         required=False, type=str, default="upos", help="""Column name of tags, \
         as defined in header. Use lowercase""")   
-parser.add_argument('-f', "--featcolumn", metavar="NAME", dest="col_name_feat",
+parser.add_argument('-f', "--featcolumn", metavar="NAME", dest="name_feat",
         required=False, type=str, default="form", help="""Column name of input 
         feature, as defined in header. Use lowercase.""")
 parser.add_argument('-u', "--upos-filter", metavar="NAME", dest="upos_filter",
@@ -34,13 +35,20 @@ parser.add_argument('-u', "--upos-filter", metavar="NAME", dest="upos_filter",
         help="""Only calculate accuracy for words with UPOS in this list. \
         Empty list = no filter.""")        
                             
-########################################################################
+################################################################################
 
-def process_args(parser):  
+def process_args(parser):
+  """
+  Show (in debug mode) and process all command line options. Checks tag and feat
+  columns appear in corpora. Create training corpus vocabulary if option present
+  for OOV status check. Input is an instance of `argparse.ArgumentParser`, 
+  returns list of `args`, `gold_corpus` and `pred_corpus` as `CoNLLUReader`, 
+  `train_vocab` dictionary. 
+  """
   args = parser.parse_args()
   Util.DEBUG_FLAG = args.DEBUG_FLAG
-  args.col_name_tag = args.col_name_tag.lower()
-  args.col_name_feat = args.col_name_feat.lower()
+  args.name_tag = args.name_tag.lower()
+  args.name_feat = args.name_feat.lower()
   Util.debug("Command-line arguments and defaults:")
   for (k,v) in vars(args).items():
     Util.debug("  * {}: {}",k,v)    
@@ -49,78 +57,141 @@ def process_args(parser):
   train_vocab = None
   if args.train_filename:
     train_corpus = CoNLLUReader(args.train_filename)
-    ignoreme, train_vocab = train_corpus.to_int_and_vocab({args.col_name_feat:[]})    
-  if args.col_name_tag  not in gold_corpus.header or \
-     args.col_name_feat not in gold_corpus.header:
+    ignoreme, train_vocab = train_corpus.to_int_and_vocab({args.name_feat:[]})    
+  if args.name_tag  not in gold_corpus.header or \
+     args.name_feat not in gold_corpus.header:
     Util.error("-c and -f names must be valid conllu column among:\n{}", 
                gold_corpus.header)
   return args, gold_corpus, pred_corpus, train_vocab
   
-########################################################################
- 
-if __name__ == "__main__":
-  args, gold_corpus, pred_corpus, train_vocab = process_args(parser)
-  prf = collections.defaultdict(lambda:{'tp':0,'t':0, 'p':0})
-  total_tokens = correct_tokens = 0
-  total_oov = correct_oov = 0
-  for (sent_gold, sent_pred) in zip(gold_corpus.readConllu(),
-                                    pred_corpus.readConllu()):
-    for (tok_gold, tok_pred) in zip (sent_gold, sent_pred):
-      if not args.upos_filter or tok_gold['upos'] in args.upos_filter :
-        if train_vocab :
-          train_vocab_feat = train_vocab[args.col_name_feat].keys()
-          if tok_gold[args.col_name_feat] not in train_vocab_feat:
-            total_oov = total_oov + 1
-            oov = True
-          else:
-            oov = False
-        if tok_gold[args.col_name_tag] == tok_pred[args.col_name_tag]:        
-          correct_tokens = correct_tokens + 1        
-          if train_vocab and oov :
-            correct_oov = correct_oov + 1
-        total_tokens += 1
-        if args.col_name_tag == 'feats':
-          pred_feats = tok_pred['feats'] if tok_pred['feats'] else {}
-          gold_feats = tok_gold['feats'] if tok_gold['feats'] else {}          
-          for key in pred_feats.keys():
-            tp_inc = int(gold_feats.get(key,None) == pred_feats[key])
-            prf[key]['tp'] = prf[key]['tp'] + tp_inc
-            prf['micro-average']['tp'] = prf['micro-average']['tp'] + tp_inc
-            p_inc = int(pred_feats.get(key,None) != None)
-            prf[key]['p'] = prf[key]['p'] + p_inc
-            prf['micro-average']['p'] = prf['micro-average']['p'] + p_inc
-          for key in gold_feats.keys():
-            t_inc = int(gold_feats.get(key,None) != None)
-            prf[key]['t'] = prf[key]['t'] + t_inc
-            prf['micro-average']['t'] = prf['micro-average']['t'] + t_inc
-  print("Pred file: {}".format(pred_corpus.name()))
+################################################################################
+
+def tp_count_feats(tok_pred, tok_gold, prf):
+  """
+  Increment number of true positives, trues and positives for morph feature eval
+  Compares all features of `tok_pred` with thos of `tok_gold`
+  Result is modification of `prf` dict, function does not return anything
+  """
+  pred_feats = tok_pred['feats'] if tok_pred['feats'] else {}
+  gold_feats = tok_gold['feats'] if tok_gold['feats'] else {}          
+  for key in pred_feats.keys():
+    tp_inc = int(gold_feats.get(key,None) == pred_feats[key])
+    prf[key]['tp'] = prf[key]['tp'] + tp_inc
+    prf['micro-average']['tp'] = prf['micro-average']['tp'] + tp_inc
+    p_inc = int(pred_feats.get(key,None) != None)
+    prf[key]['p'] = prf[key]['p'] + p_inc
+    prf['micro-average']['p'] = prf['micro-average']['p'] + p_inc
+  for key in gold_feats.keys():
+    t_inc = int(gold_feats.get(key,None) != None)
+    prf[key]['t'] = prf[key]['t'] + t_inc
+    prf['micro-average']['t'] = prf['micro-average']['t'] + t_inc
+
+################################################################################
+
+def parseme_cat_in(ent, ent_list):
+  """
+  Verify if `ent` is present in `ent_list` by comparing both span AND category.
+  Default cuptlib implementation ignores category
+  """
+  for ent_cand in ent_list:
+    if ent.span == ent_cand.span and ent.cat == ent_cand.cat :
+      return True
+  return False
+
+################################################################################
+
+def tp_count_parseme(s_pred, s_gold, name_tag, prf):
+  try :
+    import parseme.cupt as cupt
+  except ImportError:
+    print("""Please install cuptlib before running this script\n\n  git clone \
+https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
+    sys.exit(-1)
+  ents_pred = cupt.retrieve_mwes(s_pred, column_name=name_tag)
+  ents_gold = cupt.retrieve_mwes(s_gold, column_name=name_tag)
+  prf['Exact-nocat']['p'] += len(ents_pred)
+  prf['Exact-nocat']['t'] += len(ents_gold)
+  for e_pred in ents_pred.values() :         
+    if e_pred in ents_gold.values() :
+      #pdb.set_trace()
+      prf['Exact-nocat']['tp'] += 1
+    if parseme_cat_in(e_pred, ents_gold.values()) :  
+      prf['Exact-'+e_pred.cat]['tp'] += 1    
+    prf['Exact-'+e_pred.cat]['p'] += 1
+  for e_pred in ents_gold.values() :
+    prf['Exact-'+e_pred.cat]['t'] += 1
+  # Token-based evaluation - categories always ignored here
+  span_pred = sum([list(ep.int_span()) for ep in ents_pred.values()], start=[])
+  span_gold = sum([list(eg.int_span()) for eg in ents_gold.values()], start=[])
+  prf['Token-nocat']['p'] += len(span_pred)
+  prf['Token-nocat']['t'] += len(span_gold)  
+  for e_pred in span_pred :       
+    if e_pred in span_gold :      
+      prf['Token-nocat']['tp'] += 1
+      
+################################################################################
+
+def print_results(pred_corpus_name, args, acc, prf):
+  """
+  Calculate and print accuracies, precision, recall, f-score, etc.
+  """
+  print("Predictions file: {}".format(pred_corpus_name))
   if args.upos_filter :
-    print("Results focus only on following UPOS: {}".format(" ".join(args.upos_filter)))
-  accuracy = (correct_tokens / total_tokens) * 100  
-  print("Accuracy on all {}: {:0.2f} ({}/{})".format(args.col_name_tag,accuracy,
-                                                 correct_tokens, total_tokens))
-  if train_vocab :
-    accuracy_oov = (correct_oov / total_oov) * 100
-    print("Accuracy on OOV {}: {:0.2f} ({}/{})".format(args.col_name_tag,
-                                                 accuracy_oov,
-                                                 correct_oov, total_oov))
+    print("Results concern only some UPOS: {}".format(" ".join(args.upos_filter)))
+  accuracy = (acc['correct_tokens'] / acc['total_tokens']) * 100  
+  print("Accuracy on all {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, accuracy,
+        acc['correct_tokens'], acc['total_tokens']))
+  if args.train_filename :
+    accuracy_oov = (acc['correct_oov'] / acc['total_oov']) * 100
+    print("Accuracy on OOV {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, accuracy_oov,
+                                                 acc['correct_oov'], acc['total_oov']))
   if prf:
-    print("Metrics per feature:")
-    macro = {"precis":0.0,"recall":0.0}
-    for key in sorted(prf.keys()):
-      precis = prf[key]['tp'] / max(1,prf[key]['p']) # max prevents zero-division
-      recall = prf[key]['tp'] / max(1,prf[key]['t'])
-      fscore = (2*precis*recall)/max(1,precis+recall)
+    print("\nPrecision, recall, and F-score for {}:".format(args.name_tag))
+    macro = {"precis":0.0, "recall":0.0}
+    for key in sorted(prf): # max prevents zero-division in P and R       
+      precis = (prf[key]['tp'] / max(1, prf[key]['p'])) * 100
+      recall = (prf[key]['tp'] / max(1, prf[key]['t'])) * 100
+      fscore = ((2 * precis * recall) / max(1, precis + recall))
       if key != 'micro-average':
         macro['precis'] = macro['precis'] + precis
         macro['recall'] = macro['recall'] + recall
       else:
         print()
       templ = "{:13}: P={:6.2f} ({:5}/{:5}) / R={:6.2f} ({:5}/{:5}) / F={:6.2f}"      
-      print(templ.format(key,precis*100,prf[key]['tp'],prf[key]['p'],recall*100, 
-                         prf[key]['tp'],prf[key]['t'], fscore*100))
-    templ = "{:13}: P={:6.2f}               / R={:6.2f}               / F={:6.2f}"    
-    ma_precis = macro['precis'] / (len(prf.keys())-1)
-    ma_recall = macro['recall'] / (len(prf.keys())-1)
-    ma_fscore = (2*ma_precis*ma_recall)/max(1,ma_precis+ma_recall)
-    print(templ.format("macro-average",ma_precis*100,ma_recall*100, ma_fscore*100))
+      print(templ.format(key, precis, prf[key]['tp'], prf[key]['p'], recall, 
+                         prf[key]['tp'], prf[key]['t'], fscore))
+    templ = "{:13}: P={:6.2f}" + " "*15 + "/ R={:6.2f}" + " "*15 + "/ F={:6.2f}"    
+    if len(prf) > 1 : # Calculate macro-precision
+      nb_scores = len(prf)-1 if "micro-average" in prf else len(prf)
+      ma_precis = (macro['precis'] / (nb_scores)) 
+      ma_recall = (macro['recall'] / (nb_scores)) 
+      ma_fscore = ((2*ma_precis*ma_recall)/max(1,ma_precis+ma_recall))
+      print(templ.format("macro-average", ma_precis, ma_recall, ma_fscore))
+
+################################################################################
+
+if __name__ == "__main__":
+  args, gold_corpus, pred_corpus, train_vocab = process_args(parser)
+  prf = defaultdict(lambda:{'tp':0,'t':0, 'p':0}) # used for feats, NEs and MWEs
+  acc = Counter() # store correct and total for all and OOV
+  for (s_gold,s_pred) in zip(gold_corpus.readConllu(),pred_corpus.readConllu()):
+    if args.name_tag.startswith("parseme"):
+      tp_count_parseme(s_pred, s_gold, args.name_tag, prf)
+    for (tok_gold, tok_pred) in zip (s_gold, s_pred):
+      if not args.upos_filter or tok_gold['upos'] in args.upos_filter :
+        if train_vocab :
+          train_vocab_feat = train_vocab[args.name_feat].keys()
+          if tok_gold[args.name_feat] not in train_vocab_feat:
+            acc['total_oov'] += 1
+            oov = True
+          else:
+            oov = False
+        if tok_gold[args.name_tag] == tok_pred[args.name_tag]:        
+          acc['correct_tokens'] += 1       
+          if train_vocab and oov :
+            acc['correct_oov'] += 1
+        acc['total_tokens'] += 1
+        if args.name_tag == 'feats':
+          tp_count_feats(tok_gold, tok_pred, prf)
+  print_results(pred_corpus.name(), args, acc, prf) 
+  
