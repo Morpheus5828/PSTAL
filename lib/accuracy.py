@@ -26,7 +26,7 @@ parser.add_argument('-t', "--train", metavar="FILENAME.conllu", required=False,\
         help="""Training corpus in CoNLL-U, from which tagger was learnt.""")        
 parser.add_argument('-c', "--tagcolumn", metavar="NAME", dest="name_tag",
         required=False, type=str, default="upos", help="""Column name of tags, \
-        as defined in header. Use lowercase""")   
+        as defined in header. Use lowercase.""")   
 parser.add_argument('-f', "--featcolumn", metavar="NAME", dest="name_feat",
         required=False, type=str, default="form", help="""Column name of input 
         feature, as defined in header. Use lowercase.""")
@@ -113,7 +113,6 @@ https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
   prf['Exact-nocat']['t'] += len(ents_gold)
   for e_pred in ents_pred.values() :         
     if e_pred in ents_gold.values() :
-      #pdb.set_trace()
       prf['Exact-nocat']['tp'] += 1
     if parseme_cat_in(e_pred, ents_gold.values()) :  
       prf['Exact-'+e_pred.cat]['tp'] += 1    
@@ -131,7 +130,7 @@ https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
       
 ################################################################################
 
-def print_results(pred_corpus_name, args, acc, prf):
+def print_results(pred_corpus_name, args, acc, prf, parsing=False):
   """
   Calculate and print accuracies, precision, recall, f-score, etc.
   """
@@ -139,12 +138,24 @@ def print_results(pred_corpus_name, args, acc, prf):
   if args.upos_filter :
     print("Results concern only some UPOS: {}".format(" ".join(args.upos_filter)))
   accuracy = (acc['correct_tokens'] / acc['total_tokens']) * 100  
-  print("Accuracy on all {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, accuracy,
-        acc['correct_tokens'], acc['total_tokens']))
+  if not parsing:
+    acc_name = "Accuracy"
+  else: 
+    acc_name = "UAS"
+  print("{} on all {}: {:0.2f} ({:5}/{:5})".format(acc_name, args.name_tag, 
+        accuracy, acc['correct_tokens'], acc['total_tokens']))
+  if parsing :
+    accuracy_las = (acc['correct_tokens_las'] / acc['total_tokens']) * 100
+    print("LAS on OOV {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, 
+          accuracy_las, acc['correct_tokens_las'], acc['total_tokens']))
   if args.train_filename :
     accuracy_oov = (acc['correct_oov'] / acc['total_oov']) * 100
-    print("Accuracy on OOV {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, accuracy_oov,
-                                                 acc['correct_oov'], acc['total_oov']))
+    print("{} on OOV {}: {:0.2f} ({:5}/{:5})".format(acc_name, args.name_tag, 
+          accuracy_oov, acc['correct_oov'], acc['total_oov']))
+    if parsing :
+      accuracy_oov_las = (acc['correct_oov_las'] / acc['total_oov']) * 100
+      print("LAS on OOV {}: {:0.2f} ({:5}/{:5})".format(args.name_tag, 
+          accuracy_oov_las, acc['correct_oov_las'], acc['total_oov']))
   if prf:
     print("\nPrecision, recall, and F-score for {}:".format(args.name_tag))
     macro = {"precis":0.0, "recall":0.0}
@@ -174,9 +185,13 @@ if __name__ == "__main__":
   args, gold_corpus, pred_corpus, train_vocab = process_args(parser)
   prf = defaultdict(lambda:{'tp':0,'t':0, 'p':0}) # used for feats, NEs and MWEs
   acc = Counter() # store correct and total for all and OOV
+  parsing = False
   for (s_gold,s_pred) in zip(gold_corpus.readConllu(),pred_corpus.readConllu()):
     if args.name_tag.startswith("parseme"):
       tp_count_parseme(s_pred, s_gold, args.name_tag, prf)
+    if args.name_tag in ["head", "deprel"]:
+      args.name_tag = "head"
+      parsing = True
     for (tok_gold, tok_pred) in zip (s_gold, s_pred):
       if not args.upos_filter or tok_gold['upos'] in args.upos_filter :
         if train_vocab :
@@ -190,8 +205,12 @@ if __name__ == "__main__":
           acc['correct_tokens'] += 1       
           if train_vocab and oov :
             acc['correct_oov'] += 1
+        if parsing and tok_gold["head"] == tok_pred["head"] and \
+                       tok_gold["deprel"] == tok_pred["deprel"]: 
+          acc['correct_tokens_las'] += 1
+          if train_vocab and oov :
+            acc['correct_oov_las'] += 1
         acc['total_tokens'] += 1
         if args.name_tag == 'feats':
           tp_count_feats(tok_gold, tok_pred, prf)
-  print_results(pred_corpus.name(), args, acc, prf) 
-  
+  print_results(pred_corpus.name(), args, acc, prf, args.name_tag == "head")

@@ -81,7 +81,6 @@ class Util(object):
       return -Util.PSEUDO_INF
     else :
       return np.log10(number)
-    
 
 ########################################################################
 # CONLLU FUNCTIONS 
@@ -197,7 +196,7 @@ class CoNLLUReader(object):
       bio_enc.append(cur_tag)      
     return bio_enc
 
-###############################
+  ###############################
     
   @staticmethod
   def from_bio(bio_enc, bio_style='bio', stop_on_error=False):
@@ -285,6 +284,152 @@ class CoNLLUReader(object):
       prev_bio_tag = bio_tag
     return result
 
+########################################################################
+# PARSING FUNCTIONS 
+########################################################################
+
+class TransBasedSent(object): 
+  """ 
+  Useful functions to build a syntactic transition-based dependency parser.
+  Takes as constructor argument a sentence as retrieved by readConllu() above.
+  Generates oracle configurations, verifies action validity, etc.
+  """
+  ###############################
+
+  def __init__(self, sent):
+    """
+    `sent`: A `TokenList` as retrieved by the `conllu` library or `readConllu()`
+    """
+    self.sent = sent
+
+  ###############################
+
+  def get_configs_oracle(self):
+    """
+    Generator of oracle arc-hybrid configurations based on gold parsing tree.
+    Yields triples (stack, buffer, action) where action is a string among:
+    - "SHIFT" -> pop buffer into stack
+    - "LEFT-ARC-X" -> relation "X" from buffer head to stack head, pop stack
+    - "RIGHT-ARC-X" -> relation "X" from stack head to stack second, pop stack
+    Notice that RIGHT-ARC is only predicted when all its dependants are attached
+    """
+    config = TransBasedConfig(self.sent) # initial config
+    gold_tree = [(i+1, tok['head']) for (i,tok) in enumerate(self.sent)]
+    while not config.is_final():
+      action = config.get_action_oracle(gold_tree)        # get next oracle act.
+      yield (config, action)                              # yield to caller
+      rel = config.apply_action(action, add_deprel=False) # get rel (if any)
+      if rel :                                            # remove from gold        
+        gold_tree.remove(rel)
+      
+  ###############################
+
+  def update_sent(self, rels):
+    """
+    Updates the sentence by removing all syntactic relations and replacing them
+    by those encoded as triples in `rels`.  `rels` is a list of syntactic 
+    relations of the form (dep, head, label), that is, dep <---label--- head. 
+    The function updates words at position (dep-1) by setting its "head"=`head` 
+    and "deprel"=`label`
+    """
+    for tok in self.sent : # Remove existing info to avoid any error in eval
+      tok['head']='_'
+      tok['deprel']='_'
+    for rel in rels :
+      (dep, head, label) = rel
+      self.sent[dep-1]['head'] = head
+      self.sent[dep-1]['deprel'] = label      
+      
+################################################################################
 ################################################################################
 
+class TransBasedConfig(object): 
+  """ 
+  Configuration of a transition-based parser composed of a `TokenList` sentence,
+  a stack and a buffer. Both `stack` and `buff` are lists of indices within the
+  sentence. Both `stack` and `buff` contain 1-initial indices, so remember to 
+  subtract 1 to access `sent`. The class allows converting to/from dependency
+  relations to actions.
+  """
+  
+  ###############################  
 
+  def __init__(self, sent): # Initial configuration for a sentence
+    """
+    Initial stack is an empty list.
+    Initial buffer contains all sentence position indices 1..len(sent)    
+    Appends 0 (representing root) to last buffer position.
+    """
+    self.sent = sent
+    self.stack = []
+    self.buff = [i+1 for (i,w) in enumerate(self.sent)] + [0]
+  
+  ###############################
+  
+  def is_final(self):
+    """
+    Returns True if configuration is final, False else.
+    A configuration is final if the stack is empty and the buffer contains only
+    the root node.
+    """
+    return len(self.buff) == 1 and len(self.stack) == 0
+  
+  ###############################
+  
+  def apply_action(self, next_act, add_deprel=True):
+    """
+    Updates the configuration's buffer and stack by applying `next_act` action.
+    `next_act` is a string among "SHIFT", "RIGHT-ARC-X" or "LEFT-ARC-X" where
+    "X" is the name of any valid syntactic relation label (deprel).
+    Returns a new syntactic relation added by the action, or None for "SHIFT"        
+    Returned relation is a triple (mod, head, deprel) with modifier, head, and 
+    deprel label if `add_deprel=True` (default), or a pair (mod, head) if 
+    `add_deprel=False`.
+    """    
+    if next_act == "SHIFT":
+      self.stack.append(self.buff.pop(0))
+      return None
+    else :
+      deprel = next_act.split("-")[-1]
+      if next_act.startswith("LEFT-ARC-"):
+        rel = (self.stack[-1], self.buff[0])      
+      else: # RIGHT-ARC-
+        rel = (self.stack[-1], self.stack[-2])
+      if add_deprel :
+        rel = rel + (deprel,)
+      self.stack.pop()
+      return rel
+  
+  ###############################
+ 
+  def get_action_oracle(self, gold_tree):       
+    """
+    Returns a strinc with the name of the next action to perform given the 
+    current config and the gold parsing tree. The gold tree is a list of tuples
+    [(mod1, head1), (mod2, head2) ...] with modifier-head pairs in this order.
+    """
+    if self.stack :
+      deprel = self.sent[self.stack[-1] - 1]['deprel']
+    if len(self.stack) >= 2 and \
+       (self.stack[-1], self.stack[-2]) in gold_tree and \
+       self.stack[-1] not in list(map(lambda x:x[1], gold_tree)): # head complete
+      return "RIGHT-ARC-" + deprel
+    elif len(self.stack) >= 1 and (self.stack[-1], self.buff[0]) in gold_tree:
+      return "LEFT-ARC-" + deprel        
+    else:        
+      return "SHIFT"       
+    
+  ###############################
+  
+  def is_valid_act(self, act_cand):
+    """
+    Given a next-action candidate `act_cand`, returns True if the action is
+    valid in the given `stack` and `buff` configuration, and False if the action
+    cannot be applied to the current configuration. Constraints taken from
+    page 2 of [de Lhoneux et al. (2017)](https://aclanthology.org/W17-6314/)
+    """
+    return (act_cand == "SHIFT" and len(self.buff)>1) or \
+           (act_cand.startswith("RIGHT-ARC-") and len(self.stack)>1) or \
+           (act_cand.startswith("LEFT-ARC-") and len(self.stack)>0 and \
+                               (len(self.buff)>1 or len(self.stack)==1))
+    
