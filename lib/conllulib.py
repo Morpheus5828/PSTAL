@@ -14,14 +14,21 @@ import pdb
 ########################################################################
 
 class Util(object):
+  """
+  Utility static functions that can be useful (but not required) in any script.
+  """
   
-  DEBUG_FLAG = False
-  PSEUDO_INF = 9999.0
+  DEBUG_FLAG = False 
+  PSEUDO_INF = 9999.0         # Pseudo-infinity value, useful for Viterbi
 
   ###############################
 
   @staticmethod
   def error(msg, *kwargs):
+    """
+    Shows an error message `msg` on standard error output, and terminates.
+    Any `kwargs` will be forwarded to `msg.format(...)`
+    """
     print("ERROR:", msg.format(*kwargs), file=sys.stderr)
     sys.exit(-1)
 
@@ -29,12 +36,20 @@ class Util(object):
 
   @staticmethod
   def warn(msg, *kwargs):
+    """
+    Shows a warning message `msg` on standard error output.
+    Any `kwargs` will be forwarded to `msg.format(...)`
+    """
     print("WARNING:", msg.format(*kwargs), file=sys.stderr)    
 
   ###############################
 
   @staticmethod
   def debug(msg, *kwargs):
+    """
+    Shows a message `msg` on standard error output if `DEBUG_FLAG` is true
+    Any `kwargs` will be forwarded to `msg.format(...)`
+    """
     if Util.DEBUG_FLAG:
       print(msg.format(*kwargs), file=sys.stderr)
       
@@ -42,6 +57,11 @@ class Util(object):
   
   @staticmethod
   def rev_vocab(vocab):
+    """
+    Given a dict vocabulary with str keys and unique int idx values, returns a 
+    list of str keys ordered by their idx values. The str key can be obtained
+    by acessing the reversed vocabulary list in position rev_vocab[idx].
+    """
     rev_dict = {y: x for x, y in vocab.items()}
     return [rev_dict[k] for k in range(len(rev_dict))]
     
@@ -49,6 +69,12 @@ class Util(object):
   
   @staticmethod
   def dataloader(inputs, outputs, batch_size=16, shuffle=True):
+    """
+    Given a list of `input` and a list of `output` torch tensors, returns a
+    DataLoader where the tensors are shuffled and batched according to `shuffle`
+    and `batch_size` parameters. Notice that `inputs` and `outputs` need to be
+    aligned, that is, their dimension 0 has identical sizes in all tensors.
+    """
     data_set = TensorDataset(*inputs, *outputs) 
     return DataLoader(data_set, batch_size, shuffle=shuffle)   
     
@@ -56,12 +82,22 @@ class Util(object):
   
   @staticmethod
   def count_params(model):
+    """
+    Given a class that extends torch.nn.Module, returns the number of trainable
+    parameters of that class.
+    """
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
     
   ###############################
   
   @staticmethod
   def init_seed(seed):
+    """
+    Initialise the random seed generator of python (lib random) and torch with
+    a single int random seed value. If the value is zero or negative, the random
+    seed will not be deterministically initialised. This can be useful to obtain
+    reproducible results across runs.
+    """
     if seed >= 0:
       random.seed(seed)
       torch.manual_seed(seed)

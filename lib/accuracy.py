@@ -10,7 +10,9 @@ from conllulib import CoNLLUReader, Util
 
 parser = argparse.ArgumentParser(description="Calculates the accuracy of a \
 prediction with respect to the gold file. By default, uses UPOS, but this can \
-be configured with option -c.",  
+be configured with option --tagcolumn. For columns `feats` and `parseme:ne`, \
+calculates also the precision, recall, F-score. For columns `head` and \
+`deprel`, calculates LAS and UAS.",
 formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('-D', "--debug", action="store_true", dest="DEBUG_FLAG", 
@@ -101,6 +103,12 @@ def parseme_cat_in(ent, ent_list):
 ################################################################################
 
 def tp_count_parseme(s_pred, s_gold, name_tag, prf):
+  """
+  Count true positives, trues and positives for full entities in PARSEME format.
+  Updates `prf` dict with counts from sentence `s_pred` and sentence `s_gold`
+  `name_tag` is the name of the column among `parseme:ne` or `parseme:mwe`
+  This code was not tested for `parseme:mwe`.
+  """
   try :
     import parseme.cupt as cupt
   except ImportError:
@@ -132,7 +140,7 @@ https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
 
 def print_results(pred_corpus_name, args, acc, prf, parsing=False):
   """
-  Calculate and print accuracies, precision, recall, f-score, etc.
+  Calculate and print accuracies, precision, recall, f-score, LAS, etc.
   """
   print("Predictions file: {}".format(pred_corpus_name))
   if args.upos_filter :
