@@ -471,7 +471,7 @@ class TransBasedConfig(object):
  
   def get_action_oracle(self, gold_tree):       
     """
-    Returns a strinc with the name of the next action to perform given the 
+    Returns a string with the name of the next action to perform given the 
     current config and the gold parsing tree. The gold tree is a list of tuples
     [(mod1, head1), (mod2, head2) ...] with modifier-head pairs in this order.
     """
