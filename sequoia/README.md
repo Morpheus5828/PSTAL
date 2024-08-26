@@ -7,6 +7,7 @@ We obtained the file `trunk/sequoia-ud.parseme.frsemcor` from commit number `ea7
 The file is the result of the conversion from Sequoia's source as described on the [documentation](https://deep-sequoia.inria.fr/process/)
 
 We keep the original file in `src` folder to make command line completion faster
+The file `tiny.conllu` was manually extracted and simplified, it is used in parsing exercises.
 
 ### Simplification
 

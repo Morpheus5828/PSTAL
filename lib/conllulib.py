@@ -332,18 +332,40 @@ class TransBasedSent(object):
   """
   ###############################
 
-  def __init__(self, sent):
+  def __init__(self, sent, actions_only=False):
     """
     `sent`: A `TokenList` as retrieved by the `conllu` library or `readConllu()`
+    `actions_only`: affects the way the __str__ function prints this object
     """
     self.sent = sent
+    self.actions_only = actions_only
 
+  ###############################
+
+  def __str__(self):
+    """
+    Sequence of configs and arc-hybrid actions corresponding to the sentence.
+    If `self.actions_only=True` prints only sequence of actions
+    """
+    result = []
+    for config, action in self.get_configs_oracle():      
+      if not self.actions_only :
+        result.append("{} -> {}".format(str(config), action))
+      else :
+        result.append(action)
+    if not self.actions_only :
+      result.append("{} -> {}".format(str(config), action))
+      return "\n".join(result) 
+    else :
+      return " ".join(result)
+    
+    
   ###############################
 
   def get_configs_oracle(self):
     """
     Generator of oracle arc-hybrid configurations based on gold parsing tree.
-    Yields triples (stack, buffer, action) where action is a string among:
+    Yields pairs (`TransBasedConfig`, action) where action is a string among:
     - "SHIFT" -> pop buffer into stack
     - "LEFT-ARC-X" -> relation "X" from buffer head to stack head, pop stack
     - "RIGHT-ARC-X" -> relation "X" from stack head to stack second, pop stack
@@ -400,6 +422,15 @@ class TransBasedConfig(object):
     self.stack = []
     self.buff = [i+1 for (i,w) in enumerate(self.sent)] + [0]
   
+  ###############################
+  
+  def __str__(self):
+    """
+    Generate a string with explicit buffer and stack words.
+    """
+    return "{}, {}".format([self.sent[i - 1]['form'] for i in self.stack],
+                           [self.sent[i - 1]['form'] for i in self.buff[:-1]] + [0])
+    
   ###############################
   
   def is_final(self):
