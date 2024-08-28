@@ -7,7 +7,6 @@ We obtained the file `trunk/sequoia-ud.parseme.frsemcor` from commit number `ea7
 The file is the result of the conversion from Sequoia's source as described on the [documentation](https://deep-sequoia.inria.fr/process/)
 
 We keep the original file in `src` folder to make command line completion faster
-The file `tiny.conllu` was manually extracted and simplified, it is used in parsing exercises.
 
 ### Simplification
 
@@ -50,6 +49,8 @@ LASTID=`grep "sent_id" ${CORPUS} | head -n  $((NBSENT+1)) | tail -n 1 | sed 's/.
 CUTLINE=`grep -n ${LASTID} ${CORPUS} | sed 's/:.*//g'`
 head -n $((CUTLINE-1)) ${CORPUS} > sequoia-ud.parseme.frsemcor.simple.small
 ```
+
+The file `tiny.conllu` was manually extracted and simplified, it is used in parsing exercises.
 
 Finally, we also split the non-simplified version of the corpus into train, dev and test (before simplification).
 These files should not be used in your experiments.

@@ -23,6 +23,7 @@ Simplify Sequoia corpus for pedagogical purposes:
 - Columns HEAD and DEPREL (TP5 and TP6)
   - Remove non-projective sentences
   => Non-projective parse trees are not straightforward to handle in the dependency parsing models we implement
+  - [EXPERIMENTAL] Remove all deprel subrelations (after semicolon) to simplify the tagset
   
 This script depends on the `cuptlib` library. You can install it with:
 
@@ -125,13 +126,21 @@ def is_projective(sent):
 
 #########################################
 
+def remove_subrelations(sent):
+  subrel_counter = sum([1 if ':' in t['deprel'] else 0 for t in sent])
+  for token in sent :
+    token['deprel'] = re.sub(':.*', '', token['deprel'])
+  return subrel_counter
+
+#########################################
+
 if len(sys.argv) != 2:
   print('Usage: {} <input_corpus.conllu>'.format(sys.argv[0]), file=sys.stderr)  
   exit(-1)
 
 with open(sys.argv[1], "r", encoding="UTF=8") as f:
   np_counter = range_counter = del_ne_counter = 0
-  del_ssense_counter = mod_ssense_counter = 0
+  del_ssense_counter = mod_ssense_counter = 0 #subrel_counter = 0
   np_ids = []  
   for sent in conllu.parse_incr(f):    
     range_counter = range_counter + remove_range_tokens(sent)
@@ -139,10 +148,11 @@ with open(sys.argv[1], "r", encoding="UTF=8") as f:
     del_ssense_counter = del_ssense_counter + del_ssense_ci
     mod_ssense_counter = mod_ssense_counter + mod_ssense_ci
     del_ne_counter = del_ne_counter + simplify_mwe_ne(sent)
+#    subrel_counter = subrel_counter + remove_subrelations(sent)
     if is_projective(sent) : # Returns false to remove sentence
       if sent.metadata.get("global.columns", None): # Add header for new column
         sent.metadata["global.columns"] += " PARSEME:NE"
-      print(sent.serialize(),end="")
+      print(sent.serialize(), end="")
     else:
       np_counter += 1
       np_ids.append(sent.metadata["sent_id"])
@@ -154,6 +164,6 @@ print( "{} discontinuous and overlapping NEs removed.\n".format(del_ne_counter),
 print( "{} supersense tags removed (on MWEs or strange POS).".format(del_ssense_counter), file=sys.stderr)
 print( "{} supersense tags modified (complex operators).\n".format(mod_ssense_counter), file=sys.stderr)
 
-      
+#print( "{} subrelations removed from deprel.".format(subrel_counter), file=sys.stderr)
 print( "{} non-projective sentences removed:".format(np_counter), file=sys.stderr)
 print(", ".join(np_ids), file=sys.stderr)
