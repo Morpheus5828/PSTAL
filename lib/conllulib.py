@@ -147,7 +147,7 @@ class CoNLLUReader(object):
       
   ###############################
     
-  def readConllu(self):    
+  def readConllu(self):
     for sent in conllu.parse_incr(self.infile):
       yield sent
 
@@ -159,6 +159,12 @@ class CoNLLUReader(object):
   ###############################
   
   def morph_feats(self):
+    """
+    Extract the list of morphological features from the "FEATS" field of the
+    CoNLL-U file. At the end, rewinds the file so that it can be read through 
+    again. The result is a list of unique strings corresponding to the keys 
+    appearing in the FEATS column of the corpus (before the = sign)
+    """
     morph_feats_list = set([])
     for sent in conllu.parse_incr(self.infile):
       for tok in sent :
@@ -170,7 +176,7 @@ class CoNLLUReader(object):
 
   ###############################
 
-  def to_int_and_vocab(self, col_name_dict):  
+  def to_int_and_vocab(self, col_name_dict, extra_cols_dict={}):  
     int_list = {}; 
     vocab = {}
     for col_name, special_tokens in col_name_dict.items():  
@@ -179,10 +185,14 @@ class CoNLLUReader(object):
       for special_token in special_tokens:
         # Simple access to undefined dict key creates new ID (dict length)
         vocab[col_name][special_token]       
+    for col_name in extra_cols_dict.keys() :
+      int_list[col_name] = []
     for s in self.readConllu():
       # IMPORTANT : only works if "col_name" is the same as in lambda function definition!
       for col_name in col_name_dict.keys():
-        int_list[col_name].append([vocab[col_name][tok[col_name]] for tok in s])    
+        int_list[col_name].append([vocab[col_name][tok[col_name]] for tok in s]) 
+      for col_name, col_fct in extra_cols_dict.items():
+        int_list[col_name].append(list(map(col_fct, [tok[col_name] for tok in s])))
     # vocabs cannot be saved if they have lambda function: erase default_factory
     for col_name in col_name_dict.keys():
       vocab[col_name].default_factory = None    
@@ -190,16 +200,20 @@ class CoNLLUReader(object):
      
   ###############################
 
-  def to_int_from_vocab(self, col_names, unk_token, vocab={}):  
+  def to_int_from_vocab(self, col_names, unk_token, vocab={}, extra_cols_dict={}):  
     int_list = {}
     unk_toks = {}
     for col_name in col_names:  
       int_list[col_name] = []
       unk_toks[col_name] = vocab[col_name].get(unk_token,None)
+    for col_name in extra_cols_dict.keys() :
+      int_list[col_name] = []
     for s in self.readConllu():
       for col_name in col_names:
         id_getter = lambda v,t: v[col_name].get(t[col_name],unk_toks[col_name])
-        int_list[col_name].append([id_getter(vocab,tok) for tok in s])        
+        int_list[col_name].append([id_getter(vocab,tok) for tok in s])   
+      for col_name, col_fct in extra_cols_dict.items():
+        int_list[col_name].append(list(map(col_fct, [tok[col_name] for tok in s])))
     return int_list 
       
   ###############################

@@ -5,6 +5,7 @@ import argparse
 from collections import defaultdict, Counter
 import pdb
 from conllulib import CoNLLUReader, Util
+import re
 
 ################################################################################
 
@@ -197,7 +198,7 @@ if __name__ == "__main__":
   for (s_gold,s_pred) in zip(gold_corpus.readConllu(),pred_corpus.readConllu()):
     if args.name_tag.startswith("parseme"):
       tp_count_parseme(s_pred, s_gold, args.name_tag, prf)
-    if args.name_tag in ["head", "deprel"]:
+    if args.name_tag in ["head", "deprel"]: # Any of both is considered LAS/UAS eval
       args.name_tag = "head"
       parsing = True
     for (tok_gold, tok_pred) in zip (s_gold, s_pred):
@@ -213,8 +214,11 @@ if __name__ == "__main__":
           acc['correct_tokens'] += 1       
           if train_vocab and oov :
             acc['correct_oov'] += 1
+        # LAS ignores subrelations, as usual in CoNLL17/18 eval scripts
+        gold_deprel = re.sub(':.*', '', tok_gold["deprel"])
+        pred_deprel = re.sub(':.*', '', tok_pred["deprel"])
         if parsing and tok_gold["head"] == tok_pred["head"] and \
-                       tok_gold["deprel"] == tok_pred["deprel"]: 
+                       gold_deprel == pred_deprel: 
           acc['correct_tokens_las'] += 1
           if train_vocab and oov :
             acc['correct_oov_las'] += 1
