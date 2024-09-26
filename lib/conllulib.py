@@ -19,7 +19,7 @@ class Util(object):
   """
   
   DEBUG_FLAG = False 
-  PSEUDO_INF = 9999.0         # Pseudo-infinity value, useful for Viterbi
+  PSEUDO_INF = 9999.0         # Pseudo-infinity value, useful for Viterbi (TP2)
 
   ###############################
 
@@ -60,7 +60,12 @@ class Util(object):
     """
     Given a dict vocabulary with str keys and unique int idx values, returns a 
     list of str keys ordered by their idx values. The str key can be obtained
-    by acessing the reversed vocabulary list in position rev_vocab[idx].
+    by acessing the reversed vocabulary list in position rev_vocab[idx]. 
+    Example:
+    >>> print(Util.rev_vocab({"a":0, "b":1,"c":2}))
+    ['a', 'b', 'c']
+    >>> print(Util.rev_vocab({"a":2, "b":0, "c":1}))
+    ['b', 'c', 'a']
     """
     rev_dict = {y: x for x, y in vocab.items()}
     return [rev_dict[k] for k in range(len(rev_dict))]
@@ -70,7 +75,7 @@ class Util(object):
   @staticmethod
   def dataloader(inputs, outputs, batch_size=16, shuffle=True):
     """
-    Given a list of `input` and a list of `output` torch tensors, returns a
+    Given a **list** of `input` and a list of `output` torch tensors, returns a
     DataLoader where the tensors are shuffled and batched according to `shuffle`
     and `batch_size` parameters. Notice that `inputs` and `outputs` need to be
     aligned, that is, their dimension 0 has identical sizes in all tensors.
@@ -214,6 +219,13 @@ class CoNLLUReader(object):
     
   @staticmethod
   def to_bio(sent, bio_style='bio', name_tag='parseme:ne'):
+    """Given a `sent` represented as a `conllu.TokenList`, returns a list of str
+    containing the BIO encoding of the column corresponding to `name_tag`. By
+    default, it is the "parseme:ne" column, which uses ConLLU-plus (tokens 
+    belonging to the same NE get the same int + first gets ":category" suffix). 
+    The output has category appended to 'B' and 'I' tags. The `bio_style` can
+    be 'bio' or 'io', the latter has only 'I-category' tags, no 'B's.
+    """
     bio_enc = []
     neindex = 0
     for tok in sent :
@@ -236,7 +248,7 @@ class CoNLLUReader(object):
     
   @staticmethod
   def from_bio(bio_enc, bio_style='bio', stop_on_error=False):
-    """Converst BIO-encoded annotations into Sequoia/parseme format.
+    """Convert BIO-encoded annotations into Sequoia/parseme format.
     Input `bio_enc` is a list of strings, each corresponding to one BIO tag.
     `bio_style` can be "bio" (default) or "io". Will try to recover encoding
     errors by replacing wrong tags when `stop_on_error` equals False (default),
