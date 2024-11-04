@@ -80,14 +80,14 @@ def tp_count_feats(tok_pred, tok_gold, prf):
   for key in pred_feats.keys():
     tp_inc = int(gold_feats.get(key,None) == pred_feats[key])
     prf[key]['tp'] = prf[key]['tp'] + tp_inc
-    prf['micro-average']['tp'] = prf['micro-average']['tp'] + tp_inc
+    prf['micro-avg']['tp'] = prf['micro-avg']['tp'] + tp_inc
     p_inc = int(pred_feats.get(key,None) != None)
     prf[key]['p'] = prf[key]['p'] + p_inc
-    prf['micro-average']['p'] = prf['micro-average']['p'] + p_inc
+    prf['micro-avg']['p'] = prf['micro-avg']['p'] + p_inc
   for key in gold_feats.keys():
     t_inc = int(gold_feats.get(key,None) != None)
     prf[key]['t'] = prf[key]['t'] + t_inc
-    prf['micro-average']['t'] = prf['micro-average']['t'] + t_inc
+    prf['micro-avg']['t'] = prf['micro-avg']['t'] + t_inc
 
 ################################################################################
 
@@ -128,14 +128,14 @@ https://gitlab.com/parseme/cuptlib.git\n  cd cuptlib\n  pip install .""")
     prf['Exact-'+e_pred.cat]['p'] += 1
   for e_pred in ents_gold.values() :
     prf['Exact-'+e_pred.cat]['t'] += 1
-  # Token-based evaluation - categories always ignored here
+  # Fuzzy (token-based) evaluation - categories always ignored here
   span_pred = sum([list(ep.int_span()) for ep in ents_pred.values()], start=[])
   span_gold = sum([list(eg.int_span()) for eg in ents_gold.values()], start=[])
-  prf['Token-nocat']['p'] += len(span_pred)
-  prf['Token-nocat']['t'] += len(span_gold)  
+  prf['Fuzzy-nocat']['p'] += len(span_pred)
+  prf['Fuzzy-nocat']['t'] += len(span_gold)  
   for e_pred in span_pred :       
     if e_pred in span_gold :      
-      prf['Token-nocat']['tp'] += 1
+      prf['Fuzzy-nocat']['tp'] += 1
       
 ################################################################################
 
@@ -172,21 +172,21 @@ def print_results(pred_corpus_name, args, acc, prf, parsing=False):
       precis = (prf[key]['tp'] / max(1, prf[key]['p'])) * 100
       recall = (prf[key]['tp'] / max(1, prf[key]['t'])) * 100
       fscore = ((2 * precis * recall) / max(1, precis + recall))
-      if key != 'micro-average':
+      if key != 'micro-avg':
         macro['precis'] = macro['precis'] + precis
         macro['recall'] = macro['recall'] + recall
       else:
         print()
-      templ = "{:13}: P={:6.2f} ({:5}/{:5}) / R={:6.2f} ({:5}/{:5}) / F={:6.2f}"      
+      templ = "{:11}: P={:6.2f} ({:5}/{:5}) / R={:6.2f} ({:5}/{:5}) / F={:6.2f}"      
       print(templ.format(key, precis, prf[key]['tp'], prf[key]['p'], recall, 
                          prf[key]['tp'], prf[key]['t'], fscore))
-    templ = "{:13}: P={:6.2f}" + " "*15 + "/ R={:6.2f}" + " "*15 + "/ F={:6.2f}"    
+    templ = "{:11}: P={:6.2f}" + " "*15 + "/ R={:6.2f}" + " "*15 + "/ F={:6.2f}"    
     if len(prf) > 1 : # Calculate macro-precision
-      nb_scores = len(prf)-1 if "micro-average" in prf else len(prf)
+      nb_scores = len(prf)-1 if "micro-avg" in prf else len(prf)
       ma_precis = (macro['precis'] / (nb_scores)) 
       ma_recall = (macro['recall'] / (nb_scores)) 
       ma_fscore = ((2*ma_precis*ma_recall)/max(1,ma_precis+ma_recall))
-      print(templ.format("macro-average", ma_precis, ma_recall, ma_fscore))
+      print(templ.format("macro-avg", ma_precis, ma_recall, ma_fscore))
 
 ################################################################################
 

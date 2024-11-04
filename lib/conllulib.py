@@ -131,29 +131,48 @@ class CoNLLUReader(object):
  
   ###############################
   
-  start_tag = "<s>"
-  
-  def __init__(self, infile):
+  def __init__(self, infile): 
+    """
+    Initialise a CoNLL-U reader object from an open `infile` handler (read mode, 
+    UTF-8 encoding). Tries to automatically get the names of all columns from 
+    first line "# global.columns" meta-data.
+    """   
     self.infile = infile
-    DEFAULT_HEADER = "ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC " +\
-                     "PARSEME:MWE FRSEMCOR:NOUN PARSEME:NE"
-    try:
+    try: # guess the header (names of columns) from first line
       first = self.infile.readline().strip() # First line in the file
       globalcolumns = conllu.parse(first)[0].metadata['global.columns']
       self.header = globalcolumns.lower().split(" ")
       self.infile.seek(0) # Rewind open file
-    except KeyError:
-      self.header = DEFAULT_HEADER.split(" ")
+    except KeyError: # if first line absent (wrong format), try to set a default
+      DEFAULT_HEADER = "ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC " +\
+                     "PARSEME:MWE FRSEMCOR:NOUN PARSEME:NE"
+      self.header = DEFAULT_HEADER.lower().split(" ")
       
   ###############################
     
   def readConllu(self):
+    """
+    Yields sentences as `TokenList` from open CoNLL-U file given to constructor
+    """
     for sent in conllu.parse_incr(self.infile):
+      yield sent
+      
+  ###############################
+  
+  @staticmethod
+  def readConlluStr(conllustring):
+    """
+    Yields sentences as `TokenList` from CoNLL-U text given as a string
+    """
+    for sent in conllu.parse(conllustring):
       yield sent
 
   ###############################
   
   def name(self):
+    """
+    Returns the CoNLL-U filename
+    """
     return self.infile.name
     
   ###############################
@@ -176,7 +195,26 @@ class CoNLLUReader(object):
 
   ###############################
 
-  def to_int_and_vocab(self, col_name_dict, extra_cols_dict={}):  
+  def to_int_and_vocab(self, col_name_dict, extra_cols_dict={}): 
+    """
+    Transforms open `self.infile` into lists of integer indices and associated
+    vocabularies. Vocabularies are created on the fly, according to the file 
+    contents. Parameter `col_name_dict` is a dictionary with column names to 
+    encode as keys, and containing as values a list of special tokens for each 
+    column, for instance: 
+    col_name_dict = {"form":["<PAD>", "<UNK>"], "upos":["<PAD>"]}
+    means that 2 columns will be encoded, "form" and "upos", with the 
+    corresponding special symbols in respective vocabularies. Parameter 
+    `extra_cols_dict` is similar, but instead of list of special tokens, value
+    is a function to be applied to each column value, for instance:
+    extra_cols_dict = {"head":int}
+    means that column "head" will also be encoded, but with no vocabulary 
+    associated. Instead, column values are directly encoded with function int.
+    Returns a tuple of 2 dicts, `int_list` and `vocab`, with same keys as those  
+    in `col_name_dict` and `extra_cols_dict`, and results as values (list of 
+    integers and vocabulary dict, respectively)\
+    Useful to encode **training** corpora.
+    """ 
     int_list = {}; 
     vocab = {}
     for col_name, special_tokens in col_name_dict.items():  
@@ -201,6 +239,16 @@ class CoNLLUReader(object):
   ###############################
 
   def to_int_from_vocab(self, col_names, unk_token, vocab={}, extra_cols_dict={}):  
+    """
+    Transforms open `self.infile` into lists of integer indices according to 
+    provided `vocab` dictionaries (different from `to_int_and_vocab`, where 
+    vocabs are also built). Values not found in `vocab` will be replaced by 
+    `vocab[unk_token]`. Parameters `col_name_dict` and `extra_cols_dict` are
+    the same as in `to_int_and_vocab`, see above. Returns a dict, `int_list`, 
+    with same keys as those in `col_name_dict` and `extra_cols_dict`, and 
+    results as values (list of integers).
+    Useful to encode **test/dev** corpora.
+    """ 
     int_list = {}
     unk_toks = {}
     for col_name in col_names:  
@@ -221,6 +269,11 @@ class CoNLLUReader(object):
   @staticmethod
   def to_int_from_vocab_sent(sent, col_names, unk_token, vocab={}, 
                              lowercase=False):  
+    """
+    Similar to `to_int_from_vocab` above, but applies to a single `sent` 
+    represented as a `TokenList`. Extra possibility to `lowercase` sentence 
+    elements before looking them up in `vocab`.
+    """
     int_list = {}    
     for col_name in col_names:
       unk_tok_id = vocab[col_name].get(unk_token, None)
@@ -239,6 +292,13 @@ class CoNLLUReader(object):
     belonging to the same NE get the same int + first gets ":category" suffix). 
     The output has category appended to 'B' and 'I' tags. The `bio_style` can
     be 'bio' or 'io', the latter has only 'I-category' tags, no 'B's.
+    Example:
+    >>> test=\"\"\"# global.columns = ID FORM parseme:ne\n1\tLe\t1:PROD\n2\tPetit\t1\n3\tPrince\t1\n4\tde\t*\n5\tSaint-Exupéry\t2:PERS\n6\test\t*\n7\tentré\t*\n8\tà\t*\n9\tl'\t*\n10\tÉcole\t3:ORG\n11\tJules-Romains\t3\"\"\"
+    >>> for sent in readConlluString(test):
+    >>>  print(CoNLLUReader.to_bio(sent))
+    ['B-PROD', 'I-PROD', 'I-PROD', 'O', 'B-PERS', 'O', 'O', 'O', 'O', 'B-ORG', 'I-ORG']
+    
+    
     """
     bio_enc = []
     neindex = 0
