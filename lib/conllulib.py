@@ -297,8 +297,6 @@ class CoNLLUReader(object):
     >>> for sent in readConlluString(test):
     >>>  print(CoNLLUReader.to_bio(sent))
     ['B-PROD', 'I-PROD', 'I-PROD', 'O', 'B-PERS', 'O', 'O', 'O', 'O', 'B-ORG', 'I-ORG']
-    
-    
     """
     bio_enc = []
     neindex = 0
