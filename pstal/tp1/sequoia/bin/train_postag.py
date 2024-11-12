@@ -13,17 +13,20 @@ class Model(nn.Module):
     def __init__(self, vocab_size, d):
         super().__init__()
 
-        self.embedding = nn.Embedding(vocab_size, d)
-        self.gru = nn.GRU(batch_first=True, bias=False)
+        self.embedding = nn.Embedding(vocab_size, d, padding_idx=0)
+        self.gru = nn.GRU(hidden_size=d, input_size=d, batch_first=True, bias=False)
         self.fc1 = nn.Linear(d, 32)
         self.fc2 = nn.Linear(32, vocab_size)
         self.dropout = nn.Dropout(0.4)
 
     def forward(self, x):
         x = self.embedding(x)
-        x = self.gru(x)
+        x, _ = self.gru(x)
+        x = x[:, -1, :]
         x = relu(self.fc1(x))
+        x = self.dropout(x)
         x = self.fc2(x)
+
         return x
 
 
@@ -52,12 +55,12 @@ def fit(X_train, y_train, X_test, y_test, vocab_size):
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
     for epoch in range(nb_epochs):
-        model.eval()
+        model.train()
         total_loss = 0
 
         for batch_X, batch_Y in train_dataloader:
-            batch_X = batch_X.to(device)
-            batch_Y = batch_Y.to(device)
+            batch_X = batch_X.to(device).long()
+            batch_Y = batch_Y.to(device).long()
 
             output = model(batch_X)
             loss = criterion(output, batch_Y)
@@ -75,8 +78,8 @@ def fit(X_train, y_train, X_test, y_test, vocab_size):
         total_test_loss = 0
         with torch.no_grad():
             for batch_X, batch_Y in test_loader:
-                batch_X = batch_X.to(device)
-                batch_Y = batch_Y.to(device)
+                batch_X = batch_X.to(device).long()
+                batch_Y = batch_Y.to(device).long()
                 outputs = model(batch_X)
                 loss = criterion(outputs, batch_Y)
 
