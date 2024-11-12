@@ -2,6 +2,7 @@
 import os, sys
 import torch
 from conllu import parse_incr
+import matplotlib.pyplot as plt
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -51,15 +52,24 @@ def extract_data(path: str):
 
 if __name__ == "__main__":
     X_train, y_train, form_vocab_train, upos_vocab_train = extract_data(sequoia_train_path)
-    X_test, y_test, form_vocab_test, upos_vocab_test = extract_data(sequoia_test_path)
+    X_test, y_test, _, _ = extract_data(sequoia_test_path)
 
-    train_postag.fit(
+    _, history = train_postag.fit(
         X_train=X_train,
         y_train=y_train,
         X_test=X_test,
         y_test=y_test,
-        vocab_size=len(form_vocab_train)
+        vocab_size_input=len(form_vocab_train),
+        vocab_size_output=len(upos_vocab_train)
     )
+
+    plt.plot(history["train_loss"], c="blue", label="Train Loss")
+    plt.plot(history["test_loss"], c="red", label="Test Loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.show()
+
 
 
 
