@@ -9,6 +9,10 @@ First let's run learn model using neural network on 100 epochs.
 python pstal/tp1/sequoia/bin/main.py
 ```
 
+You will have this kind of result:
+
+<img src="lib/img/Figure_1.png">
+
 Then compute evaluation score:
 ```shell
 python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn upos

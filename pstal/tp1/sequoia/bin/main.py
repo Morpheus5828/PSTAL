@@ -81,7 +81,7 @@ if __name__ == "__main__":
         upos_vocab=upos_vocab_train,
         device=device,
         batch_size=batch_size,
-        output_file_path='predictions.conllu'
+        output_file_path=os.path.join(project_path, 'pstal/tp1/sequoia/bin/predictions.conllu')
     )
 
     plt.show()
