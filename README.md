@@ -19,7 +19,15 @@ pip install -r requirements.txt
 ```
 
 # TP1 POS Labelling using Reccurent Neural Network
-First let's run learn model using neural network on 100 epochs.
+First let's run learn model using neural network using these parametters:
+
+    batch_size = 64
+    nb_epochs = 120
+    max_len = 30
+    embedding_size = 100
+    hidden_layer = 32
+You can update them in this file ``pstal/tp1/sequoia/bin/main.py``.
+
 ```shell
 python pstal/tp1/sequoia/bin/main.py
 ```
@@ -32,6 +40,8 @@ Then compute evaluation score:
 ```shell
 python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn upos
 ```
+We obtains this score: 84.36 ( 8097/ 9598).
+
 
 ## Authors
 - Marius THORRE
