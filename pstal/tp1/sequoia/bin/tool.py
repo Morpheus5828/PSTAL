@@ -19,7 +19,8 @@ def extract_data(
         path: str,
         all_form_vocab: dict,
         all_upos_vocab: dict,
-        update_vocab: bool = True
+        update_vocab: bool = True,
+        max_len: int = 20
 ):
     max_length = 0
     all_form, all_upos = [], []
@@ -45,8 +46,8 @@ def extract_data(
         all_form.append(current_X)
         all_upos.append(current_Y)
 
-    all_form = pad_tensor(all_form, 20)
-    all_upos = pad_tensor(all_upos, 20)
+    all_form = pad_tensor(all_form, max_len)
+    all_upos = pad_tensor(all_upos, max_len)
 
     return all_form, all_upos, all_form_vocab, all_upos_vocab
 

@@ -37,14 +37,16 @@ def fit(
         vocab_size_output,
         nb_epochs,
         batch_size,
-        device
+        device,
+        embedding_size,
+        hidden_layer
 ):
 
     model = Model(
         vocab_size_input=vocab_size_input,
         vocab_size_output=vocab_size_output,
-        d=64,
-        embedding_size=100
+        d=hidden_layer,
+        embedding_size=embedding_size
     ).to(device)
 
     criterion = nn.CrossEntropyLoss()
