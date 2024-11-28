@@ -1,7 +1,7 @@
+import argparse
 import os, sys
 import pickle
 from collections import defaultdict, Counter
-
 
 # Add the correct directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -17,20 +17,8 @@ sequoia_dev_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.
 sequoia_tiny_path = os.path.join(project_path, "pstal/sequoia/tiny.conllu")
 
 
-def prepare_data(file_path: str):
-    with open(file_path, "r", encoding="UTF-8") as file:
-        tokens = CoNLLUReader(file).readConllu()
-
-        BIOs = CoNLLUReader.to_bio(tokens, bio_style='bio', name_tag='parseme:ne')
-
-    pass
-
-
-if __name__ == "__main__":
-    # TO-DO: Regroup into function
-    # TO-DO: prefer using parser
-
-    with open(sequoia_train_path, "r", encoding='UTF-8') as infile:
+def train(file_path: str, count_display=False):
+    with open(file_path, "r", encoding="UTF-8") as infile:
         tokenLists = CoNLLUReader(infile).readConllu()
 
         c_w_t = defaultdict(Counter)  # Word-Tag Counts
@@ -56,23 +44,24 @@ if __name__ == "__main__":
             # Update tag counts
             c_t.update(BIOs)
 
-        S = sum(c_s_t.values()) # Total number of sentence
+        S = sum(c_s_t.values())  # Total number of sentence
 
-        # Display results
-        print("Word-Tag Counts (c(wj, ti)):")
-        print(dict(c_w_t))
+        if count_display:
+            # Display results
+            print("Word-Tag Counts (c(wj, ti)):")
+            print(dict(c_w_t))
 
-        print("\nAdjacent Tag Counts (c(ti, tj)):")
-        print(dict(c_t_t))
+            print("\nAdjacent Tag Counts (c(ti, tj)):")
+            print(dict(c_t_t))
 
-        print("\nTag Counts (c(ti)):")
-        print(dict(c_t))
+            print("\nTag Counts (c(ti)):")
+            print(dict(c_t))
 
-        print("\nStart-of-Sentence Tag Counts (c(<s>, ti)):")
-        print(dict(c_s_t))
+            print("\nStart-of-Sentence Tag Counts (c(<s>, ti)):")
+            print(dict(c_s_t))
 
-        print("\nTotal number of sentences:")
-        print(S)
+            print("\nTotal number of sentences:")
+            print(S)
 
         # Compute log probabilities
         log_E = defaultdict(dict)
@@ -97,10 +86,32 @@ if __name__ == "__main__":
         log_E = {word: dict(tags) for word, tags in log_E.items()}
         log_T = {tag1: dict(tag2_counts) for tag1, tag2_counts in log_T.items()}
 
-        # Save parameters using pickle
-        parameters = {'log_E': log_E, 'log_T': log_T, 'log_pi': log_pi}
+        return log_E, log_T, log_pi
 
-        with open('hmm_parameters.pkl', 'wb') as f:
-            pickle.dump(parameters, f)
 
-        print("Parameters saved to hmm_parameters.pkl")
+def save(output_path: str, log_E: dict, log_T: dict, log_pi: dict):
+    # Save parameters using pickle
+    parameters = {'log_E': log_E, 'log_T': log_T, 'log_pi': log_pi}
+
+    with open(output_path, 'wb') as f:
+        pickle.dump(parameters, f)
+
+    print(f"Parameters saved to {output_path}")
+
+
+if __name__ == "__main__":
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Train a model for NER")
+    parser.add_argument("inputFileName", help="Path to the sequoia input file")
+    parser.add_argument("outputFileName", help="Name and path for .pkl output file")
+    parser.add_argument("countDisplay", nargs='?', type=str, choices=["True", "False"], default="False", help="")
+
+    args = parser.parse_args()
+
+    # Get the input file name from the command line argument
+    input_file_name = args.inputFileName
+    output_path = args.outputFileName
+    display = args.countDisplay == "True"  # Convert to boolean value
+
+    log_E, log_T, log_pi = train(input_file_name, count_display=display)
+    save(output_path, log_E, log_T, log_pi)
