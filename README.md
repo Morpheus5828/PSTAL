@@ -34,7 +34,7 @@ python pstal/tp1/sequoia/bin/main.py
 
 You will have this kind of result:
 
-<img src="lib/img/Figure_1.png">
+<img src="img/Figure_1.png">
 
 Then compute evaluation score:
 ```shell
