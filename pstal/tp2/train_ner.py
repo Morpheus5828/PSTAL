@@ -11,11 +11,6 @@ if project_path not in sys.path:
 
 from lib.conllulib import CoNLLUReader, Util
 
-sequoia_train_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.train")
-sequoia_test_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.test")
-sequoia_dev_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.dev")
-sequoia_tiny_path = os.path.join(project_path, "pstal/sequoia/tiny.conllu")
-
 
 def train(file_path: str, alpha=0.1, count_display=False):
     with open(file_path, "r", encoding="UTF-8") as infile:
@@ -71,7 +66,7 @@ def train(file_path: str, alpha=0.1, count_display=False):
             print("\nNumber of labels:")
             print(V_t)
 
-        # Compute log probabilities
+        # Compute -log probabilities
         log_E = defaultdict(dict)
         for tag in c_t.keys():
             log_E[tag]["OOV"] = Util.log_cap(c_t[tag] + V_w * alpha) - Util.log_cap(0 + alpha)
@@ -80,8 +75,7 @@ def train(file_path: str, alpha=0.1, count_display=False):
         for tag in c_t.keys():
             log_T[tag]["OOV"] = Util.log_cap(c_t[tag] + V_t * alpha) - Util.log_cap(0 + alpha)
 
-        log_pi = {}
-        log_pi["OOV"] = Util.log_cap(S + V_t * alpha) - Util.log_cap(0 + alpha)
+        log_pi = {"OOV": Util.log_cap(S + V_t * alpha) - Util.log_cap(0 + alpha)}
 
         # Compute −logE(ti, wj)
         for word, tag_counts in c_w_t.items():
