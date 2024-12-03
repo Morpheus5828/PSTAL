@@ -12,7 +12,7 @@ if project_path not in sys.path:
 from lib.conllulib import CoNLLUReader, Util
 
 
-def train(file_path: str, alpha=0.1, count_display=False):
+def train(file_path: str, alpha=0.1, count_display=True):
     with open(file_path, "r", encoding="UTF-8") as infile:
         tokenLists = CoNLLUReader(infile).readConllu()
 
@@ -126,11 +126,11 @@ if __name__ == "__main__":
     alpha = args.alpha
     display = args.countDisplay == "True"  # Convert to boolean value
 
-    log_E, log_T, log_pi = train(input_file_name, alpha=alpha, count_display=display)
+    log_E, log_T, log_pi = train(input_file_name, alpha=alpha, count_display=True)
 
     """
     print(f"Log E: {log_E}\n")
     print(f"Log T: {log_T}\n")
     print(f"Log pi: {log_pi}\n")
     """
-    save(output_path, log_E, log_T, log_pi)
+    #save(output_path, log_E, log_T, log_pi)
