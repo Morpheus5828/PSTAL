@@ -29,12 +29,8 @@ class MorphModel(nn.Module):
 
 
 def fit(
-        in_enc_train,
-        ends_train,
-        feats_number_train,
-        in_enc_dev,
-        ends_dev,
-        feats_number_dev,
+        train_data,
+        dev_data,
         vocab_size_input,
         vocab_size_output,
         nb_epochs,

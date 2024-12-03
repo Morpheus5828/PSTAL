@@ -9,7 +9,7 @@ from torch.utils.data import TensorDataset, DataLoader
 from conllu import parse_incr
 
 
-def extract_data(
+def _extract_data(
         path: str,
         all_char_vocab: dict,
         all_feats: dict,
@@ -50,20 +50,76 @@ def extract_data(
     return in_enc, ends, feats_number, all_char_vocab
 
 
+def preprocess_data(
+        sequoia_train_path: str,
+        sequoia_dev_path: str,
+        sequoia_test_path: str,
+        max_len: int,
+        max_w: int,
+        all_char_vocab: dict,
+        all_feats: dict
+):
+    in_enc_train, ends_train, feats_number_train, all_char_vocab = _extract_data(
+        path=sequoia_train_path,
+        all_char_vocab=all_char_vocab,
+        all_feats=all_feats,
+        max_len=max_len,
+        max_w=max_w
+    )
+
+    in_enc_dev, ends_dev, feats_number_dev, all_char_vocab = _extract_data(
+        path=sequoia_dev_path,
+        all_char_vocab=all_char_vocab,
+        all_feats=all_feats,
+        max_len=max_len,
+        max_w=max_w
+    )
+
+    in_enc_test, ends_test, feats_number_test, all_char_vocab = _extract_data(
+        path=sequoia_test_path,
+        all_char_vocab=all_char_vocab,
+        all_feats=all_feats
+    )
+
+    train_data = {
+        "in_enc_train": in_enc_train,
+        "ends_train": ends_train,
+        "feats_number_train": feats_number_train,
+        "all_char_vocab": all_char_vocab
+    }
+
+    dev_data = {
+        "in_enc_dev": in_enc_dev,
+        "ends_dev": ends_dev,
+        "feats_number_dev": feats_number_dev,
+        "all_char_vocab": all_char_vocab
+    }
+
+    test_data = {
+        "in_enc_test": in_enc_test,
+        "ends_test": ends_test,
+        "feats_number_test": feats_number_test,
+        "all_char_vocab": all_char_vocab
+    }
+
+    return train_data, dev_data, test_data
+
+
 def download_pred_file(
     model,
-    sentences,
-    in_enc_test,
-    ends_test,
-    all_feats,
+    sequoia_test_path,
+    test_data,
     device,
     output_file_path
 ):
-    idx_to_feat = {idx: feat for feat, idx in all_feats.items()}
+
+    with open(sequoia_test_path, 'r', encoding='utf-8') as f:
+        sentences = list(parse_incr(f))
+    idx_to_feat = {idx: feat for feat, idx in test_data["all_feats"].items()}
 
     model.eval()
 
-    test_dataset = torch.utils.data.TensorDataset(in_enc_test, ends_test)
+    test_dataset = torch.utils.data.TensorDataset(test_data["in_enc_test"], test_data["ends_test"])
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1, shuffle=False)
 
     with open(output_file_path, 'w', encoding='utf-8') as out_f:
