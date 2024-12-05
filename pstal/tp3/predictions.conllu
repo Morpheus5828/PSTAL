@@ -5968,7 +5968,7 @@
 
 # sent_id = emea-fr-dev_00447
 # text = 10 flacons.
-1	10	10	NUM	_	NumType=Card	2	nummod	_	_	*	*
+1	10	10	NUM	_	NumType=Card|Number=Sing	2	nummod	_	_	*	*
 2	flacons	flacon	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Artifact
 3	.	.	PUNCT	_	Number=Sing	2	punct	_	_	*	*
 
@@ -10568,7 +10568,7 @@
 
 # sent_id = frwiki_50.1000_00632
 # text = RH : 190 500 ;
-1	RH	RH	PROPN	_	_	0	root	_	_	1:PROPN|NE-PERS.final|_	Person
+1	RH	RH	PROPN	_	Number=Sing	0	root	_	_	1:PROPN|NE-PERS.final|_	Person
 2	:	:	PUNCT	_	Number=Sing	1	punct	_	_	*	*
 3	190 500	190 500	NOUN	_	NumType=Card|Number=Sing	1	nmod	_	_	*	Possession
 4	;	;	PUNCT	_	Number=Sing	1	punct	_	_	*	*
