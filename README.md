@@ -94,6 +94,33 @@ Therefore, we will process sentences character by character, rather than word by
 Additionally, the system will need to predict not just a single label but multiple key-value pairs (or none at all). <br>
 Our system will therefore be more complex than the one developed for POS tagging in Lab 1. <br>
 
+To run both model, you can click on this link:
+
+```shell
+python pstal/tp3/main.py
+```
+You should obtain this king of graph:
+
+<img src="img/Figure_3.png">
+
+and to check evaluation, do these commands:
+-> For the first model on Number task:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/predictions_number.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --tagcolumn feats
+```
+
+-> For the second model on multitasks:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/predictions_multitask.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --tagcolumn feats
+```
+
+
+
+
+
+
 ## Authors
 - Marius THORRE
 - Dang Dinh NGUYEN

@@ -38,6 +38,8 @@ if __name__ == "__main__":
         all_feats=all_feats
     )
 
+    print("Start training first model: \n")
+
     model, history = fit(
         train_data=train_data,
         dev_data=dev_data,
@@ -58,14 +60,6 @@ if __name__ == "__main__":
         device=device,
         output_file_path=os.path.join(project_path, 'pstal/tp3/predictions.conllu')
     )
-    #
-    # plt.plot(history["validation_loss"], label="Valdiation loss", c="orange")
-    # plt.plot(history["train_loss"], label="Train loss", c="blue")
-    # plt.xlabel("Epoch")
-    # plt.ylabel("Loss")
-    # plt.legend()
-    # plt.title("Training loss for Number")
-    # plt.savefig("first_model_perf.png")
 
     all_feats_dict = {
         "Definite": {"Def": 0, "Ind": 1, "<N/A>": 2},
@@ -93,6 +87,8 @@ if __name__ == "__main__":
         all_char_vocab=all_char_vocab,
         all_feats_dict=all_feats_dict,
     )
+
+    print("Start training second model: \n")
 
     model2, history2 = fit_multitask(
         train_data=train_data,
@@ -136,7 +132,7 @@ if __name__ == "__main__":
     axes[1].legend()
 
     plt.tight_layout()
-    plt.savefig("combined_models_loss.png")
+    plt.savefig("pstal/tp3/Figure_3.png")
 
 
 

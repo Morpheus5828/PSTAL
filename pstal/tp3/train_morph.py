@@ -6,7 +6,6 @@ import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
-from torch.nn.functional import relu
 from model import MorphModel, MultiTaskMorphModel
 
 
@@ -93,7 +92,7 @@ def fit(
         avg_test_loss = total_test_loss / len(test_loader)
         history["validation_loss"].append(avg_test_loss)
 
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_test_loss:.4f}")
+        print(f"\t Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_test_loss:.4f}")
 
     torch.save({
         'model_state_dict': model.state_dict(),
@@ -185,7 +184,7 @@ def fit_multitask(
         avg_dev_loss = total_dev_loss / len(dev_loader)
         history["validation_loss"].append(avg_dev_loss)
 
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_dev_loss:.4f}")
+        print(f"\t Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_dev_loss:.4f}")
 
     torch.save({
         'model_state_dict': model.state_dict(),
