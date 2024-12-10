@@ -129,7 +129,7 @@
 
 # sent_id = Europar.550_00050
 # text = Aux États-Unis, le traité de l'OMPI est déjà entré en vigueur au moyen du Digital Millenium Corporate Act et cette mesure législative a permis de sauvegarder l'équilibre délicat de l'OMPI.
-1-2	Aux	_	_	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	_	_	_	_	*	*
+1-2	Aux	_	_	_	Definite=Def|Foreign=Yes|Gender=Masc|NumType=Card|Number=Sing|Person=3|VerbForm=Part	_	_	_	_	*	*
 1	À	à	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	case	_	_	*	*
 2	les	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	États-Unis	États-Unis	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	12	obl:mod	_	_	1:PROPN|NE-LOC.final|_	Institution
@@ -278,7 +278,7 @@
 
 # sent_id = Europar.550_00065
 # text = (EN) J'ai voté en faveur du rapport de Mme Stenzel sur l'initiative EQUAL car je pense qu'il est essentiel de poursuivre le travail qui a été entamé avec les précédentes composantes NOW, Horizon, Youthstart et Integra des initiatives ADAPT et Employment.
-1	(	(	PUNCT	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	6	punct	_	_	*	*
+1	(	(	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	6	punct	_	_	*	*
 2	EN	EN	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	obl:mod	_	_	*	*
 3	)	)	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	punct	_	_	*	*
 4	J'	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj	_	_	*	*
@@ -335,7 +335,7 @@
 
 # sent_id = Europar.550_00073
 # text = Au cours de la dernière période de programmation, 9% des fonds structurels ont été alloués à des initiatives communautaires.
-1-2	Au	_	_	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	_	_	_	_	*	*
+1-2	Au	_	_	_	Definite=Def|Foreign=Yes|Gender=Masc|NumType=Card|Number=Sing|Person=3|VerbForm=Part	_	_	_	_	*	*
 1	À	à	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	case	_	_	1:_|MWE|LEX	*
 2	le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	1	*
 3	cours	cours	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	19	obl:mod	_	_	1	*
@@ -431,7 +431,7 @@
 
 # sent_id = Europar.550_00097
 # text = Si les représentants du Conseil avaient un fils, un frère ou un père dans les prisons serbes, ils réagiraient plus vite, croyez-moi !
-1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	7	mark	_	_	*	*
+1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	7	mark	_	_	*	*
 2	les	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	représentants	représentant	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj	_	_	*	Person
 4-5	du	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
@@ -629,7 +629,7 @@
 
 # sent_id = Europar.550_00126
 # text = C'est pourquoi j'attends de tout le monde, Albanais et Serbes, qu'ils laissent les troupes de la KFOR en paix.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	5	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
 2	est	être	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	pourquoi	pourquoi	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 4	j'	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	*
@@ -750,7 +750,7 @@
 
 # sent_id = Europar.550_00154
 # text = Y a-t-il des circonstances dans lesquelles la Commission chercherait à utiliser le vote à la majorité qualifiée pour l'un de ces sujets ?
-1	Y	y	PRON	_	Person=1|Definite=Def|Foreign=Yes|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Poss=Yes|PronType=Int|Reflex=Yes|Tense=Past|VerbForm=Fin|Voice=Act	2	expl:comp	_	_	1:_|MWE-VID|_	*
+1	Y	y	PRON	_	Person=3|Definite=Def|Foreign=Yes|Gender=Masc|NumType=Card|Polarity=Pos|PronType=Prs|Reflex=Yes|Tense=Past|VerbForm=Inf	2	expl:comp	_	_	1:_|MWE-VID|_	*
 2	a	avoir	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1	*
 3	-t-il	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	expl:subj	_	_	1	*
 4	des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -1085,7 +1085,7 @@
 
 # sent_id = Europar.550_00210
 # text = C'est pourquoi nous considérons que certaines questions soulevées par la baronne Ludford et certains problèmes soulevés par Mme Boumediene-Thiery -qui sont très importants- doivent être envisagés dans le cadre du règlement sur la protection temporaire et la protection subsidiaire que la Commission prépare activement.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	5	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
 2	est	être	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	pourquoi	pourquoi	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 4	nous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	*
@@ -1169,7 +1169,7 @@
 
 # sent_id = Europar.550_00223
 # text = Cette solution équilibrée permettra peut-être de répondre de manière plus détendue et confiante à certaines réserves et à certains doutes politiques que certains députés du Parlement ont soulevés lors de ce débat.
-1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	solution	solution	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	Cognition
 3	équilibrée	équilibré	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	permettra	permettre	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
@@ -1373,7 +1373,7 @@
 
 # sent_id = Europar.550_00246
 # text = C'est pourquoi nous ne soumettrons pas aujourd'hui cette résolution au vote.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	6	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	advmod	_	ExtPos=ADV	1:PRON|MWE|MORPHO	*
 2	est	être	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	pourquoi	pourquoi	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 4	nous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj	_	_	*	*
@@ -1717,7 +1717,7 @@
 
 # sent_id = Europar.550_00341
 # text = C'était également une réussite, et je ne le dis pas seulement pour complimenter le commissaire, parce qu'il était évident que l'Union européenne, la Commission européenne, a enfin pris une initiative, tandis qu'elle est restée à mon avis trop longtemps à l'arrière-plan.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	5	nsubj	_	_	*	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	*
 2	était	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	cop	_	_	*	*
 3	également	également	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	advmod	_	_	*	*
 4	une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -1773,7 +1773,7 @@
 
 # sent_id = Europar.550_00350
 # text = Un montant qui notamment n'est jamais cité par la Banque européenne d'investissement, qui est mentionné plus tard par le Président de la Commission Prodi et dont on ne sait pas encore, du moins à mon avis, comment il sera déboursé l'année prochaine.
-1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	montant	montant	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Possession
 3	qui	qui	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	8	nsubj:pass	_	_	*	*
 4	notamment	notamment	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	8	advmod	_	_	*	*
@@ -2020,7 +2020,7 @@
 
 # sent_id = Europar.550_00405
 # text = Où sont-ils donc ces 32 et quelques, qui se sont levés et qui se lèveront encore, mais sont absents maintenant pendant que nous délibérons ?
-1	Où	où	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	2	obl:arg	_	_	*	*
+1	Où	où	ADV	_	PronType=Prs|Definite=Def|Foreign=Yes|Gender=Masc|Mood=Ind|NumType=Card|Person=3|Polarity=Pos|Poss=Yes|Reflex=Yes|Tense=Fut|VerbForm=Fin	2	obl:arg	_	_	*	*
 2	sont	être	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 3	-ils	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	expl:subj	_	_	*	*
 4	donc	donc	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	advmod	_	_	*	*
@@ -2280,7 +2280,7 @@
 
 # sent_id = Europar.550_00468
 # text = Des observateurs doivent être dépêchés le plus rapidement au Zimbabwe, si possible aujourd'hui plutôt que demain.
-1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	observateurs	observateur	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	nsubj	_	_	*	Person
 3	doivent	devoir	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 4	être	être	AUX	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	aux:pass	_	_	*	*
@@ -2324,7 +2324,7 @@
 
 # sent_id = Europar.550_00475
 # text = Si la Commission n'agit pas de la sorte, les saisies illégales de terres pourraient s'étendre au reste de l'Afrique australe et entraîner une catastrophe, non seulement pour cette région, mais aussi pour tout le reste de l'Afrique.
-1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	5	mark	_	_	*	*
+1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	5	mark	_	_	*	*
 2	la	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	Commission	commission	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	1:PROPN|NE-ORG.final|_	Institution
 4	n'	ne	ADV	_	Polarity=Neg|Definite=Def|NumType=Card|Number=Sing|Voice=Pass	5	advmod	_	_	*	*
@@ -2417,7 +2417,7 @@
 
 # sent_id = Europar.550_00495
 # text = Cette visite s'inscrivait dans le cadre de la neuvième rencontre entre les présidents du Parlement européen et les présidents des pays candidats, une rencontre qui a été initiée il y a plusieurs années par mes prédécesseurs Enrique Barón Crespo, Klaus Hänsch et José Maria Gil Robles.
-1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	visite	visite	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	Act
 3	s'	se	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	expl:pass	_	_	*	*
 4	inscrivait	inscrire	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
@@ -2587,7 +2587,7 @@
 
 # sent_id = Europar.550_00508
 # text = (La séance solennelle est close à 12h30)
-1	(	(	PUNCT	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	6	punct	_	_	*	*
+1	(	(	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	6	punct	_	_	*	*
 2	La	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	séance	séance	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	*	Act
 4	solennelle	solennel	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	*	*
@@ -3105,7 +3105,7 @@
 
 # sent_id = annodis.er_00084
 # text = Photos Jacques FISSIER
-1	Photos	photo	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Artifact
+1	Photos	photo	NOUN	_	Gender=Masc|Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Artifact
 2	Jacques	Jacques	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	1	nmod	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	FISSIER	FISSIER	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 
@@ -3146,7 +3146,7 @@
 
 # sent_id = annodis.er_00103
 # text = S'apercevant que son mari avait soudainement perdu connaissance, l'épouse, passagère avant, a tenté de garder le véhicule en ligne droite en se saisissant du volant.
-1	S'	se	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	2	expl:comp	_	_	1:_|MWE-IRV|_	*
+1	S'	se	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	expl:comp	_	_	1:_|MWE-IRV|_	*
 2	apercevant	apercevoir	VERB	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	18	advcl	_	_	1	*
 3	que	que	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	8	mark	_	_	*	*
 4	son	son	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -3297,7 +3297,7 @@
 
 # sent_id = annodis.er_00137
 # text = à travers cette oeuvre, les élèves de CM2 de la classe de Mme Galotte ont abordé la compréhension du texte.
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	4	case	_	ExtPos=ADP	1:_|MWE|ZERO	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	4	case	_	ExtPos=ADP	1:_|MWE|ZERO	*
 2	travers	travers	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 4	oeuvre	oeuvre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	17	obl:mod	_	_	*	Cognition
@@ -3325,7 +3325,7 @@
 
 # sent_id = annodis.er_00144
 # text = C'est dans une aisance toute naturelle que les élèves apprentis-acteurs ont joué.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	5	expl:subj	_	_	*	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	expl:subj	_	_	*	*
 2	est	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	cop	_	_	*	*
 3	dans	dans	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -3386,7 +3386,7 @@
 
 # sent_id = annodis.er_00157
 # text = Une juste récompense pour les efforts de qualité entrepris par Jeanine et Willy Schaer, jeune couple d'hôteliers originaires de Haute-Saône et installés à Arc-et-Senans depuis maintenant treize ans.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	3	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 2	juste	juste	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	*	*
 3	récompense	récompense	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 4	pour	pour	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	case	_	_	*	*
@@ -3548,7 +3548,7 @@
 
 # sent_id = annodis.er_00209
 # text = Une entreprise dont on reparlera et qui nécessite un budget important.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	entreprise	entreprise	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 3	dont	dont	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	iobj	_	_	*	*
 4	on	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	*
@@ -3597,7 +3597,7 @@
 
 # sent_id = annodis.er_00239
 # text = Ce Belfortain de 27 ans a recouvré sa liberté après avoir passé le restant de la nuit dans une cellule de dégrisement.
-1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	Belfortain	belfortain	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj	_	_	*	Person
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	27	27	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	5	nummod	_	_	*	*
@@ -3714,7 +3714,7 @@
 
 # sent_id = annodis.er_00282
 # text = Ce dernier vient de répondre aux maires de la vallée et au député Claude Jacquot, qui lui avaient fait collectivement un courrier pour, de nouveau, attirer son attention sur ce dossier.
-1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	dernier	dernier	ADJ	_	Number=Sing|NumType=Card|Definite=Def|Polarity=Neg|Voice=Pass	3	nsubj	_	_	*	*
 3	vient	venir	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 4	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	mark	_	_	*	*
@@ -3842,7 +3842,7 @@
 
 # sent_id = annodis.er_00315
 # text = De magnifiques photographies d'orages, prises pour la plupart depuis l'observatoire de Montsec, point de vue somptueux sur le Lac de Madine.
-1	De	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	3	det	_	_	*	*
+1	De	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 2	magnifiques	magnifique	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	*	*
 3	photographies	photographie	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:_|MWE-LVC.full|_	Artifact/Cognition
 4	d'	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -3900,7 +3900,7 @@
 
 # sent_id = annodis.er_00320
 # text = Une animation très ludique avec Maggie Jankowski.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	animation	animation	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 3	très	très	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	advmod	_	_	*	*
 4	ludique	ludique	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
@@ -3912,7 +3912,7 @@
 
 # sent_id = annodis.er_00333
 # text = Une sorte de réaction épidermique par rapport à leur présence" commentait le commissaire central.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	sorte	sorte	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Cognition
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	_	*	*
 4	réaction	réaction	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	Act
@@ -4082,7 +4082,7 @@
 
 # sent_id = annodis.er_00371
 # text = D'autant que le relèvement des seuils exclurait de nombreuses petites listes.
-1	D'	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	0	root	_	ExtPos=ADV	1:ADV|MWE|IRREG	*
+1	D'	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	ExtPos=ADV	1:ADV|MWE|IRREG	*
 2	autant	autant	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	que	que	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	9	mark	_	_	*	*
 4	le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -4187,7 +4187,7 @@
 
 # sent_id = annodis.er_00405
 # text = à son époux, à ses enfants, ainsi qu'à toute sa famille, nous présentons nos sincères condoléances.
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	3	case	_	_	*	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	3	case	_	_	*	*
 2	son	son	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	époux	époux	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	17	obl:arg	_	_	*	Person
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	7	punct	_	_	*	*
@@ -4278,7 +4278,7 @@
 
 # sent_id = annodis.er_00415
 # text = D'autres manifestations ont très bien fonctionné en terme d'affluence, notamment lors de la fête des Fraises organisée le 1er dimanche de juin, ou encore la journée des associations au Zénith, où 2.000 visiteurs étaient présents.
-1	D'	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	3	det	_	_	*	*
+1	D'	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 2	autres	autre	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	*	*
 3	manifestations	manifestation	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj	_	_	*	Act
 4	ont	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	aux:tense	_	_	*	*
@@ -4692,7 +4692,7 @@
 
 # sent_id = annodis.er_00501
 # text = De retour à Bethoncourt, les trois garnements sont repartis comme ils étaient venus.
-1	De	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	2	case	_	_	1:_|MWE|ZERO	*
+1	De	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	case	_	_	1:_|MWE|ZERO	*
 2	retour	retour	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	10	obl:mod	_	_	1	*
 3	à	à	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	_	*	*
 4	Bethoncourt	Bethoncourt	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	2:PROPN|NE-LOC.final|_	Institution
@@ -5212,12 +5212,12 @@
 
 # sent_id = emea-fr-dev_00111
 # text = ICP
-1	ICP	ICP	NOUN	_	Foreign=Yes|Gender=Masc|Mood=Sub|NumType=Ord|Person=1|Polarity=Pos|Poss=Yes|PronType=Int|Reflex=Yes|Tense=Fut|VerbForm=Fin|Voice=Act	0	root	_	_	*	Act
+1	ICP	ICP	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 
 
 # sent_id = emea-fr-dev_00116
 # text = Une adaptation de la dose n'est pas nécessaire si la fonction rénale est normale.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	adaptation	adaptation	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	9	nsubj	_	_	*	Act
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	la	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -5263,7 +5263,7 @@
 
 # sent_id = emea-fr-dev_00121
 # text = Si l'ACT est inférieur à 225 secondes, un second bolus de 0,3 mg/kg doit être administré.
-1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	5	mark	_	_	*	*
+1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	5	mark	_	_	*	*
 2	l'	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	ACT	ACT	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	Time
 4	est	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	cop	_	_	*	*
@@ -5309,7 +5309,7 @@
 
 # sent_id = emea-fr-dev_00133
 # text = à la fin de la procédure ICP, chez ces même patients, les valeurs ACT étaient en moyenne de 355 +/- 81 secondes.
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	3	case	_	_	*	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	3	case	_	_	*	*
 2	la	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	fin	fin	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	24	obl:mod	_	_	*	Time
 4	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	case	_	_	*	*
@@ -5488,7 +5488,7 @@
 
 # sent_id = emea-fr-dev_00255
 # text = Un saignement mineur a été défini comme étant tout événement hémorragique observé qui ne répondait pas aux critères de saignement majeur.
-1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	saignement	saignement	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	*	Event
 3	mineur	mineur	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	a	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	aux:tense	_	_	*	*
@@ -5516,7 +5516,7 @@
 
 # sent_id = emea-fr-dev_00256
 # text = Des saignements mineurs ont été rapportés de façon très fréquente (1/10) et les saignements majeurs de façon fréquente (1/100 et < 1/10).
-1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	saignements	saignement	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	*	Event
 3	mineurs	mineur	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	ont	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	aux:tense	_	_	*	*
@@ -5674,7 +5674,7 @@
 
 # sent_id = emea-fr-dev_00307
 # text = Des études cliniques ont montré que la bivalirudine procure une anticoagulation adéquate pendant les procédures d'ICP.
-1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	études	étude	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	1:_|MWE|LEX	1:Act/Cognition
 3	cliniques	clinique	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	1	1
 4	ont	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	aux:tense	_	_	*	*
@@ -5815,7 +5815,7 @@
 
 # sent_id = emea-fr-dev_00381
 # text = à conserver au réfrigérateur (entre 2 °C et 8 °C).
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	2	mark	_	_	*	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	2	mark	_	_	*	*
 2	conserver	conserver	VERB	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 3-4	au	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
 3	à	à	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -5968,7 +5968,7 @@
 
 # sent_id = emea-fr-dev_00447
 # text = 10 flacons.
-1	10	10	NUM	_	NumType=Card|Definite=Def|Gender=Masc|Number=Sing|Polarity=Pos|Voice=Act	2	nummod	_	_	*	*
+1	10	10	NUM	_	NumType=Card|Definite=Def|Foreign=Yes|Gender=Masc|Number=Sing|Person=3|Polarity=Pos|VerbForm=Part	2	nummod	_	_	*	*
 2	flacons	flacon	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Artifact
 3	.	.	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
 
@@ -5991,7 +5991,7 @@
 
 # sent_id = emea-fr-dev_00464
 # text = - Si vous avez d'autres questions, si vous avez un doute, demandez plus d'informations à votre pharmacien
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	15	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	15	punct	_	_	*	*
 2	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	mark	_	_	*	*
 3	vous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	*
 4	avez	avoir	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	15	advcl	_	_	1:_|MWE-VID|_	*
@@ -6030,7 +6030,7 @@
 
 # sent_id = emea-fr-dev_00484
 # text = - si vous avez ou avez eu une infection du tissu cardiaque.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	4	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	4	punct	_	_	*	*
 2	si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	mark	_	_	*	*
 3	vous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	*
 4	avez	avoir	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
@@ -6049,7 +6049,7 @@
 
 # sent_id = emea-fr-dev_00488
 # text = - si vous avez été traité par des produits similaires à Angiox (par exemple lépirudine)
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	6	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	6	punct	_	_	*	*
 2	si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	mark	_	_	*	*
 3	vous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	*	*
 4	avez	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	aux:tense	_	_	*	*
@@ -6203,7 +6203,7 @@
 
 # sent_id = emea-fr-dev_00551
 # text = - Essoufflements
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Essoufflements	essoufflement	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Event/Feeling
 
 
@@ -6701,7 +6701,7 @@
 
 # sent_id = emea-fr-test_00170
 # text = Une insuffisance rénale a été observée après l'administration d'acide zolédronique, en particulier chez les patients présentant une altération rénale préexistante ou des facteurs de risque supplémentaires (par exemple, chimiothérapie anticancéreuse, médicaments néphrotoxiques concomitants, déshydratation sévère, etc.).
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	insuffisance	insuffisance	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	1:_|MWE|LEX	1:State
 3	rénale	rénal	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	1	1
 4	a	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	aux:tense	_	_	*	*
@@ -6927,7 +6927,7 @@
 
 # sent_id = emea-fr-test_00208
 # text = 85% des patients n'avaient jamais reçu de bisphosphonates.
-1	85	85	NUM	_	NumType=Card|Definite=Def|Gender=Masc|Number=Sing|Polarity=Pos|Voice=Act	2	nummod	_	_	*	*
+1	85	85	NUM	_	NumType=Card|Definite=Def|Gender=Masc|Number=Sing	2	nummod	_	_	*	*
 2	%	%	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	9	nsubj	_	_	*	Quantity
 3-4	des	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -6944,7 +6944,7 @@
 
 # sent_id = emea-fr-test_00218
 # text = Au moins une nouvelle fracture vertébrale (0-3 ans)
-1-2	Au	_	_	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	_	_	_	_	*	*
+1-2	Au	_	_	_	Definite=Def|Foreign=Yes|Gender=Masc|NumType=Card|Number=Sing|Person=3|VerbForm=Part	_	_	_	_	*	*
 1	À	à	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	advmod	_	ExtPos=ADV	1:ADV|MWE|INSERT	*
 2	le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	moins	moins	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
@@ -6976,7 +6976,7 @@
 
 # sent_id = emea-fr-test_00231
 # text = (2) Y compris fractures cliniques dorsales et fractures cliniques vertébrales lombaires
-1	(	(	PUNCT	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	2	punct	_	_	*	*
+1	(	(	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	2	punct	_	_	*	*
 2	2	2	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	6	nummod	_	_	*	*
 3	)	)	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
 4	Y	y	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	case	_	ExtPos=ADP	1:ADP|MWE|IRREG	*
@@ -6993,7 +6993,7 @@
 
 # sent_id = emea-fr-test_00243
 # text = à 12 mois, le P1NP a été réduit significativement de 61% par rapport aux valeurs initiales et à 36 mois cette réduction s'est maintenue à 52% en-dessous des valeurs initiales.
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	3	case	_	_	*	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	3	case	_	_	*	*
 2	12	12	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nummod	_	_	*	*
 3	mois	mois	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	9	obl:mod	_	_	*	Time
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	9	punct	_	_	*	*
@@ -7170,7 +7170,7 @@
 
 # sent_id = emea-fr-test_00268
 # text = Cette étude n'était pas conçue pour montrer une différence significative sur les fractures de hanche mais une réduction sur les nouvelles fractures de hanche a été observée.
-1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Cette	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	étude	étude	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	nsubj:pass	_	_	*	Act/Cognition
 3	n'	ne	ADV	_	Polarity=Neg|Definite=Def|NumType=Card|Number=Sing|Voice=Pass	6	advmod	_	_	*	*
 4	était	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	6	aux:pass	_	_	*	*
@@ -7243,7 +7243,7 @@
 
 # sent_id = emea-fr-test_00274
 # text = Une augmentation de 5,4% au fémur total et de 4,3% au col fémoral a été observé sous Aclasta, en comparaison au placebo durant les 24 mois.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	augmentation	augmentation	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	20	nsubj:pass	_	_	*	Event
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	5,4	5,4	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	5	nummod	_	_	*	*
@@ -7402,7 +7402,7 @@
 
 # sent_id = emea-fr-test_00292
 # text = Des perfusions uniques et multiples de 5 et 15 minutes avec 2, 4, 8 et 16 mg d'acide zolédronique chez 64 patients ont généré les données pharmacocinétiques suivantes, qui se sont révélées indépendantes de la dose.
-1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	perfusions	perfusion	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	27	nsubj	_	_	*	Act
 3	uniques	unique	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	et	et	CCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	cc	_	_	*	*
@@ -7601,7 +7601,7 @@
 
 # sent_id = emea-fr-test_00418
 # text = Si la maladie n'est pas traitée, les os se déforment, deviennent douloureux et peuvent se casser.
-1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	7	mark	_	_	*	*
+1	Si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	7	mark	_	_	*	*
 2	la	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	maladie	maladie	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj:pass	_	_	*	State
 4	n'	ne	ADV	_	Polarity=Neg|Definite=Def|NumType=Card|Number=Sing|Voice=Pass	7	advmod	_	_	*	*
@@ -7625,7 +7625,7 @@
 
 # sent_id = emea-fr-test_00425
 # text = - si vous êtes enceinte ou vous prévoyez de le devenir.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	5	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	5	punct	_	_	*	*
 2	si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	mark	_	_	*	*
 3	vous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nsubj	_	_	*	*
 4	êtes	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	cop	_	_	*	*
@@ -7641,7 +7641,7 @@
 
 # sent_id = emea-fr-test_00426
 # text = - si vous allaitez.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	4	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	4	punct	_	_	*	*
 2	si	si	SCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	mark	_	_	*	*
 3	vous	il	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	*
 4	allaitez	allaiter	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
@@ -7870,7 +7870,7 @@
 
 # sent_id = emea-fr-test_00499
 # text = - Avant ouverture du flacon : pas de précautions particulières de conservation.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	Avant	avant	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	case	_	_	*	*
 3	ouverture	ouverture	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	10	nmod	_	_	*	Act
 4-5	du	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
@@ -7889,7 +7889,7 @@
 
 # sent_id = emea-fr-test_00505
 # text = - La substance active est l'acide zolédronique.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	7	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	7	punct	_	_	*	*
 2	La	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	substance	substance	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj	_	_	1:_|MWE|LEX	1:Substance
 4	active	actif	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	1	1
@@ -7932,7 +7932,7 @@
 
 # sent_id = emea-fr-test_00508
 # text = - Les autres composants sont : mannitol, citrate de sodium et eau pour préparations injectables.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	7	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	7	punct	_	_	*	*
 2	Les	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 3	autres	autre	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	amod	_	_	*	*
 4	composants	composant	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	7	nsubj	_	_	*	Substance
@@ -8069,7 +8069,7 @@
 
 # sent_id = emea-fr-test_00526
 # text = Un apport supplémentaire approprié en calcium et vitamine D est recommandé en association avec l'administration d'Aclasta.
-1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	apport	apport	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	11	nsubj:pass	_	_	*	Act
 3	supplémentaire	supplémentaire	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	approprié	approprié	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
@@ -8092,7 +8092,7 @@
 
 # sent_id = emea-fr-test_00532
 # text = - Aclasta 5 mg solution pour perfusion est prête à l'emploi.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	9	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	9	punct	_	_	*	*
 2	Aclasta	Aclasta	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	9	nsubj	_	_	1:PROPN|NE-PROD.final|_	Substance
 3	5	5	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	4	nummod	_	_	*	*
 4	mg	mg	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	Quantity
@@ -8109,7 +8109,7 @@
 
 # sent_id = emea-fr-test_00533
 # text = à usage unique seulement.
-1	à	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	2	case	_	_	*	*
+1	à	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	2	case	_	_	*	*
 2	usage	usage	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 3	unique	unique	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	seulement	seulement	ADV	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	advmod	_	_	*	*
@@ -8393,7 +8393,7 @@
 
 # sent_id = frwiki_50.1000_00045
 # text = Un livre, Pour l'honneur de Théo et des caporaux de Souain, écrit par Jacqueline Laisné, l'institutrice qui prit la suite de Blanche Maupas dans son école, raconte également cette histoire.
-1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Un	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	livre	livre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	34	nsubj	_	_	*	Cognition
 3	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
 4	Pour	pour	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	case	_	_	1:PROPN|NE-PROD.final|_	1:Cognition
@@ -8521,7 +8521,7 @@
 
 # sent_id = frwiki_50.1000_00107
 # text = - Propagande
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Propagande	propagande	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act/Cognition
 
 
@@ -8532,7 +8532,7 @@
 
 # sent_id = frwiki_50.1000_00116
 # text = - (en) Maggie O'Kane, This time I 'm scared, The Guardian, December 5, 2002.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	(	(	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
 3	en	en	X	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 4	)	)	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
@@ -8558,7 +8558,7 @@
 
 # sent_id = frwiki_50.1000_00117
 # text = - (en) Ian Urbina, HBO adds disclaimer to Gulf War movie, Asia Times, Nov 13, 2002.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	(	(	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
 3	en	en	X	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 4	)	)	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
@@ -8585,7 +8585,7 @@
 
 # sent_id = frwiki_50.1000_00140
 # text = Une partie du montant de leur vente est rétrocédé au gouvernement de Bangui pour la Croix-Rouge de Centrafrique alors que le reste (67 025 francs) est versé à des oeuvres caritatives du pays.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	partie	partie	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	10	nsubj:pass	_	_	*	Part
 3-4	du	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -8723,7 +8723,7 @@
 
 # sent_id = frwiki_50.1000_00158
 # text = A partir de ce moment, toutes les traces seront perdues.
-1	A	à	ADP	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Inf|Voice=Act	11	advmod	_	ExtPos=ADV	1:ADV|MWE|IRREG	*
+1	A	à	ADP	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	11	advmod	_	ExtPos=ADV	1:ADV|MWE|IRREG	*
 2	partir	partir	VERB	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*
@@ -8799,7 +8799,7 @@
 
 # sent_id = frwiki_50.1000_00181
 # text = Ce dernier avait publié un pamphlet violent contre Richelieu et s'opposait fermement à la destruction des murailles de la ville.
-1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Ce	ce	DET	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	dernier	dernier	ADJ	_	Number=Sing|NumType=Card|Definite=Def|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	*
 3	avait	avoir	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	aux:tense	_	_	*	*
 4	publié	publier	VERB	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
@@ -8832,7 +8832,7 @@
 
 # sent_id = frwiki_50.1000_00197
 # text = - Satanisme
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Satanisme	satanisme	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Cognition
 
 
@@ -9017,14 +9017,14 @@
 
 # sent_id = frwiki_50.1000_00216
 # text = .. /..
-1	..	..	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	0	root	_	_	*	*
+1	..	..	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	*
 2	/	/	SYM	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	dep	_	_	*	*
 3	..	..	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	punct	_	_	*	*
 
 
 # sent_id = frwiki_50.1000_00219
 # text = - Affaire des HLM de Paris
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Affaire	affaire	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-EVE.final|_	1:Event;Event
 3-4	des	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	1	*
@@ -9054,7 +9054,7 @@
 
 # sent_id = frwiki_50.1000_00259
 # text = Une décision qui est confirmée en appel puis en cassation en 2002.
-1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Pos|Voice=Pass	2	det	_	_	*	*
+1	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	2	det	_	_	*	*
 2	décision	décision	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act/Cognition
 3	qui	qui	PRON	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	nsubj:pass	_	_	*	*
 4	est	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	aux:pass	_	_	*	*
@@ -9544,7 +9544,7 @@
 
 # sent_id = frwiki_50.1000_00378
 # text = "Mis en place (...) par mesure d'assurance" et "dans des conditions non rigoureuses", écrivait Jean-François Briand, l'ancien directeur général de Thomson-CSF, ce réseau suscitait plus de doutes que de certitudes chez les dirigeants d'Elf.
-1	"	"	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	"	"	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing	2	punct	_	_	*	*
 2	Mis	mettre	VERB	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	35	advcl	_	_	*	*
 3	en	en	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	_	1:_|MWE|LEX	*
 4	place	place	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	obl:arg	_	_	1	*
@@ -9624,7 +9624,7 @@
 
 # sent_id = frwiki_50.1000_00404
 # text = - Ex-directeur adjoint chez Thomson-CSF, Alain Fribourg a assuré aux juges avoir "toujours considéré à l'époque que c'était le parti au pouvoir à Taïwan qui bénéficiait pour une bonne partie de ce que l'on versait à M. Wang".
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	10	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	10	punct	_	_	*	*
 2	Ex-directeur	ex-directeur	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	10	obl:mod	_	_	*	Person
 3	adjoint	adjoint	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4	chez	chez	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -9698,7 +9698,7 @@
 
 # sent_id = frwiki_50.1000_00426
 # text = - Joël Bucher, ancien directeur adjoint de la Société générale à Taïwan (Sogenal) entre 1987 et 1990, a souligné l'implication de plusieurs banques française dans le système de commissions installés autour des ventes d'armes du début 1990 (frégates La Fayette, Mirages 2000 Dassault, missiles MICA Matra).
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	23	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	23	punct	_	_	*	*
 2	Joël	Joël	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	23	nsubj	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Bucher	Bucher	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -9763,7 +9763,7 @@
 
 # sent_id = frwiki_50.1000_00431
 # text = - Audition de M. Joël Bucher, ancien directeur général adjoint de la Société générale à Taiwan, par la mission parlementaire sur les obstacles au contrôle et à la répression de la délinquance financière et du blanchiment des capitaux en Europe, le 22 mars 2001 (Volume 5- Le Grand Duché du Luxembourg).
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Audition	audition	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 3	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	_	*	*
 4	M.	monsieur	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	Person
@@ -9833,7 +9833,7 @@
 
 # sent_id = frwiki_50.1000_00437
 # text = - Une information judiciaire contre X a été ouverte en juin 2001 pour "abus de biens sociaux et recel" après la découverte sur un compte suisse, et la mise sous séquestre, de plusieurs dizaines de millions d'euros qui pourrait être liée à cette affaire.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	9	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	9	punct	_	_	*	*
 2	Une	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	information	information	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	9	nsubj:pass	_	_	1:_|MWE|LEX	1:Act
 4	judiciaire	judiciaire	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	amod	_	_	1	1
@@ -9939,7 +9939,7 @@
 
 # sent_id = frwiki_50.1000_00458
 # text = - Le 16 juin 2006, les juges Renaud van Ruymbeke et Xavière Simeoni (qui remplace Dominique de Talancé) ont adressé une nouvelle demande de levée du secret défense au ministère de l'Économie et des Finances, seul habilité à saisir la commission consultative du secret de la défense nationale (CCSDN).
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	23	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	23	punct	_	_	*	*
 2	Le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	16	16	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	23	obl:mod	_	_	*	Time
 4	juin	juin	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	*
@@ -10008,7 +10008,7 @@
 
 # sent_id = frwiki_50.1000_00472
 # text = - En 2001, le juge genevois Paul Perraudin a bloqué à Zurich 1,2 milliard de francs suisses appartenant sur les comptes suisses de l'intermédiaire taiwanais, Andrew Wang, 73 ans.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	11	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	11	punct	_	_	*	*
 2	En	en	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	case	_	_	*	*
 3	2001	2001	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	11	obl:mod	_	_	*	Time
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	11	punct	_	_	*	*
@@ -10054,7 +10054,7 @@
 
 # sent_id = frwiki_50.1000_00494
 # text = - L'actuelle direction de Thales, présidée par Denis Ranque, dit n'être pas concernée par l'enquête, et s'est désolidarisée d'Alain Gomez, PDG de Thomson CSF au moment des faits.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	13	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	13	punct	_	_	*	*
 2	L'	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 3	actuelle	actuel	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	amod	_	_	*	*
 4	direction	direction	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	13	nsubj	_	_	*	Institution
@@ -10100,7 +10100,7 @@
 
 # sent_id = frwiki_50.1000_00506
 # text = - Jacques Morisson : Capitaine de vaisseau de la marine française, il était négociateur du volet technique de la vente des frégates à Taiwan.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	15	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	15	punct	_	_	*	*
 2	Jacques	Jacques	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	15	obl:mod	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Morisson	Morisson	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -10153,7 +10153,7 @@
 
 # sent_id = frwiki_50.1000_00522
 # text = - Des frégates et des morts, Swiss Info, 22 juin 2002
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	Des	un	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	frégates	frégate	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Artifact
 4	et	et	CCONJ	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	6	cc	_	_	*	*
@@ -10180,13 +10180,13 @@
 
 # sent_id = frwiki_50.1000_00546
 # text = ISBN 2840985314
-1	ISBN	ISBN	NOUN	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_	*	Attribute
+1	ISBN	ISBN	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	Attribute
 2	2840985314	2840985314	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	1	nummod	_	_	*	*
 
 
 # sent_id = frwiki_50.1000_00551
 # text = - Christine Deviers-Joncour, Opération Bravo, Pocket (2000).
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Christine	Christine	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Deviers-Joncour	Deviers-Joncour	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -10255,7 +10255,7 @@
 
 # sent_id = frwiki_50.1000_00567
 # text = - 21 décembre 1994 : le Dr Jean-Pierre Maréchal, beau-père du juge Eric Halphen, est mis en examen pour trafic d'influence et extorsion de fonds.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	19	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	19	punct	_	_	*	*
 2	21	21	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	19	obl:mod	_	_	*	Time
 3	décembre	décembre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	*
 4	1994	1994	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	Time
@@ -10325,7 +10325,7 @@
 
 # sent_id = frwiki_50.1000_00578
 # text = - octobre 1997 : Demande d'extradition de Didier Schuller, localisé aux Bahamas, puis en République Dominicaine
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	octobre	octobre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	5	nmod	_	_	*	Time
 3	1997	1997	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	Time
 4	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -10350,7 +10350,7 @@
 
 # sent_id = frwiki_50.1000_00583
 # text = - février 2005 : Didier Schuller et Patrick Balkany sont renvoyés devant le tribunal correctionnel de Créteil aux côtés de huit autres prévenus.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	11	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	11	punct	_	_	*	*
 2	février	février	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	11	obl:mod	_	_	*	Time
 3	2005	2005	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	Time
 4	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	11	punct	_	_	*	*
@@ -10380,7 +10380,7 @@
 
 # sent_id = frwiki_50.1000_00588
 # text = - 18 octobre 2005 : A l'issue du procès, Didier Schuller est condamné à cinq ans de prison, dont trois avec sursis, ainsi qu'à une amende de 150.000 euros, pour trafic d'influence, recel et complicité d'abus de biens sociaux.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	16	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	16	punct	_	_	*	*
 2	18	18	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	16	obl:mod	_	_	*	Time
 3	octobre	octobre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	*
 4	2005	2005	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	Time
@@ -10435,7 +10435,7 @@
 
 # sent_id = frwiki_50.1000_00595
 # text = - Financement illégal des partis politiques français
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Financement	financement	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act/Possession
 3	illégal	illégal	ADJ	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	amod	_	_	*	*
 4-5	des	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
@@ -10448,7 +10448,7 @@
 
 # sent_id = frwiki_50.1000_00596
 # text = - Hauts-de-Seine
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Hauts-de-Seine	Hauts-de-Seine	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-LOC.final|_	Institution
 
 
@@ -10474,7 +10474,7 @@
 
 # sent_id = frwiki_50.1000_00610
 # text = - Été 1994 : une information judiciaire est ouverte : le juge Éric Halphen acquiert vite la conviction que Jean-Claude Méry est l'un des hommes clefs du système.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	9	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	9	punct	_	_	*	*
 2	Été	Été	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	9	obl:mod	_	_	*	Time
 3	1994	1994	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	2	nummod	_	_	*	Time
 4	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	9	punct	_	_	*	*
@@ -10568,8 +10568,8 @@
 
 # sent_id = frwiki_50.1000_00632
 # text = RH : 190 500 ;
-1	RH	RH	PROPN	_	Definite=Def|Gender=Masc|Mood=Ind|NumType=Card|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_	1:PROPN|NE-PERS.final|_	Person
-2	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	1	punct	_	_	*	*
+1	RH	RH	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	Person
+2	:	:	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	punct	_	_	*	*
 3	190 500	190 500	NOUN	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	1	nmod	_	_	*	Possession
 4	;	;	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	punct	_	_	*	*
 
@@ -10635,7 +10635,7 @@
 
 # sent_id = frwiki_50.1000_00639
 # text = - 8 novembre 1994 : Rémy Halbwax est mis en examen.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	9	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	9	punct	_	_	*	*
 2	8	8	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	9	obl:mod	_	_	*	Time
 3	novembre	novembre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	*
 4	1994	1994	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	Time
@@ -10651,7 +10651,7 @@
 
 # sent_id = frwiki_50.1000_00640
 # text = - 14 novembre 1994 : Michel Roussin, ancien directeur de cabinet de Jacques Chirac, est mis en examen.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	18	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	18	punct	_	_	*	*
 2	14	14	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	18	obl:mod	_	_	*	Time
 3	novembre	novembre	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	*
 4	1994	1994	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	Time
@@ -10676,7 +10676,7 @@
 
 # sent_id = frwiki_50.1000_00648
 # text = C'est le début de l'affaire Schuller-Maréchal.
-1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Pos|Voice=Pass	4	nsubj	_	_	*	*
+1	C'	ce	PRON	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	nsubj	_	_	*	*
 2	est	être	AUX	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	4	cop	_	_	*	*
 3	le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 4	début	début	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Time
@@ -10770,7 +10770,7 @@
 
 # sent_id = frwiki_50.1000_00665
 # text = - 17 mars 1995 : mise en examen de Robert Pandraud, membre RPR du conseil régional d'Ile-de-France.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	6	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	6	punct	_	_	*	*
 2	17	17	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	6	nmod	_	_	*	Time
 3	mars	mars	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	nmod	_	_	*	*
 4	1995	1995	NUM	_	NumType=Card|Definite=Def|Number=Sing|Polarity=Neg|Voice=Pass	3	nmod	_	_	*	Time
@@ -10884,7 +10884,7 @@
 
 # sent_id = frwiki_50.1000_00695
 # text = - En l'absence de tout responsable politique, c'est l'ancien directeur général de l'Office public HLM de Paris et élu corrézien, Georges Pérol, qui fait figure de clé de voûte de ce vaste système de versements de commissions par les entreprises et de détournement de procédures dans l'attribution de marchés publics.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	14	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	14	punct	_	_	*	*
 2	En	en	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	_	1:_|MWE|DET	*
 3	l'	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 4	absence	absence	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	14	obl:mod	_	_	1	*
@@ -10947,7 +10947,7 @@
 
 # sent_id = frwiki_50.1000_00705
 # text = - Le contrat de maintenance et de rénovation des 3 092 cabines d'ascenseurs des immeubles d'HLM parisiens est attribué en 1992.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	22	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	22	punct	_	_	*	*
 2	Le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	*	*
 3	contrat	contrat	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	22	nsubj:pass	_	_	*	Cognition
 4	de	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
@@ -11022,7 +11022,7 @@
 
 # sent_id = frwiki_50.1000_00718
 # text = - Le Monde du 22 septembre 2000
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	Le	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	3	det	_	_	1:PROPN|NE-ORG.prim|_;2:PROPN|NE-PROD.final|_	1:Cognition
 3	Monde	Monde	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1;2	1
 4-5	du	_	_	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	_	_	_	_	*	*
@@ -11274,7 +11274,7 @@
 
 # sent_id = frwiki_50.1000_00736
 # text = - Michel Roussin, ex-bras droit de Jacques Chirac à la mairie de Paris.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Michel	Michel	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Roussin	Roussin	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -11319,7 +11319,7 @@
 
 # sent_id = frwiki_50.1000_00744
 # text = - Gérard Longuet
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Gérard	Gérard	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Longuet	Longuet	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 
@@ -11418,7 +11418,7 @@
 
 # sent_id = frwiki_50.1000_00771
 # text = - Jean-François Donzel, élu écologiste dissident de Génération écologie, a été condamné à un an de prison ferme (trois ans de prison dont deux avec sursis).
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	14	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	14	punct	_	_	*	*
 2	Jean-François	Jean-François	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	14	nsubj:pass	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Donzel	Donzel	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -11498,7 +11498,7 @@
 
 # sent_id = frwiki_50.1000_00789
 # text = - Gérard Longuet
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Gérard	Gérard	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Longuet	Longuet	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 
@@ -11733,7 +11733,7 @@
 
 # sent_id = frwiki_50.1000_00887
 # text = - Henri Mazères, colonel de gendarmerie : 30 mois dont 6 mois fermes
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Henri	Henri	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Mazères	Mazères	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -11776,7 +11776,7 @@
 
 # sent_id = frwiki_50.1000_00906
 # text = D'après les commentaires les accompagnant dans leur publication par Reuters, il y a notamment deux clichés du même immeuble, datés respectivement du 24 juillet et du 5 août 2006, qui sont censés représenter chacun un "immeuble de Beyrouth détruit la nuit précédente par un raid israélien" [3].
-1	D'	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Pos|Voice=Pass	4	case	_	ExtPos=ADP	1:ADP|MWE|IRREG	*
+1	D'	de	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	case	_	ExtPos=ADP	1:ADP|MWE|IRREG	*
 2	après	après	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	1	fixed	_	_	1	*
 3	les	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	4	det	_	_	*	*
 4	commentaires	commentaire	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	15	obl:mod	_	_	*	Cognition
@@ -11891,7 +11891,7 @@
 
 # sent_id = frwiki_50.1000_00934
 # text = - ^ "Reuters admits to more image manipulation". Ynetnews.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	4	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	4	punct	_	_	*	*
 2	^	^	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	punct	_	_	*	*
 3	"	"	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	punct	_	_	*	*
 4	Reuters	Reuters	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-ORG.final|_;2:PROPN|NE-PROD.final|_	1:Cognition;Institution
@@ -11908,7 +11908,7 @@
 
 # sent_id = frwiki_50.1000_00938
 # text = - ^ "Reuters withdraws all photos by Lebanese freelance", Reuters, August 7, 2006.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	4	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	4	punct	_	_	*	*
 2	^	^	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	punct	_	_	*	*
 3	"	"	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	4	punct	_	_	*	*
 4	Reuters	Reuters	PROPN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-ORG.final|_;2:PROPN|NE-PROD.final|_	1:Cognition
@@ -11940,7 +11940,7 @@
 
 # sent_id = frwiki_50.1000_00942
 # text = - (fr) "La guerre des images" (avec une explication des modifications) par Alain Korkos, La Boite à Images, 8 septembre 2006
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	3	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	3	punct	_	_	*	*
 2	(	(	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
 3	fr	fr	NOUN	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	0	root	_	_	*	Communication
 4	)	)	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	3	punct	_	_	*	*
@@ -12134,7 +12134,7 @@
 
 # sent_id = frwiki_50.1000_00980
 # text = - Yves Gras, "Histoire de la Guerre d'Indochine", Plon, Paris, 1979.
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Yves	Yves	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	1:PROPN|NE-PERS.final|_	1:Person
 3	Gras	Gras	PROPN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	2	flat:name	_	_	1	1
 4	,	,	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	2	punct	_	_	*	*
@@ -12163,7 +12163,7 @@
 
 # sent_id = frwiki_50.1000_00991
 # text = - Colloque sur les fraudes
-1	-	-	PUNCT	_	Definite=Def|Gender=Masc|NumType=Card|Number=Sing|Polarity=Pos|Voice=Act	2	punct	_	_	*	*
+1	-	-	PUNCT	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg	2	punct	_	_	*	*
 2	Colloque	colloque	NOUN	_	Number=Sing|Definite=Def|NumType=Card|Polarity=Neg|Voice=Pass	0	root	_	_	*	Act
 3	sur	sur	ADP	_	Definite=Def|NumType=Card|Number=Sing|Polarity=Neg|Voice=Pass	5	case	_	_	*	*
 4	les	le	DET	_	Definite=Def|Number=Sing|NumType=Card|Polarity=Neg|Voice=Pass	5	det	_	_	*	*

@@ -7,7 +7,8 @@ if project_path not in sys.path:
 
 import torch
 from pstal.tp3.train_morph import fit_multitask, fit
-from pstal.tp3.tool import preprocess_data_multitask, download_pred_file_multitask, preprocess_data, download_pred_file
+from pstal.tp3.tool import preprocess_data_multitask, preprocess_data
+from pstal.tp3.predict_morph import download_pred_file_multitask, download_pred_file
 import matplotlib.pyplot as plt
 
 sequoia_train_path = os.path.join(project_path, "pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.train")
