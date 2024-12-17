@@ -7,6 +7,7 @@ from torch.nn.functional import relu
 
 
 class MLP(nn.Module):
+    # TO BE REVIEWED : output_dimension = 25 ?
     def __init__(self, d, vocab_size_output, hidden_layer=32):
         super().__init__()
         self.fc1 = nn.Linear(d, hidden_layer)
