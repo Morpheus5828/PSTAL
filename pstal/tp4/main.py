@@ -21,7 +21,7 @@ from transformers import AutoTokenizer, AutoModel
 if __name__ == "__main__":
     tokenize = AutoTokenizer.from_pretrained("almanach/camembert-base")
 
-    input, target, = extract_data(sequoia_test_path, tokenize)
+    input, = extract_data(sequoia_test_path, tokenize)
     print(len(input), len(target))
 
     model = AutoModel.from_pretrained("almanach/camembert-base")
