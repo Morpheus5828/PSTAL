@@ -37,7 +37,7 @@ if __name__ == "__main__":
     tokenize = AutoTokenizer.from_pretrained("almanach/camembert-base")
     pre_trained_model = AutoModel.from_pretrained("almanach/camembert-base")
     nb_epochs = 20
-    batch_size = 256
+    batch_size = 128
     hidden_layer = 128
     encoding_dict = {"*": 0}
 

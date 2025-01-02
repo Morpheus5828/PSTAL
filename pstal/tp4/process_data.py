@@ -43,7 +43,7 @@ def contextual_embeddings(
 
             with torch.no_grad():  # Freeze embeddings
                 outputs = model(**tok_sent)
-                embeddings = outputs.last_hidden_state[0]  # Shape: (num_tokens, 768)
+                embeddings = outputs["last_hidden_state"][0]  # Shape: (num_tokens, 768)
 
             for idx in word_indices:
                 subtoken_indices = [i for i, word_id in enumerate(word_ids) if word_id == idx]

@@ -101,7 +101,7 @@ python pstal/tp3/main.py
 ```
 You should obtain this king of graph:
 
-<img src="img/Figure_3.png">
+<img src="img/Figure_3.png" width="1280">
 
 and to check evaluation, do these commands:
 -> For the first model on Number task:
@@ -132,14 +132,20 @@ python pstal/tp4/main.py
 
 You should obtains this kind of loss:
 
-<img src="img/Figure_4.png">
+<img src="img/Figure_4.png" width="640">
 
 and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test 
+```
+You should find 80.37 ( 8321/10354). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
 
 ```shell
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --upos-filter NOUN PROPN NUM
 ```
 
+You should find 41.31 (1138 / 2876)
 
 
 
