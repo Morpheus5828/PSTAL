@@ -1,3 +1,6 @@
+"""This script contains code to learn classifier of tp4
+..moduleauthor::Marius THORRE
+"""
 
 import torch
 from torch import nn
