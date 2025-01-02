@@ -116,6 +116,31 @@ python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/pred
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/predictions_multitask.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --tagcolumn feats
 ```
 
+# TP4: Supersense Tagger with Pre-trained Transformers
+
+The objective of this lab work is to develop and evaluate a system capable of predicting semantic labels <br>
+called super-senses (column frsemcor:noun). These labels indicate, for each noun, its coarse-grained semantic category. <br>
+For example: surprise is a feeling (label: Feeling), leg is a body part (Body), lawyer is a person (Person) <br>
+or a food item (Food) depending on the context, etc. We will use contextual vector representations, known as contextual <br>
+embeddings, derived from pre-trained transformer models. <br>
+
+To run model, you can click on this link:
+
+```shell
+python pstal/tp4/main.py
+```
+
+You should obtains this kind of loss:
+
+<img src="img/Figure_4.png">
+
+and to check evaluation, do this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --upos-filter NOUN PROPN NUM
+```
+
+
 
 
 
