@@ -83,6 +83,40 @@ cd ..
 python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
 ```
 
+The first result obtained is :
+```shell
+Accuracy on all parseme:ne: 94.31 ( 9052/ 9598)
+
+Precision, recall, and F-score for parseme:ne:
+Exact-EVE  : P= 92.31 (   12/   13) / R= 60.00 (   12/   20) / F= 72.73
+Exact-LOC  : P= 70.21 (   33/   47) / R= 43.42 (   33/   76) / F= 53.66
+Exact-ORG  : P= 70.21 (   66/   94) / R= 54.10 (   66/  122) / F= 61.11
+Exact-PERS : P= 82.46 (   94/  114) / R= 77.05 (   94/  122) / F= 79.66
+Exact-PROD : P= 87.93 (   51/   58) / R= 77.27 (   51/   66) / F= 82.26
+Exact-nocat: P= 80.37 (  262/  326) / R= 64.53 (  262/  406) / F= 71.58
+Fuzzy-nocat: P= 85.08 (  576/  677) / R= 72.00 (  576/  800) / F= 78.00
+macro-avg  : P= 81.22               / R= 64.05               / F= 71.62
+```
+
+We then replaced the Emission matrix by a bidirectional RNN. This model was trained apart while the others matrices still be calculated dynamically inside the Viterbi algorithm.
+The following figure illustrate our best RNN model:
+
+<img src="pstal/tp2/RNN for NER training loss.png">
+
+The scores achieved is much lower than the traditional Viterbi :
+```shell
+Accuracy on all parseme:ne: 93.81 ( 9004/ 9598)
+
+Precision, recall, and F-score for parseme:ne:
+Exact-EVE  : P= 57.14 (    4/    7) / R= 20.00 (    4/   20) / F= 29.63
+Exact-LOC  : P= 57.14 (   16/   28) / R= 21.05 (   16/   76) / F= 30.77
+Exact-ORG  : P= 55.56 (   55/   99) / R= 45.08 (   55/  122) / F= 49.77
+Exact-PERS : P= 74.07 (   80/  108) / R= 65.57 (   80/  122) / F= 69.57
+Exact-PROD : P= 91.67 (   44/   48) / R= 66.67 (   44/   66) / F= 77.19
+Exact-nocat: P= 71.38 (  207/  290) / R= 50.99 (  207/  406) / F= 59.48
+Fuzzy-nocat: P= 91.28 (  377/  413) / R= 47.12 (  377/  800) / F= 62.16
+macro-avg  : P= 71.18               / R= 45.21               / F= 55.30
+```
 # TP3: Sub-lexical and multi-task models for morphological analysis
 
 The goal of this lab is to develop and evaluate a morphological analysis system. <br> 

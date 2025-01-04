@@ -3,6 +3,7 @@ import os, sys
 import pickle
 from collections import defaultdict, Counter
 
+
 # Add the correct directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_path = os.path.abspath(os.path.join(current_dir, '../../'))
@@ -133,4 +134,4 @@ if __name__ == "__main__":
     print(f"Log T: {log_T}\n")
     print(f"Log pi: {log_pi}\n")
     """
-    #save(output_path, log_E, log_T, log_pi)
+    save(output_path, log_E, log_T, log_pi)
