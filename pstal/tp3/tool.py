@@ -4,8 +4,6 @@ This script is a tools script which contains code for fit function
 """
 
 import torch
-#from pstal.tp1.sequoia.bin.tool import pad_tensor
-from torch.utils.data import TensorDataset, DataLoader
 from conllu import parse_incr
 
 
@@ -88,7 +86,7 @@ def _extract_data(
         if len(sent) > max_length:
             max_length = len(sent)
         for tok in sent:
-            for letter in tok["lemma"]:
+            for letter in tok["form"]:
                 if letter not in all_char_vocab:
                     all_char_vocab[letter] = len(all_char_vocab)
                 current_chars.append(all_char_vocab[letter])
@@ -128,7 +126,6 @@ def preprocess_data(
         max_w: int,
         all_char_vocab: dict,
         all_feats: dict,
-        poly: bool = False
 ):
 
     in_enc_train, ends_train, feats_number_train, all_char_vocab, _ = _extract_data(

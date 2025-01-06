@@ -83,6 +83,40 @@ cd ..
 python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
 ```
 
+The first result obtained is :
+```shell
+Accuracy on all parseme:ne: 94.31 ( 9052/ 9598)
+
+Precision, recall, and F-score for parseme:ne:
+Exact-EVE  : P= 92.31 (   12/   13) / R= 60.00 (   12/   20) / F= 72.73
+Exact-LOC  : P= 70.21 (   33/   47) / R= 43.42 (   33/   76) / F= 53.66
+Exact-ORG  : P= 70.21 (   66/   94) / R= 54.10 (   66/  122) / F= 61.11
+Exact-PERS : P= 82.46 (   94/  114) / R= 77.05 (   94/  122) / F= 79.66
+Exact-PROD : P= 87.93 (   51/   58) / R= 77.27 (   51/   66) / F= 82.26
+Exact-nocat: P= 80.37 (  262/  326) / R= 64.53 (  262/  406) / F= 71.58
+Fuzzy-nocat: P= 85.08 (  576/  677) / R= 72.00 (  576/  800) / F= 78.00
+macro-avg  : P= 81.22               / R= 64.05               / F= 71.62
+```
+
+We then replaced the Emission matrix by a bidirectional RNN. This model was trained apart while the others matrices still be calculated dynamically inside the Viterbi algorithm.
+The following figure illustrate our best RNN model:
+
+<img src="pstal/tp2/RNN for NER training loss.png">
+
+The scores achieved is much lower than the traditional Viterbi :
+```shell
+Accuracy on all parseme:ne: 93.81 ( 9004/ 9598)
+
+Precision, recall, and F-score for parseme:ne:
+Exact-EVE  : P= 57.14 (    4/    7) / R= 20.00 (    4/   20) / F= 29.63
+Exact-LOC  : P= 57.14 (   16/   28) / R= 21.05 (   16/   76) / F= 30.77
+Exact-ORG  : P= 55.56 (   55/   99) / R= 45.08 (   55/  122) / F= 49.77
+Exact-PERS : P= 74.07 (   80/  108) / R= 65.57 (   80/  122) / F= 69.57
+Exact-PROD : P= 91.67 (   44/   48) / R= 66.67 (   44/   66) / F= 77.19
+Exact-nocat: P= 71.38 (  207/  290) / R= 50.99 (  207/  406) / F= 59.48
+Fuzzy-nocat: P= 91.28 (  377/  413) / R= 47.12 (  377/  800) / F= 62.16
+macro-avg  : P= 71.18               / R= 45.21               / F= 55.30
+```
 # TP3: Sub-lexical and multi-task models for morphological analysis
 
 The goal of this lab is to develop and evaluate a morphological analysis system. <br> 
@@ -101,7 +135,7 @@ python pstal/tp3/main.py
 ```
 You should obtain this king of graph:
 
-<img src="img/Figure_3.png">
+<img src="img/Figure_3.png" width="1280">
 
 and to check evaluation, do these commands:
 -> For the first model on Number task:
@@ -116,8 +150,36 @@ python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/pred
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn feats --pred pstal/tp3/predictions_multitask.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --tagcolumn feats
 ```
 
+# TP4: Supersense Tagger with Pre-trained Transformers
 
+The objective of this lab work is to develop and evaluate a system capable of predicting semantic labels <br>
+called super-senses (column frsemcor:noun). These labels indicate, for each noun, its coarse-grained semantic category. <br>
+For example: surprise is a feeling (label: Feeling), leg is a body part (Body), lawyer is a person (Person) <br>
+or a food item (Food) depending on the context, etc. We will use contextual vector representations, known as contextual <br>
+embeddings, derived from pre-trained transformer models. <br>
 
+To run model, you can click on this link:
+
+```shell
+python pstal/tp4/main.py
+```
+
+You should obtains this kind of loss:
+
+<img src="img/Figure_4.png" width="640">
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 97.71 ( 9378/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+
+You should find  92.01 ( 2532/ 2752)
 
 
 

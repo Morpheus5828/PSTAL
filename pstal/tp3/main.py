@@ -115,7 +115,6 @@ if __name__ == "__main__":
         output_file_path=output_file_path
     )
 
-
     fig, axes = plt.subplots(1, 2, figsize=(20, 8))
 
     axes[0].plot(history["validation_loss"], label="Validation loss", c="orange")
