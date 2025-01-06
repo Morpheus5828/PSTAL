@@ -39,13 +39,13 @@ if __name__ == "__main__":
     hidden_layer = 128
     encoding_dict = {}
 
+    print("Start preprocessing data: \n")
+
     inputs_train, targets_train = contextual_embeddings(sequoia_train_path, tokenize, pre_trained_model)
     targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
 
     inputs_dev, targets_dev = contextual_embeddings(sequoia_dev_path, tokenize, pre_trained_model)
     targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=False)
-
-    print(encoding_dict)
 
     model = MLP(d=768, vocab_size_output=len(encoding_dict), hidden_layer=hidden_layer).to(device)
 
