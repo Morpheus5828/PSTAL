@@ -18,6 +18,5 @@ class MLP(nn.Module):
         x = relu(self.fc1(x))
         x = self.dropout(x)
         x = relu(self.fc2(x))
-        #x = self.dropout(x)
         x = self.fc3(x)
         return x

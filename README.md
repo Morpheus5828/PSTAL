@@ -138,17 +138,14 @@ and to check evaluation, do this command:
 ```shell
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
 ```
-You should find 89.75 ( 8614/ 9598). 
+You should find 97.71 ( 9378/ 9598). 
 And if you want to filter juste NOUN PROPN and NUM, run this command:
 
 ```shell
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
 ```
 
-You should find  64,24 ( 1768/ 2752)
-
-
-
+You should find  92.01 ( 2532/ 2752)
 
 
 

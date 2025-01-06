@@ -37,7 +37,7 @@ if __name__ == "__main__":
     nb_epochs = 20
     batch_size = 128
     hidden_layer = 128
-    encoding_dict = {"*": 0}
+    encoding_dict = {}
 
     inputs_train, targets_train = contextual_embeddings(sequoia_train_path, tokenize, pre_trained_model)
     targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
@@ -50,7 +50,6 @@ if __name__ == "__main__":
     model = MLP(d=768, vocab_size_output=len(encoding_dict), hidden_layer=hidden_layer).to(device)
 
     print("Start model: \n")
-
 
     print(inputs_train.shape, targets_train.shape)
 

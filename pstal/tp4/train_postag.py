@@ -20,7 +20,7 @@ def fit(
         device,
 ):
 
-    criterion = nn.CrossEntropyLoss(ignore_index=0)
+    criterion = nn.CrossEntropyLoss()
     optim = Adam(lr=1e-3, params=model.parameters())
 
     history = {
@@ -48,10 +48,6 @@ def fit(
 
             output = output.view(-1, vocab_size)
             batch_Y = batch_Y.view(-1)
-
-            mask = batch_Y != 0
-            output = output[mask]
-            batch_Y = batch_Y[mask]
 
             loss = criterion(output, batch_Y)
 
