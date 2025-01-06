@@ -14,14 +14,14 @@ def fit(
         target_train,
         input_dev,
         target_dev,
-        vocab_size_output,
+        vocab_size,
         nb_epochs,
         batch_size,
         device,
 ):
 
-    criterion = nn.CrossEntropyLoss(ignore_index=2)
-    optim = Adam(lr=1e-4, params=model.parameters())
+    criterion = nn.CrossEntropyLoss(ignore_index=0)
+    optim = Adam(lr=1e-3, params=model.parameters())
 
     history = {
         "train_loss": [],
@@ -46,7 +46,7 @@ def fit(
             batch_Y = batch_Y.to(device).long()
             output = model(batch_X)
 
-            output = output.view(-1, vocab_size_output)
+            output = output.view(-1, vocab_size)
             batch_Y = batch_Y.view(-1)
 
             mask = batch_Y != 0
@@ -65,26 +65,26 @@ def fit(
         history["train_loss"].append(avg_train_loss)
 
         model.eval()
-        total_test_loss = 0
+        total_dev_loss = 0
         with torch.no_grad():
             for batch_X, batch_Y in dev_loader:
                 batch_X = batch_X.to(device).float()
                 batch_Y = batch_Y.to(device).long()
                 outputs = model(batch_X)
-                outputs = outputs.view(-1, vocab_size_output)
+                outputs = outputs.view(-1, vocab_size)
                 batch_Y = batch_Y.view(-1)
                 mask = batch_Y != 0
                 outputs = outputs[mask]
                 batch_Y = batch_Y[mask]
 
                 loss = criterion(outputs, batch_Y)
-                total_test_loss += loss.item()
+                total_dev_loss += loss.item()
 
-        avg_test_loss = total_test_loss / len(dev_loader)
+        avg_dev_loss = total_dev_loss / len(dev_loader)
 
-        history["validation_loss"].append(avg_test_loss)
+        history["validation_loss"].append(avg_dev_loss)
 
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_test_loss:.4f}")
+        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_dev_loss:.4f}")
 
 
     return model, history

@@ -11,10 +11,10 @@ project_path = os.path.abspath(os.path.join(current_dir, '../..'))
 if project_path not in sys.path:
     sys.path.append(project_path)
 
-sequoia_train_path = os.path.join(project_path, "pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.train")
-sequoia_test_path = os.path.join(project_path, "pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test")
-sequoia_dev_path = os.path.join(project_path, "pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.dev")
-#sequoia_simple_small_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.small")
+sequoia_train_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.train")
+sequoia_test_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.test")
+sequoia_dev_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.dev")
+sequoia_simple_small_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.small")
 
 from process_data import contextual_embeddings, target_encoding
 from predict_ssense import download_pred_file
@@ -22,8 +22,6 @@ from train_postag import fit
 from model import MLP
 from transformers import AutoTokenizer, AutoModel
 import torch
-import torch.nn as nn
-from torch.optim import Adam
 import matplotlib.pyplot as plt
 import warnings
 
@@ -45,14 +43,16 @@ if __name__ == "__main__":
     targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
 
     inputs_dev, targets_dev = contextual_embeddings(sequoia_dev_path, tokenize, pre_trained_model)
-    targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=True)
+    targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=False)
+
+    print(encoding_dict)
 
     model = MLP(d=768, vocab_size_output=len(encoding_dict), hidden_layer=hidden_layer).to(device)
 
-    print("Start training first model: \n")
+    print("Start model: \n")
 
-    criterion = nn.CrossEntropyLoss()
-    optim = Adam(lr=1e-4, params=model.parameters())
+
+    print(inputs_train.shape, targets_train.shape)
 
     model, history = fit(
         model=model,
@@ -60,7 +60,7 @@ if __name__ == "__main__":
         target_train=targets_train,
         input_dev=inputs_dev,
         target_dev=targets_dev,
-        vocab_size_output=len(encoding_dict),
+        vocab_size=len(encoding_dict),
         nb_epochs=nb_epochs,
         batch_size=batch_size,
         device=device

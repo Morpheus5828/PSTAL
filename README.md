@@ -136,16 +136,16 @@ You should obtains this kind of loss:
 
 and to check evaluation, do this command:
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test 
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
 ```
-You should find 80.37 ( 8321/10354). 
+You should find 89.75 ( 8614/ 9598). 
 And if you want to filter juste NOUN PROPN and NUM, run this command:
 
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold pstal/tp1/sequoia/src/sequoia-ud.parseme.frsemcor.test --upos-filter NOUN PROPN NUM
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
 ```
 
-You should find 41.31 (1138 / 2876)
+You should find  64,24 ( 1768/ 2752)
 
 
 

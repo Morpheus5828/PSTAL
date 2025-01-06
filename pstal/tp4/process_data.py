@@ -13,7 +13,7 @@ project_path = os.path.abspath(os.path.join(current_dir, '../../../lib'))
 if project_path not in sys.path:
     sys.path.append(project_path)
 
-from lib.conllulib import CoNLLUReader
+from conllu import parse_incr
 
 
 def contextual_embeddings(
@@ -22,38 +22,51 @@ def contextual_embeddings(
         model,
         upos_list: list = ["NOUN", "PROPN", "NUM"],
 ):
-
     input_embeddings, target_labels = [], []
 
-    with open(path, "r", encoding="UTF-8") as file:
-        sentences = CoNLLUReader(file).readConllu()
+    for sentence in parse_incr(open(path, encoding="UTF-8")):
+        words, labels, upos_tags = [], [], []
 
-        for sentence in sentences:
-            words, labels, word_indices = [], [], []
+        for token in sentence:
+            words.append(token["form"])
+            upos_tags.append(token["upos"])
+            if token["upos"] in upos_list:
+                labels.append(token["frsemcor:noun"])
 
-            for token in sentence:
-                words.append(token["form"])
-                if token["upos"] in upos_list:
-                    labels.append(token["frsemcor:noun"])
-                    word_indices.append(len(words) - 1)
+        tok_sent = tokenize(words, is_split_into_words=True, return_tensors='pt')
+        word_ids = tok_sent.word_ids()
+        with torch.no_grad():
+            output = model(**tok_sent)['last_hidden_state'][0]
 
+        output = output[1:-1]
+        word_ids = word_ids[1:-1]
 
-            tok_sent = tokenize(words, is_split_into_words=True, return_tensors='pt')
-            word_ids = tok_sent.word_ids()  # Alignement words <-> sub-tokens
+        current_result = []
+        current_idx = None
+        label_idx = 0
 
-            with torch.no_grad():  # Freeze embeddings
-                outputs = model(**tok_sent)
-                embeddings = outputs["last_hidden_state"][0]  # Shape: (num_tokens, 768)
+        for idx, value in enumerate(word_ids):
+            if current_idx is None:
+                current_idx = value
+                current_result.append(output[idx])
+            elif value == current_idx:
+                current_result.append(output[idx])
+            else:
+                if upos_tags[current_idx] in upos_list:
+                    average = torch.mean(torch.stack(current_result), dim=0)
+                    input_embeddings.append(average)
+                    target_labels.append(labels[label_idx])
+                    label_idx += 1
 
-            for idx in word_indices:
-                subtoken_indices = [i for i, word_id in enumerate(word_ids) if word_id == idx]
-                if subtoken_indices:  # If the word contains sub-tokens
-                    subtoken_embs = embeddings[subtoken_indices]
-                    mean_emb = subtoken_embs.mean(dim=0)  # Mean of embeddings
-                    input_embeddings.append(mean_emb.numpy())
-                    target_labels.append(labels.pop(0))
+                current_result = [output[idx]]
+                current_idx = value
 
-        return torch.tensor(input_embeddings), target_labels
+        if len(current_result) > 0 and upos_tags[current_idx] in upos_list:
+            average = torch.mean(torch.stack(current_result), dim=0)
+            input_embeddings.append(average)
+            target_labels.append(labels[label_idx])
+
+    return torch.stack(input_embeddings), target_labels
 
 
 def target_encoding(target: list, encoding_dict: dict, update_dict: bool = True):

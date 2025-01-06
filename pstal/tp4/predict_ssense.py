@@ -2,7 +2,6 @@ import torch
 from conllu import parse_incr
 
 
-
 def download_pred_file(
     model,
     inputs_test,
@@ -33,8 +32,6 @@ def download_pred_file(
                     idx_word += 1
 
                     token["frsemcor:noun"] = pred_label
-                else:
-                    token["frsemcor:noun"] = "*"
 
             f_out.write(sentence.serialize())
             f_out.write("\n")
