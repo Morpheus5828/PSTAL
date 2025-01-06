@@ -18,7 +18,7 @@ sequoia_simple_small_path = os.path.join(project_path, "lib/corpus/sequoia-ud.pa
 
 from process_data import contextual_embeddings, target_encoding
 from predict_ssense import download_pred_file
-from train_postag import fit
+from train_ssense import fit
 from model import MLP
 from transformers import AutoTokenizer, AutoModel
 import torch
