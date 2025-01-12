@@ -7,20 +7,25 @@ import torch.nn as nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
 
+import os, sys
+
+os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+os.environ['TORCH_USE_CUDA_DSA'] = "1"
+
 
 def fit(
         model,
         input_train,
+        feats_train,
         target_train,
         input_dev,
+        feats_dev,
         target_dev,
-        vocab_size_output,
         nb_epochs,
         batch_size,
         device,
 ):
-
-    criterion = nn.CrossEntropyLoss(ignore_index=2)
+    criterion = nn.CrossEntropyLoss()
     optim = Adam(lr=1e-4, params=model.parameters())
 
     history = {
@@ -28,64 +33,49 @@ def fit(
         "validation_loss": []
     }
 
-    train_dataset = TensorDataset(input_train, target_train)
+    train_dataset = TensorDataset(input_train, feats_train, target_train)
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-    dev_dataset = TensorDataset(input_dev, target_dev)
-    dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-
-    num_samples = input_train.size(0)
-    num_batches = (num_samples + batch_size - 1) // batch_size
+    dev_dataset = TensorDataset(input_dev, feats_dev, target_dev)
+    dev_dataloader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
 
     for epoch in range(nb_epochs):
         model.train()
         total_loss = 0
 
-        for batch_X, batch_Y in train_dataloader:
-            batch_X = batch_X.to(device).float()
+        for batch_X, batch_feats, batch_Y in train_dataloader:
+            batch_X = batch_X.to(device).long()
+            batch_feats = batch_feats.to(device).long()
             batch_Y = batch_Y.to(device).long()
-            output = model(batch_X)
 
-            output = output.view(-1, vocab_size_output)
-            batch_Y = batch_Y.view(-1)
-
-            mask = batch_Y != 0
-            output = output[mask]
-            batch_Y = batch_Y[mask]
-
-            loss = criterion(output, batch_Y)
-
+            logits = model(batch_X, batch_feats)
+            loss = criterion(logits, batch_Y)
             optim.zero_grad()
             loss.backward()
             optim.step()
 
             total_loss += loss.item()
 
-        avg_train_loss = total_loss / num_batches
+        avg_train_loss = total_loss / len(train_dataloader)
         history["train_loss"].append(avg_train_loss)
 
         model.eval()
-        total_test_loss = 0
+        total_val_loss = 0
         with torch.no_grad():
-            for batch_X, batch_Y in dev_loader:
-                batch_X = batch_X.to(device).float()
+            for batch_X, batch_feats, batch_Y in dev_dataloader:
+                batch_X = batch_X.to(device).long()
+                batch_feats = batch_feats.to(device).long()
                 batch_Y = batch_Y.to(device).long()
-                outputs = model(batch_X)
-                outputs = outputs.view(-1, vocab_size_output)
-                batch_Y = batch_Y.view(-1)
-                mask = batch_Y != 0
-                outputs = outputs[mask]
-                batch_Y = batch_Y[mask]
 
-                loss = criterion(outputs, batch_Y)
-                total_test_loss += loss.item()
+                logits = model(batch_X, batch_feats)
+                loss = criterion(logits, batch_Y)
+                total_val_loss += loss.item()
 
-        avg_test_loss = total_test_loss / len(dev_loader)
+        avg_val_loss = total_val_loss / len(dev_dataloader)
+        history["validation_loss"].append(avg_val_loss)
 
-        history["validation_loss"].append(avg_test_loss)
-
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_test_loss:.4f}")
-
+        print(f"Epoch {epoch + 1}/{nb_epochs}, Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}")
 
     return model, history
+
 
