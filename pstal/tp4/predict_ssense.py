@@ -34,3 +34,22 @@ def download_pred_file(
                     token["frsemcor:noun"] = pred_label
             f_out.write(sentence.serialize())
             f_out.write("\n")
+
+
+def download_pred_file_ft(model, inputs_test, all_word_ids_test, device, output_file_path, encoding_dict, sequoia_test_path, upos_list=["NOUN", "PROPN", "NUM"]):
+    model.eval()
+    rev_encoding_dict = {v: k for k, v in encoding_dict.items()}
+    with open(sequoia_test_path, "r", encoding="utf-8") as f_in, open(output_file_path, "w", encoding="utf-8") as f_out:
+        sentences = list(parse_incr(f_in))
+        inputs_test = inputs_test.to(device)
+        all_word_ids_test = all_word_ids_test.to(device)
+        with torch.no_grad():
+            outputs = model(inputs_test, all_word_ids_test, device)
+            _, pred_idxs = torch.max(outputs, dim=1)
+        for idx, sentence in enumerate(sentences):
+            pred_label = rev_encoding_dict[pred_idxs[idx].item()]
+            for token in sentence:
+                if token["upos"] in upos_list and token["frsemcor:noun"] != "*":
+                    token["frsemcor:noun"] = pred_label
+            f_out.write(sentence.serialize())
+            f_out.write("\n")

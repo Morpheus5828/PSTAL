@@ -16,10 +16,10 @@ sequoia_test_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.fr
 sequoia_dev_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.dev")
 sequoia_simple_small_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.small")
 
-from process_data import contextual_embeddings, target_encoding
-from predict_ssense import download_pred_file
-from train_ssense import fit
-from model import MLP
+from process_data import contextual_embeddings, target_encoding, prepare_data_for_finetuning
+from predict_ssense import download_pred_file, download_pred_file_ft
+from train_ssense import fit, fit_ft
+from model import MLP, MLP_FT
 from transformers import AutoTokenizer, AutoModel
 import torch
 import matplotlib.pyplot as plt
@@ -31,17 +31,19 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 print(f"Device used: {device}")
 
+
 if __name__ == "__main__":
     tokenize = AutoTokenizer.from_pretrained("almanach/camembert-base")
     pre_trained_model = AutoModel.from_pretrained("almanach/camembert-base")
-    nb_epochs = 20
+    nb_epochs = 25
     batch_size = 128
     hidden_layer = 128
     encoding_dict = {}
+    max_len = 30
 
     print("Start preprocessing data: \n")
 
-    inputs_train, targets_train = contextual_embeddings(sequoia_train_path, tokenize, pre_trained_model)
+    '''inputs_train, targets_train = contextual_embeddings(sequoia_train_path, tokenize, pre_trained_model)
     targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
 
     inputs_dev, targets_dev = contextual_embeddings(sequoia_dev_path, tokenize, pre_trained_model)
@@ -75,6 +77,45 @@ if __name__ == "__main__":
         output_file_path=os.path.join(project_path, "pstal/tp4/prediction.conllu"),
         encoding_dict=encoding_dict,
         sequoia_test_path=sequoia_test_path
+    )'''
+
+
+    inputs_train, targets_train, all_word_ids_train = prepare_data_for_finetuning(sequoia_train_path, tokenize)
+    targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
+
+    print(inputs_train.shape, targets_train.shape, all_word_ids_train.shape)
+    inputs_dev, targets_dev, all_word_ids_dev = prepare_data_for_finetuning(sequoia_dev_path, tokenize)
+    targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=True)
+
+    model_ft = MLP_FT(
+        pre_trained_model=pre_trained_model,
+        num_labels=len(encoding_dict),
+        freeze_layers=2
+    ).to(device)
+
+    model_ft, history = fit_ft(
+        model=model_ft,
+        input_train=inputs_train,
+        target_train=targets_train,
+        all_word_ids_train=all_word_ids_train,
+        input_dev=inputs_dev,
+        target_dev=targets_dev,
+        all_word_ids_dev=all_word_ids_dev,
+        nb_epochs=nb_epochs,
+        batch_size=batch_size,
+        device=device
+    )
+
+    inputs_test, _, all_word_ids_test = prepare_data_for_finetuning(sequoia_test_path, tokenize)
+
+    download_pred_file_ft(
+        model=model_ft,
+        inputs_test=inputs_test,
+        all_word_ids_test=all_word_ids_test,
+        device=device,
+        output_file_path=os.path.join(project_path, "pstal/tp4/prediction_ft.conllu"),
+        encoding_dict=encoding_dict,
+        sequoia_test_path=sequoia_test_path
     )
 
     plt.plot(range(len(history["train_loss"])), history["train_loss"], label="train_loss")
@@ -83,4 +124,5 @@ if __name__ == "__main__":
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
     plt.title("Training loss")
-    plt.savefig(os.path.join(project_path, "pstal/tp4/loss.png"))
+    plt.savefig(os.path.join(project_path, "pstal/tp4/loss_ft.png"))
+
