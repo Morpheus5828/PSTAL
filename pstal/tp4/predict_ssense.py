@@ -36,15 +36,16 @@ def download_pred_file(
             f_out.write("\n")
 
 
-def download_pred_file_ft(model, inputs_test, all_word_ids_test, device, output_file_path, encoding_dict, sequoia_test_path, upos_list=["NOUN", "PROPN", "NUM"]):
+def download_pred_file_ft(model, inputs_test, all_word_ids_test, device, output_file_path, all_attention_mask_test, encoding_dict, sequoia_test_path, upos_list=["NOUN", "PROPN", "NUM"]):
     model.eval()
     rev_encoding_dict = {v: k for k, v in encoding_dict.items()}
     with open(sequoia_test_path, "r", encoding="utf-8") as f_in, open(output_file_path, "w", encoding="utf-8") as f_out:
         sentences = list(parse_incr(f_in))
         inputs_test = inputs_test.to(device)
         all_word_ids_test = all_word_ids_test.to(device)
+        all_attention_mask_test = all_attention_mask_test.to(device)
         with torch.no_grad():
-            outputs = model(inputs_test, all_word_ids_test, device)
+            outputs = model(inputs_test, all_word_ids_test, all_attention_mask_test, device)
             _, pred_idxs = torch.max(outputs, dim=1)
         for idx, sentence in enumerate(sentences):
             pred_label = rev_encoding_dict[pred_idxs[idx].item()]

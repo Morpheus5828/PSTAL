@@ -7,7 +7,7 @@ from torch.nn.functional import relu
 
 
 class MLP(nn.Module):
-    def __init__(self, d, vocab_size_output, hidden_layer=256):
+    def __init__(self, d, vocab_size_output, hidden_layer=32):
         super().__init__()
         self.fc1 = nn.Linear(d, hidden_layer)
         self.fc2 = nn.Linear(hidden_layer, 32)
@@ -23,7 +23,7 @@ class MLP(nn.Module):
 
 
 class MLP_FT(nn.Module):
-    def __init__(self, pre_trained_model, num_labels, freeze_layers, hidden_layer=64):
+    def __init__(self, pre_trained_model, num_labels, freeze_layers, hidden_layer=32):
         super().__init__()
         self.pre_trained_model = pre_trained_model
 
@@ -35,14 +35,12 @@ class MLP_FT(nn.Module):
                 param.requires_grad = True
 
         self.fc1 = nn.Linear(768, hidden_layer)
-        self.fc2 = nn.Linear(hidden_layer, 32)
-        self.fc3 = nn.Linear(32, num_labels)
+        self.fc2 = nn.Linear(hidden_layer, num_labels)
         self.dropout = nn.Dropout()
 
-    def forward(self, x, word_ids, device):
+    def forward(self, x, word_ids, attention_mask, device):
         batch_size, seq_length = x.size()
         all_avg_embeddings = []
-        attention_mask = (x != self.pre_trained_model.config.pad_token_id).long().to(device)
 
         outputs = self.pre_trained_model(input_ids=x.to(device), attention_mask=attention_mask)
 
@@ -56,7 +54,7 @@ class MLP_FT(nn.Module):
             avg_embeddings = []
             for i, w_id in enumerate(word_ids_filtered):
                 subtoken_indices = [j for j, word_id in enumerate(word_ids_filtered) if word_id == i]
-                #subtoken_indices = [j for j in subtoken_indices if j < last_hidden.size(0)]
+                subtoken_indices = [j for j in subtoken_indices if j < last_hidden.size(0)]
                 if subtoken_indices:
                     subtokens_emb = last_hidden[subtoken_indices, :]
                     avg_emb = subtokens_emb.mean(dim=0)

@@ -38,8 +38,8 @@ if __name__ == "__main__":
     nb_epochs = 25
     batch_size = 128
     hidden_layer = 128
-    encoding_dict = {}
-    max_len = 30
+    encoding_dict = {"*": 0}
+    max_len = 40
 
     print("Start preprocessing data: \n")
 
@@ -79,14 +79,13 @@ if __name__ == "__main__":
         sequoia_test_path=sequoia_test_path
     )'''
 
-
-    inputs_train, targets_train, all_word_ids_train = prepare_data_for_finetuning(sequoia_train_path, tokenize)
+    inputs_train, targets_train, all_word_ids_train, all_attention_mask_train = prepare_data_for_finetuning(sequoia_train_path, tokenize, max_len=max_len)
+    print(inputs_train.shape, len(targets_train), len(all_word_ids_train))
     targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
 
-    print(inputs_train.shape, targets_train.shape, all_word_ids_train.shape)
-    inputs_dev, targets_dev, all_word_ids_dev = prepare_data_for_finetuning(sequoia_dev_path, tokenize)
+    inputs_dev, targets_dev, all_word_ids_dev, all_attention_mask_dev = prepare_data_for_finetuning(sequoia_dev_path, tokenize, max_len=max_len)
     targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=True)
-
+    print(encoding_dict)
     model_ft = MLP_FT(
         pre_trained_model=pre_trained_model,
         num_labels=len(encoding_dict),
@@ -96,9 +95,11 @@ if __name__ == "__main__":
     model_ft, history = fit_ft(
         model=model_ft,
         input_train=inputs_train,
+        all_attention_mask_train=all_attention_mask_train,
         target_train=targets_train,
         all_word_ids_train=all_word_ids_train,
         input_dev=inputs_dev,
+        all_attention_mask_dev=all_attention_mask_dev,
         target_dev=targets_dev,
         all_word_ids_dev=all_word_ids_dev,
         nb_epochs=nb_epochs,
@@ -106,11 +107,12 @@ if __name__ == "__main__":
         device=device
     )
 
-    inputs_test, _, all_word_ids_test = prepare_data_for_finetuning(sequoia_test_path, tokenize)
+    inputs_test, _, all_word_ids_test, all_attention_mask_test = prepare_data_for_finetuning(sequoia_test_path, tokenize)
 
     download_pred_file_ft(
         model=model_ft,
         inputs_test=inputs_test,
+        all_attention_mask_test=all_attention_mask_test,
         all_word_ids_test=all_word_ids_test,
         device=device,
         output_file_path=os.path.join(project_path, "pstal/tp4/prediction_ft.conllu"),

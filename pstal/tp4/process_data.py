@@ -51,54 +51,56 @@ def contextual_embeddings(
     return input_embeddings, target_labels
 
 
-def prepare_data_for_finetuning(path, tokenize, upos_list=["NOUN", "PROPN", "NUM"], max_length=30, pad_label_value=-100):
-    data, targets, all_words_ids = [], [], []
-    with open(path, encoding="UTF-8") as f:
+def prepare_data_for_finetuning(
+        path,
+        tokenizer,
+        upos_list=["NOUN", "PROPN", "NUM"],
+        max_len=30
+):
+
+    all_input_ids = []
+    all_word_ids = []
+    all_labels = []
+    all_attention_mask = []
+
+    with open(path, encoding="utf-8") as f:
         for sentence in parse_incr(f):
             words = [token["form"] for token in sentence]
-            tok_sent = tokenize(
+
+            encoding = tokenizer(
                 words,
                 is_split_into_words=True,
                 return_tensors='pt',
                 padding='max_length',
-                max_length=max_length,
+                max_length=max_len,
                 truncation=True
             )
-            words_ids = tok_sent.word_ids()
-            words_ids = [a if a is not None else -1 for a in words_ids]
-            all_words_ids.append(torch.tensor(words_ids))
-            data.append(tok_sent["input_ids"].squeeze())
-            sentence_labels = [pad_label_value] * max_length
+            all_attention_mask.append(encoding["attention_mask"])
+            word_ids = encoding.word_ids()
+            word_ids = [w if w is not None else -1 for w in word_ids]
+
+            all_input_ids.append(encoding["input_ids"].squeeze(0))
+            all_word_ids.append(torch.tensor(word_ids))
+
+            sentence_labels = []
             for idx, token in enumerate(sentence):
-                if idx >= max_length:
+                if idx >= max_len:
                     break
                 if token["upos"] in upos_list and token["frsemcor:noun"] != "*":
-                    sentence_labels[idx] = token["frsemcor:noun"]
-            targets.append(sentence_labels)
-    data = torch.stack(data)
-    all_words_ids = torch.stack(all_words_ids)
-    return data, targets, all_words_ids
+                    sentence_labels.append(token["frsemcor:noun"])
 
-'''def prepare_data_for_finetuning(path, tokenize, upos_list: list = ["NOUN","PROPN","NUM"]):
-    data, targets, all_words_ids = [], [], []
 
-    with open(path, encoding="UTF-8") as f:
-        for sentence in parse_incr(f):
-            words = [token["form"] for token in sentence]
-            tok_sent = tokenize(words, is_split_into_words=True, return_tensors='pt', padding='max_length', max_length=42, truncation=True)
-            words_ids = tok_sent.word_ids()
-            words_ids = [a if a is not None else -1 for a in words_ids]
+            if len(sentence_labels) < max_len:
+                pad_len = max_len - len(sentence_labels)
+                sentence_labels.extend(["*"] * pad_len)
 
-            all_words_ids.append(torch.Tensor(words_ids))
-            data.append(tok_sent["input_ids"].squeeze())
+            all_labels.append(sentence_labels)
 
-            for i, token in enumerate(sentence):
-                if token["upos"] in upos_list and token["frsemcor:noun"] != "*":
-                    targets.append(token["frsemcor:noun"])
+    all_input_ids = torch.stack(all_input_ids, dim=0)
+    all_word_ids = torch.stack(all_word_ids, dim=0)
+    all_attention_mask = torch.stack(all_attention_mask)
 
-    data = torch.stack(data)
-    all_words_ids = torch.stack(all_words_ids)
-    return data, targets, all_words_ids'''
+    return all_input_ids, all_labels, all_word_ids, all_attention_mask
 
 
 def target_encoding(target: list, encoding_dict: dict, update_dict: bool = True):

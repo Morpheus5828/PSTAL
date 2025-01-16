@@ -6,6 +6,7 @@ import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
+from transformers import get_linear_schedule_with_warmup
 
 
 def fit(
@@ -88,7 +89,7 @@ def fit(
     return model, history
 
 
-def fit_ft(
+'''def fit_ft(
         model,
         input_train,
         target_train,
@@ -110,6 +111,7 @@ def fit_ft(
 
     dev_dataset = TensorDataset(input_dev, all_word_ids_dev, target_dev)
     dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+    scheduler = get_linear_schedule_with_warmup(optim, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
 
     num_batches = len(train_dataloader)
 
@@ -170,7 +172,101 @@ def fit_ft(
 
         print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_dev_loss:.4f}")
 
+    return model, history'''
+
+
+def fit_ft(
+        model,
+        input_train,
+        target_train,
+        all_word_ids_train,
+        all_attention_mask_train,
+        input_dev,
+        target_dev,
+        all_word_ids_dev,
+        all_attention_mask_dev,
+        nb_epochs,
+        batch_size,
+        device,
+        warmup_steps=100
+):
+    criterion = nn.CrossEntropyLoss()
+    optim = Adam(lr=1e-4, params=model.parameters())
+
+    train_dataset = TensorDataset(input_train, all_word_ids_train, all_attention_mask_train, target_train)
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+    dev_dataset = TensorDataset(input_dev, all_word_ids_dev, all_attention_mask_dev, target_dev)
+    dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+
+    num_batches = len(train_dataloader)
+    total_steps = num_batches * nb_epochs
+    scheduler = get_linear_schedule_with_warmup(optim, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
+
+    history = {"train_loss": [], "validation_loss": []}
+    pad_label_value = -100
+
+    for epoch in range(nb_epochs):
+        model.train()
+        total_loss = 0
+        for batch_X, batch_word_ids, attention_mask, batch_Y in train_dataloader:
+            batch_X = batch_X.to(device)
+            attention_mask = attention_mask.to(device)
+            batch_word_ids = batch_word_ids.to(device)
+            batch_Y = batch_Y.to(device)
+
+            main_labels = []
+            for labels in batch_Y:
+                valid = [label.item() for label in labels if label.item() != pad_label_value]
+                main_labels.append(valid[0])
+
+            main_labels = torch.tensor(main_labels, device=device)
+
+            output = model(batch_X, batch_word_ids, attention_mask, device)
+            mask = main_labels != 0
+            output = output[mask]
+            main_labels = main_labels[mask]
+            loss = criterion(output, main_labels)
+
+            optim.zero_grad()
+            loss.backward()
+            optim.step()
+            scheduler.step()
+
+            total_loss += loss.item()
+
+        avg_train_loss = total_loss / num_batches
+        history["train_loss"].append(avg_train_loss)
+
+        model.eval()
+        total_dev_loss = 0
+        with torch.no_grad():
+            for batch_X, batch_word_ids, attention_mask, batch_Y in dev_loader:
+                batch_X = batch_X.to(device)
+                attention_mask = attention_mask.to(device)
+                batch_word_ids = batch_word_ids.to(device)
+                batch_Y = batch_Y.to(device)
+
+                main_labels = []
+                for labels in batch_Y:
+                    valid = [label.item() for label in labels if label.item() != pad_label_value]
+                    main_labels.append(valid[0])
+
+                main_labels = torch.tensor(main_labels, device=device)
+                output = model(batch_X, batch_word_ids, attention_mask, device)
+                mask = main_labels != 0
+                output = output[mask]
+                main_labels = main_labels[mask]
+                loss = criterion(output, main_labels)
+                total_dev_loss += loss.item()
+
+        avg_dev_loss = total_dev_loss / len(dev_loader)
+        history["validation_loss"].append(avg_dev_loss)
+
+        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_dev_loss:.4f}")
+
     return model, history
+
 
 
 
