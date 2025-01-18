@@ -36,21 +36,46 @@ def download_pred_file(
             f_out.write("\n")
 
 
-def download_pred_file_ft(model, inputs_test, all_word_ids_test, device, output_file_path, all_attention_mask_test, encoding_dict, sequoia_test_path, upos_list=["NOUN", "PROPN", "NUM"]):
+def download_pred_file_ft(
+        model,
+        test_loader,
+        encoding_dict,
+        sequoia_test_path,
+        output_file_path,
+        device,
+        upos_list=["NOUN", "PROPN", "NUM"]):
     model.eval()
     rev_encoding_dict = {v: k for k, v in encoding_dict.items()}
-    with open(sequoia_test_path, "r", encoding="utf-8") as f_in, open(output_file_path, "w", encoding="utf-8") as f_out:
+
+    with open(sequoia_test_path, "r", encoding="utf-8") as f_in:
         sentences = list(parse_incr(f_in))
-        inputs_test = inputs_test.to(device)
-        all_word_ids_test = all_word_ids_test.to(device)
-        all_attention_mask_test = all_attention_mask_test.to(device)
-        with torch.no_grad():
-            outputs = model(inputs_test, all_word_ids_test, all_attention_mask_test, device)
-            _, pred_idxs = torch.max(outputs, dim=1)
-        for idx, sentence in enumerate(sentences):
-            pred_label = rev_encoding_dict[pred_idxs[idx].item()]
-            for token in sentence:
-                if token["upos"] in upos_list and token["frsemcor:noun"] != "*":
-                    token["frsemcor:noun"] = pred_label
+
+    all_predictions = []
+    with torch.no_grad():
+        for batch in test_loader:
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+
+            outputs = model(input_ids, attention_mask)
+            _, pred_idxs = torch.max(outputs, dim=2)
+            all_predictions.extend(pred_idxs.cpu().numpy())
+
+    with open(output_file_path, "w", encoding="utf-8") as f_out:
+        pred_idx_iter = iter(all_predictions)
+        for sentence in sentences:
+            predictions = next(pred_idx_iter)
+            for idx, token in enumerate(sentence):
+                if token["upos"] in upos_list and token.get("frsemcor:noun", "*") != "*":
+                    if idx < len(predictions):
+                        pred_label_idx = predictions[idx]
+                        pred_label = rev_encoding_dict.get(pred_label_idx, "*")
+                        token["frsemcor:noun"] = pred_label
+                    else:
+                        token["frsemcor:noun"] = "*"
             f_out.write(sentence.serialize())
             f_out.write("\n")
+
+
+
+
+

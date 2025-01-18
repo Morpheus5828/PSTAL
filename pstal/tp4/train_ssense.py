@@ -6,7 +6,8 @@ import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
-from transformers import get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup, AutoTokenizer
+from torch.nn.utils.rnn import pad_sequence
 
 
 def fit(
@@ -89,183 +90,82 @@ def fit(
     return model, history
 
 
-'''def fit_ft(
-        model,
-        input_train,
-        target_train,
-        all_word_ids_train,
-        input_dev,
-        target_dev,
-        all_word_ids_dev,
-        nb_epochs,
-        batch_size,
-        device,
-):
-    criterion = nn.CrossEntropyLoss()
-    optim = Adam(lr=1e-4, params=model.parameters())
+def collate_fn(batch):
+    input_ids = [item['input_ids'] for item in batch]
+    attention_masks = [item['attention_mask'] for item in batch]
+    word_ids = [item['word_ids'] for item in batch]
+    labels = [item['labels'] for item in batch]
+
+    input_ids = pad_sequence(input_ids, batch_first=True, padding_value=0)
+    attention_masks = pad_sequence(attention_masks, batch_first=True, padding_value=0)
+    word_ids = pad_sequence(word_ids, batch_first=True, padding_value=-1)
+    labels = pad_sequence(labels, batch_first=True, padding_value=-100)
+
+    return {
+        'input_ids': input_ids,
+        'attention_mask': attention_masks,
+        'word_ids': word_ids,
+        'labels': labels
+    }
+
+
+def fit_ft(model, train_loader, dev_loader, nb_epochs, device, learning_rate=1e-4):
+    criterion = nn.CrossEntropyLoss(ignore_index=-100)  # Ignorer les labels padding
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
     history = {"train_loss": [], "validation_loss": []}
 
-    train_dataset = TensorDataset(input_train, all_word_ids_train, target_train)
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
-    dev_dataset = TensorDataset(input_dev, all_word_ids_dev, target_dev)
-    dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-    scheduler = get_linear_schedule_with_warmup(optim, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
-
-    num_batches = len(train_dataloader)
-
-    pad_label_value = -100
-
     for epoch in range(nb_epochs):
         model.train()
-        total_loss = 0
-        for batch_X, batch_word_ids, batch_Y in train_dataloader:
-            batch_X = batch_X.to(device)
-            batch_word_ids = batch_word_ids.to(device)
-            batch_Y = batch_Y.to(device)
+        total_train_loss = 0
+        for batch in train_loader:
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            labels = batch["labels"].to(device)
 
-            main_labels = []
-            for labels in batch_Y:
-                valid = [label.item() for label in labels if label.item() != pad_label_value]
-                if valid:
-                    main_labels.append(valid[0])
-                else:
-                    main_labels.append(pad_label_value)
-            main_labels = torch.tensor(main_labels, device=device)
+            outputs = model(input_ids, attention_mask)
 
-            output = model(batch_X, batch_word_ids, device)
-            loss = criterion(output, main_labels)
+            outputs = outputs.view(-1, outputs.size(-1))
+            labels = labels.view(-1)
+            mask = labels != 0
+            outputs = outputs[mask]
+            batch_Y = labels[mask]
 
-            optim.zero_grad()
+            optimizer.zero_grad()
+
+            loss = criterion(outputs, batch_Y)
             loss.backward()
-            optim.step()
+            optimizer.step()
 
-            total_loss += loss.item()
+            total_train_loss += loss.item()
 
-        avg_train_loss = total_loss / num_batches
+        avg_train_loss = total_train_loss / len(train_loader)
         history["train_loss"].append(avg_train_loss)
 
         model.eval()
-        total_dev_loss = 0
+        total_val_loss = 0
         with torch.no_grad():
-            for batch_X, batch_word_ids, batch_Y in dev_loader:
-                batch_X = batch_X.to(device)
-                batch_word_ids = batch_word_ids.to(device)
-                batch_Y = batch_Y.to(device)
+            for batch in dev_loader:
+                input_ids = batch["input_ids"].to(device)
+                attention_mask = batch["attention_mask"].to(device)
+                labels = batch["labels"].to(device)
 
-                main_labels = []
-                for labels in batch_Y:
-                    valid = [label.item() for label in labels if label.item() != pad_label_value]
-                    if valid:
-                        main_labels.append(valid[0])
-                    else:
-                        main_labels.append(pad_label_value)
-                main_labels = torch.tensor(main_labels, device=device)
+                outputs = model(input_ids, attention_mask)
 
-                output = model(batch_X, batch_word_ids, device)
-                loss = criterion(output, main_labels)
-                total_dev_loss += loss.item()
+                outputs = outputs.view(-1, outputs.size(-1))
+                labels = labels.view(-1)
 
-        avg_dev_loss = total_dev_loss / len(dev_loader)
-        history["validation_loss"].append(avg_dev_loss)
+                loss = criterion(outputs, labels)
+                total_val_loss += loss.item()
 
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_dev_loss:.4f}")
+        avg_val_loss = total_val_loss / len(dev_loader)
+        history["validation_loss"].append(avg_val_loss)
 
-    return model, history'''
-
-
-def fit_ft(
-        model,
-        input_train,
-        target_train,
-        all_word_ids_train,
-        all_attention_mask_train,
-        input_dev,
-        target_dev,
-        all_word_ids_dev,
-        all_attention_mask_dev,
-        nb_epochs,
-        batch_size,
-        device,
-        warmup_steps=100
-):
-    criterion = nn.CrossEntropyLoss()
-    optim = Adam(lr=1e-4, params=model.parameters())
-
-    train_dataset = TensorDataset(input_train, all_word_ids_train, all_attention_mask_train, target_train)
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
-    dev_dataset = TensorDataset(input_dev, all_word_ids_dev, all_attention_mask_dev, target_dev)
-    dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-
-    num_batches = len(train_dataloader)
-    total_steps = num_batches * nb_epochs
-    scheduler = get_linear_schedule_with_warmup(optim, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
-
-    history = {"train_loss": [], "validation_loss": []}
-    pad_label_value = -100
-
-    for epoch in range(nb_epochs):
-        model.train()
-        total_loss = 0
-        for batch_X, batch_word_ids, attention_mask, batch_Y in train_dataloader:
-            batch_X = batch_X.to(device)
-            attention_mask = attention_mask.to(device)
-            batch_word_ids = batch_word_ids.to(device)
-            batch_Y = batch_Y.to(device)
-
-            main_labels = []
-            for labels in batch_Y:
-                valid = [label.item() for label in labels if label.item() != pad_label_value]
-                main_labels.append(valid[0])
-
-            main_labels = torch.tensor(main_labels, device=device)
-
-            output = model(batch_X, batch_word_ids, attention_mask, device)
-            mask = main_labels != 0
-            output = output[mask]
-            main_labels = main_labels[mask]
-            loss = criterion(output, main_labels)
-
-            optim.zero_grad()
-            loss.backward()
-            optim.step()
-            scheduler.step()
-
-            total_loss += loss.item()
-
-        avg_train_loss = total_loss / num_batches
-        history["train_loss"].append(avg_train_loss)
-
-        model.eval()
-        total_dev_loss = 0
-        with torch.no_grad():
-            for batch_X, batch_word_ids, attention_mask, batch_Y in dev_loader:
-                batch_X = batch_X.to(device)
-                attention_mask = attention_mask.to(device)
-                batch_word_ids = batch_word_ids.to(device)
-                batch_Y = batch_Y.to(device)
-
-                main_labels = []
-                for labels in batch_Y:
-                    valid = [label.item() for label in labels if label.item() != pad_label_value]
-                    main_labels.append(valid[0])
-
-                main_labels = torch.tensor(main_labels, device=device)
-                output = model(batch_X, batch_word_ids, attention_mask, device)
-                mask = main_labels != 0
-                output = output[mask]
-                main_labels = main_labels[mask]
-                loss = criterion(output, main_labels)
-                total_dev_loss += loss.item()
-
-        avg_dev_loss = total_dev_loss / len(dev_loader)
-        history["validation_loss"].append(avg_dev_loss)
-
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Test Loss: {avg_dev_loss:.4f}")
+        print(
+            f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}")
 
     return model, history
+
 
 
 

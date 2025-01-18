@@ -6,7 +6,7 @@ import os
 import sys
 
 import torch
-
+from torch.nn.utils.rnn import pad_sequence
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_path = os.path.abspath(os.path.join(current_dir, '../../../lib'))
@@ -51,66 +51,54 @@ def contextual_embeddings(
     return input_embeddings, target_labels
 
 
-def prepare_data_for_finetuning(
-        path,
-        tokenizer,
-        upos_list=["NOUN", "PROPN", "NUM"],
-        max_len=30
-):
-
-    all_input_ids = []
-    all_word_ids = []
-    all_labels = []
-    all_attention_mask = []
+def prepare_data_for_finetuning(path, tokenizer, encoding_dict, upos_list=["NOUN", "PROPN", "NUM"], max_length=30, pad_label_value=-100):
+    input_ids = []
+    attention_masks = []
+    word_ids_list = []
+    labels = []
 
     with open(path, encoding="utf-8") as f:
         for sentence in parse_incr(f):
             words = [token["form"] for token in sentence]
-
-            encoding = tokenizer(
+            tok_sent = tokenizer(
                 words,
                 is_split_into_words=True,
-                return_tensors='pt',
-                padding='max_length',
-                max_length=max_len,
+                return_tensors="pt",
+                padding="max_length",
+                max_length=max_length,
                 truncation=True
             )
-            all_attention_mask.append(encoding["attention_mask"])
-            word_ids = encoding.word_ids()
+
+            word_ids = tok_sent.word_ids()
             word_ids = [w if w is not None else -1 for w in word_ids]
+            word_ids_list.append(torch.tensor(word_ids))
+            input_ids.append(tok_sent["input_ids"].squeeze(0))
+            attention_masks.append(tok_sent["attention_mask"].squeeze(0))
 
-            all_input_ids.append(encoding["input_ids"].squeeze(0))
-            all_word_ids.append(torch.tensor(word_ids))
-
-            sentence_labels = []
+            sentence_labels = [pad_label_value] * max_length
             for idx, token in enumerate(sentence):
-                if idx >= max_len:
+                if idx >= max_length:
                     break
-                if token["upos"] in upos_list and token["frsemcor:noun"] != "*":
-                    sentence_labels.append(token["frsemcor:noun"])
+                if token["upos"] in upos_list:
+                    label = token.get("frsemcor:noun")
+                    if label not in encoding_dict:
+                        encoding_dict[label] = len(encoding_dict)
+                    sentence_labels[idx] = encoding_dict[label]
+            labels.append(sentence_labels)
 
+    input_ids = torch.stack(input_ids)
+    attention_masks = torch.stack(attention_masks)
+    word_ids_list = torch.stack(word_ids_list)
 
-            if len(sentence_labels) < max_len:
-                pad_len = max_len - len(sentence_labels)
-                sentence_labels.extend(["*"] * pad_len)
-
-            all_labels.append(sentence_labels)
-
-    all_input_ids = torch.stack(all_input_ids, dim=0)
-    all_word_ids = torch.stack(all_word_ids, dim=0)
-    all_attention_mask = torch.stack(all_attention_mask)
-
-    return all_input_ids, all_labels, all_word_ids, all_attention_mask
+    return input_ids, labels, word_ids_list, attention_masks, encoding_dict
 
 
 def target_encoding(target: list, encoding_dict: dict, update_dict: bool = True):
-    result = []
-    for sequence in target:
-        seq_indices = []
-        for word in sequence:
-            if word not in encoding_dict:
-                if update_dict:
-                    encoding_dict[word] = len(encoding_dict)
-            seq_indices.append(encoding_dict.get(word, -100))
-        result.append(seq_indices)
-    return torch.tensor(result), encoding_dict
+    encoded_targets = []
+    for word in target:
+        print(word)
+        if word not in encoding_dict:
+            if update_dict:
+                encoding_dict[word] = len(encoding_dict)
+        encoded_targets.append(encoding_dict.get(word, 0))
+    return torch.tensor(encoded_targets), encoding_dict

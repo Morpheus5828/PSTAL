@@ -1,9 +1,23 @@
-"""This script is the main function to run model from tp4
-..moduleauthor::Marius THORRE
+"""
+Main script for training and evaluating the super-sense tagger
+..moduleauthor:: Marius THORRE
 """
 
-import os, sys
+import os
+import sys
+import torch
+import warnings
+import matplotlib.pyplot as plt
+from torch.nn.utils.rnn import pad_sequence
+from torch.utils.data import DataLoader, TensorDataset
+from transformers import AutoTokenizer, AutoModel
+from dataset import SupersenseDataset
+from pstal.tp4.model import MLP_FT
+from pstal.tp4.train_ssense import fit_ft
+from pstal.tp4.predict_ssense import download_pred_file_ft
+from pstal.tp4.process_data import prepare_data_for_finetuning, target_encoding
 
+warnings.filterwarnings("ignore")
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -12,119 +26,106 @@ if project_path not in sys.path:
     sys.path.append(project_path)
 
 sequoia_train_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.train")
-sequoia_test_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.test")
 sequoia_dev_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.dev")
-sequoia_simple_small_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.small")
+sequoia_test_path = os.path.join(project_path, "lib/corpus/sequoia-ud.parseme.frsemcor.simple.test")
 
-from process_data import contextual_embeddings, target_encoding, prepare_data_for_finetuning
-from predict_ssense import download_pred_file, download_pred_file_ft
-from train_ssense import fit, fit_ft
-from model import MLP, MLP_FT
-from transformers import AutoTokenizer, AutoModel
-import torch
-import matplotlib.pyplot as plt
-import warnings
-
-warnings.filterwarnings("ignore")
-
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-print(f"Device used: {device}")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
 
-if __name__ == "__main__":
-    tokenize = AutoTokenizer.from_pretrained("almanach/camembert-base")
-    pre_trained_model = AutoModel.from_pretrained("almanach/camembert-base")
-    nb_epochs = 25
-    batch_size = 128
-    hidden_layer = 128
-    encoding_dict = {"*": 0}
-    max_len = 40
+def collate_fn(batch):
+    input_ids = [item['input_ids'] for item in batch]
+    attention_masks = [item['attention_mask'] for item in batch]
+    word_ids = [item['word_ids'] for item in batch]
+    labels = [item['labels'] for item in batch]
 
-    print("Start preprocessing data: \n")
+    input_ids = pad_sequence(input_ids, batch_first=True, padding_value=0)
+    attention_masks = pad_sequence(attention_masks, batch_first=True, padding_value=0)
+    word_ids = pad_sequence(word_ids, batch_first=True, padding_value=-1)
+    labels = pad_sequence(labels, batch_first=True, padding_value=-100)
 
-    '''inputs_train, targets_train = contextual_embeddings(sequoia_train_path, tokenize, pre_trained_model)
-    targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
+    return {
+        'input_ids': input_ids,
+        'attention_mask': attention_masks,
+        'word_ids': word_ids,
+        'labels': labels
+    }
 
-    inputs_dev, targets_dev = contextual_embeddings(sequoia_dev_path, tokenize, pre_trained_model)
-    targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=False)
+nb_epochs = 15
+batch_size = 128
+hidden_layer = 64
+freeze_layers = 2
+learning_rate = 1e-4
+max_length = 50
 
-    model = MLP(d=768, vocab_size_output=len(encoding_dict), hidden_layer=hidden_layer).to(device)
+tokenizer = AutoTokenizer.from_pretrained("almanach/camembert-base")
+pre_trained_model = AutoModel.from_pretrained("almanach/camembert-base")
+encoding_dict = {"*": 0}
 
-    print("Start model: \n")
+print("Preparing data...")
+inputs_train, targets_train, word_ids_train, attention_masks_train, encoding_dict = prepare_data_for_finetuning(
+    sequoia_train_path, tokenizer, encoding_dict=encoding_dict, max_length=max_length
+)
+print(inputs_train.shape)
 
-    print(inputs_train.shape, targets_train.shape)
+inputs_dev, targets_dev, word_ids_dev, attention_masks_dev, encoding_dict = prepare_data_for_finetuning(
+    sequoia_dev_path, tokenizer, encoding_dict=encoding_dict, max_length=max_length
+)
+train_dataset = SupersenseDataset(inputs_train, attention_masks_train, word_ids_train, targets_train)
+dev_dataset = SupersenseDataset(inputs_dev, attention_masks_dev, word_ids_dev, targets_dev)
 
-    model, history = fit(
-        model=model,
-        input_train=inputs_train,
-        target_train=targets_train,
-        input_dev=inputs_dev,
-        target_dev=targets_dev,
-        vocab_size=len(encoding_dict),
-        nb_epochs=nb_epochs,
-        batch_size=batch_size,
-        device=device
-    )
 
-    inputs_test, targets_test = contextual_embeddings(sequoia_test_path, tokenize, pre_trained_model)
-    targets_test, _ = target_encoding(targets_test, encoding_dict, update_dict=False)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
 
-    download_pred_file(
-        model=model,
-        inputs_test=inputs_test,
-        device=device,
-        output_file_path=os.path.join(project_path, "pstal/tp4/prediction.conllu"),
-        encoding_dict=encoding_dict,
-        sequoia_test_path=sequoia_test_path
-    )'''
+num_labels = len(encoding_dict)
+model_ft = MLP_FT(
+    pre_trained_model=pre_trained_model,
+    num_labels=num_labels,
+    freeze_layers=freeze_layers,
+    hidden_layer=hidden_layer
+).to(device)
 
-    inputs_train, targets_train, all_word_ids_train, all_attention_mask_train = prepare_data_for_finetuning(sequoia_train_path, tokenize, max_len=max_len)
-    print(inputs_train.shape, len(targets_train), len(all_word_ids_train))
-    targets_train, encoding_dict = target_encoding(targets_train, encoding_dict, update_dict=True)
+print("Starting training...")
+trained_model, history = fit_ft(
+    model=model_ft,
+    train_loader=train_loader,
+    dev_loader=dev_loader,
+    nb_epochs=nb_epochs,
+    device=device,
+    learning_rate=learning_rate
+)
 
-    inputs_dev, targets_dev, all_word_ids_dev, all_attention_mask_dev = prepare_data_for_finetuning(sequoia_dev_path, tokenize, max_len=max_len)
-    targets_dev, encoding_dict = target_encoding(targets_dev, encoding_dict, update_dict=True)
-    print(encoding_dict)
-    model_ft = MLP_FT(
-        pre_trained_model=pre_trained_model,
-        num_labels=len(encoding_dict),
-        freeze_layers=2
-    ).to(device)
+inputs_test, targets_test, word_ids_test, attention_masks_test, _ = prepare_data_for_finetuning(
+    sequoia_test_path, tokenizer, encoding_dict=encoding_dict, max_length=max_length
+)
 
-    model_ft, history = fit_ft(
-        model=model_ft,
-        input_train=inputs_train,
-        all_attention_mask_train=all_attention_mask_train,
-        target_train=targets_train,
-        all_word_ids_train=all_word_ids_train,
-        input_dev=inputs_dev,
-        all_attention_mask_dev=all_attention_mask_dev,
-        target_dev=targets_dev,
-        all_word_ids_dev=all_word_ids_dev,
-        nb_epochs=nb_epochs,
-        batch_size=batch_size,
-        device=device
-    )
+test_dataset = SupersenseDataset(inputs_test, attention_masks_test, word_ids_test, targets_test)
 
-    inputs_test, _, all_word_ids_test, all_attention_mask_test = prepare_data_for_finetuning(sequoia_test_path, tokenize)
+test_loader = DataLoader(
+    test_dataset,
+    batch_size=batch_size,
+    shuffle=False,
+    collate_fn=collate_fn
+)
 
-    download_pred_file_ft(
-        model=model_ft,
-        inputs_test=inputs_test,
-        all_attention_mask_test=all_attention_mask_test,
-        all_word_ids_test=all_word_ids_test,
-        device=device,
-        output_file_path=os.path.join(project_path, "pstal/tp4/prediction_ft.conllu"),
-        encoding_dict=encoding_dict,
-        sequoia_test_path=sequoia_test_path
-    )
+output_file_path = os.path.join(project_path, "pstal/tp4/prediction_ft.conllu")
+download_pred_file_ft(
+    model=trained_model,
+    test_loader=test_loader,
+    encoding_dict=encoding_dict,
+    sequoia_test_path=sequoia_test_path,
+    output_file_path=output_file_path,
+    device=device
+)
 
-    plt.plot(range(len(history["train_loss"])), history["train_loss"], label="train_loss")
-    plt.plot(range(len(history["validation_loss"])), history["validation_loss"], label="validation_loss")
-    plt.legend()
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss")
-    plt.title("Training loss")
-    plt.savefig(os.path.join(project_path, "pstal/tp4/loss_ft.png"))
+plt.figure()
+plt.plot(range(len(history["train_loss"])), history["train_loss"], label="Training Loss")
+plt.plot(range(len(history["validation_loss"])), history["validation_loss"], label="Validation Loss")
+plt.legend()
+plt.xlabel("Epochs")
+plt.ylabel("Loss")
+plt.title("Training and Validation Loss")
+plt.savefig(os.path.join(project_path, "pstal/tp4/loss_ft.png"))
+plt.show()
 
