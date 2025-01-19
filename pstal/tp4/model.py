@@ -23,7 +23,7 @@ class MLP(nn.Module):
 
 
 class MLP_FT(nn.Module):
-    def __init__(self, pre_trained_model, num_labels, freeze_layers=2, hidden_layer=64):
+    def __init__(self, pre_trained_model, num_labels, hidden_layer, freeze_layers=2):
         super().__init__()
         self.pre_trained_model = pre_trained_model
 
@@ -35,7 +35,7 @@ class MLP_FT(nn.Module):
 
         self.fc1 = nn.Linear(pre_trained_model.config.hidden_size, hidden_layer)
         self.fc2 = nn.Linear(hidden_layer, num_labels)
-        self.dropout = nn.Dropout(0.4)
+        self.dropout = nn.Dropout(0.2)
 
     def forward(self, input_ids, attention_mask):
         outputs = self.pre_trained_model(input_ids=input_ids, attention_mask=attention_mask)

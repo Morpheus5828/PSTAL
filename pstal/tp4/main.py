@@ -9,13 +9,13 @@ import torch
 import warnings
 import matplotlib.pyplot as plt
 from torch.nn.utils.rnn import pad_sequence
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, AutoModel
 from dataset import SupersenseDataset
 from pstal.tp4.model import MLP_FT
 from pstal.tp4.train_ssense import fit_ft
 from pstal.tp4.predict_ssense import download_pred_file_ft
-from pstal.tp4.process_data import prepare_data_for_finetuning, target_encoding
+from pstal.tp4.process_data import prepare_data_for_finetuning
 
 warnings.filterwarnings("ignore")
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -51,15 +51,20 @@ def collate_fn(batch):
         'labels': labels
     }
 
-nb_epochs = 15
+
+nb_epochs = 50
 batch_size = 128
-hidden_layer = 64
-freeze_layers = 2
-learning_rate = 1e-4
-max_length = 50
+hidden_layer = 128
+freeze_layers = 4
+learning_rate = 2e-4
+max_length = 45
 
 tokenizer = AutoTokenizer.from_pretrained("almanach/camembert-base")
 pre_trained_model = AutoModel.from_pretrained("almanach/camembert-base")
+
+#tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+#pre_trained_model = AutoModel.from_pretrained("distilbert-base-uncased")
+
 encoding_dict = {"*": 0}
 
 print("Preparing data...")
@@ -74,9 +79,10 @@ inputs_dev, targets_dev, word_ids_dev, attention_masks_dev, encoding_dict = prep
 train_dataset = SupersenseDataset(inputs_train, attention_masks_train, word_ids_train, targets_train)
 dev_dataset = SupersenseDataset(inputs_dev, attention_masks_dev, word_ids_dev, targets_dev)
 
-
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=True)
+
+print(encoding_dict)
 
 num_labels = len(encoding_dict)
 model_ft = MLP_FT(
@@ -128,4 +134,3 @@ plt.ylabel("Loss")
 plt.title("Training and Validation Loss")
 plt.savefig(os.path.join(project_path, "pstal/tp4/loss_ft.png"))
 plt.show()
-

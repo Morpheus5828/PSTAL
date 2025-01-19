@@ -81,6 +81,7 @@ def prepare_data_for_finetuning(path, tokenizer, encoding_dict, upos_list=["NOUN
                     break
                 if token["upos"] in upos_list:
                     label = token.get("frsemcor:noun")
+
                     if label not in encoding_dict:
                         encoding_dict[label] = len(encoding_dict)
                     sentence_labels[idx] = encoding_dict[label]
@@ -93,12 +94,12 @@ def prepare_data_for_finetuning(path, tokenizer, encoding_dict, upos_list=["NOUN
     return input_ids, labels, word_ids_list, attention_masks, encoding_dict
 
 
+
 def target_encoding(target: list, encoding_dict: dict, update_dict: bool = True):
-    encoded_targets = []
+    result = []
     for word in target:
-        print(word)
         if word not in encoding_dict:
             if update_dict:
                 encoding_dict[word] = len(encoding_dict)
-        encoded_targets.append(encoding_dict.get(word, 0))
-    return torch.tensor(encoded_targets), encoding_dict
+        result.append(encoding_dict[word])
+    return torch.tensor(result), encoding_dict

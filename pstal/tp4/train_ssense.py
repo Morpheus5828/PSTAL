@@ -2,12 +2,12 @@
 ..moduleauthor::Marius THORRE
 """
 
+import numpy as np
 import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
-from transformers import get_linear_schedule_with_warmup, AutoTokenizer
-from torch.nn.utils.rnn import pad_sequence
+from transformers import get_scheduler
 
 
 def fit(
@@ -23,7 +23,7 @@ def fit(
 ):
 
     criterion = nn.CrossEntropyLoss()
-    optim = Adam(lr=1e-3, params=model.parameters())
+    optim = Adam(lr=1e-3, params=model.parameters(), weight_decay=1e-5)
 
     history = {
         "train_loss": [],
@@ -58,6 +58,7 @@ def fit(
 
             optim.zero_grad()
             loss.backward()
+
             optim.step()
 
             total_loss += loss.item()
@@ -90,30 +91,14 @@ def fit(
     return model, history
 
 
-def collate_fn(batch):
-    input_ids = [item['input_ids'] for item in batch]
-    attention_masks = [item['attention_mask'] for item in batch]
-    word_ids = [item['word_ids'] for item in batch]
-    labels = [item['labels'] for item in batch]
-
-    input_ids = pad_sequence(input_ids, batch_first=True, padding_value=0)
-    attention_masks = pad_sequence(attention_masks, batch_first=True, padding_value=0)
-    word_ids = pad_sequence(word_ids, batch_first=True, padding_value=-1)
-    labels = pad_sequence(labels, batch_first=True, padding_value=-100)
-
-    return {
-        'input_ids': input_ids,
-        'attention_mask': attention_masks,
-        'word_ids': word_ids,
-        'labels': labels
-    }
-
-
-def fit_ft(model, train_loader, dev_loader, nb_epochs, device, learning_rate=1e-4):
-    criterion = nn.CrossEntropyLoss(ignore_index=-100)  # Ignorer les labels padding
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+def fit_ft(model, train_loader, dev_loader, nb_epochs, device, learning_rate, patience=3):
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
 
     history = {"train_loss": [], "validation_loss": []}
+
+    best_val_loss = np.inf
+    patience_counter = 0
 
     for epoch in range(nb_epochs):
         model.train()
@@ -164,8 +149,16 @@ def fit_ft(model, train_loader, dev_loader, nb_epochs, device, learning_rate=1e-
         print(
             f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}")
 
-    return model, history
+        if avg_val_loss < best_val_loss:
+            best_val_loss = avg_val_loss
+            patience_counter = 0
+        else:
+            patience_counter += 1
 
+        if patience_counter >= patience:
+            print("Early stopping triggered.")
+            break
+    return model, history
 
 
 

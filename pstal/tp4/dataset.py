@@ -2,7 +2,6 @@ from torch.utils.data import Dataset
 
 import torch
 
-
 class SupersenseDataset(Dataset):
     def __init__(self, input_ids, attention_masks, word_ids, labels):
         self.input_ids = input_ids
