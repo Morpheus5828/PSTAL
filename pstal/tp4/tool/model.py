@@ -23,15 +23,20 @@ class MLP(nn.Module):
 
 
 class MLP_FT(nn.Module):
-    def __init__(self, pre_trained_model, num_labels, hidden_layer, freeze_layers=2):
+    def __init__(self, pre_trained_model, num_labels, hidden_layer, pre_trained_model_name, freeze_layers=2):
         super().__init__()
         self.pre_trained_model = pre_trained_model
 
         for param in self.pre_trained_model.parameters():
             param.requires_grad = False
-        for layer in self.pre_trained_model.encoder.layer[-freeze_layers:]:
-            for param in layer.parameters():
-                param.requires_grad = True
+        if pre_trained_model_name == "Distilbert":
+            for layer in self.pre_trained_model.transformer.layer[-freeze_layers:]:
+                for param in layer.parameters():
+                    param.requires_grad = True
+        else:
+            for layer in self.pre_trained_model.encoder.layer[-freeze_layers:]:
+                for param in layer.parameters():
+                    param.requires_grad = True
 
         self.fc1 = nn.Linear(pre_trained_model.config.hidden_size, hidden_layer)
         self.fc2 = nn.Linear(hidden_layer, num_labels)

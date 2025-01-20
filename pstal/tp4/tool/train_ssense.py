@@ -7,7 +7,6 @@ import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
-from transformers import get_scheduler
 
 
 def fit(
@@ -19,11 +18,12 @@ def fit(
         vocab_size,
         nb_epochs,
         batch_size,
+        learning_rate,
         device,
 ):
 
     criterion = nn.CrossEntropyLoss()
-    optim = Adam(lr=1e-3, params=model.parameters(), weight_decay=1e-5)
+    optim = Adam(lr=learning_rate, params=model.parameters(), weight_decay=1e-5)
 
     history = {
         "train_loss": [],
@@ -47,9 +47,6 @@ def fit(
             batch_X = batch_X.to(device).float()
             batch_Y = batch_Y.to(device).long()
             output = model(batch_X)
-
-            print("output.shape =", output.shape)
-            print("batch_Y.shape =", batch_Y.shape)
 
             output = output.view(-1, vocab_size)
             batch_Y = batch_Y.view(-1)
