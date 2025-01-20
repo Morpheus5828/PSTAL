@@ -82,7 +82,7 @@
 18	imputables	imputable	ADJ	_	Number=Plur	15	amod	_	_	*	*	*
 19	à	à	ADP	_	_	21	case	_	_	*	*	*
 20	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	21	det	_	_	*	*	*
-21	homme	homme	NOUN	_	Gender=Masc|Number=Sing	18	obl:arg	_	_	*	Substance	*
+21	homme	homme	NOUN	_	Gender=Masc|Number=Sing	18	obl:arg	_	_	*	Person	*
 22	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 
@@ -114,7 +114,7 @@
 24	Autriche	Autriche	PROPN	_	Gender=Fem|Number=Sing	19	nmod	_	_	*	Institution	2:LOC
 25	et	et	CCONJ	_	_	27	cc	_	_	*	*	*
 26	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	27	det	_	_	*	*	*
-27	manière	manière	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	*	Event	*
+27	manière	manière	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	*	Act	*
 28	dont	dont	PRON	_	PronType=Rel	30	iobj	_	_	*	*	*
 29	cela	cela	PRON	_	Number=Sing|PronType=Dem	30	nsubj	_	_	*	*	*
 30	affectera	affecter	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	27	acl:relcl	_	_	*	*	*
@@ -152,7 +152,7 @@
 23	Act	Act	X	_	Foreign=Yes	20	flat:foreign	_	_	*	*	2
 24	et	et	CCONJ	_	_	29	cc	_	_	*	*	*
 25	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	26	det	_	_	*	*	*
-26	mesure	mesure	NOUN	_	Gender=Fem|Number=Sing	29	nsubj	_	_	*	Act	*
+26	mesure	mesure	NOUN	_	Gender=Fem|Number=Sing	29	nsubj	_	_	*	Cognition	*
 27	législative	législatif	ADJ	_	Gender=Fem|Number=Sing	26	amod	_	_	*	*	*
 28	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	29	aux:tense	_	_	*	*	*
 29	permis	permettre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part	12	conj	_	_	*	*	*
@@ -179,7 +179,7 @@
 8	position	position	NOUN	_	Gender=Fem|Number=Sing	5	obj	_	_	*	Cognition	*
 9	de	de	ADP	_	_	11	case	_	_	*	*	*
 10	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-11	culture	culture	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Act	*
+11	culture	culture	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Institution	*
 12	en	en	ADP	_	_	13	case	_	_	*	*	*
 13	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Institution	1:LOC
 14	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
@@ -244,7 +244,7 @@
 15	diffuser	diffuser	VERB	_	VerbForm=Inf	12	conj	_	_	*	*	*
 16	de	de	ADP	_	_	18	det	_	ExtPos=DET	1:DET|MWE|IRREG	*	*
 17	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	fixed	_	_	1	*	*
-18	culture	culture	NOUN	_	Gender=Fem|Number=Sing	15	obj	_	_	*	Act	*
+18	culture	culture	NOUN	_	Gender=Fem|Number=Sing	15	obj	_	_	*	Attribute	*
 19	selon	selon	ADP	_	_	21	case	_	_	*	*	*
 20	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	21	det	_	_	*	*	*
 21	modalités	modalité	NOUN	_	Gender=Fem|Number=Plur	15	obl:mod	_	_	*	Cognition	*
@@ -286,7 +286,7 @@
 14	Stenzel	Stenzel	PROPN	_	_	13	flat:name	_	_	*	Person	1:PERS
 15	sur	sur	ADP	_	_	17	case	_	_	*	*	*
 16	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Act	*
+17	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Cognition	*
 18	EQUAL	EQUAL	PROPN	_	_	17	nmod	_	_	*	Cognition	2:ORG
 19	car	car	CCONJ	_	_	21	cc	_	_	*	*	*
 20	je	il	PRON	_	Number=Sing|Person=1	21	nsubj	_	_	*	*	*
@@ -317,7 +317,7 @@
 45	de	de	ADP	_	_	47	case	_	_	*	*	*
 46	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	47	det	_	_	*	*	*
 47	initiatives	initiative	NOUN	_	Gender=Fem|Number=Plur	37	nmod	_	_	*	Cognition	*
-48	ADAPT	ADAPT	PROPN	_	_	47	nmod	_	_	*	Cognition	7:ORG
+48	ADAPT	ADAPT	PROPN	_	_	47	nmod	_	_	*	Institution	7:ORG
 49	et	et	CCONJ	_	_	50	cc	_	_	*	*	*
 50	Employment	Employment	PROPN	_	_	48	conj	_	_	*	Institution	8:ORG
 51	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
@@ -663,7 +663,7 @@
 23	intérêts	intérêt	NOUN	_	Gender=Masc|Number=Plur	10	conj	_	_	*	Act	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	26	det	_	_	*	*	*
-26	communautés	communauté	NOUN	_	Gender=Fem|Number=Plur	23	nmod	_	_	*	Artifact	*
+26	communautés	communauté	NOUN	_	Gender=Fem|Number=Plur	23	nmod	_	_	*	Person	*
 27	de	de	ADP	_	_	28	case	_	_	*	*	*
 28	pêcheurs	pêcheur	NOUN	_	Gender=Masc|Number=Plur	26	nmod	_	_	*	Person	*
 29	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
@@ -850,7 +850,7 @@
 24	proposition	proposition	NOUN	_	Gender=Fem|Number=Sing	5	obj	_	_	*	Cognition	*
 25	concernant	concerner	VERB	_	Tense=Pres|VerbForm=Part	24	acl	_	_	*	*	*
 26	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	27	det	_	_	*	*	*
-27	émissions	émission	NOUN	_	Gender=Fem|Number=Plur	25	obj	_	_	*	Cognition	*
+27	émissions	émission	NOUN	_	Gender=Fem|Number=Plur	25	obj	_	_	*	Act	*
 28	de	de	ADP	_	_	29	case	_	_	*	*	*
 29	NOX	NOX	NOUN	_	Gender=Masc	27	nmod	_	_	*	Cognition	*
 30	en	en	ADP	_	_	31	case	_	_	3:_|MWE|LEX	*	*
@@ -883,7 +883,7 @@
 7	nom	nom	NOUN	_	Gender=Masc|Number=Sing	20	obl:mod	_	_	1	*	*
 8	de	de	ADP	_	_	10	case	_	_	*	*	*
 9	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	10	det	_	_	*	*	*
-10	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Institution	*
+10	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Person	*
 11	de	de	ADP	_	_	13	case	_	_	*	*	*
 12	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det	_	_	*	*	*
 13	parti	parti	NOUN	_	Gender=Masc|Number=Sing	10	nmod	_	_	*	Institution	1:ORG
@@ -936,7 +936,7 @@
 25	-	-	PUNCT	_	_	9	punct	_	_	*	*	*
 26	à	à	ADP	_	_	28	case	_	_	*	*	*
 27	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	28	det	_	_	*	*	*
-28	droit	droit	NOUN	_	Gender=Masc|Number=Sing	7	obl:arg	_	_	*	Act	*
+28	droit	droit	NOUN	_	Gender=Masc|Number=Sing	7	obl:arg	_	_	*	Attribute	*
 29	à	à	ADP	_	_	31	case	_	_	*	*	*
 30	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	31	det	_	_	*	*	*
 31	vie	vie	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	3:_|MWE|LEX	*	*
@@ -987,7 +987,7 @@
 18	plus	plus	ADV	_	_	20	advmod	_	_	*	*	*
 19	de	de	ADP	_	_	18	fixed	_	_	*	*	*
 20	cent	cent	NUM	_	NumType=Card	21	nummod	_	_	*	*	*
-21	signatures	signature	NOUN	_	Gender=Fem|Number=Plur	17	obj	_	_	*	Cognition	*
+21	signatures	signature	NOUN	_	Gender=Fem|Number=Plur	17	obj	_	_	*	Possession	*
 22	de	de	ADP	_	_	23	case	_	_	*	*	*
 23	députés	député	NOUN	_	Gender=Masc|Number=Plur	21	nmod	_	_	*	Person	*
 24	européens	européen	ADJ	_	Gender=Masc|Number=Plur	23	amod	_	_	*	*	*
@@ -1223,7 +1223,7 @@
 10	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det	_	_	*	*	*
 11	plus	plus	ADV	_	_	12	advmod	_	_	*	*	*
 12	grand	grand	ADJ	_	Gender=Masc|Number=Sing	13	amod	_	_	*	*	*
-13	sérieux	sérieux	NOUN	_	Gender=Masc|Number=Sing	6	obl:arg	_	_	*	Cognition	*
+13	sérieux	sérieux	NOUN	_	Gender=Masc|Number=Sing	6	obl:arg	_	_	*	Possession	*
 14	et	et	CCONJ	_	_	16	cc	_	_	*	*	*
 15	à	à	ADP	_	_	16	mark	_	_	*	*	*
 16	fournir	fournir	VERB	_	VerbForm=Inf	6	conj	_	_	1:_|MWE-LVC.full|_	*	*
@@ -1314,7 +1314,7 @@
 29	,	,	PUNCT	_	_	22	punct	_	_	*	*	*
 30	faute	faute	ADV	_	Gender=Fem|Number=Sing	22	advmod	_	_	2:ADP|MWE|IRREG	*	*
 31	de	de	ADP	_	_	32	case	_	_	2	*	*
-32	produits	produit	NOUN	_	Gender=Masc|Number=Plur	30	obl:arg	_	_	*	Act	*
+32	produits	produit	NOUN	_	Gender=Masc|Number=Plur	30	obl:arg	_	_	*	Possession	*
 33	alimentaires	alimentaire	ADJ	_	Number=Plur	32	amod	_	_	*	*	*
 34	,	,	PUNCT	_	_	36	punct	_	_	*	*	*
 35	de	de	ADP	_	_	36	case	_	_	*	*	*
@@ -1593,7 +1593,7 @@
 62	écrit	écrire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	56	acl:relcl	_	_	*	*	*
 63	pour	pour	ADP	_	_	65	case	_	_	*	*	*
 64	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	65	det	_	_	*	*	*
-65	conférence	conférence	NOUN	_	Gender=Fem|Number=Sing	62	obl:mod	_	_	*	Act	*
+65	conférence	conférence	NOUN	_	Gender=Fem|Number=Sing	62	obl:mod	_	_	*	Cognition	*
 66	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 
@@ -1621,7 +1621,7 @@
 6	qu'	que	SCONJ	_	_	14	mark	_	_	*	*	*
 7	à	à	ADP	_	_	9	case	_	_	*	*	*
 8	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	9	det	_	_	*	*	*
-9	conférence	conférence	NOUN	_	Gender=Fem|Number=Sing	14	obl:mod	_	_	*	Act	*
+9	conférence	conférence	NOUN	_	Gender=Fem|Number=Sing	14	obl:mod	_	_	*	Time	*
 10	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	11	det	_	_	*	*	*
 11	enthousiasme	enthousiasme	NOUN	_	Gender=Masc|Number=Sing	14	nsubj	_	_	*	State	*
 12	était	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	14	cop	_	_	*	*	*
@@ -1654,7 +1654,7 @@
 14	pour	pour	ADP	_	_	15	mark	_	_	*	*	*
 15	complimenter	complimenter	VERB	_	VerbForm=Inf	11	advcl	_	_	*	*	*
 16	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	commissaire	commissaire	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	*	Act	*
+17	commissaire	commissaire	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	*	Cognition	*
 18	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 19	parce	parce	SCONJ	_	_	23	mark	_	ExtPos=SCONJ	1:PRON|MWE|CRAN	*	*
 20	qu'	que	SCONJ	_	_	19	fixed	_	_	1	*	*
@@ -1674,7 +1674,7 @@
 34	enfin	enfin	ADV	_	_	35	advmod	_	_	*	*	*
 35	pris	prendre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part	23	ccomp	_	_	2:_|MWE-LVC.full|_	*	*
 36	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	37	det	_	_	*	*	*
-37	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	35	obj	_	_	2	Act	*
+37	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	35	obj	_	_	2	Cognition	*
 38	,	,	PUNCT	_	_	23	punct	_	_	*	*	*
 39	tandis	tandis	ADV	_	_	43	mark	_	ExtPos=SCONJ	3:PRON|MWE|CRAN	*	*
 40	qu'	que	SCONJ	_	_	39	fixed	_	_	3	*	*
@@ -1688,7 +1688,7 @@
 48	longtemps	longtemps	ADV	_	_	43	advmod	_	_	*	*	*
 49	à	à	ADP	_	_	51	case	_	_	*	*	*
 50	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	51	det	_	_	*	*	*
-51	arrière-plan	arrière-plan	NOUN	_	Gender=Masc|Number=Sing	43	obl:arg	_	_	5:NOUN|MWE|IRREG	Institution	*
+51	arrière-plan	arrière-plan	NOUN	_	Gender=Masc|Number=Sing	43	obl:arg	_	_	5:NOUN|MWE|IRREG	Cognition	*
 52	.	.	PUNCT	_	_	5	punct	_	_	*	*	*
 
 
@@ -1720,7 +1720,7 @@
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det	_	_	*	*	*
 26	Commission	commission	NOUN	_	Gender=Fem|Number=Sing	23	nmod	_	_	*	*	2:ORG
-27	Prodi	Prodi	PROPN	_	_	26	nmod	_	_	*	Cognition	2
+27	Prodi	Prodi	PROPN	_	_	26	nmod	_	_	*	Act	2
 28	et	et	CCONJ	_	_	32	cc	_	_	*	*	*
 29	dont	dont	PRON	_	PronType=Rel	32	iobj	_	_	*	*	*
 30	on	il	PRON	_	Number=Sing|Person=3	32	nsubj	_	_	*	*	*
@@ -1882,12 +1882,12 @@
 7	illusion	illusion	NOUN	_	Gender=Fem|Number=Sing	5	obj	_	_	*	Cognition	*
 8	selon	selon	ADP	_	_	9	case	_	_	*	*	*
 9	laquelle	lequel	PRON	_	Gender=Fem|Number=Sing|PronType=Rel	15	obl:mod	_	_	*	*	*
-10	argent	argent	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Cognition	*
+10	argent	argent	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Possession	*
 11	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
 12	intelligence	intelligence	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	*	Attribute	*
 13	seraient	être	AUX	_	Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	15	cop	_	_	*	*	*
 14	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	15	det	_	_	*	*	*
-15	facteurs	facteur	NOUN	_	Gender=Masc|Number=Plur	7	acl:relcl	_	_	*	Event	*
+15	facteurs	facteur	NOUN	_	Gender=Masc|Number=Plur	7	acl:relcl	_	_	*	Possession	*
 16	liés	lier	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	15	acl	_	_	*	*	*
 17	.	.	PUNCT	_	_	5	punct	_	_	*	*	*
 
@@ -1984,7 +1984,7 @@
 # text = Monsieur le Président, mes chers collègues, le développement d'une infrastructure de transport efficace sur le territoire européen est primordial, notamment pour les régions enclavées et les zones rurales, tant en France que dans de nombreux autres États.
 1	Monsieur	monsieur	NOUN	_	Gender=Masc|Number=Sing	22	vocative	_	_	*	Person	*
 2	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-3	Président	président	NOUN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	Institution	*
+3	Président	président	NOUN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	Person	*
 4	,	,	PUNCT	_	_	7	punct	_	_	*	*	*
 5	mes	son	DET	_	Number=Plur|Poss=Yes	7	det	_	_	*	*	*
 6	chers	cher	ADJ	_	Gender=Masc|Number=Plur	7	amod	_	_	*	*	*
@@ -1994,7 +1994,7 @@
 10	développement	développement	NOUN	_	Gender=Masc|Number=Sing	22	nsubj	_	_	*	Act	*
 11	d'	de	ADP	_	_	13	case	_	_	*	*	*
 12	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	13	det	_	_	*	*	*
-13	infrastructure	infrastructure	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Act	*
+13	infrastructure	infrastructure	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Institution	*
 14	de	de	ADP	_	_	15	case	_	_	*	*	*
 15	transport	transport	NOUN	_	Gender=Masc|Number=Sing	13	nmod	_	_	*	Act	*
 16	efficace	efficace	ADJ	_	Number=Sing	13	amod	_	_	*	*	*
@@ -2103,7 +2103,7 @@
 5	comme	comme	ADP	_	_	6	mark	_	_	*	*	*
 6	positive	positif	ADJ	_	Gender=Fem|Number=Sing	4	xcomp	_	_	*	*	*
 7	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	8	det	_	_	*	*	*
-8	obligation	obligation	NOUN	_	Gender=Fem|Number=Sing	4	obj	_	_	*	Event	*
+8	obligation	obligation	NOUN	_	Gender=Fem|Number=Sing	4	obj	_	_	*	Act	*
 9	imposée	imposer	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	8	acl	_	_	*	*	*
 10	à	à	ADP	_	_	12	case	_	_	*	*	*
 11	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	12	det	_	_	*	*	*
@@ -2118,7 +2118,7 @@
 20	de	de	ADP	_	_	21	mark	_	_	*	*	*
 21	supprimer	supprimer	VERB	_	VerbForm=Inf	18	conj	_	_	*	*	*
 22	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	23	det	_	_	*	*	*
-23	ensemble	ensemble	NOUN	_	Gender=Masc|Number=Sing	21	obj	_	_	*	State	*
+23	ensemble	ensemble	NOUN	_	Gender=Masc|Number=Sing	21	obj	_	_	*	Quantity	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	leur	son	DET	_	Number=Sing|Poss=Yes	26	det	_	_	*	*	*
 26	cheptel	cheptel	NOUN	_	Gender=Masc|Number=Sing	23	nmod	_	_	*	Artifact	*
@@ -2140,7 +2140,7 @@
 11	complémentaire	complémentaire	ADJ	_	Number=Sing	10	amod	_	_	*	*	*
 12	pour	pour	ADP	_	_	14	case	_	_	*	*	*
 13	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	14	det	_	_	*	*	*
-14	produits	produit	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Artifact	*
+14	produits	produit	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Substance	*
 15	tels	tel	ADJ	_	Gender=Masc|Number=Plur	14	amod	_	_	*	*	*
 16	que	que	SCONJ	_	_	18	mark	_	_	*	*	*
 17	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	18	det	_	_	*	*	*
@@ -2227,7 +2227,7 @@
 9	enfermés	enfermer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	8	xcomp	_	_	*	*	*
 10	dans	dans	ADP	_	_	12	case	_	_	*	*	*
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	mutisme	mutisme	NOUN	_	Gender=Masc|Number=Sing	9	obl:mod	_	_	*	Artifact	*
+12	mutisme	mutisme	NOUN	_	Gender=Masc|Number=Sing	9	obl:mod	_	_	*	Attribute	*
 13	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	15	det	_	_	*	*	*
 14	plus	plus	ADV	_	_	15	advmod	_	_	*	*	*
 15	total	total	ADJ	_	Gender=Masc|Number=Sing	12	amod	_	_	*	*	*
@@ -2247,7 +2247,7 @@
 9	sorte	sorte	NOUN	_	Gender=Fem|Number=Sing	5	obl:arg	_	_	1	*	*
 10	,	,	PUNCT	_	_	16	punct	_	_	*	*	*
 11	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	12	det	_	_	*	*	*
-12	saisies	saisie	NOUN	_	Gender=Fem|Number=Plur	16	nsubj	_	_	*	Event	*
+12	saisies	saisie	NOUN	_	Gender=Fem|Number=Plur	16	nsubj	_	_	*	Cognition	*
 13	illégales	illégal	ADJ	_	Gender=Fem|Number=Plur	12	amod	_	_	*	*	*
 14	de	de	ADP	_	_	15	case	_	_	*	*	*
 15	terres	terre	NOUN	_	Gender=Fem|Number=Plur	12	nmod	_	_	*	Possession	*
@@ -2256,7 +2256,7 @@
 18	étendre	étendre	VERB	_	VerbForm=Inf	16	xcomp	_	_	*	*	*
 19	à	à	ADP	_	_	21	case	_	_	*	*	*
 20	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	21	det	_	_	*	*	*
-21	reste	reste	NOUN	_	Gender=Masc|Number=Sing	18	obl:arg	_	_	*	Institution	*
+21	reste	reste	NOUN	_	Gender=Masc|Number=Sing	18	obl:arg	_	_	*	Attribute	*
 22	de	de	ADP	_	_	24	case	_	_	*	*	*
 23	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	24	det	_	_	*	*	*
 24	Afrique	Afrique	PROPN	_	Gender=Fem|Number=Sing	21	nmod	_	_	*	Institution	2:LOC
@@ -2397,7 +2397,7 @@
 11	parlé	parler	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 12	de	de	ADP	_	_	14	case	_	_	*	*	*
 13	votre	son	DET	_	Number=Sing|Poss=Yes	14	det	_	_	*	*	*
-14	souhait	souhait	NOUN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	*	State	*
+14	souhait	souhait	NOUN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	*	Cognition	*
 15	d'	de	ADP	_	_	16	mark	_	_	*	*	*
 16	entrer	entrer	VERB	_	VerbForm=Inf	14	acl	_	_	*	*	*
 17	dans	dans	ADP	_	_	19	case	_	_	*	*	*
@@ -2422,7 +2422,7 @@
 36	souhait	souhait	NOUN	_	Gender=Masc|Number=Sing	33	nsubj	_	_	*	Cognition	*
 37	de	de	ADP	_	_	39	case	_	_	*	*	*
 38	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	39	det	_	_	*	*	*
-39	majorité	majorité	NOUN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	Quantity	*
+39	majorité	majorité	NOUN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	Attribute	*
 40	de	de	ADP	_	_	42	case	_	_	*	*	*
 41	notre	son	DET	_	Number=Sing|Poss=Yes	42	det	_	_	*	*	*
 42	Assemblée	assemblée	NOUN	_	Gender=Fem|Number=Sing	39	nmod	_	_	*	Institution	1:ORG
@@ -2464,14 +2464,14 @@
 31	recherche	recherche	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	Act	*
 32	d'	de	ADP	_	_	34	case	_	_	*	*	*
 33	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	34	det	_	_	*	*	*
-34	devise	devise	NOUN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Cognition	*
+34	devise	devise	NOUN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Act	*
 35	pour	pour	ADP	_	_	37	case	_	_	*	*	*
 36	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	37	det	_	_	*	*	*
 37	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Institution	2:ORG
 38	et	et	CCONJ	_	_	55	cc	_	_	*	*	*
 39	que	que	SCONJ	_	_	55	mark	_	_	*	*	*
 40	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	41	det	_	_	*	*	*
-41	devise	devise	NOUN	_	Gender=Fem|Number=Sing	55	nsubj	_	_	*	Cognition	*
+41	devise	devise	NOUN	_	Gender=Fem|Number=Sing	55	nsubj	_	_	*	Act	*
 42	qui	qui	PRON	_	PronType=Rel	46	nsubj:pass	_	_	*	*	*
 43	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	46	aux:tense	_	_	*	*	*
 44	été	être	AUX	_	Tense=Past|VerbForm=Part	46	aux:pass	_	_	*	*	*
@@ -2615,7 +2615,7 @@
 10	pas	pas	ADV	_	Polarity=Neg	11	advmod	_	_	*	*	*
 11	lever	lever	VERB	_	VerbForm=Inf	4	xcomp	_	_	*	*	*
 12	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	13	det	_	_	*	*	*
-13	immunité	immunité	NOUN	_	Gender=Fem|Number=Sing	11	obj	_	_	*	State	*
+13	immunité	immunité	NOUN	_	Gender=Fem|Number=Sing	11	obj	_	_	*	Attribute	*
 14	dans	dans	ADP	_	_	16	case	_	_	*	*	*
 15	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	16	det	_	_	*	*	*
 16	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	11	obl:mod	_	_	*	Event	*
@@ -2651,7 +2651,7 @@
 25	et	et	CCONJ	_	_	26	cc	_	_	*	*	*
 26	exhibé	exhiber	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	24	conj	_	_	*	*	*
 27	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	28	det	_	_	*	*	*
-28	affiche	affiche	NOUN	_	Gender=Fem|Number=Sing	24	obj	_	_	*	Artifact	*
+28	affiche	affiche	NOUN	_	Gender=Fem|Number=Sing	24	obj	_	_	*	Act	*
 29	de	de	ADP	_	_	31	case	_	_	*	*	*
 30	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	31	det	_	_	*	*	*
 31	Porte	porte	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	*	1:PROD
@@ -2663,7 +2663,7 @@
 37	protester	protester	VERB	_	VerbForm=Inf	24	advcl	_	_	*	*	*
 38	contre	contre	ADP	_	_	40	case	_	_	*	*	*
 39	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	40	det	_	_	*	*	*
-40	fossé	fossé	NOUN	_	Gender=Masc|Number=Sing	37	obl:arg	_	_	*	Event	*
+40	fossé	fossé	NOUN	_	Gender=Masc|Number=Sing	37	obl:arg	_	_	*	Act	*
 41	qui	qui	PRON	_	PronType=Rel	42	nsubj	_	_	*	*	*
 42	existe	exister	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	40	acl:relcl	_	_	*	*	*
 43	dans	dans	ADP	_	_	45	case	_	_	*	*	*
@@ -2711,7 +2711,7 @@
 6	directive	directive	NOUN	_	Gender=Fem|Number=Sing	4	nmod	_	_	*	Cognition	*
 7	propose	proposer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 8	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	9	det	_	_	*	*	*
-9	limitation	limitation	NOUN	_	Gender=Fem|Number=Sing	7	obj	_	_	*	Cognition	*
+9	limitation	limitation	NOUN	_	Gender=Fem|Number=Sing	7	obj	_	_	*	Act	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	12	det	_	_	*	*	*
 12	exportations	exportation	NOUN	_	Gender=Fem|Number=Plur	9	nmod	_	_	*	Act	*
@@ -2721,7 +2721,7 @@
 # sent_id = annodis.er_00010
 # text = La pose d'un panneau stop paraît être la formule la mieux adaptée pour assurer la sécurité des usagers.
 1	La	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	pose	pose	NOUN	_	Gender=Fem|Number=Sing	7	nsubj	_	_	*	Act	*
+2	pose	pose	NOUN	_	Gender=Fem|Number=Sing	7	nsubj	_	_	*	State	*
 3	d'	de	ADP	_	_	5	case	_	_	*	*	*
 4	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	5	det	_	_	*	*	*
 5	panneau	panneau	NOUN	_	Gender=Masc|Number=Sing	2	nmod	_	_	1:_|MWE|LEX	*	*
@@ -2885,28 +2885,28 @@
 2	pense	penser	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 3	que	que	SCONJ	_	_	17	mark	_	_	*	*	*
 4	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	5	det	_	_	*	*	*
-5	espace	espace	NOUN	_	Number=Sing	17	nsubj	_	_	*	State	*
+5	espace	espace	NOUN	_	Number=Sing	17	nsubj	_	_	*	Artifact	*
 6	,	,	PUNCT	_	_	8	punct	_	_	*	*	*
 7	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	8	det	_	_	*	*	*
-8	couleurs	couleur	NOUN	_	Gender=Fem|Number=Plur	5	conj	_	_	*	Cognition	*
+8	couleurs	couleur	NOUN	_	Gender=Fem|Number=Plur	5	conj	_	_	*	Attribute	*
 9	,	,	PUNCT	_	_	11	punct	_	_	*	*	*
 10	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det	_	_	*	*	*
 11	silence	silence	NOUN	_	Gender=Masc|Number=Sing	5	conj	_	_	*	Attribute	*
 12	d'	de	ADP	_	_	15	case	_	_	*	*	*
 13	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	15	det	_	_	*	*	*
 14	tel	tel	ADJ	_	Gender=Masc|Number=Sing	15	amod	_	_	*	*	*
-15	lieu	lieu	NOUN	_	Gender=Masc|Number=Sing	11	nmod	_	_	*	Substance	*
+15	lieu	lieu	NOUN	_	Gender=Masc|Number=Sing	11	nmod	_	_	*	Artifact	*
 16	ne	ne	ADV	_	Polarity=Neg	17	advmod	_	_	*	*	*
 17	peuvent	pouvoir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	2	ccomp	_	_	*	*	*
 18	qu'	que	ADV	_	_	21	advmod	_	_	*	*	*
 19	être	être	AUX	_	VerbForm=Inf	21	cop	_	_	*	*	*
 20	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	21	det	_	_	*	*	*
-21	élément	élément	NOUN	_	Gender=Masc|Number=Sing	17	xcomp	_	_	*	Event	*
+21	élément	élément	NOUN	_	Gender=Masc|Number=Sing	17	xcomp	_	_	*	State	*
 22	d'	de	ADP	_	_	23	case	_	_	*	*	*
 23	harmonie	harmonie	NOUN	_	Gender=Fem|Number=Sing	21	nmod	_	_	*	Act	*
 24	dans	dans	ADP	_	_	26	case	_	_	*	*	*
 25	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det	_	_	*	*	*
-26	vie	vie	NOUN	_	Gender=Fem|Number=Sing	21	obl:mod	_	_	*	Attribute	*
+26	vie	vie	NOUN	_	Gender=Fem|Number=Sing	21	obl:mod	_	_	*	Act	*
 27	de	de	ADP	_	_	29	case	_	_	*	*	*
 28	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	29	det	_	_	*	*	*
 29	commune	commune	NOUN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	Institution	*
@@ -3032,7 +3032,7 @@
 19	pris	prendre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part	7	advcl:cleft	_	_	*	*	*
 20	sa	son	DET	_	Gender=Fem|Number=Sing|Poss=Yes	22	det	_	_	*	*	*
 21	réelle	réel	ADJ	_	Gender=Fem|Number=Sing	22	amod	_	_	*	*	*
-22	importance	importance	NOUN	_	Gender=Fem|Number=Sing	19	obj	_	_	*	Event	*
+22	importance	importance	NOUN	_	Gender=Fem|Number=Sing	19	obj	_	_	*	Attribute	*
 23	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 24	avec	avec	ADP	_	_	26	case	_	_	*	*	*
 25	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det	_	_	*	*	*
@@ -3058,7 +3058,7 @@
 11	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	épouse	épouse	NOUN	_	Gender=Fem|Number=Sing	18	nsubj	_	_	*	Person	*
 13	,	,	PUNCT	_	_	12	punct	_	_	*	*	*
-14	passagère	passager	NOUN	_	Gender=Fem|Number=Sing	12	appos	_	_	*	Act	*
+14	passagère	passager	NOUN	_	Gender=Fem|Number=Sing	12	appos	_	_	*	Person	*
 15	avant	avant	ADV	_	_	14	advmod	_	_	*	*	*
 16	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 17	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	aux:tense	_	_	*	*	*
@@ -3117,7 +3117,7 @@
 3	midi	midi	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Time	*
 4	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 5	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	ville	ville	NOUN	_	Gender=Fem|Number=Sing	10	nsubj:pass	_	_	*	Institution	*
+6	ville	ville	NOUN	_	Gender=Fem|Number=Sing	10	nsubj:pass	_	_	*	Artifact	*
 7	de	de	ADP	_	_	8	case	_	_	*	*	*
 8	Maxéville	Maxéville	PROPN	_	_	6	nmod	_	_	*	Institution	1:LOC
 9	sera	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	10	aux:pass	_	_	*	*	*
@@ -3136,7 +3136,7 @@
 1	Pour	pour	ADP	_	_	2	mark	_	_	*	*	*
 2	préparer	préparer	VERB	_	VerbForm=Inf	11	advcl	_	_	*	*	*
 3	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det	_	_	*	*	*
-4	population	population	NOUN	_	Gender=Fem|Number=Sing	2	obj	_	_	*	Person	*
+4	population	population	NOUN	_	Gender=Fem|Number=Sing	2	obj	_	_	*	Act	*
 5	à	à	ADP	_	_	7	case	_	_	*	*	*
 6	ce	ce	DET	_	Gender=Masc|Number=Sing|PronType=Dem	7	det	_	_	*	*	*
 7	phénomène	phénomène	NOUN	_	Gender=Masc|Number=Sing	2	obl:arg	_	_	*	Act	*
@@ -3148,7 +3148,7 @@
 13	à	à	ADP	_	_	15	case	_	_	*	*	*
 14	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	15	det	_	_	*	*	*
 15	centre	centre	NOUN	_	Gender=Masc|Number=Sing	11	obl:mod	_	_	*	*	2:LOC
-16	Marie-Marvingt	Marie-Marvingt	PROPN	_	_	15	nmod	_	_	*	Person	2
+16	Marie-Marvingt	Marie-Marvingt	PROPN	_	_	15	nmod	_	_	*	Institution	2
 17	et	et	CCONJ	_	_	21	cc	_	_	*	*	*
 18	jusqu'	jusque	ADP	_	_	21	case	_	_	*	*	*
 19	à	à	ADP	_	_	21	case	_	_	*	*	*
@@ -3192,12 +3192,12 @@
 1	à	à	ADP	_	_	4	case	_	ExtPos=ADP	1:_|MWE|ZERO	*	*
 2	travers	travers	NOUN	_	Gender=Masc	1	fixed	_	_	1	*	*
 3	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	4	det	_	_	*	*	*
-4	oeuvre	oeuvre	NOUN	_	Gender=Fem|Number=Sing	17	obl:mod	_	_	*	Act	*
+4	oeuvre	oeuvre	NOUN	_	Gender=Fem|Number=Sing	17	obl:mod	_	_	*	Cognition	*
 5	,	,	PUNCT	_	_	17	punct	_	_	*	*	*
 6	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	7	det	_	_	*	*	*
 7	élèves	élève	NOUN	_	Number=Plur	17	nsubj	_	_	*	Person	*
 8	de	de	ADP	_	_	9	case	_	_	*	*	*
-9	CM2	CM2	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Person	*
+9	CM2	CM2	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Institution	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	classe	classe	NOUN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	Person	*
@@ -3220,7 +3220,7 @@
 2	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	cop	_	_	*	*	*
 3	dans	dans	ADP	_	_	5	case	_	_	*	*	*
 4	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	det	_	_	*	*	*
-5	aisance	aisance	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
+5	aisance	aisance	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	State	*
 6	toute	toute	ADV	_	_	7	advmod	_	_	*	*	*
 7	naturelle	naturel	ADJ	_	Gender=Fem|Number=Sing	5	amod	_	_	*	*	*
 8	que	que	PRON	_	PronType=Rel	13	iobj	_	_	*	*	*
@@ -3709,7 +3709,7 @@
 2	particulièrement	particulièrement	ADV	_	_	5	advmod	_	_	*	*	*
 3	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	orages	orage	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	State	*
+5	orages	orage	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Body	*
 6	et	et	CCONJ	_	_	8	cc	_	_	*	*	*
 7	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	8	det	_	_	*	*	*
 8	formations	formation	NOUN	_	Gender=Fem|Number=Plur	5	conj	_	_	*	Cognition	*
@@ -3726,7 +3726,7 @@
 2	magnifiques	magnifique	ADJ	_	Number=Plur	3	amod	_	_	*	*	*
 3	photographies	photographie	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	1:_|MWE-LVC.full|_	Artifact	*
 4	d'	de	ADP	_	_	5	case	_	_	*	*	*
-5	orages	orage	NOUN	_	Gender=Masc|Number=Plur	3	nmod	_	_	*	State	*
+5	orages	orage	NOUN	_	Gender=Masc|Number=Plur	3	nmod	_	_	*	Artifact	*
 6	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 7	prises	prendre	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	3	acl	_	_	1	*	*
 8	pour	pour	ADP	_	_	10	case	_	_	*	*	*
@@ -3761,7 +3761,7 @@
 7	exposé	exposé	NOUN	_	Gender=Masc|Number=Sing	5	obj	_	_	*	Cognition	*
 8	sur	sur	ADP	_	_	10	case	_	_	*	*	*
 9	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	10	det	_	_	*	*	*
-10	histoire	histoire	NOUN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	Event	*
+10	histoire	histoire	NOUN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	Cognition	*
 11	et	et	CCONJ	_	_	13	cc	_	_	*	*	*
 12	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det	_	_	*	*	*
 13	fonctionnement	fonctionnement	NOUN	_	Gender=Masc|Number=Sing	10	conj	_	_	*	Act	*
@@ -3792,7 +3792,7 @@
 # sent_id = annodis.er_00333
 # text = Une sorte de réaction épidermique par rapport à leur présence" commentait le commissaire central.
 1	Une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	sorte	sorte	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	*
+2	sorte	sorte	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Attribute	*
 3	de	de	ADP	_	_	4	case	_	_	*	*	*
 4	réaction	réaction	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
 5	épidermique	épidermique	ADJ	_	Number=Sing	4	amod	_	_	*	*	*
@@ -3800,7 +3800,7 @@
 7	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	4	nmod	_	_	1	*	*
 8	à	à	ADP	_	_	10	case	_	_	*	*	*
 9	leur	son	DET	_	Number=Sing|Poss=Yes	10	det	_	_	*	*	*
-10	présence	présence	NOUN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	Person	*
+10	présence	présence	NOUN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	State	*
 11	"	"	PUNCT	_	_	4	punct	_	_	*	*	*
 12	commentait	commenter	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	parataxis	_	_	*	*	*
 13	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det	_	_	*	*	*
@@ -3815,7 +3815,7 @@
 2	poursuite	poursuite	NOUN	_	Gender=Fem|Number=Sing	7	nsubj	_	_	*	Act	*
 3	de	de	ADP	_	_	5	case	_	_	*	*	*
 4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	investigations	investigation	NOUN	_	Gender=Fem|Number=Plur	2	nmod	_	_	*	Act	*
+5	investigations	investigation	NOUN	_	Gender=Fem|Number=Plur	2	nmod	_	_	*	Person	*
 6	policières	policier	ADJ	_	Gender=Fem|Number=Plur	5	amod	_	_	*	*	*
 7	permettra	permettre	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	0	root	_	_	*	*	*
 8	d'	de	ADP	_	_	9	mark	_	_	*	*	*
@@ -3840,7 +3840,7 @@
 27	familles	famille	NOUN	_	Gender=Fem|Number=Plur	25	nmod	_	_	*	Person	*
 28	de	de	ADP	_	_	30	case	_	_	*	*	*
 29	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	30	det	_	_	*	*	*
-30	immeuble	immeuble	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Person	*
+30	immeuble	immeuble	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Artifact	*
 31	.	.	PUNCT	_	_	7	punct	_	_	*	*	*
 
 
@@ -3950,7 +3950,7 @@
 16	d'	de	ADP	_	_	17	mark	_	_	*	*	*
 17	avoir	avoir	VERB	_	VerbForm=Inf	15	xcomp	_	_	*	*	*
 18	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	19	det	_	_	*	*	*
-19	députés	député	NOUN	_	Gender=Masc|Number=Plur	17	obj	_	_	*	Cognition	*
+19	députés	député	NOUN	_	Gender=Masc|Number=Plur	17	obj	_	_	*	Possession	*
 20	.	.	PUNCT	_	_	5	punct	_	_	*	*	*
 
 
@@ -3963,7 +3963,7 @@
 5	relèvement	relèvement	NOUN	_	Gender=Masc|Number=Sing	9	nsubj	_	_	*	Act	*
 6	de	de	ADP	_	_	8	case	_	_	*	*	*
 7	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	8	det	_	_	*	*	*
-8	seuils	seuil	NOUN	_	Gender=Masc|Number=Plur	5	nmod	_	_	*	Cognition	*
+8	seuils	seuil	NOUN	_	Gender=Masc|Number=Plur	5	nmod	_	_	*	Act	*
 9	exclurait	exclure	VERB	_	Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	ccomp	_	_	*	*	*
 10	de	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	13	det	_	_	*	*	*
 11	nombreuses	nombreux	ADJ	_	Gender=Fem|Number=Plur	13	amod	_	_	*	*	*
@@ -4020,7 +4020,7 @@
 # sent_id = annodis.er_00403
 # text = En témoignage de reconnaissance, elle avait d'ailleurs reçu la médaille du mérite UNC.
 1	En	en	ADP	_	_	2	case	_	_	*	*	*
-2	témoignage	témoignage	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Act	*
+2	témoignage	témoignage	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Person	*
 3	de	de	ADP	_	_	4	case	_	_	*	*	*
 4	reconnaissance	reconnaissance	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
 5	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
@@ -4106,7 +4106,7 @@
 39	,	,	PUNCT	_	_	30	punct	_	_	*	*	*
 40	et	et	CCONJ	_	_	42	cc	_	_	*	*	*
 41	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	42	det	_	_	*	*	*
-42	occasion	occasion	NOUN	_	Gender=Fem|Number=Sing	6	conj	_	_	*	Act	*
+42	occasion	occasion	NOUN	_	Gender=Fem|Number=Sing	6	conj	_	_	*	Cognition	*
 43	également	également	ADV	_	_	42	advmod	_	_	*	*	*
 44	pour	pour	ADP	_	_	45	case	_	_	*	*	*
 45	J.-P.	J.-P.	PROPN	_	_	42	nmod	_	_	*	*	3:PERS
@@ -4118,7 +4118,7 @@
 51	de	de	ADP	_	_	52	mark	_	_	*	*	*
 52	présenter	présenter	VERB	_	VerbForm=Inf	42	acl	_	_	5:_|MWE-LVC.full|_	*	*
 53	ses	son	DET	_	Number=Plur|Poss=Yes	54	det	_	_	*	*	*
-54	voeux	voeu	NOUN	_	Gender=Masc|Number=Plur	52	obj	_	_	5	Cognition	*
+54	voeux	voeu	NOUN	_	Gender=Masc|Number=Plur	52	obj	_	_	5	Person	*
 55	à	à	ADP	_	_	57	case	_	_	*	*	*
 56	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	57	det	_	_	*	*	*
 57	dizaine	dizaine	NOUN	_	Gender=Fem|Number=Sing	52	obl:arg	_	_	*	Act	*
@@ -4221,7 +4221,7 @@
 41	et	et	CCONJ	_	_	42	cc	_	_	*	*	*
 42	partager	partager	VERB	_	VerbForm=Inf	36	conj	_	_	*	*	*
 43	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	44	det	_	_	*	*	*
-44	passion	passion	NOUN	_	Gender=Fem|Number=Sing	42	obj	_	_	*	Cognition	*
+44	passion	passion	NOUN	_	Gender=Fem|Number=Sing	42	obj	_	_	*	Attribute	*
 45	"	"	PUNCT	_	_	34	punct	_	_	*	*	*
 46	.	.	PUNCT	_	_	12	punct	_	_	*	*	*
 
@@ -4379,7 +4379,7 @@
 21	aurai	avoir	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Fut|VerbForm=Fin	10	advcl	_	_	1:_|MWE-LVC.full|_	*	*
 22	peut-être	peut-être	ADV	_	_	23	advmod	_	_	2:ADV|MWE|IRREG	*	*
 23	encore	encore	ADV	_	_	21	advmod	_	_	*	*	*
-24	envie	envie	NOUN	_	Gender=Fem|Number=Sing	21	obj	_	_	1	State	*
+24	envie	envie	NOUN	_	Gender=Fem|Number=Sing	21	obj	_	_	1	Act	*
 25	de	de	ADP	_	_	26	mark	_	_	*	*	*
 26	jouer	jouer	VERB	_	VerbForm=Inf	24	acl	_	_	*	*	*
 27	"	"	PUNCT	_	_	21	punct	_	_	*	*	*
@@ -4576,7 +4576,7 @@
 19	réduction	réduction	NOUN	_	Gender=Fem|Number=Sing	17	appos	_	_	*	Event	*
 20	de	de	ADP	_	_	22	case	_	_	*	*	*
 21	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
-22	flux	flux	NOUN	_	Gender=Masc|Number=Sing	19	nmod	_	_	*	Act	*
+22	flux	flux	NOUN	_	Gender=Masc|Number=Sing	19	nmod	_	_	*	Event	*
 23	sanguin	sanguin	ADJ	_	Gender=Masc|Number=Sing	22	amod	_	_	*	*	*
 24	vers	vers	ADP	_	_	26	case	_	_	*	*	*
 25	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	26	det	_	_	*	*	*
@@ -4588,10 +4588,10 @@
 31	angor	angor	NOUN	_	Gender=Masc|Number=Sing	12	nmod	_	_	3:_|MWE|LEX	*	*
 32	instable	instable	ADJ	_	Number=Sing	31	amod	_	_	3	*	*
 33	(	(	PUNCT	_	_	31	punct	_	_	*	*	*
-34	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	31	appos	_	_	*	Event	*
+34	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	31	appos	_	_	*	Feeling	*
 35	thoraciques	thoracique	ADJ	_	Number=Plur	34	amod	_	_	*	*	*
 36	de	de	ADP	_	_	37	case	_	_	*	*	*
-37	gravité	gravité	NOUN	_	Gender=Fem|Number=Sing	34	nmod	_	_	*	State	*
+37	gravité	gravité	NOUN	_	Gender=Fem|Number=Sing	34	nmod	_	_	*	Attribute	*
 38	variable	variable	ADJ	_	Number=Sing	37	amod	_	_	*	*	*
 39	)	)	PUNCT	_	_	31	punct	_	_	*	*	*
 40	ou	ou	CCONJ	_	_	42	cc	_	_	*	*	*
@@ -4617,7 +4617,7 @@
 60	anormal	anormal	ADJ	_	Gender=Masc|Number=Sing	59	amod	_	_	*	*	*
 61	à	à	ADP	_	_	63	case	_	_	*	*	*
 62	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	63	det	_	_	*	*	*
-63	électrocardiogramme	électrocardiogramme	NOUN	_	Gender=Masc|Number=Sing	59	nmod	_	_	*	State	*
+63	électrocardiogramme	électrocardiogramme	NOUN	_	Gender=Masc|Number=Sing	59	nmod	_	_	*	Event	*
 64	ou	ou	CCONJ	_	_	65	cc	_	_	*	*	*
 65	ECG	ECG	NOUN	_	Number=Sing	63	conj	_	_	*	Event	*
 66	)	)	PUNCT	_	_	52	punct	_	_	*	*	*
@@ -4630,7 +4630,7 @@
 2	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	aux:pass	_	_	*	*	*
 3	utilisé	utiliser	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	*	*	*
 4	en	en	ADP	_	_	5	case	_	_	*	*	*
-5	conjonction	conjonction	NOUN	_	Gender=Fem|Number=Sing	3	obl:mod	_	_	*	Substance	*
+5	conjonction	conjonction	NOUN	_	Gender=Fem|Number=Sing	3	obl:mod	_	_	*	State	*
 6	avec	avec	ADP	_	_	9	case	_	_	*	*	*
 7	de	de	ADP	_	_	9	det	_	ExtPos=DET	1:DET|MWE|IRREG	*	*
 8	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	7	fixed	_	_	1	*	*
@@ -4659,7 +4659,7 @@
 31	traitement	traitement	NOUN	_	Gender=Masc|Number=Sing	29	obj	_	_	4	Act	*
 32	pour	pour	ADP	_	_	34	case	_	_	*	*	*
 33	leur	son	DET	_	Number=Sing|Poss=Yes	34	det	_	_	*	*	*
-34	SCA	SCA	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	State	*
+34	SCA	SCA	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Substance	*
 35	,	,	PUNCT	_	_	31	punct	_	_	*	*	*
 36	comme	comme	ADP	_	_	38	case	_	_	*	*	*
 37	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	38	det	_	_	*	*	*
@@ -4690,7 +4690,7 @@
 10	(	(	PUNCT	_	_	8	punct	_	_	*	*	*
 11	dans	dans	ADP	_	_	13	case	_	_	*	*	*
 12	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	13	det	_	_	*	*	*
-13	veine	veine	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Substance	*
+13	veine	veine	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Body	*
 14	)	)	PUNCT	_	_	8	punct	_	_	*	*	*
 15	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
@@ -4710,7 +4710,7 @@
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	processus	processus	NOUN	_	Gender=Masc|Number=Sing	9	obl:arg	_	_	*	Event	*
 13	de	de	ADP	_	_	14	case	_	_	*	*	*
-14	coagulation	coagulation	NOUN	_	Gender=Fem|Number=Sing	12	nmod	_	_	*	Act	*
+14	coagulation	coagulation	NOUN	_	Gender=Fem|Number=Sing	12	nmod	_	_	*	Event	*
 15	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 16	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det	_	_	*	*	*
 17	thrombine	thrombine	NOUN	_	Gender=Fem|Number=Sing	5	appos	_	_	*	Substance	*
@@ -4735,7 +4735,7 @@
 14	patients	patient	NOUN	_	Gender=Masc|Number=Plur	5	obl:mod	_	_	*	Person	*
 15	atteints	atteindre	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	14	acl	_	_	1:_|MWE-LVC.full|_;2:_|MWE-LVC.full|_	*	*
 16	d'	de	ADP	_	_	17	case	_	_	*	*	*
-17	angor	angor	NOUN	_	Gender=Masc|Number=Sing	15	obl:agent	_	_	1	State	*
+17	angor	angor	NOUN	_	Gender=Masc|Number=Sing	15	obl:agent	_	_	1	Event	*
 18	ou	ou	CCONJ	_	_	21	cc	_	_	*	*	*
 19	d'	de	ADP	_	_	21	case	_	_	*	*	*
 20	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	21	det	_	_	*	*	*
@@ -4748,7 +4748,7 @@
 27	efficacité	efficacité	NOUN	_	Gender=Fem|Number=Sing	25	obj	_	_	*	Attribute	*
 28	de	de	ADP	_	_	30	case	_	_	*	*	*
 29	leur	son	DET	_	Number=Sing|Poss=Yes	30	det	_	_	*	*	*
-30	ICP	ICP	NOUN	_	Number=Sing	27	nmod	_	_	*	Act	*
+30	ICP	ICP	NOUN	_	Number=Sing	27	nmod	_	_	*	Attribute	*
 31	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
 
@@ -4789,7 +4789,7 @@
 14	:	:	PUNCT	_	_	13	punct	_	_	*	*	*
 15	taux	taux	NOUN	_	Gender=Masc|Number=Sing	13	appos	_	_	*	Quantity	*
 16	de	de	ADP	_	_	17	case	_	_	*	*	*
-17	décès	décès	NOUN	_	Gender=Masc|Number=Sing	15	nmod	_	_	*	State	*
+17	décès	décès	NOUN	_	Gender=Masc|Number=Sing	15	nmod	_	_	*	Event	*
 18	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 19	crise	crise	NOUN	_	Gender=Fem|Number=Sing	15	conj	_	_	1:_|MWE|LEX	*	*
 20	cardiaque	cardiaque	ADJ	_	Number=Sing	19	amod	_	_	1	*	*
@@ -4800,7 +4800,7 @@
 25	rétablissement	rétablissement	NOUN	_	Gender=Masc|Number=Sing	22	appos	_	_	*	Act	*
 26	de	de	ADP	_	_	28	case	_	_	*	*	*
 27	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	28	det	_	_	*	*	*
-28	flux	flux	NOUN	_	Gender=Masc|Number=Sing	25	nmod	_	_	*	Act	*
+28	flux	flux	NOUN	_	Gender=Masc|Number=Sing	25	nmod	_	_	*	Body	*
 29	sanguin	sanguin	ADJ	_	Gender=Masc|Number=Sing	28	amod	_	_	*	*	*
 30	vers	vers	ADP	_	_	32	case	_	_	*	*	*
 31	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	32	det	_	_	*	*	*
@@ -4848,7 +4848,7 @@
 4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	1
 5	médicaments	médicament	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	*	Substance	1
 6	à	à	ADP	_	_	7	case	_	_	*	*	1
-7	usage	usage	NOUN	_	Gender=Masc|Number=Sing	5	nmod	_	_	*	Act	1
+7	usage	usage	NOUN	_	Gender=Masc|Number=Sing	5	nmod	_	_	*	Substance	1
 8	humain	humain	ADJ	_	Gender=Masc|Number=Sing	7	amod	_	_	*	*	1
 9	(	(	PUNCT	_	_	2	punct	_	_	*	*	*
 10	CHMP	CHMP	PROPN	_	_	2	appos	_	_	*	Institution	2:ORG
@@ -4931,7 +4931,7 @@
 
 # sent_id = emea-fr-dev_00093
 # text = Poudre lyophilisée blanche à blanc cassé.
-1	Poudre	poudre	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Substance	*
+1	Poudre	poudre	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Artifact	*
 2	lyophilisée	lyophiliser	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	1	acl	_	_	*	*	*
 3	blanche	blanc	ADJ	_	Gender=Fem|Number=Sing	1	amod	_	_	*	*	*
 4	à	à	ADP	_	_	5	mark	_	_	*	*	*
@@ -5007,7 +5007,7 @@
 2	adaptation	adaptation	NOUN	_	Gender=Fem|Number=Sing	9	nsubj	_	_	*	Act	*
 3	de	de	ADP	_	_	5	case	_	_	*	*	*
 4	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det	_	_	*	*	*
-5	dose	dose	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Quantity	*
+5	dose	dose	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Attribute	*
 6	n'	ne	ADV	_	Polarity=Neg	9	advmod	_	_	*	*	*
 7	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	cop	_	_	*	*	*
 8	pas	pas	ADV	_	Polarity=Neg	9	advmod	_	_	*	*	*
@@ -5051,7 +5051,7 @@
 # text = Si l'ACT est inférieur à 225 secondes, un second bolus de 0,3 mg/kg doit être administré.
 1	Si	si	SCONJ	_	_	5	mark	_	_	*	*	*
 2	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-3	ACT	ACT	NOUN	_	Number=Sing	5	nsubj	_	_	*	Time	*
+3	ACT	ACT	NOUN	_	Number=Sing	5	nsubj	_	_	*	Quantity	*
 4	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	cop	_	_	*	*	*
 5	inférieur	inférieur	ADJ	_	Gender=Masc|Number=Sing	18	advcl	_	_	*	*	*
 6	à	à	ADP	_	_	8	case	_	_	*	*	*
@@ -5089,7 +5089,7 @@
 7	minutes	minute	NOUN	_	Gender=Fem|Number=Plur	10	nmod	_	_	*	Time	*
 8	après	après	ADP	_	_	10	case	_	_	*	*	*
 9	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	10	det	_	_	*	*	*
-10	bolus	bolus	NOUN	_	Gender=Masc|Number=Sing	3	obl:mod	_	_	*	Act	*
+10	bolus	bolus	NOUN	_	Gender=Masc|Number=Sing	3	obl:mod	_	_	*	Substance	*
 11	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 
@@ -5134,7 +5134,7 @@
 8	/	/	SYM	_	_	9	cc	_	_	3	*	*
 9	ou	ou	CCONJ	_	_	7	conj	_	_	3	*	*
 10	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-11	endocardite	endocardite	NOUN	_	Gender=Fem|Number=Sing	3	conj	_	_	2	State	*
+11	endocardite	endocardite	NOUN	_	Gender=Fem|Number=Sing	3	conj	_	_	2	Substance	*
 12	bactérienne	bactérien	ADJ	_	Gender=Fem|Number=Sing	11	amod	_	_	*	*	*
 13	subaiguë	subaiguë	ADJ	_	Gender=Fem|Number=Sing	11	amod	_	_	*	*	*
 14	.	.	PUNCT	_	_	1	punct	_	_	*	*	*
@@ -5385,7 +5385,7 @@
 1	Classes	classe	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Cognition	*
 2	de	de	ADP	_	_	4	case	_	_	*	*	*
 3	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	4	det	_	_	*	*	*
-4	systèmes	système	NOUN	_	Gender=Masc|Number=Plur	1	nmod	_	_	*	Cognition	*
+4	systèmes	système	NOUN	_	Gender=Masc|Number=Plur	1	nmod	_	_	*	Attribute	*
 5	d'	de	ADP	_	_	6	case	_	_	*	*	*
 6	organes	organes	NOUN	_	Gender=Masc|Number=Plur	4	nmod	_	_	*	Body	*
 
@@ -5433,7 +5433,7 @@
 28	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	29	det	_	_	*	*	*
 29	exosite	exosite	NOUN	_	Number=Sing	24	conj	_	_	*	Substance	*
 30	de	de	ADP	_	_	31	case	_	_	*	*	*
-31	liaison	liaison	NOUN	_	Gender=Fem|Number=Sing	29	nmod	_	_	*	Substance	*
+31	liaison	liaison	NOUN	_	Gender=Fem|Number=Sing	29	nmod	_	_	*	Act	*
 32	de	de	ADP	_	_	34	case	_	_	*	*	*
 33	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	34	det	_	_	*	*	*
 34	anions	anion	NOUN	_	Gender=Masc|Number=Plur	31	nmod	_	_	*	Substance	*
@@ -5463,7 +5463,7 @@
 8	bivalirudine	bivalirudine	NOUN	_	Gender=Fem|Number=Sing	9	nsubj	_	_	*	Substance	*
 9	procure	procurer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	ccomp	_	_	*	*	*
 10	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-11	anticoagulation	anticoagulation	NOUN	_	Gender=Fem|Number=Sing	9	obj	_	_	*	Act	*
+11	anticoagulation	anticoagulation	NOUN	_	Gender=Fem|Number=Sing	9	obj	_	_	*	Substance	*
 12	adéquate	adéquat	ADJ	_	Gender=Fem|Number=Sing	11	amod	_	_	*	*	*
 13	pendant	pendant	ADP	_	_	15	case	_	_	*	*	*
 14	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	15	det	_	_	*	*	*
@@ -5492,7 +5492,7 @@
 15	constitutifs	constitutif	ADJ	_	Gender=Masc|Number=Plur	13	amod	_	_	*	*	*
 16	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 17	avec	avec	ADP	_	_	18	case	_	_	*	*	*
-18	recyclage	recyclage	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Substance	*
+18	recyclage	recyclage	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Act	*
 19	ultérieur	ultérieur	ADJ	_	Gender=Masc|Number=Sing	18	amod	_	_	*	*	*
 20	de	de	ADP	_	_	22	case	_	_	*	*	*
 21	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	22	det	_	_	*	*	*
@@ -5537,11 +5537,11 @@
 10	paramètres	paramètre	NOUN	_	Gender=Masc|Number=Plur	18	nsubj	_	_	*	Substance	*
 11	de	de	ADP	_	_	13	case	_	_	*	*	*
 12	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det	_	_	*	*	*
-13	coagulation	coagulation	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Act	*
+13	coagulation	coagulation	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Event	*
 14	tels	tel	ADJ	_	Gender=Masc|Number=Plur	10	amod	_	_	*	*	*
 15	que	que	SCONJ	_	_	17	mark	_	_	*	*	*
 16	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	ACT	ACT	NOUN	_	Number=Sing	14	dep	_	_	*	State	*
+17	ACT	ACT	NOUN	_	Number=Sing	14	dep	_	_	*	Substance	*
 18	peuvent	pouvoir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 19	être	être	AUX	_	VerbForm=Inf	20	aux:pass	_	_	*	*	*
 20	monitorés	monitorer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	18	xcomp	_	_	*	*	*
@@ -5561,7 +5561,7 @@
 
 # sent_id = emea-fr-dev_00370
 # text = Durée de conservation
-1	Durée	durée	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Time	*
+1	Durée	durée	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	*
 2	de	de	ADP	_	_	3	case	_	_	*	*	*
 3	conservation	conservation	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Act	*
 
@@ -5703,7 +5703,7 @@
 1	PRECAUTIONS	précaution	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Cognition	*
 2	PARTICULIERES	particulier	ADJ	_	Gender=Fem|Number=Plur	1	amod	_	_	*	*	*
 3	DE	de	ADP	_	_	4	case	_	_	*	*	*
-4	CONSERVATION	conservation	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Cognition	*
+4	CONSERVATION	conservation	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Act	*
 
 
 # sent_id = emea-fr-dev_00435
@@ -5714,7 +5714,7 @@
 4	ELIMINATION	élimination	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Cognition	*
 5	DE	de	ADP	_	_	7	case	_	_	*	*	*
 6	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	7	det	_	_	*	*	*
-7	MEDICAMENTS	médicament	NOUN	_	Gender=Masc|Number=Plur	4	nmod	_	_	*	Substance	*
+7	MEDICAMENTS	médicament	NOUN	_	Gender=Masc|Number=Plur	4	nmod	_	_	*	Cognition	*
 8	NON	non	ADV	_	_	9	advmod	_	_	*	*	*
 9	UTILISES	utiliser	VERB	_	Tense=Past|VerbForm=Part	7	acl	_	_	*	*	*
 10	OU	ou	CCONJ	_	_	13	cc	_	_	*	*	*
@@ -5798,7 +5798,7 @@
 7	AVANT	avant	ADP	_	_	9	mark	_	_	*	*	*
 8	D'	de	ADP	_	_	9	mark	_	_	*	*	*
 9	UTILISER	utiliser	VERB	_	VerbForm=Inf	6	advcl	_	_	*	*	*
-10	ANGIOX	Angiox	PROPN	_	_	9	obj	_	_	*	Cognition	1:PROD
+10	ANGIOX	Angiox	PROPN	_	_	9	obj	_	_	*	Institution	1:PROD
 
 
 # sent_id = emea-fr-dev_00484
@@ -5814,7 +5814,7 @@
 9	infection	infection	NOUN	_	Gender=Fem|Number=Sing	4	obj	_	_	1	Event	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	tissu	tissu	NOUN	_	Gender=Masc|Number=Sing	9	nmod	_	_	*	State	*
+12	tissu	tissu	NOUN	_	Gender=Masc|Number=Sing	9	nmod	_	_	*	Body	*
 13	cardiaque	cardiaque	ADJ	_	Number=Sing	12	amod	_	_	*	*	*
 14	.	.	PUNCT	_	_	4	punct	_	_	*	*	*
 
@@ -5974,7 +5974,7 @@
 # sent_id = emea-fr-dev_00551
 # text = - Essoufflements
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Essoufflements	essoufflement	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Event	*
+2	Essoufflements	essoufflement	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Act	*
 
 
 # sent_id = emea-fr-dev_00560
@@ -6202,7 +6202,7 @@
 8	à	à	ADP	_	_	9	case	_	_	*	*	*
 9	Aclasta	Aclasta	PROPN	_	_	7	obl:arg	_	_	*	Substance	1:PROD
 10	ont	avoir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	2:_|MWE-LVC.full|_	*	*
-11	tendance	tendance	NOUN	_	Gender=Fem|Number=Sing	10	obj	_	_	2	Event	*
+11	tendance	tendance	NOUN	_	Gender=Fem|Number=Sing	10	obj	_	_	2	Time	*
 12	à	à	ADP	_	_	14	mark	_	_	*	*	*
 13	se	se	PRON	_	Person=3|Reflex=Yes	14	expl:comp	_	_	3:_|MWE-IRV|_	*	*
 14	produire	produire	VERB	_	VerbForm=Inf	10	xcomp	_	_	3	*	*
@@ -6248,7 +6248,7 @@
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	dossier	dossier	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
 3	d'	de	ADP	_	_	4	case	_	_	*	*	*
-4	information	information	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
+4	information	information	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Cognition	*
 
 
 # sent_id = emea-fr-test_00083
@@ -6287,7 +6287,7 @@
 32	intervention	intervention	NOUN	_	Gender=Fem|Number=Sing	21	obl:mod	_	_	*	Act	*
 33	sur	sur	ADP	_	_	35	case	_	_	*	*	*
 34	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	35	det	_	_	*	*	*
-35	fracture	fracture	NOUN	_	Gender=Fem|Number=Sing	32	nmod	_	_	*	Act	*
+35	fracture	fracture	NOUN	_	Gender=Fem|Number=Sing	32	nmod	_	_	*	State	*
 36	(	(	PUNCT	_	_	19	punct	_	_	*	*	*
 37	voir	voir	VERB	_	VerbForm=Inf	19	parataxis	_	_	*	*	*
 38	rubrique	rubrique	NOUN	_	Gender=Fem|Number=Sing	37	obj	_	_	*	Cognition	*
@@ -6319,7 +6319,7 @@
 19	ex.	ex.	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	1	*	*
 20	hypoparathyroïdie	hypoparathyroïdie	NOUN	_	Gender=Fem|Number=Sing	10	obl:mod	_	_	*	Substance	*
 21	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
-22	malabsorption	malabsorption	NOUN	_	Gender=Fem|Number=Sing	10	obl:mod	_	_	*	Event	*
+22	malabsorption	malabsorption	NOUN	_	Gender=Fem|Number=Sing	10	obl:mod	_	_	*	State	*
 23	intestinale	intestinal	ADJ	_	Gender=Fem|Number=Sing	22	amod	_	_	*	*	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	26	det	_	_	*	*	*
@@ -6355,10 +6355,10 @@
 23	individuelle	individuel	ADJ	_	Gender=Fem|Number=Sing	22	amod	_	_	*	*	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	26	det	_	_	*	*	*
-26	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	22	nmod	_	_	*	Cognition	*
+26	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	22	nmod	_	_	*	Possession	*
 27	bénéfice	bénéfice	NOUN	_	Gender=Masc|Number=Sing	26	nmod	_	_	*	Attribute	*
 28	/	/	SYM	_	_	27	dep	_	_	*	*	*
-29	risque	risque	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	State	*
+29	risque	risque	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Attribute	*
 30	.	.	PUNCT	_	_	8	punct	_	_	*	*	*
 
 
@@ -6423,7 +6423,7 @@
 5	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 6	oesophagite	oesophagite	NOUN	_	Gender=Fem|Number=Sing	2	obl:mod	_	_	*	State	*
 7	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
-8	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	2	obl:mod	_	_	*	State	*
+8	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	2	obl:mod	_	_	*	Feeling	*
 9	dentaires	dentaire	ADJ	_	Number=Plur	8	amod	_	_	*	*	*
 10	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
@@ -6522,7 +6522,7 @@
 1	Dans	dans	ADP	_	_	4	case	_	_	*	*	*
 2	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	4	det	_	_	*	*	*
 3	deux	deux	NUM	_	NumType=Card	4	nummod	_	_	*	*	*
-4	cas	cas	NOUN	_	Gender=Masc|Number=Plur	10	obl:mod	_	_	*	Cognition	*
+4	cas	cas	NOUN	_	Gender=Masc|Number=Plur	10	obl:mod	_	_	*	Event	*
 5	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 6	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	7	det	_	_	*	*	*
 7	évolution	évolution	NOUN	_	Gender=Fem|Number=Sing	10	nsubj	_	_	*	Act	*
@@ -6618,7 +6618,7 @@
 2	sur	sur	ADP	_	_	5	case	_	_	*	*	*
 3	toutes	tout	ADJ	_	Gender=Fem|Number=Plur	5	amod	_	_	*	*	*
 4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	1	nmod	_	_	*	Event	*
+5	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	1	nmod	_	_	*	Object	*
 6	cliniques	clinique	ADJ	_	Number=Plur	5	amod	_	_	*	*	*
 
 
@@ -6635,11 +6635,11 @@
 3	)	)	PUNCT	_	_	2	punct	_	_	*	*	*
 4	Y	y	PRON	_	Person=3	6	case	_	ExtPos=ADP	1:ADP|MWE|IRREG	*	*
 5	compris	compris	ADJ	_	Gender=Masc	4	fixed	_	_	1	*	*
-6	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Event	*
+6	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Object	*
 7	cliniques	clinique	ADJ	_	Number=Plur	6	amod	_	_	*	*	*
 8	dorsales	dorsal	ADJ	_	Gender=Fem|Number=Plur	6	amod	_	_	*	*	*
 9	et	et	CCONJ	_	_	10	cc	_	_	*	*	*
-10	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	6	conj	_	_	*	Event	*
+10	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	6	conj	_	_	*	Object	*
 11	cliniques	clinique	ADJ	_	Number=Plur	10	amod	_	_	*	*	*
 12	vertébrales	vertébral	ADJ	_	Gender=Fem|Number=Plur	10	amod	_	_	*	*	*
 13	lombaires	lombaire	ADJ	_	Number=Plur	10	amod	_	_	*	*	*
@@ -6652,7 +6652,7 @@
 3	mois	mois	NOUN	_	Gender=Masc|Number=Plur	9	obl:mod	_	_	*	Time	*
 4	,	,	PUNCT	_	_	9	punct	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	P1NP	P1NP	NOUN	_	Gender=Masc|Number=Sing	9	nsubj:pass	_	_	*	Attribute	*
+6	P1NP	P1NP	NOUN	_	Gender=Masc|Number=Sing	9	nsubj:pass	_	_	*	Quantity	*
 7	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux:tense	_	_	*	*	*
 8	été	être	AUX	_	Tense=Past|VerbForm=Part	9	aux:pass	_	_	*	*	*
 9	réduit	réduire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	*	*	*
@@ -6709,7 +6709,7 @@
 19	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	20	det	_	_	*	*	*
 20	fait	fait	NOUN	_	Gender=Masc|Number=Sing	17	nmod	_	_	1	*	*
 21	de	de	ADP	_	_	22	case	_	_	*	*	*
-22	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	20	nmod	_	_	*	Act	*
+22	douleurs	douleur	NOUN	_	Gender=Fem|Number=Plur	20	nmod	_	_	*	Feeling	*
 23	rachidiennes	rachidien	ADJ	_	Gender=Fem|Number=Plur	22	amod	_	_	*	*	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	17,9	17,9	NUM	_	NumType=Card	26	nummod	_	_	*	*	*
@@ -6721,7 +6721,7 @@
 31	jours	jour	NOUN	_	Gender=Masc|Number=Plur	28	nmod	_	_	*	Time	*
 32	dans	dans	ADP	_	_	34	case	_	_	*	*	*
 33	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	34	det	_	_	*	*	*
-34	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Institution	*
+34	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Person	*
 35	placebo	placebo	NOUN	_	Gender=Masc|Number=Sing	34	nmod	_	_	*	Substance	*
 36	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
@@ -6761,7 +6761,7 @@
 31	jours	jour	NOUN	_	Gender=Masc|Number=Plur	28	nmod	_	_	*	Time	*
 32	dans	dans	ADP	_	_	34	case	_	_	*	*	*
 33	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	34	det	_	_	*	*	*
-34	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Substance	*
+34	groupe	groupe	NOUN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Person	*
 35	placebo	placebo	NOUN	_	Gender=Masc|Number=Sing	34	nmod	_	_	*	Substance	*
 36	(	(	PUNCT	_	_	4	punct	_	_	*	*	*
 37	p	p	NOUN	_	_	38	nsubj	_	_	*	Quantity	*
@@ -6778,7 +6778,7 @@
 # sent_id = emea-fr-test_00260
 # text = Le délai médian de perfusion était d'environ 6 semaines après l'intervention.
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	délai	délai	NOUN	_	Gender=Masc|Number=Sing	10	nsubj	_	_	*	Act	*
+2	délai	délai	NOUN	_	Gender=Masc|Number=Sing	10	nsubj	_	_	*	Person	*
 3	médian	médian	ADJ	_	Gender=Masc|Number=Sing	2	amod	_	_	*	*	*
 4	de	de	ADP	_	_	5	case	_	_	*	*	*
 5	perfusion	perfusion	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
@@ -6799,10 +6799,10 @@
 2	critère	critère	NOUN	_	Gender=Masc|Number=Sing	8	nsubj	_	_	*	Cognition	*
 3	principal	principal	ADJ	_	Gender=Masc|Number=Sing	2	amod	_	_	*	*	*
 4	d'	de	ADP	_	_	5	case	_	_	*	*	*
-5	efficacité	efficacité	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Event	*
+5	efficacité	efficacité	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
 6	était	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	8	cop	_	_	*	*	*
 7	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	8	det	_	_	*	*	*
-8	incidence	incidence	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
+8	incidence	incidence	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Attribute	*
 9	de	de	ADP	_	_	11	case	_	_	*	*	*
 10	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	11	det	_	_	*	*	*
 11	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	8	nmod	_	_	*	Event	*
@@ -6832,16 +6832,16 @@
 11	significative	significatif	ADJ	_	Gender=Fem|Number=Sing	10	amod	_	_	*	*	*
 12	sur	sur	ADP	_	_	14	case	_	_	*	*	*
 13	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	14	det	_	_	*	*	*
-14	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	10	nmod	_	_	*	Event	*
+14	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	10	nmod	_	_	*	Body	*
 15	de	de	ADP	_	_	16	case	_	_	*	*	*
 16	hanche	hanche	NOUN	_	Gender=Fem|Number=Sing	14	nmod	_	_	*	Body	*
 17	mais	mais	CCONJ	_	_	28	cc	_	_	*	*	*
 18	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	19	det	_	_	*	*	*
-19	réduction	réduction	NOUN	_	Gender=Fem|Number=Sing	28	nsubj:pass	_	_	*	Cognition	*
+19	réduction	réduction	NOUN	_	Gender=Fem|Number=Sing	28	nsubj:pass	_	_	*	Act	*
 20	sur	sur	ADP	_	_	23	case	_	_	*	*	*
 21	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	23	det	_	_	*	*	*
 22	nouvelles	nouveau	ADJ	_	Gender=Fem|Number=Plur	23	amod	_	_	*	*	*
-23	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	19	nmod	_	_	*	Event	*
+23	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	19	nmod	_	_	*	Body	*
 24	de	de	ADP	_	_	25	case	_	_	*	*	*
 25	hanche	hanche	NOUN	_	Gender=Fem|Number=Sing	23	nmod	_	_	*	Body	*
 26	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	28	aux:tense	_	_	*	*	*
@@ -6868,7 +6868,7 @@
 14	DMO	DMO	NOUN	_	Gender=Fem|Number=Sing	12	obj	_	_	*	Substance	*
 15	à	à	ADP	_	_	17	case	_	_	*	*	*
 16	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	fémur	fémur	NOUN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	Act	*
+17	fémur	fémur	NOUN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	Body	*
 18	total	total	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	*	*	*
 19	et	et	CCONJ	_	_	22	cc	_	_	*	*	*
 20	à	à	ADP	_	_	22	case	_	_	*	*	*
@@ -6992,7 +6992,7 @@
 
 # sent_id = emea-fr-test_00281
 # text = Efficacité clinique dans le traitement de la maladie de Paget
-1	Efficacité	efficacité	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
+1	Efficacité	efficacité	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Act	*
 2	clinique	clinique	ADJ	_	Number=Sing	1	amod	_	_	*	*	*
 3	dans	dans	ADP	_	_	5	case	_	_	*	*	*
 4	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	5	det	_	_	*	*	*
@@ -7062,7 +7062,7 @@
 9	zolédronique	zolédronique	ADJ	_	Gender=Masc|Number=Sing	8	amod	_	_	1	*	*
 10	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 11	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	12	det	_	_	*	*	*
-12	concentrations	concentration	NOUN	_	Gender=Fem|Number=Plur	19	nsubj	_	_	*	Attribute	*
+12	concentrations	concentration	NOUN	_	Gender=Fem|Number=Plur	19	nsubj	_	_	*	Quantity	*
 13	plasmatiques	plasmatique	ADJ	_	Number=Plur	12	amod	_	_	*	*	*
 14	de	de	ADP	_	_	16	case	_	_	*	*	*
 15	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	det	_	_	*	*	*
@@ -7074,7 +7074,7 @@
 21	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 22	atteignant	atteindre	VERB	_	Tense=Pres|VerbForm=Part	19	advcl	_	_	*	*	*
 23	leur	son	DET	_	Number=Sing|Poss=Yes	24	det	_	_	*	*	*
-24	pic	pic	NOUN	_	Gender=Masc|Number=Sing	22	obj	_	_	*	Attribute	*
+24	pic	pic	NOUN	_	Gender=Masc|Number=Sing	22	obj	_	_	*	Quantity	*
 25	à	à	ADP	_	_	27	case	_	_	*	*	*
 26	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	27	det	_	_	*	*	*
 27	fin	fin	NOUN	_	Gender=Fem|Number=Sing	22	obl:mod	_	_	*	Time	*
@@ -7117,7 +7117,7 @@
 64	période	période	NOUN	_	Gender=Fem|Number=Sing	61	obl:agent	_	_	*	Time	*
 65	prolongée	prolonger	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	64	acl	_	_	*	*	*
 66	de	de	ADP	_	_	67	case	_	_	*	*	*
-67	concentrations	concentration	NOUN	_	Gender=Fem|Number=Plur	65	obl:arg	_	_	*	Attribute	*
+67	concentrations	concentration	NOUN	_	Gender=Fem|Number=Plur	65	obl:arg	_	_	*	Quantity	*
 68	très	très	ADV	_	_	69	advmod	_	_	*	*	*
 69	faibles	faible	ADJ	_	Number=Plur	67	amod	_	_	*	*	*
 70	ne	ne	ADV	_	Polarity=Neg	71	advmod	_	_	*	*	*
@@ -7135,7 +7135,7 @@
 # sent_id = emea-fr-test_00296
 # text = Les phases de distribution précoce (et, avec les demi-vies t½ précisées ci-dessus) reflètent vraisemblablement une absorption rapide dans l'os et une excrétion par voie rénale.
 1	Les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	2	det	_	_	*	*	*
-2	phases	phase	NOUN	_	Gender=Fem|Number=Plur	16	nsubj	_	_	*	Cognition	*
+2	phases	phase	NOUN	_	Gender=Fem|Number=Plur	16	nsubj	_	_	*	Event	*
 3	de	de	ADP	_	_	4	case	_	_	*	*	*
 4	distribution	distribution	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Act	*
 5	précoce	précoce	ADJ	_	Number=Sing	4	amod	_	_	*	*	*
@@ -7323,7 +7323,7 @@
 # text = Dans le cas où vous avez eu récemment une fracture de hanche, il est recommandé qu'Aclasta soit administré 2 semaines ou plus après réparation de votre fracture.
 1	Dans	dans	ADP	_	_	3	case	_	_	*	*	*
 2	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-3	cas	cas	NOUN	_	Gender=Masc|Number=Sing	16	obl:mod	_	_	*	State	*
+3	cas	cas	NOUN	_	Gender=Masc|Number=Sing	16	obl:mod	_	_	*	Event	*
 4	où	où	PRON	_	PronType=Rel	7	iobj	_	_	*	*	*
 5	vous	il	PRON	_	Number=Plur|Person=2	7	nsubj	_	_	*	*	*
 6	avez	avoir	AUX	_	Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin	7	aux:tense	_	_	*	*	*
@@ -7397,10 +7397,10 @@
 14	intraveineuse	intraveineux	ADJ	_	Gender=Fem|Number=Sing	13	amod	_	_	1	*	*
 15	par	par	ADP	_	_	17	case	_	_	*	*	*
 16	votre	son	DET	_	Number=Sing|Poss=Yes	17	det	_	_	*	*	*
-17	médecin	médecin	NOUN	_	Gender=Masc|Number=Sing	9	obl:agent	_	_	*	State	*
+17	médecin	médecin	NOUN	_	Gender=Masc|Number=Sing	9	obl:agent	_	_	*	Person	*
 18	ou	ou	CCONJ	_	_	20	cc	_	_	*	*	*
 19	votre	son	DET	_	Number=Sing|Poss=Yes	20	det	_	_	*	*	*
-20	infirmière	infirmier	NOUN	_	Gender=Fem|Number=Sing	17	conj	_	_	*	State	*
+20	infirmière	infirmier	NOUN	_	Gender=Fem|Number=Sing	17	conj	_	_	*	Substance	*
 21	.	.	PUNCT	_	_	7	punct	_	_	*	*	*
 
 
@@ -7583,13 +7583,13 @@
 13	(	(	PUNCT	_	_	8	punct	_	_	*	*	*
 14	par	par	ADP	_	_	15	case	_	_	1:_|MWE|ZERO	*	*
 15	exemple	exemple	NOUN	_	Gender=Masc|Number=Sing	8	obl:mod	_	_	1	*	*
-16	réduction	réduction	NOUN	_	Gender=Fem|Number=Sing	8	obl:mod	_	_	*	Act	*
+16	réduction	réduction	NOUN	_	Gender=Fem|Number=Sing	8	obl:mod	_	_	*	Event	*
 17	de	de	ADP	_	_	19	case	_	_	*	*	*
 18	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	det	_	_	*	*	*
-19	réserve	réserve	NOUN	_	Gender=Fem|Number=Sing	16	nmod	_	_	*	Substance	*
+19	réserve	réserve	NOUN	_	Gender=Fem|Number=Sing	16	nmod	_	_	*	Attribute	*
 20	parathyroïde	parathyroïd	ADJ	_	Gender=Fem|Number=Sing	19	amod	_	_	*	*	*
 21	,	,	PUNCT	_	_	8	punct	_	_	*	*	*
-22	malabsorption	malabsorption	NOUN	_	Gender=Fem|Number=Sing	8	obl:mod	_	_	*	Event	*
+22	malabsorption	malabsorption	NOUN	_	Gender=Fem|Number=Sing	8	obl:mod	_	_	*	State	*
 23	intestinale	intestinal	ADJ	_	Gender=Fem|Number=Sing	22	amod	_	_	*	*	*
 24	de	de	ADP	_	_	25	case	_	_	*	*	*
 25	calcium	calcium	NOUN	_	Gender=Masc|Number=Sing	22	nmod	_	_	*	Substance	*
@@ -7789,7 +7789,7 @@
 34	demandé	demander	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	10	advcl	_	_	*	*	*
 35	à	à	ADP	_	_	37	case	_	_	*	*	*
 36	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	37	det	_	_	*	*	*
-37	artillerie	artillerie	NOUN	_	Gender=Fem|Number=Sing	34	obl:arg	_	_	*	Institution	*
+37	artillerie	artillerie	NOUN	_	Gender=Fem|Number=Sing	34	obl:arg	_	_	*	Person	*
 38	de	de	ADP	_	_	39	mark	_	_	*	*	*
 39	pilonner	pilonner	VERB	_	VerbForm=Inf	34	xcomp	_	_	*	*	*
 40	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	41	det	_	_	*	*	*
@@ -7898,7 +7898,7 @@
 5	fusillés	fusillé	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	*	Person	*
 6	reçurent	recevoir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root	_	_	*	*	*
 7	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det	_	_	*	*	*
-8	franc	franc	NOUN	_	Gender=Masc|Number=Sing	6	obj	_	_	*	Artifact	*
+8	franc	franc	NOUN	_	Gender=Masc|Number=Sing	6	obj	_	_	*	Cognition	*
 9	symbolique	symbolique	ADJ	_	Number=Sing	8	amod	_	_	*	*	*
 10	à	à	ADP	_	_	12	case	_	_	1:_|MWE|LEX	*	*
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
@@ -7920,7 +7920,7 @@
 27	réhabilités	réhabiliter	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	21	ccomp	_	_	*	*	*
 28	dans	dans	ADP	_	_	30	case	_	_	*	*	*
 29	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	30	det	_	_	*	*	*
-30	mémoire	mémoire	NOUN	_	Gender=Fem|Number=Sing	27	obl:mod	_	_	*	Act	*
+30	mémoire	mémoire	NOUN	_	Gender=Fem|Number=Sing	27	obl:mod	_	_	*	Attribute	*
 31	de	de	ADP	_	_	33	case	_	_	*	*	*
 32	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	33	det	_	_	*	*	*
 33	Français	français	NOUN	_	Gender=Masc|Number=Plur	30	nmod	_	_	*	Person	*
@@ -7944,7 +7944,7 @@
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	école	école	NOUN	_	Gender=Fem|Number=Sing	5	nsubj	_	_	*	Institution	*
 3	de	de	ADP	_	_	4	case	_	_	*	*	*
-4	Percy	Percy	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Person	2:LOC
+4	Percy	Percy	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	2:LOC
 5	porte	porter	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	1:_|MWE-VID|_	*	*
 6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_	*	*	*
 7	nom	nom	NOUN	_	Gender=Masc|Number=Sing	5	obj	_	_	1	*	*
@@ -7993,7 +7993,7 @@
 29	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	28	flat:name	_	_	*	*	3
 30	dans	dans	ADP	_	_	32	case	_	_	*	*	*
 31	son	son	DET	_	Number=Sing|Poss=Yes	32	det	_	_	*	*	*
-32	école	école	NOUN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	Person	*
+32	école	école	NOUN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	Institution	*
 33	,	,	PUNCT	_	_	34	punct	_	_	*	*	*
 34	raconte	raconter	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 35	également	également	ADV	_	_	34	advmod	_	_	*	*	*
@@ -8015,7 +8015,7 @@
 # sent_id = frwiki_50.1000_00065
 # text = Le journal L'Évènement du jeudi du 28 décembre 1989 a même titré "Dracula était communiste."
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	journal	journal	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Institution	*
+2	journal	journal	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Time	*
 3	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	4	det	_	_	*	*	1:PROD
 4	Évènement	évènement	NOUN	_	Number=Sing	2	nmod	_	_	*	Act	1
 5	de	de	ADP	_	_	7	case	_	_	*	*	1
@@ -8030,7 +8030,7 @@
 14	même	même	ADV	_	_	15	advmod	_	_	*	*	*
 15	titré	titrer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 16	"	"	PUNCT	_	_	15	punct	_	_	*	*	*
-17	Dracula	Dracula	PROPN	_	_	19	nsubj	_	_	*	Person	2:PERS
+17	Dracula	Dracula	PROPN	_	_	19	nsubj	_	_	*	Institution	2:PERS
 18	était	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	19	cop	_	_	*	*	*
 19	communiste	communiste	ADJ	_	Number=Sing	15	ccomp	_	_	*	*	*
 20	.	.	PUNCT	_	_	15	punct	_	_	*	*	*
@@ -8170,7 +8170,7 @@
 11	causes	cause	NOUN	_	Gender=Fem|Number=Plur	8	nmod	_	_	*	Event	*
 12	de	de	ADP	_	_	14	case	_	_	*	*	*
 13	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	_	_	*	*	*
-14	défaite	défaite	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Event	*
+14	défaite	défaite	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Act	*
 15	de	de	ADP	_	_	16	case	_	_	*	*	*
 16	Valéry	Valéry	PROPN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	*	1:PERS
 17	Giscard	Giscard	PROPN	_	_	16	flat:name	_	_	*	*	1
@@ -8224,7 +8224,7 @@
 26	qui	qui	PRON	_	PronType=Rel	27	nsubj	_	_	*	*	*
 27	effectue	effectuer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	24	acl:relcl	_	_	2:_|MWE-LVC.full|_	*	*
 28	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	29	det	_	_	*	*	*
-29	liaisons	liaison	NOUN	_	Gender=Fem|Number=Plur	27	obj	_	_	2	Artifact	*
+29	liaisons	liaison	NOUN	_	Gender=Fem|Number=Plur	27	obj	_	_	2	Act	*
 30	Brazzaville-Kinshasa	Brazzaville-Kinshasa	PROPN	_	_	29	nmod	_	_	*	Institution	2:LOC
 31	)	)	PUNCT	_	_	21	punct	_	_	*	*	*
 32	,	,	PUNCT	_	_	13	punct	_	_	*	*	*
@@ -8414,7 +8414,7 @@
 # sent_id = frwiki_50.1000_00203
 # text = Les poursuites ne font pas référence à son rôle comme instigateur ou organisateur.
 1	Les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	2	det	_	_	*	*	*
-2	poursuites	poursuite	NOUN	_	Gender=Fem|Number=Plur	4	nsubj	_	_	*	Act	*
+2	poursuites	poursuite	NOUN	_	Gender=Fem|Number=Plur	4	nsubj	_	_	*	Cognition	*
 3	ne	ne	ADV	_	Polarity=Neg	4	advmod	_	_	*	*	*
 4	font	faire	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	1:_|MWE-LVC.full|_	*	*
 5	pas	pas	ADV	_	Polarity=Neg	4	advmod	_	_	*	*	*
@@ -8471,7 +8471,7 @@
 38	"	"	PUNCT	_	_	37	punct	_	_	*	*	*
 39	à	à	ADP	_	_	41	case	_	_	*	*	*
 40	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	41	det	_	_	*	*	*
-41	faits	fait	NOUN	_	Gender=Masc|Number=Plur	37	nmod	_	_	*	Act	*
+41	faits	fait	NOUN	_	Gender=Masc|Number=Plur	37	nmod	_	_	*	Event	*
 42	de	de	ADP	_	_	43	case	_	_	*	*	*
 43	prise	prise	NOUN	_	Gender=Fem|Number=Sing	41	nmod	_	_	3:_|MWE|LEX	*	*
 44	illégale	illégal	ADJ	_	Gender=Fem|Number=Sing	43	amod	_	_	3	*	*
@@ -8671,7 +8671,7 @@
 13	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	*	*	1:PERS
 14	Dominati	Dominati	PROPN	_	_	13	flat:name	_	_	*	*	1
 15	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	16	det	_	_	*	*	*
-16	peine	peine	NOUN	_	Gender=Fem|Number=Sing	11	obj	_	_	*	Act	*
+16	peine	peine	NOUN	_	Gender=Fem|Number=Sing	11	obj	_	_	*	Possession	*
 17	de	de	ADP	_	_	19	case	_	_	*	*	*
 18	douze	douze	NUM	_	NumType=Card	19	nummod	_	_	*	*	*
 19	mois	mois	NOUN	_	Gender=Masc|Number=Plur	16	nmod	_	_	*	Time	*
@@ -8773,7 +8773,7 @@
 10	Combes	Combes	PROPN	_	Gender=Masc|Number=Sing	8	nmod	_	_	*	Institution	5:PERS
 11	et	et	CCONJ	_	_	13	cc	_	_	*	*	*
 12	sa	son	DET	_	Gender=Fem|Number=Sing|Poss=Yes	13	det	_	_	*	*	*
-13	fin	fin	NOUN	_	Gender=Fem|Number=Sing	8	conj	_	_	*	Event	*
+13	fin	fin	NOUN	_	Gender=Fem|Number=Sing	8	conj	_	_	*	Act	*
 14	politique	politique	ADJ	_	Number=Sing	13	amod	_	_	*	*	*
 15	,	,	PUNCT	_	_	6	punct	_	_	*	*	*
 16	avec	avec	ADP	_	_	20	case	_	_	*	*	*
@@ -8840,7 +8840,7 @@
 # text = Tentative d'analyse et de conclusion
 1	Tentative	tentative	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	*
 2	d'	de	ADP	_	_	3	case	_	_	*	*	*
-3	analyse	analyse	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Cognition	*
+3	analyse	analyse	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Act	*
 4	et	et	CCONJ	_	_	6	cc	_	_	*	*	*
 5	de	de	ADP	_	_	6	case	_	_	*	*	*
 6	conclusion	conclusion	NOUN	_	Gender=Fem|Number=Sing	3	conj	_	_	*	Cognition	*
@@ -8907,7 +8907,7 @@
 14	"	"	PUNCT	_	_	17	punct	_	_	*	*	*
 15	dans	dans	ADP	_	_	17	case	_	_	*	*	*
 16	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	17	det	_	_	*	*	*
-17	conditions	condition	NOUN	_	Gender=Fem|Number=Plur	9	conj	_	_	*	State	*
+17	conditions	condition	NOUN	_	Gender=Fem|Number=Plur	9	conj	_	_	*	Cognition	*
 18	non	non	ADV	_	_	19	advmod	_	_	*	*	*
 19	rigoureuses	rigoureux	ADJ	_	Gender=Fem|Number=Plur	17	amod	_	_	*	*	*
 20	"	"	PUNCT	_	_	17	punct	_	_	*	*	*
@@ -8958,7 +8958,7 @@
 14	en	en	ADP	_	_	15	case	_	_	1:_|MWE|LEX	*	*
 15	place	place	NOUN	_	Gender=Fem|Number=Sing	13	obl:arg	_	_	1	*	*
 16	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	dispositif	dispositif	NOUN	_	Gender=Masc|Number=Sing	13	obj	_	_	*	Artifact	*
+17	dispositif	dispositif	NOUN	_	Gender=Masc|Number=Sing	13	obj	_	_	*	Act	*
 18	bancaire	bancaire	ADJ	_	Number=Sing	17	amod	_	_	*	*	*
 19	destiné	destiner	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	17	acl	_	_	*	*	*
 20	à	à	ADP	_	_	21	mark	_	_	*	*	*
@@ -9084,7 +9084,7 @@
 40	blanchiment	blanchiment	NOUN	_	Gender=Masc|Number=Sing	35	conj	_	_	*	Act	*
 41	de	de	ADP	_	_	43	case	_	_	*	*	*
 42	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	43	det	_	_	*	*	*
-43	capitaux	capitaux	NOUN	_	Gender=Masc|Number=Plur	40	nmod	_	_	*	Person	*
+43	capitaux	capitaux	NOUN	_	Gender=Masc|Number=Plur	40	nmod	_	_	*	Possession	*
 44	en	en	ADP	_	_	45	case	_	_	*	*	*
 45	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	40	nmod	_	_	*	Institution	4:LOC
 46	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
@@ -9134,7 +9134,7 @@
 24	découverte	découverte	NOUN	_	Gender=Fem|Number=Sing	9	obl:mod	_	_	*	Act	*
 25	sur	sur	ADP	_	_	27	case	_	_	*	*	*
 26	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	27	det	_	_	*	*	*
-27	compte	compte	NOUN	_	Gender=Masc|Number=Sing	24	nmod	_	_	*	Artifact	*
+27	compte	compte	NOUN	_	Gender=Masc|Number=Sing	24	nmod	_	_	*	Institution	*
 28	suisse	suisse	ADJ	_	Number=Sing	27	amod	_	_	*	*	*
 29	,	,	PUNCT	_	_	24	punct	_	_	*	*	*
 30	et	et	CCONJ	_	_	32	cc	_	_	*	*	*
@@ -9147,7 +9147,7 @@
 37	plusieurs	plusieurs	DET	_	Number=Plur	38	det	_	_	*	*	*
 38	dizaines	dizaine	NOUN	_	Gender=Fem|Number=Plur	24	nmod	_	_	*	Quantity	*
 39	de	de	ADP	_	_	40	case	_	_	*	*	*
-40	millions	million	NOUN	_	Gender=Masc|Number=Plur|NumType=Card	38	nmod	_	_	*	Possession	*
+40	millions	million	NOUN	_	Gender=Masc|Number=Plur|NumType=Card	38	nmod	_	_	*	Quantity	*
 41	d'	de	ADP	_	_	42	case	_	_	*	*	*
 42	euros	euro	NOUN	_	Gender=Masc|Number=Plur	40	nmod	_	_	*	Possession	*
 43	qui	qui	PRON	_	PronType=Rel	44	nsubj	_	_	*	*	*
@@ -9291,7 +9291,7 @@
 12	à	à	ADP	_	_	13	case	_	_	*	*	*
 13	Zurich	Zurich	PROPN	_	_	11	obl:mod	_	_	*	Institution	3:LOC
 14	1,2	1,2	NUM	_	NumType=Card	15	nummod	_	_	*	*	*
-15	milliard	milliard	NOUN	_	Gender=Masc|Number=Sing|NumType=Card	11	obj	_	_	*	Possession	*
+15	milliard	milliard	NOUN	_	Gender=Masc|Number=Sing|NumType=Card	11	obj	_	_	*	Quantity	*
 16	de	de	ADP	_	_	17	case	_	_	*	*	*
 17	francs	franc	NOUN	_	Gender=Masc|Number=Plur	15	nmod	_	_	1:_|MWE|LEX	*	*
 18	suisses	suisse	ADJ	_	Number=Plur	17	amod	_	_	1	*	*
@@ -9326,7 +9326,7 @@
 1	-	-	PUNCT	_	_	13	punct	_	_	*	*	*
 2	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	4	det	_	_	*	*	*
 3	actuelle	actuel	ADJ	_	Gender=Fem|Number=Sing	4	amod	_	_	*	*	*
-4	direction	direction	NOUN	_	Gender=Fem|Number=Sing	13	nsubj	_	_	*	Institution	*
+4	direction	direction	NOUN	_	Gender=Fem|Number=Sing	13	nsubj	_	_	*	Person	*
 5	de	de	ADP	_	_	6	case	_	_	*	*	*
 6	Thales	Thales	PROPN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Institution	4:ORG
 7	,	,	PUNCT	_	_	4	punct	_	_	*	*	*
@@ -9435,7 +9435,7 @@
 
 # sent_id = frwiki_50.1000_00524
 # text = Épilogue
-1	Épilogue	Épilogue	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Act	*
+1	Épilogue	Épilogue	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
 
 
 # sent_id = frwiki_50.1000_00533
@@ -9445,7 +9445,7 @@
 
 # sent_id = frwiki_50.1000_00546
 # text = ISBN 2840985314
-1	ISBN	ISBN	NOUN	_	_	0	root	_	_	*	Cognition	*
+1	ISBN	ISBN	NOUN	_	_	0	root	_	_	*	Attribute	*
 2	2840985314	2840985314	NUM	_	NumType=Card	1	nummod	_	_	*	*	*
 
 
@@ -9492,7 +9492,7 @@
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	page	page	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Possession	*
 13	(	(	PUNCT	_	_	10	punct	_	_	*	*	*
-14	15 000	15 000	NOUN	_	NumType=Card	10	appos	_	_	*	Time	*
+14	15 000	15 000	NOUN	_	NumType=Card	10	appos	_	_	*	Quantity	*
 15	)	)	PUNCT	_	_	10	punct	_	_	*	*	*
 16	-	-	PUNCT	_	_	7	punct	_	_	*	*	*
 17	demandés	demander	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	7	acl	_	_	*	*	*
@@ -9502,7 +9502,7 @@
 21	qui	qui	PRON	_	PronType=Rel	22	nsubj	_	_	*	*	*
 22	passent	passer	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	20	acl:relcl	_	_	*	*	*
 23	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	24	det	_	_	*	*	*
-24	publicités	publicité	NOUN	_	Gender=Fem|Number=Plur	22	obj	_	_	*	Person	*
+24	publicités	publicité	NOUN	_	Gender=Fem|Number=Plur	22	obj	_	_	*	Cognition	*
 25	dans	dans	ADP	_	_	27	case	_	_	*	*	*
 26	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	27	det	_	_	*	*	1:PROD
 27	Clichois	Clichois	PROPN	_	Gender=Masc|Number=Sing	24	nmod	_	_	*	*	1
@@ -9558,7 +9558,7 @@
 4	sous	sous	ADP	_	_	5	case	_	_	*	*	*
 5	scellés	scellé	NOUN	_	Gender=Masc|Number=Plur	3	obl:arg	_	_	*	Cognition	*
 6	170	170	NUM	_	NumType=Card	7	nummod	_	_	*	*	*
-7	cartons	carton	NOUN	_	Gender=Masc|Number=Plur	3	obj	_	_	*	Quantity	*
+7	cartons	carton	NOUN	_	Gender=Masc|Number=Plur	3	obj	_	_	*	Possession	*
 8	de	de	ADP	_	_	9	case	_	_	*	*	*
 9	documents	document	NOUN	_	Gender=Masc|Number=Plur	7	nmod	_	_	*	Cognition	*
 10	,	,	PUNCT	_	_	9	punct	_	_	*	*	*
@@ -9663,7 +9663,7 @@
 23	dont	dont	PRON	_	PronType=Rel	24	nmod	_	_	*	*	*
 24	trois	trois	PRON	_	NumType=Card	19	acl:relcl	_	_	*	*	*
 25	avec	avec	ADP	_	_	26	case	_	_	*	*	*
-26	sursis	sursis	NOUN	_	Gender=Masc|Number=Sing	24	nmod	_	_	*	State	*
+26	sursis	sursis	NOUN	_	Gender=Masc|Number=Sing	24	nmod	_	_	*	Act	*
 27	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 28	ainsi	ainsi	ADV	_	_	32	cc	_	ExtPos=CCONJ	2:CCONJ|MWE|IRREG	*	*
 29	qu'	que	SCONJ	_	_	28	fixed	_	_	2	*	*
@@ -9758,7 +9758,7 @@
 28	clefs	clef	NOUN	_	Gender=Fem|Number=Plur	27	nmod	_	_	*	Person	*
 29	de	de	ADP	_	_	31	case	_	_	*	*	*
 30	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	31	det	_	_	*	*	*
-31	système	système	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Institution	*
+31	système	système	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Cognition	*
 32	.	.	PUNCT	_	_	9	punct	_	_	*	*	*
 
 
@@ -9978,7 +9978,7 @@
 4	indique	indiquer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 5	qu'	que	SCONJ	_	_	8	mark	_	_	*	*	*
 6	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det	_	_	*	*	*
-7	transaction	transaction	NOUN	_	Gender=Fem|Number=Sing	8	nsubj	_	_	*	Act	*
+7	transaction	transaction	NOUN	_	Gender=Fem|Number=Sing	8	nsubj	_	_	*	Person	*
 8	doit	devoir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	ccomp	_	_	*	*	*
 9	se	se	PRON	_	Person=3|Reflex=Yes	10	expl:comp	_	_	1:_|MWE-IRV|_	*	*
 10	dérouler	dérouler	VERB	_	VerbForm=Inf	8	xcomp	_	_	1	*	*
@@ -10062,14 +10062,14 @@
 7	Toubon	Toubon	PROPN	_	_	6	flat:name	_	_	*	*	1
 8	envoie	envoyer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 9	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	10	det	_	_	*	*	*
-10	hélicoptère	hélicoptère	NOUN	_	Gender=Masc|Number=Sing	8	obj	_	_	*	Act	*
+10	hélicoptère	hélicoptère	NOUN	_	Gender=Masc|Number=Sing	8	obj	_	_	*	Person	*
 11	dans	dans	ADP	_	_	13	case	_	_	*	*	*
 12	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	13	det	_	_	*	*	*
 13	Himalaya	Himalaya	PROPN	_	Number=Sing	8	obl:arg	_	_	*	Institution	3:LOC
 14	pour	pour	ADP	_	_	15	mark	_	_	*	*	*
 15	ramener	ramener	VERB	_	VerbForm=Inf	8	advcl	_	_	*	*	*
 16	en	en	ADP	_	_	17	case	_	_	*	*	*
-17	urgence	urgence	NOUN	_	Gender=Fem|Number=Sing	15	obl:mod	_	_	*	State	*
+17	urgence	urgence	NOUN	_	Gender=Fem|Number=Sing	15	obl:mod	_	_	*	Act	*
 18	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	19	det	_	_	*	*	*
 19	procureur	procureur	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	2:_|MWE|LEX	*	*
 20	de	de	ADP	_	_	22	case	_	_	2	*	*
@@ -10203,7 +10203,7 @@
 11	3 092	3 092	NUM	_	NumType=Card	12	nummod	_	_	*	*	*
 12	cabines	cabine	NOUN	_	Gender=Fem|Number=Plur	5	nmod	_	_	*	Artifact	*
 13	d'	de	ADP	_	_	14	case	_	_	*	*	*
-14	ascenseurs	ascenseur	NOUN	_	Gender=Masc|Number=Plur	12	nmod	_	_	*	Artifact	*
+14	ascenseurs	ascenseur	NOUN	_	Gender=Masc|Number=Plur	12	nmod	_	_	*	Person	*
 15	de	de	ADP	_	_	17	case	_	_	*	*	*
 16	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	17	det	_	_	*	*	*
 17	immeubles	immeuble	NOUN	_	Gender=Masc|Number=Plur	12	nmod	_	_	*	Artifact	*
@@ -10297,7 +10297,7 @@
 10	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	conj	_	_	*	Event	1:EVE
 11	de	de	ADP	_	_	13	case	_	_	*	*	1
 12	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	13	det	_	_	*	*	1
-13	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Artifact	1
+13	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Possession	1
 14	truqués	truquer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	13	acl	_	_	*	*	1
 15	de	de	ADP	_	_	17	case	_	_	*	*	1
 16	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	17	det	_	_	*	*	1
@@ -10306,7 +10306,7 @@
 19	Île-de-France	Île-de-France	PROPN	_	_	17	nmod	_	_	*	Institution	1
 20	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	22	cop	_	_	*	*	*
 21	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
-22	dossier	dossier	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Event	*
+22	dossier	dossier	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
 23	emblématique	emblématique	ADJ	_	Number=Sing	22	amod	_	_	*	*	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	26	det	_	_	*	*	*
@@ -10426,7 +10426,7 @@
 1	La	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det	_	_	*	*	*
 2	plus	plus	ADV	_	_	3	advmod	_	_	*	*	*
 3	grosse	gros	ADJ	_	Gender=Fem|Number=Sing	4	amod	_	_	*	*	*
-4	part	part	NOUN	_	Gender=Fem|Number=Sing	14	nsubj	_	_	*	Possession	*
+4	part	part	NOUN	_	Gender=Fem|Number=Sing	14	nsubj	_	_	*	Quantity	*
 5	(	(	PUNCT	_	_	4	punct	_	_	*	*	*
 6	1,2	1,2	NUM	_	NumType=Card	7	nummod	_	_	*	*	*
 7	%	%	NOUN	_	Gender=Masc	4	appos	_	_	*	Quantity	*
@@ -10434,7 +10434,7 @@
 9	de	de	ADP	_	_	12	case	_	_	*	*	*
 10	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 11	"	"	PUNCT	_	_	12	punct	_	_	*	*	*
-12	racket	racket	NOUN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Cognition	*
+12	racket	racket	NOUN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Act	*
 13	"	"	PUNCT	_	_	12	punct	_	_	*	*	*
 14	revint	revenir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	_	*	*	*
 15	à	à	ADP	_	_	17	case	_	_	*	*	*
@@ -10529,14 +10529,14 @@
 8	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	9	det	_	_	*	*	*
 9	fonds	fonds	NOUN	_	Gender=Masc|Number=Plur	6	obj	_	_	*	Possession	*
 10	en	en	ADP	_	_	11	case	_	_	*	*	*
-11	espèces	espèce	NOUN	_	Gender=Fem|Number=Plur	9	nmod	_	_	*	Possession	*
+11	espèces	espèce	NOUN	_	Gender=Fem|Number=Plur	9	nmod	_	_	*	Act	*
 12	en	en	ADP	_	_	13	case	_	_	*	*	*
 13	1986	1986	NUM	_	NumType=Card	6	obl:mod	_	_	*	Time	*
 14	à	à	ADP	_	_	15	case	_	_	*	*	*
 15	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	6	obl:arg	_	_	*	*	1:PERS
 16	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	15	flat:name	_	_	*	*	1
 17	en	en	ADP	_	_	18	case	_	_	*	*	*
-18	présence	présence	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	State	*
+18	présence	présence	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	Act	*
 19	de	de	ADP	_	_	20	case	_	_	*	*	*
 20	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	*	2:PERS
 21	Roussin	Roussin	PROPN	_	_	20	flat:name	_	_	*	*	2
@@ -10569,14 +10569,14 @@
 15	peuvent	pouvoir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 16	examiner	examiner	VERB	_	VerbForm=Inf	15	xcomp	_	_	*	*	*
 17	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	18	det	_	_	*	*	*
-18	investigations	investigation	NOUN	_	Gender=Fem|Number=Plur	16	obj	_	_	1:_|MWE-LVC.full|_	Act	*
+18	investigations	investigation	NOUN	_	Gender=Fem|Number=Plur	16	obj	_	_	1:_|MWE-LVC.full|_	Cognition	*
 19	menées	mener	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	18	acl	_	_	1	*	*
 20	sur	sur	ADP	_	_	22	case	_	_	*	*	*
 21	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	22	det	_	_	*	*	*
 22	voyages	voyage	NOUN	_	Gender=Masc|Number=Plur	19	obl:arg	_	_	*	Possession	*
 23	payés	payer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	22	acl	_	_	*	*	*
 24	en	en	ADP	_	_	25	case	_	_	*	*	*
-25	espèces	espèce	NOUN	_	Gender=Fem|Number=Plur	23	obl:mod	_	_	*	Time	*
+25	espèces	espèce	NOUN	_	Gender=Fem|Number=Plur	23	obl:mod	_	_	*	Institution	*
 26	par	par	ADP	_	_	27	case	_	_	*	*	*
 27	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	23	obl:agent	_	_	*	*	2:PERS
 28	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	27	flat:name	_	_	*	*	2
@@ -10651,8 +10651,8 @@
 6	écologiste	écologiste	ADJ	_	Number=Sing	5	amod	_	_	*	*	*
 7	dissident	dissident	ADJ	_	Gender=Masc|Number=Sing	5	amod	_	_	*	*	*
 8	de	de	ADP	_	_	9	case	_	_	*	*	*
-9	Génération	Génération	PROPN	_	_	7	obl:arg	_	_	*	Institution	2:ORG
-10	écologie	écologie	NOUN	_	Gender=Fem|Number=Sing	9	nmod	_	_	*	Cognition	2
+9	Génération	Génération	PROPN	_	_	7	obl:arg	_	_	*	Act	2:ORG
+10	écologie	écologie	NOUN	_	Gender=Fem|Number=Sing	9	nmod	_	_	*	Act	2
 11	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 12	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	aux:tense	_	_	*	*	*
 13	été	être	AUX	_	Tense=Past|VerbForm=Part	14	aux:pass	_	_	*	*	*
@@ -10671,7 +10671,7 @@
 26	dont	dont	PRON	_	PronType=Rel	27	nmod	_	_	*	*	*
 27	deux	deux	PRON	_	NumType=Card	23	acl:relcl	_	_	*	*	*
 28	avec	avec	ADP	_	_	29	case	_	_	*	*	*
-29	sursis	sursis	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	State	*
+29	sursis	sursis	NOUN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Act	*
 30	)	)	PUNCT	_	_	17	punct	_	_	*	*	*
 31	.	.	PUNCT	_	_	14	punct	_	_	*	*	*
 
@@ -10813,7 +10813,7 @@
 6	B	B	NOUN	_	_	5	nmod	_	_	*	Attribute	1
 7	(	(	PUNCT	_	_	5	punct	_	_	*	*	*
 8	2e	2e	ADJ	_	NumType=Ord	9	amod	_	_	*	*	*
-9	division	division	NOUN	_	Gender=Fem|Number=Sing	5	appos	_	_	*	Institution	*
+9	division	division	NOUN	_	Gender=Fem|Number=Sing	5	appos	_	_	*	Attribute	*
 10	)	)	PUNCT	_	_	5	punct	_	_	*	*	*
 11	avec	avec	ADP	_	_	13	case	_	_	*	*	*
 12	30	30	NUM	_	NumType=Card	13	nummod	_	_	*	*	*
@@ -10844,7 +10844,7 @@
 
 # sent_id = frwiki_50.1000_00828
 # text = Liens externes
-1	Liens	lien	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Cognition	*
+1	Liens	lien	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Institution	*
 2	externes	externe	ADJ	_	Number=Plur	1	amod	_	_	*	*	*
 
 
@@ -10980,15 +10980,15 @@
 # text = Wikipédia : ébauche droit.
 1	Wikipédia	Wikipédia	PROPN	_	_	0	root	_	_	*	Cognition	1:PROD
 2	:	:	PUNCT	_	_	1	punct	_	_	*	*	*
-3	ébauche	ébauche	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Cognition	*
-4	droit	droit	NOUN	_	Gender=Masc|Number=Sing	3	nmod	_	_	*	Cognition	*
+3	ébauche	ébauche	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Artifact	*
+4	droit	droit	NOUN	_	Gender=Masc|Number=Sing	3	nmod	_	_	*	Artifact	*
 5	.	.	PUNCT	_	_	1	punct	_	_	*	*	*
 
 
 # sent_id = frwiki_50.1000_00904
 # text = Les photos incriminées
 1	Les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	2	det	_	_	*	*	*
-2	photos	photo	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Artifact	*
+2	photos	photo	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Cognition	*
 3	incriminées	incriminer	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	2	acl	_	_	*	*	*
 
 
@@ -11015,7 +11015,7 @@
 19	de	de	ADP	_	_	22	case	_	_	*	*	*
 20	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
 21	même	même	ADJ	_	Number=Sing	22	amod	_	_	*	*	*
-22	immeuble	immeuble	NOUN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	Cognition	*
+22	immeuble	immeuble	NOUN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	Artifact	*
 23	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 24	datés	dater	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	18	acl	_	_	*	*	*
 25	respectivement	respectivement	ADV	_	_	24	advmod	_	_	*	*	*
@@ -11073,7 +11073,7 @@
 14	photo	photo	NOUN	_	Gender=Fem|Number=Sing	9	obl:mod	_	_	*	Artifact	*
 15	représentant	représenter	VERB	_	Tense=Pres|VerbForm=Part	14	acl	_	_	*	*	*
 16	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
-17	quartier	quartier	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	*	Person	*
+17	quartier	quartier	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	*	Institution	*
 18	de	de	ADP	_	_	19	case	_	_	*	*	*
 19	Beyrouth	Beyrouth	PROPN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	Institution	1:LOC
 20	ayant	avoir	AUX	_	Tense=Pres|VerbForm=Part	21	aux:tense	_	_	*	*	*
@@ -11227,7 +11227,7 @@
 35	débats	débat	NOUN	_	Gender=Masc|Number=Plur	32	obl:arg	_	_	*	Act	*
 36	sur	sur	ADP	_	_	38	case	_	_	*	*	*
 37	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	38	det	_	_	*	*	*
-38	période	période	NOUN	_	Gender=Fem|Number=Sing	35	nmod	_	_	*	Act	*
+38	période	période	NOUN	_	Gender=Fem|Number=Sing	35	nmod	_	_	*	Time	*
 39	coloniale	colonial	ADJ	_	Gender=Fem|Number=Sing	38	amod	_	_	*	*	*
 40	;	;	PUNCT	_	_	13	punct	_	_	*	*	*
 41	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3	43	nsubj	_	_	*	*	*
@@ -11245,7 +11245,7 @@
 # sent_id = frwiki_50.1000_00953
 # text = Le trafic (1948-1953)
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	trafic	trafic	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Artifact	*
+2	trafic	trafic	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Person	*
 3	(	(	PUNCT	_	_	2	punct	_	_	*	*	*
 4	1948-1953	1948-1953	NOUN	_	NumType=Card	2	nmod	_	_	*	Time	*
 5	)	)	PUNCT	_	_	2	punct	_	_	*	*	*
@@ -11321,7 +11321,7 @@
 21	colonisation	colonisation	NOUN	_	Gender=Fem|Number=Sing	18	nmod	_	_	*	Act	*
 22	dont	dont	PRON	_	PronType=Rel	24	nmod	_	_	*	*	*
 23	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	24	det	_	_	*	*	*
-24	bilan	bilan	NOUN	_	Gender=Masc|Number=Sing	27	nsubj	_	_	*	Cognition	*
+24	bilan	bilan	NOUN	_	Gender=Masc|Number=Sing	27	nsubj	_	_	*	Possession	*
 25	général	général	ADJ	_	Gender=Masc|Number=Sing	24	amod	_	_	*	*	*
 26	s'	se	PRON	_	Person=3|Reflex=Yes	27	expl:comp	_	_	2:_|MWE-IRV|_	*	*
 27	avéra	avérer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	21	acl:relcl	_	_	2	*	*
@@ -11375,13 +11375,13 @@
 2	Colloque	colloque	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
 3	sur	sur	ADP	_	_	5	case	_	_	*	*	*
 4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	fraudes	fraude	NOUN	_	Gender=Fem|Number=Plur	2	nmod	_	_	*	Act	*
+5	fraudes	fraude	NOUN	_	Gender=Fem|Number=Plur	2	nmod	_	_	*	Cognition	*
 
 
 # sent_id = frwiki_50.1000_00995
 # text = Quatrième République.
 1	Quatrième	quatrième	ADJ	_	Number=Sing|NumType=Ord	2	amod	_	_	*	*	*
-2	République	république	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	*
+2	République	république	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Act	*
 3	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
 

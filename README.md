@@ -216,7 +216,7 @@ You should obtains this kind of loss:
 
 <img src="img/Figure_8.png" width="640">
 
-Extract process time: Training process time: s All process time: s
+Extract process time: 60.69s Training process time: 3.49s All process time: 64.18s
 
 and to check evaluation, do this command:
 ```shell
@@ -245,7 +245,7 @@ You should find this kind of loss: <br>
 
 <img src="img/Figure_5.png" width="640">
 
-Extract process time: Training process time: s All process time: s
+Extract process time: 1.45 Training process time: 331.41s All process time: 332.86s
 
 and to check evaluation, do this command:
 ```shell
@@ -269,7 +269,7 @@ You sould find this kind of loss: <br>
 
 <img src="img/Figure_6.png" width="640">
 
-Extract process time: 1.32 Training process time: s All process time: s
+Extract process time: 1.32 Training process time: 275.74s All process time: 277.07s
 
 and to check evaluation, do this command:
 ```shell
@@ -291,7 +291,7 @@ python pstal/tp4/demo_with_extension.py --pre_trained_model Distilbert
 
 You sould find this kind of loss: <br>
 
-Extract process time: Training process time: s All process time: s
+Extract process time: 1.48 Training process time: 68.72 s All process time: 70.20 s
 
 <img src="img/Figure_7.png" width="640">
 
@@ -306,9 +306,6 @@ And if you want to filter juste NOUN PROPN and NUM, run this command:
 python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Distilbert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
 ```
 You should find  67.44 ( 1856/ 2752)
-
-
-
 
 
 ## Authors
