@@ -38,7 +38,7 @@ First let's run learn model using neural network using these parametters:
 You can update them in this file ``pstal/tp1/sequoia/bin/main.py``.
 
 ```shell
-python pstal/tp1/sequoia/bin/main.py
+python pstal/tp1/sequoia/bin/demo_with_extension.py
 ```
 
 You will have this kind of result:
@@ -131,7 +131,7 @@ Our system will therefore be more complex than the one developed for POS tagging
 To run both model, you can click on this link:
 
 ```shell
-python pstal/tp3/main.py
+python pstal/tp3/demo_with_extension.py
 ```
 You should obtain this king of graph:
 
@@ -158,28 +158,155 @@ For example: surprise is a feeling (label: Feeling), leg is a body part (Body), 
 or a food item (Food) depending on the context, etc. We will use contextual vector representations, known as contextual <br>
 embeddings, derived from pre-trained transformer models. <br>
 
-To run model, you can click on this link:
+To run model using CamemBERT pre-trained model:
 
 ```shell
-python pstal/tp4/main.py
+python pstal/tp4/demo_without_extension.py --pre_trained_model CamemBERT
 ```
 
 You should obtains this kind of loss:
 
 <img src="img/Figure_4.png" width="640">
 
+Extract process time: 111s Training process time: 3.4s All process time: 114<s
+
 and to check evaluation, do this command:
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Camembert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
 ```
 You should find 97.71 ( 9378/ 9598). 
 And if you want to filter juste NOUN PROPN and NUM, run this command:
 
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Camembert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  91.28 ( 2512/ 2752)
+
+To run model using Multi-BERT pre-trained model:
+
+```shell
+python pstal/tp4/demo_without_extension.py --pre_trained_model Multi-BERT
 ```
 
-You should find  92.01 ( 2532/ 2752)
+You should obtains this kind of loss:
+
+<img src="img/Figure_4.png" width="640">
+
+Extract process time: 111s Training process time: 3.47s All process time: 115.43s
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Multi-BERT.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 95.75 ( 9190/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Multi-BERT.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  85.17 ( 2344/ 2752)
+
+To run model using Distilbert pre-trained model:
+
+```shell
+python pstal/tp4/demo_without_extension.py --pre_trained_model Distilbert
+```
+
+You should obtains this kind of loss:
+
+<img src="img/Figure_8.png" width="640">
+
+Extract process time: 60.69s Training process time: 3.49s All process time: 64.18s
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Distilbert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 94.75 ( 9094/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_Distilbert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  81.69 ( 2248/ 2752)
+
+You should obtains this kind of loss:
+
+<img src="img/Figure_9.png" width="640">
+
+Extract process time: 58s Training process time: 3.39s All process time: 62.15s
+
+To run model using extension on CamemBERT pre-trained model:
+
+```shell
+python pstal/tp4/demo_with_extension.py --pre_trained_model CamemBERT
+```
+You should find this kind of loss: <br>
+
+<img src="img/Figure_5.png" width="640">
+
+Extract process time: 1.45 Training process time: 331.41s All process time: 332.86s
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Camembert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 91.49 ( 8781/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Camembert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  70.31 ( 1935/ 2752)
+
+To run model using extension on Multi-BERT pre-trained model:
+
+```shell
+python pstal/tp4/demo_with_extension.py --pre_trained_model Multi-BERT
+```
+
+You sould find this kind of loss: <br>
+
+<img src="img/Figure_6.png" width="640">
+
+Extract process time: 1.32 Training process time: 275.74s All process time: 277.07s
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Multi-BERT.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 91.66 ( 8798/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Multi-BERT.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  70.93 ( 1952/ 2752)
+
+To run model using extension on Distilbert pre-trained model:
+
+```shell
+python pstal/tp4/demo_with_extension.py --pre_trained_model Distilbert
+```
+
+You sould find this kind of loss: <br>
+
+Extract process time: 1.48 Training process time: 68.72 s All process time: 70.20 s
+
+<img src="img/Figure_7.png" width="640">
+
+and to check evaluation, do this command:
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Distilbert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+You should find 90.66 ( 8702/ 9598). 
+And if you want to filter juste NOUN PROPN and NUM, run this command:
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/tp4/prediction/prediction_ft_Distilbert.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --upos-filter NOUN PROPN NUM
+```
+You should find  67.44 ( 1856/ 2752)
+
 
 # TP5: Transition-based dependency parser
 
