@@ -181,6 +181,12 @@ python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/
 
 You should find  92.01 ( 2532/ 2752)
 
+# TP5: Transition-based dependency parser
+
+```shell
+python pstal/tp1/sequoia/bin/accuracy.py  --tagcolumn deprel --pred pstal/tp5/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+```
+
 
 
 ## Authors
