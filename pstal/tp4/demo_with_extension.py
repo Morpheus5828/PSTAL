@@ -58,9 +58,11 @@ if __name__ == "__main__":
     parser.add_argument("--pre_trained_model", required=True,
                         choices=["CamemBERT", "Multi-BERT", "Distilbert"],
                         help="Choose between CamemBERT or Multi-BERT")
+    parser.add_argument("--k_min")
+    parser.add_argument("--k_max")
     args = parser.parse_args()
 
-    tokenizer, pre_trained_model, title = None, None, None
+    tokenizer, pre_trained_model, title = None, None, None,
 
     if args.pre_trained_model == "CamemBERT":
         tokenizer = camembert_tokenizer
@@ -74,6 +76,9 @@ if __name__ == "__main__":
         tokenizer = distilbert_tokenizer
         pre_trained_model = distilbert_pre_trained_model
         title = "Distilbert"
+
+    k_min = args.k_min
+    k_max = args.k_max
 
     print("Preparing data, please hold on :-) \n")
     start = time.time()
