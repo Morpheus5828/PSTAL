@@ -3,7 +3,6 @@ import os, sys
 import pickle
 from collections import defaultdict, Counter
 
-
 # Add the correct directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_path = os.path.abspath(os.path.join(current_dir, '../../'))
@@ -13,7 +12,30 @@ if project_path not in sys.path:
 from lib.conllulib import CoNLLUReader, Util
 
 
-def train(file_path: str, alpha=0.1, count_display=True):
+def display_counts(c_w_t: dict, c_t_t: dict, c_t: dict, c_s_t: dict, S: int, V_w: int, V_t: int):
+    print("Word-Tag Counts (c(wj, ti)):")
+    print(c_w_t)
+
+    print("\nAdjacent Tag Counts (c(ti, tj)):")
+    print(c_t_t)
+
+    print("\nTag Counts (c(ti)):")
+    print(c_t)
+
+    print("\nStart-of-Sentence Tag Counts (c(<s>, ti)):")
+    print(c_s_t)
+
+    print("\nTotal number of sentences:")
+    print(S)
+
+    print("\nSize of vocabulary:")
+    print(V_w)
+
+    print("\nNumber of labels:")
+    print(V_t)
+
+
+def train(file_path: str, alpha=0.1, display_count=True):
     with open(file_path, "r", encoding="UTF-8") as infile:
         tokenLists = CoNLLUReader(infile).readConllu()
 
@@ -30,8 +52,8 @@ def train(file_path: str, alpha=0.1, count_display=True):
             c_s_t[BIOs[0]] += 1
 
             # Update word-tag counts
-            for form, bio in zip(forms, BIOs):
-                c_w_t[form][bio] += 1
+            for word, tag in zip(forms, BIOs):
+                c_w_t[word][tag] += 1
 
             # Update adjacent tag counts
             for tag1, tag2 in zip(BIOs, BIOs[1:]):
@@ -44,28 +66,8 @@ def train(file_path: str, alpha=0.1, count_display=True):
         V_w = len(c_w_t.keys())
         V_t = len(c_t.keys())
 
-        if count_display:
-            # Display results
-            print("Word-Tag Counts (c(wj, ti)):")
-            print(dict(c_w_t))
-
-            print("\nAdjacent Tag Counts (c(ti, tj)):")
-            print(dict(c_t_t))
-
-            print("\nTag Counts (c(ti)):")
-            print(dict(c_t))
-
-            print("\nStart-of-Sentence Tag Counts (c(<s>, ti)):")
-            print(dict(c_s_t))
-
-            print("\nTotal number of sentences:")
-            print(S)
-
-            print("\nSize of vocabulary:")
-            print(V_w)
-
-            print("\nNumber of labels:")
-            print(V_t)
+        if display_count:
+            display_counts(dict(c_w_t), dict(c_t_t), dict(c_t), dict(c_s_t), S, V_w, V_t)
 
         # Compute -log probabilities
         log_E = defaultdict(dict)
@@ -115,9 +117,9 @@ if __name__ == "__main__":
     parser.add_argument("inputFileName", help="Path to the sequoia input file")
     parser.add_argument("outputFileName", help="Name and path for .pkl output file")
 
-    # TO DO : using optional parameters alpha and countDisplay
+    # Using optional parameters alpha and countDisplay
     parser.add_argument("alpha", nargs='?', type=float, default=0.1, help="Smoothing rate")
-    parser.add_argument("countDisplay", nargs='?', type=str, choices=["True", "False"], default="False", help="")
+    parser.add_argument("display_counts", nargs='?', type=str, choices=["True", "False"], default="False", help="")
 
     args = parser.parse_args()
 
@@ -125,13 +127,14 @@ if __name__ == "__main__":
     input_file_name = args.inputFileName
     output_path = args.outputFileName
     alpha = args.alpha
-    display = args.countDisplay == "True"  # Convert to boolean value
+    display_opt = args.display_counts == "True"  # Convert to boolean value
 
-    log_E, log_T, log_pi = train(input_file_name, alpha=alpha, count_display=True)
+    log_E, log_T, log_pi = train(input_file_name, alpha=alpha, display_count=display_opt)
 
     """
     print(f"Log E: {log_E}\n")
     print(f"Log T: {log_T}\n")
     print(f"Log pi: {log_pi}\n")
     """
+
     save(output_path, log_E, log_T, log_pi)

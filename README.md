@@ -60,12 +60,12 @@ Therefore, we will not be using the PyTorch library this time. <br>
 
 1. Start training
 ```shell
-python pstal/tp2/train_ner.py pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.train pstal/tp2/simple.train.parameters.1.pkl
+python pstal/tp2/train_ner.py pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.train pstal/tp2/train_ner.parameters.pkl
 ```
 
 2. Compute prediction
 ```shell
-python pstal/tp2/predict_ner.py pstal/tp2/simple.train.parameters.1.pkl pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.dev pstal/tp1/predictions.dev.conllu
+python pstal/tp2/predict_ner.py pstal/tp2/train_ner.parameters.pkl pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test pstal/tp1/predictions.test.conllu
 ```
 
 3. Compute evaluation
@@ -79,8 +79,9 @@ Then back to pstal folder
 ```shell
 cd ..
 ```
+
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
+python lib/accuracy.py --pred pstal/tp2/predictions.test.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
 ```
 
 The first result obtained is :
@@ -99,9 +100,19 @@ macro-avg  : P= 81.22               / R= 64.05               / F= 71.62
 ```
 
 We then replaced the Emission matrix by a bidirectional RNN. This model was trained apart while the others matrices still be calculated dynamically inside the Viterbi algorithm.
+
 The following figure illustrate our best RNN model:
 
 <img src="pstal/tp2/RNN for NER training loss.png">
+
+To predict a corpus with RNN :
+```shell
+python pstal/tp2/predict_ner.py pstal/tp2/train_ner.parameters.pkl lib/corpus/sequoia-ud.parseme.frsemcor.simple.test pstal/tp2/predictions.rnn.test.conllu pstal/tp2/simple.train.emission.parameters1.pkl
+```
+
+```shell
+python lib/accuracy.py --pred pstal/tp2/predictions.rnn.test.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
+```
 
 The scores achieved is much lower than the traditional Viterbi :
 ```shell
