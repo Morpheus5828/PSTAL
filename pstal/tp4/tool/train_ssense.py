@@ -1,4 +1,4 @@
-"""This script contains code to learn classifier of èèè
+"""This script contains code to learn classifier of tp4
 ..moduleauthor::Marius THORRE
 """
 

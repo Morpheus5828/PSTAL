@@ -307,14 +307,35 @@ python pstal/tp1/sequoia/bin/accuracy.py --tagcolumn frsemcor:noun --pred pstal/
 ```
 You should find  67.44 ( 1856/ 2752)
 
-
-# TP5: Transition-based dependency parser
-
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py  --tagcolumn deprel --pred pstal/tp5/prediction.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test 
+python pstal/tp4/demo_various_k.py --pre_trained_model CamemBERT --k_min 1 --k_max 4
 ```
 
+<img src="img/Figure_11.png" >
 
+Evaluation score: <br>
+- Global Accuracy: 86.74 / 90.23 / 90.69 / 90.93
+- Filter Accuracy: 53.74 / 65.92 / 67.51 / 68.02
+
+```shell
+python pstal/tp4/demo_various_k.py --pre_trained_model Distilbert --k_min 1 --k_max 4
+```
+
+<img src="img/Figure_10.png" >
+
+Evaluation score: <br>
+- Global Accuracy: 87.12 / 89.19 / 90.55 / 91.25 
+- Filter Accuracy: 55.09 / 62.28 / 67.04 / 69.48
+
+```shell
+python pstal/tp4/demo_various_k.py --pre_trained_model Multi-BERT --k_min 1 --k_max 4
+```
+
+<img src="img/Figure_12.png" >
+
+Evaluation score: <br>
+- Global Accuracy: 83.19 / 90.22 / 90.96 / 91.39
+- Filter Accuracy: 41.39 / 65.88 / 68.46 / 69.99
 
 ## Authors
 - Marius THORRE

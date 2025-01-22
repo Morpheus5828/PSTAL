@@ -1,4 +1,4 @@
-"""This script contains model from èèè
+"""This script contains model from tp4
 ..moduleauthor::Marius THORRE
 """
 

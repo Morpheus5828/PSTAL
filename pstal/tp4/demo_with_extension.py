@@ -1,5 +1,5 @@
 """
-This script is the main function to run model with extension from èèè
+This script is the main function to run model with extension from tp4
 ..moduleauthor::Marius THORRE
 """
 
@@ -58,6 +58,7 @@ if __name__ == "__main__":
     parser.add_argument("--pre_trained_model", required=True,
                         choices=["CamemBERT", "Multi-BERT", "Distilbert"],
                         help="Choose between CamemBERT or Multi-BERT")
+
     args = parser.parse_args()
 
     tokenizer, pre_trained_model, title = None, None, None
@@ -75,6 +76,7 @@ if __name__ == "__main__":
         pre_trained_model = distilbert_pre_trained_model
         title = "Distilbert"
 
+        
     print("Preparing data, please hold on :-) \n")
     start = time.time()
     inputs_train, targets_train, word_ids_train, attention_masks_train, encoding_dict = prepare_data_for_finetuning(
@@ -150,7 +152,8 @@ if __name__ == "__main__":
         collate_fn=collate_fn
     )
 
-    output_file_path = os.path.join(project_path, f"pstal/èèè/prediction/prediction_ft_{title}.conllu")
+    output_file_path = os.path.join(project_path, f"pstal/tp4/prediction/prediction_ft_{title}.conllu")
+
     download_pred_file_ft(
         model=trained_model,
         test_loader=test_loader,
@@ -167,5 +170,6 @@ if __name__ == "__main__":
     plt.legend()
     plt.xlabel("Epochs")
     plt.ylabel("Loss")
-    #plt.title(f"Training and Validation Loss using {title} pre-trained model")
-    #plt.savefig(os.path.join(project_path, f"pstal/èèè/loss_ft_{title}.png"))
+    plt.title(f"Training and Validation Loss using {title} pre-trained model")
+    plt.savefig(os.path.join(project_path, f"pstal/tp4/loss_ft_{title}.png"))
+

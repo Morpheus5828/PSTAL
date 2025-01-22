@@ -1,6 +1,6 @@
 """
-This script is the main function to run model without extension from èèè
-..moduleauthor::Marius THORRE
+This script is the main function to run model without extension from tp4
+thor::Marius THORRE
 """
 
 import os, sys
@@ -115,7 +115,9 @@ if __name__ == "__main__":
     inputs_test, targets_test = contextual_embeddings(sequoia_test_path, tokenizer, pre_trained_model)
     targets_test, _ = target_encoding(targets_test, encoding_dict, update_dict=False)
 
-    output_file_path = os.path.join(project_path, f"pstal/èèè/prediction/prediction_{title}.conllu")
+
+    output_file_path = os.path.join(project_path, f"pstal/tp4/prediction/prediction_{title}.conllu")
+
 
     download_pred_file(
         model=model,
@@ -134,4 +136,6 @@ if __name__ == "__main__":
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
     plt.title("Training loss")
-    #plt.savefig(os.path.join(project_path, f"pstal/èèè/loss_{title}.png"))
+
+    plt.savefig(os.path.join(project_path, f"pstal/tp4/loss_{title}.png"))
+
