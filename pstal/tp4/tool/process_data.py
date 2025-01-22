@@ -93,8 +93,6 @@ def prepare_data_for_finetuning(path, tokenizer, encoding_dict, upos_list=["NOUN
 
     return input_ids, labels, word_ids_list, attention_masks, encoding_dict
 
-
-
 def target_encoding(target: list, encoding_dict: dict, update_dict: bool = True):
     result = []
     for word in target:

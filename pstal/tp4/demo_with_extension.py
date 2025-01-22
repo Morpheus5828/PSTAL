@@ -58,11 +58,10 @@ if __name__ == "__main__":
     parser.add_argument("--pre_trained_model", required=True,
                         choices=["CamemBERT", "Multi-BERT", "Distilbert"],
                         help="Choose between CamemBERT or Multi-BERT")
-    parser.add_argument("--k_min")
-    parser.add_argument("--k_max")
+
     args = parser.parse_args()
 
-    tokenizer, pre_trained_model, title = None, None, None,
+    tokenizer, pre_trained_model, title = None, None, None
 
     if args.pre_trained_model == "CamemBERT":
         tokenizer = camembert_tokenizer
@@ -77,9 +76,7 @@ if __name__ == "__main__":
         pre_trained_model = distilbert_pre_trained_model
         title = "Distilbert"
 
-    k_min = args.k_min
-    k_max = args.k_max
-
+        
     print("Preparing data, please hold on :-) \n")
     start = time.time()
     inputs_train, targets_train, word_ids_train, attention_masks_train, encoding_dict = prepare_data_for_finetuning(
@@ -156,6 +153,7 @@ if __name__ == "__main__":
     )
 
     output_file_path = os.path.join(project_path, f"pstal/tp4/prediction/prediction_ft_{title}.conllu")
+
     download_pred_file_ft(
         model=trained_model,
         test_loader=test_loader,
@@ -172,5 +170,6 @@ if __name__ == "__main__":
     plt.legend()
     plt.xlabel("Epochs")
     plt.ylabel("Loss")
-    #plt.title(f"Training and Validation Loss using {title} pre-trained model")
-    #plt.savefig(os.path.join(project_path, f"pstal/tp4/loss_ft_{title}.png"))
+    plt.title(f"Training and Validation Loss using {title} pre-trained model")
+    plt.savefig(os.path.join(project_path, f"pstal/tp4/loss_ft_{title}.png"))
+
