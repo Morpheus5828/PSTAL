@@ -41,16 +41,7 @@ def extract_features(tokenList: TokenList, feature_functions, max_len=30):
     for token, tag in zip(forms, upos):
         feature_vector = []
         for func in feature_functions:
-            # Use inspect to get argument names
-            func_args = inspect.signature(func).parameters
-            if 'token' in func_args and 'tag' in func_args:
-                feature_vector.append(func(token, tag))
-            elif 'token' in func_args:
-                feature_vector.append(func(token))
-            elif 'tag' in func_args:
-                feature_vector.append(func(tag))
-            else:
-                feature_vector.append(func())  # For functions that don't need any arguments
+            feature_vector.append(func(token, tag))
         features.append(feature_vector)
 
     # Ensure the feature list is padded or truncated to max_len
@@ -65,27 +56,27 @@ def extract_features(tokenList: TokenList, feature_functions, max_len=30):
     return features_tensor
 
 
-def first_letter_uppercase(token, *args):
+def first_letter_uppercase(token, tag):
     return int(token[0].isupper())
 
 
-def all_letters_uppercase(token, *args):
+def all_letters_uppercase(token, tag):
     return int(token.isupper())
 
 
-def contains_digits(token, *args):
+def contains_digits(token, tag):
     return int(any(char.isdigit() for char in token))
 
 
-def contains_hyphen(token, *args):
+def contains_hyphen(token, tag):
     return int("-" in token)
 
 
-def is_noun(*args, tag):
+def is_noun(token, tag):
     return int(tag == 'NOUN')
 
 
-def is_propn(*args, tag):
+def is_propn(token, tag):
     return int(tag == 'PROPN')
 
 
@@ -102,7 +93,7 @@ def extract_ner(
     with open(file_path, "r", encoding="UTF-8") as file:
         tokenLists = CoNLLUReader(file).readConllu()
 
-        all_form, all_bio, all_features = [], [], []
+        all_form, all_bio, all_features = [], [], None
 
         for tokenList in tokenLists:
             current_X = []
@@ -125,7 +116,9 @@ def extract_ner(
             all_form.append(current_X)
             all_bio.append(current_Y)
 
-            if feature_functions:
+            if feature_functions is not None:
+                if all_features is None:
+                    all_features = []
                 current_features = extract_features(tokenList, feature_functions, max_len)
                 all_features.append(current_features)
 
@@ -134,6 +127,5 @@ def extract_ner(
 
         if feature_functions:
             all_features = torch.stack(all_features)
-            return all_form, all_features, all_bio, all_form_vocab, all_bio_vocab
 
-        return all_form, all_bio, all_form_vocab, all_bio_vocab
+        return all_form, all_features, all_bio, all_form_vocab, all_bio_vocab
