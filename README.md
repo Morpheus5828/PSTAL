@@ -60,12 +60,12 @@ Therefore, we will not be using the PyTorch library this time. <br>
 
 1. Start training
 ```shell
-python pstal/tp2/train_ner.py pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.train pstal/tp2/simple.train.parameters.1.pkl
+python pstal/tp2/train_ner.py lib/corpus/sequoia-ud.parseme.frsemcor.simple.train pstal/tp2/train_ner.parameters.pkl
 ```
 
 2. Compute prediction
 ```shell
-python pstal/tp2/predict_ner.py pstal/tp2/simple.train.parameters.1.pkl pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.dev pstal/tp1/predictions.dev.conllu
+python pstal/tp2/predict_ner.py pstal/tp2/train_ner.parameters.pkl lib/corpus/sequoia-ud.parseme.frsemcor.simple.test pstal/tp1/predictions.test.conllu
 ```
 
 3. Compute evaluation
@@ -79,44 +79,82 @@ Then back to pstal folder
 ```shell
 cd ..
 ```
+
 ```shell
-python pstal/tp1/sequoia/bin/accuracy.py --pred pstal/tp1/sequoia/bin/predictions.conllu --gold pstal/tp1/sequoia/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
+python lib/accuracy.py --pred pstal/tp2/predictions.test.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
 ```
 
 The first result obtained is :
 ```shell
-Accuracy on all parseme:ne: 94.31 ( 9052/ 9598)
+Predictions file: pstal/tp2/predictions.test.conllu
+Accuracy on all parseme:ne: 89.22 ( 8563/ 9598)
 
 Precision, recall, and F-score for parseme:ne:
-Exact-EVE  : P= 92.31 (   12/   13) / R= 60.00 (   12/   20) / F= 72.73
-Exact-LOC  : P= 70.21 (   33/   47) / R= 43.42 (   33/   76) / F= 53.66
-Exact-ORG  : P= 70.21 (   66/   94) / R= 54.10 (   66/  122) / F= 61.11
-Exact-PERS : P= 82.46 (   94/  114) / R= 77.05 (   94/  122) / F= 79.66
-Exact-PROD : P= 87.93 (   51/   58) / R= 77.27 (   51/   66) / F= 82.26
-Exact-nocat: P= 80.37 (  262/  326) / R= 64.53 (  262/  406) / F= 71.58
-Fuzzy-nocat: P= 85.08 (  576/  677) / R= 72.00 (  576/  800) / F= 78.00
-macro-avg  : P= 81.22               / R= 64.05               / F= 71.62
+Exact-EVE  : P= 40.74 (   11/   27) / R= 55.00 (   11/   20) / F= 46.81
+Exact-LOC  : P= 76.92 (   30/   39) / R= 39.47 (   30/   76) / F= 52.17
+Exact-ORG  : P= 47.83 (   55/  115) / R= 45.08 (   55/  122) / F= 46.41
+Exact-PERS : P= 52.38 (   88/  168) / R= 72.13 (   88/  122) / F= 60.69
+Exact-PROD : P= 59.46 (   44/   74) / R= 66.67 (   44/   66) / F= 62.86
+Exact-nocat: P= 57.45 (  243/  423) / R= 59.85 (  243/  406) / F= 58.62
+Fuzzy-nocat: P= 51.90 (  614/ 1183) / R= 76.75 (  614/  800) / F= 61.93
+macro-avg  : P= 55.24               / R= 59.28               / F= 57.19
 ```
 
 We then replaced the Emission matrix by a bidirectional RNN. This model was trained apart while the others matrices still be calculated dynamically inside the Viterbi algorithm.
+
 The following figure illustrate our best RNN model:
 
 <img src="pstal/tp2/RNN for NER training loss.png">
 
+To predict a corpus with RNN :
+```shell
+python pstal/tp2/predict_ner.py pstal/tp2/train_ner.parameters.pkl lib/corpus/sequoia-ud.parseme.frsemcor.simple.test pstal/tp2/predictions.rnn.test.conllu pstal/tp2/rnn_model.parameters.pkl
+```
+
+```shell
+python lib/accuracy.py --pred pstal/tp2/predictions.rnn.test.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
+```
+
 The scores achieved is much lower than the traditional Viterbi :
 ```shell
-Accuracy on all parseme:ne: 93.81 ( 9004/ 9598)
+Predictions file: pstal/tp2/predictions.rnn.test.conllu
+Accuracy on all parseme:ne: 93.79 ( 9002/ 9598)
 
 Precision, recall, and F-score for parseme:ne:
-Exact-EVE  : P= 57.14 (    4/    7) / R= 20.00 (    4/   20) / F= 29.63
-Exact-LOC  : P= 57.14 (   16/   28) / R= 21.05 (   16/   76) / F= 30.77
-Exact-ORG  : P= 55.56 (   55/   99) / R= 45.08 (   55/  122) / F= 49.77
-Exact-PERS : P= 74.07 (   80/  108) / R= 65.57 (   80/  122) / F= 69.57
-Exact-PROD : P= 91.67 (   44/   48) / R= 66.67 (   44/   66) / F= 77.19
-Exact-nocat: P= 71.38 (  207/  290) / R= 50.99 (  207/  406) / F= 59.48
-Fuzzy-nocat: P= 91.28 (  377/  413) / R= 47.12 (  377/  800) / F= 62.16
-macro-avg  : P= 71.18               / R= 45.21               / F= 55.30
+Exact-EVE  : P= 73.33 (   11/   15) / R= 55.00 (   11/   20) / F= 62.86
+Exact-LOC  : P= 60.34 (   35/   58) / R= 46.05 (   35/   76) / F= 52.24
+Exact-ORG  : P= 51.82 (   57/  110) / R= 46.72 (   57/  122) / F= 49.14
+Exact-PERS : P= 70.37 (   19/   27) / R= 15.57 (   19/  122) / F= 25.50
+Exact-PROD : P= 72.22 (   52/   72) / R= 78.79 (   52/   66) / F= 75.36
+Exact-nocat: P= 73.76 (  208/  282) / R= 51.23 (  208/  406) / F= 60.47
+Fuzzy-nocat: P= 88.76 (  458/  516) / R= 57.25 (  458/  800) / F= 69.60
+macro-avg  : P= 70.09               / R= 50.09               / F= 58.42
 ```
+
+Enhance the performance of the RNN by features engineering:
+
+```shell
+python pstal/tp2/predict_ner.py pstal/tp2/train_ner.parameters.pkl lib/corpus/sequoia-ud.parseme.frsemcor.simple.test pstal/tp2/predictions.rnnsf.test.conllu pstal/tp2/rnnsf_model.parameters.pkl
+```
+
+```shell
+python lib/accuracy.py --pred pstal/tp2/predictions.rnnsf.test.conllu --gold lib/corpus/sequoia-ud.parseme.frsemcor.simple.test --tagcolumn parseme:ne
+```
+
+````shell
+Predictions file: pstal/tp2/predictions.rnnsf.test.conllu
+Accuracy on all parseme:ne: 94.41 ( 9061/ 9598)
+
+Precision, recall, and F-score for parseme:ne:
+Exact-EVE  : P= 68.18 (   15/   22) / R= 75.00 (   15/   20) / F= 71.43
+Exact-LOC  : P= 61.54 (   32/   52) / R= 42.11 (   32/   76) / F= 50.00
+Exact-ORG  : P= 51.79 (   58/  112) / R= 47.54 (   58/  122) / F= 49.57
+Exact-PERS : P= 90.00 (   27/   30) / R= 22.13 (   27/  122) / F= 35.53
+Exact-PROD : P= 71.83 (   51/   71) / R= 77.27 (   51/   66) / F= 74.45
+Exact-nocat: P= 78.05 (  224/  287) / R= 55.17 (  224/  406) / F= 64.65
+Fuzzy-nocat: P= 92.62 (  502/  542) / R= 62.75 (  502/  800) / F= 74.81
+macro-avg  : P= 73.43               / R= 54.57               / F= 62.61
+````
 # TP3: Sub-lexical and multi-task models for morphological analysis
 
 The goal of this lab is to develop and evaluate a morphological analysis system. <br> 

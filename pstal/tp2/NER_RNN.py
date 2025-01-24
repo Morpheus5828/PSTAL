@@ -1,13 +1,17 @@
 import os
 import pickle
 import sys
+from abc import ABC, abstractmethod
 
 import torch
 from matplotlib import pyplot as plt
-from torch import nn, relu
+from pytorchcrf import CRF
+from torch import nn, relu, tensor
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
 
+from pstal.tp2.process_data import extract_ner, first_letter_uppercase, all_letters_uppercase, contains_digits, \
+    contains_hyphen, is_noun, is_propn
 
 # Add the correct directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -15,207 +19,189 @@ project_path = os.path.abspath(os.path.join(current_dir, '../../'))
 if project_path not in sys.path:
     sys.path.append(project_path)
 
-from lib.conllulib import CoNLLUReader
 
-
-class NER_RNN(nn.Module):
-    def __init__(self, d_in, d_out, d_emb, d_hidden=128):
-        super().__init__()
-        self.d_in = d_in
-        self.d_embed = d_emb
-        self.d_hidden = d_hidden
-        self.d_out = d_out
-
-        # Embedding layer
-        self.embedding = nn.Embedding(d_in, d_emb, padding_idx=0)
-
-        # GRU Layer (Increase hidden size and add more layers if needed)
-        self.gru = nn.GRU(input_size=d_emb, hidden_size=d_hidden, bidirectional=True,  batch_first=True, bias=False, num_layers=2)
-
-        # Dense layers
-        self.dense1 = nn.Linear(d_hidden * 2, d_hidden)  # *2 for bidirectional GRU
-        self.dropout = nn.Dropout(0.3)  # Lower dropout
-        self.dense2 = nn.Linear(d_hidden, d_out)
-    def forward(self, x):
-        x = self.embedding(x)
-        x, _ = self.gru(x)
-        x = relu(self.dense1(x))
-        x = self.dropout(x)
-        x = self.dense2(x)
-        return x
-
-
-def pad_tensor(X: list, max_len: int, padding_value: int = 0, device=None) -> torch.Tensor:
-    result = torch.full((len(X), max_len), padding_value, device=device, dtype=torch.long)
-    for i, row in enumerate(X):
-        x_len = min(max_len, len(row))
-        result[i, :x_len] = torch.tensor(row[:x_len], device=device, dtype=torch.long)
-    return result
-
-
-def extract_ner(
-        file_path: str,
-        all_form_vocab: dict,
-        all_bio_vocab: dict,
-        update_vocab: bool = True,
-        max_len: int = 30,
-        name_tag: str = 'parseme:ne',
-        bio_stype: str = 'bio'
-):
-    with open(file_path, "r", encoding="UTF-8") as file:
-        tokenLists = CoNLLUReader(file).readConllu()
-
-        all_form, all_bio = [], []
-
-        for tokenList in tokenLists:
-            current_X = []
-            current_Y = []
-            forms = [token['form'] for token in tokenList]
-            BIOs = CoNLLUReader.to_bio(tokenList, bio_style=bio_stype, name_tag=name_tag)
-
-            for form, bio in zip(forms,BIOs):
-                if form not in all_form_vocab:
-                    if update_vocab:
-                        all_form_vocab[form] = len(all_form_vocab)
-                    else:
-                        all_form_vocab[form] = all_form_vocab.get("UNK_ID", 1)
-                current_X.append(all_form_vocab.get(form, all_form_vocab["UNK_ID"]))
-
-                if bio not in all_bio_vocab:
-                    if update_vocab:
-                        all_bio_vocab[bio] = len(all_bio_vocab)
-                    else:
-                        all_bio_vocab[bio] = all_bio_vocab.get("UNK_ID", 1)
-                current_Y.append(all_bio_vocab.get(bio, all_bio_vocab["UNK_ID"]))
-
-            all_form.append(current_X)
-            all_bio.append(current_Y)
-
-        all_form = pad_tensor(all_form, max_len)
-        all_bio = pad_tensor(all_bio, max_len)
-
-        return all_form, all_bio, all_form_vocab, all_bio_vocab
-
-
-def save(model, vocabulary: dict, tags: dict, history: dict, output_path: str):
-    parameters = {'model': model, 'vocabulary': vocabulary, 'tags': tags, 'history': history}
+def save(model, optimizer, criterion, vocabulary: dict, tags: dict, history: dict, batch_size: int, output_path: str):
+    parameters = {'model': model, 'optimizer': optimizer, 'criterion': criterion, 'vocabulary': vocabulary,
+                  'tags': tags, 'history': history, 'batch_size': batch_size}
 
     with open(output_path, "wb") as f:
         pickle.dump(parameters, f)
     print(f"Model saved to {output_path}")
 
 
-def fit(model, X_train, y_train, X_dev, y_dev, nb_epochs, batch_size):
-    optimizer = Adam(lr=0.001, params=model.parameters())
-    criterion = nn.CrossEntropyLoss()
+class BaseNERModel(nn.Module, ABC):
+    """Abstract Base Class for Named Entity Recognition models."""
 
-    histories = {
-        "train_loss": [],
-        "dev_loss": []
-    }
+    def __init__(self, d_in, d_emb, d_out, d_hidden):
+        super().__init__()
 
-    train_dataset = TensorDataset(X_train, y_train)
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False)
+        self.d_in = d_in
+        self.d_emb = d_emb
+        self.d_hidden = d_hidden
+        self.d_out = d_out
 
-    dev_dataset = TensorDataset(X_dev, y_dev)
-    dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+        self.embedding = nn.Embedding(d_in, d_emb, padding_idx=0)
+        self.gru = nn.GRU(input_size=d_emb, hidden_size=d_hidden, bidirectional=True, batch_first=True, num_layers=2,
+                          dropout=0.1)  # Bidirectional GRU
+        self.dropout = nn.Dropout(0.3)
+        self.dense = nn.Linear(d_hidden * 2, d_hidden)
+        self.decision = nn.Linear(d_hidden, d_out)
 
-    for epoch in range(nb_epochs):
-        model.train()
-        total_train_loss = 0
+    @abstractmethod
+    def forward(self, x, features=None):
+        pass
 
-        for batch_X, batch_Y in train_dataloader:
-            # Forward pass
-            output = model(batch_X)
-            output = output.view(-1, model.d_out)
-            batch_Y = batch_Y.view(-1)
-            mask = (batch_Y != 0)
 
-            output = output[mask]
-            batch_Y = batch_Y[mask]
-            loss = criterion(output, batch_Y)
+class NER_RNN(BaseNERModel):
+    def forward(self, x, features=None):
+        x = self.embedding(x)
+        x, _ = self.gru(x)
+        x = relu(self.dense(x))
+        x = self.dropout(x)
 
-            # Backward pass
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+        return self.decision(x)
 
-            total_train_loss += loss.item()
 
-        avg_train_loss = total_train_loss / len(train_dataloader)
-        histories["train_loss"].append(avg_train_loss)
+class NER_RNN_with_features(BaseNERModel):
+    def __init__(self, d_in, d_emb, d_features, d_out, d_hidden):
+        super().__init__(d_in, d_emb, d_out, d_hidden)
+        self.d_features = d_features
+        self.gru = nn.GRU(input_size=d_emb + d_features, hidden_size=d_hidden, bidirectional=True, batch_first=True, num_layers=2,
+                          dropout=0.1)  # Bidirectional GRU
 
-        # Evaluate on the test set
-        model.eval()
-        total_dev_loss = 0
+    def forward(self, x, features):
+        x = self.embedding(x)
+        x = torch.cat((x, features), dim=-1)
+        x, _ = self.gru(x)
+        x = relu(self.dense(x))
+        x = self.dropout(x)
 
-        with torch.no_grad():
-            for batch_X, batch_Y in dev_loader:
-                output = model(batch_X)
+        return self.decision(x)
 
-                output = output.view(-1, model.d_out)
-                batch_Y = batch_Y.view(-1)
 
-                mask = batch_Y != 0
-                output = output[mask]
-                batch_Y = batch_Y[mask]
+class ModelTrainer:
+    """Encapsulates training and evaluation logic."""
 
-                loss = criterion(output, batch_Y)
-                total_dev_loss += loss.item()
+    def __init__(self, model, optimizer, criterion, batch_size):
+        self.model = model
+        self.optimizer = optimizer
+        self.criterion = criterion
+        self.batch_size = batch_size
+        self.history = {"train_loss": [], "dev_loss": []}
 
-        avg_dev_loss = total_dev_loss / len(dev_loader)
-        histories["dev_loss"].append(avg_dev_loss)
+    def train(self, X_train, features_train, y_train, X_dev, features_dev, y_dev, nb_epochs):
+        train_dataset = TensorDataset(X_train, features_train,
+                                      y_train) if features_train is not None else TensorDataset(X_train, y_train)
+        train_loader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
 
-        print(f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Dev Loss: {avg_dev_loss:.4f}")
+        dev_dataset = TensorDataset(X_dev, features_dev, y_dev) if features_dev is not None else TensorDataset(X_dev,
+                                                                                                               y_dev)
+        dev_loader = DataLoader(dev_dataset, batch_size=self.batch_size, shuffle=False)
 
-    return model, histories
+        for epoch in range(nb_epochs):
+            self.model.train()
+            avg_train_loss = self._run_epoch(train_loader, train=True)
+
+            self.model.eval()
+            avg_dev_loss = self._run_epoch(dev_loader, train=False)
+
+            print(
+                f"Epoch {epoch + 1}/{nb_epochs}, Training Loss: {avg_train_loss:.4f}, Dev Loss: {avg_dev_loss:.4f}")
+
+        return self.history
+
+    def _run_epoch(self, dataloader, train):
+        total_loss = 0
+        for batch in dataloader:
+            X, *features, Y = batch
+            features = features[0] if features else None
+
+            self.optimizer.zero_grad()
+            output = self.model(X, features)
+            loss = self._compute_loss(output, Y)
+            if train:
+                loss.backward()
+                self.optimizer.step()
+
+            total_loss += loss.item()
+
+        avg_loss = total_loss / len(dataloader)
+        loss_key = "train_loss" if train else "dev_loss"
+        self.history[loss_key].append(avg_loss)
+
+        return avg_loss
+
+    def _compute_loss(self, output, target):
+        output = output.view(-1, output.shape[-1])
+        target = target.view(-1)
+        mask = target != 0
+        return self.criterion(output[mask], target[mask])
+
+
+class Config:
+    """Configuration settings for model training."""
+    D_EMB = 120
+    D_HIDDEN = 32
+    BATCH_SIZE = 32
+    NB_EPOCHS = 15
+    MAX_LEN = 50
+    LEARNING_RATE = 0.001
+    WEIGHT_DECAY = 0 #1e-5
+    LABEL_SMOOTHING = 0.00005
+    FEATURE_FUNCTIONS = [
+        first_letter_uppercase,
+        all_letters_uppercase,
+        contains_digits,
+        contains_hyphen,
+        is_noun,
+        is_propn
+    ]
+    MODEL_NAME = "./rnn_model2b.parameters.pkl"
 
 
 if __name__ == "__main__":
     sequoia_train_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.train")
     sequoia_dev_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.dev")
 
-    all_form_vocab, all_bio_vocab = {"PAD_ID": 0, "UNK_ID": 1}, {"PAD_ID": 0, "UNK_ID": 1}
+    vocab = {"PAD_ID": 0, "UNK_ID": 1}
+    tag_vocab = {}
 
-    d_emb = 128
-    d_hidden = 128
-    batch_size = 64
-    nb_epochs = 50
-    max_len = 30
-    name_tag = "parseme:ne"
 
-    X_train, y_train, form_vocab_train, ner_vocab_train = extract_ner(
-        file_path=sequoia_train_path,
-        all_form_vocab=all_form_vocab,
-        all_bio_vocab=all_bio_vocab,
-        update_vocab=True,
-        max_len=max_len,
+    X_train, features_train, y_train, form_vocab_train, ner_vocab_train = extract_ner(
+        sequoia_train_path, vocab, tag_vocab, update_vocab=True, max_len=Config.MAX_LEN
+    )
+    X_dev, features_dev, y_dev, _, _ = extract_ner(
+        sequoia_dev_path, form_vocab_train, ner_vocab_train, update_vocab=False, max_len=Config.MAX_LEN
     )
 
-    X_dev, y_dev, form_vocab_dev, ner_vocab_dev = extract_ner(
-        file_path=sequoia_dev_path,
-        all_form_vocab=all_form_vocab,
-        all_bio_vocab=all_bio_vocab,
-        update_vocab=False,
-        max_len=max_len,
+    """
+    X_train, features_train, y_train, form_vocab_train, ner_vocab_train = extract_ner(
+        sequoia_train_path, vocab, tag_vocab, update_vocab=True, feature_functions=Config.FEATURE_FUNCTIONS, max_len=Config.MAX_LEN
     )
+    X_dev, features_dev, y_dev, _, _ = extract_ner(
+        sequoia_dev_path, form_vocab_train, ner_vocab_train, update_vocab=False, feature_functions=Config.FEATURE_FUNCTIONS, max_len=Config.MAX_LEN
+    )
+    """
 
-    ner_rnn_model = NER_RNN(d_in=len(form_vocab_train), d_out=len(ner_vocab_train), d_emb=d_emb, d_hidden=32)
+    # Choose model with or without features
+    # model = NER_RNN_with_features(len(form_vocab_train), Config.D_EMB, len(Config.FEATURE_FUNCTIONS), len(ner_vocab_train), Config.D_HIDDEN)
+    model = NER_RNN(len(form_vocab_train), Config.D_EMB, len(ner_vocab_train), Config.D_HIDDEN)
 
-    model, histories = fit(ner_rnn_model, X_train, y_train, X_dev, y_dev, nb_epochs, batch_size)
+    print(ner_vocab_train)
 
-    # Save the model
-    save(model, form_vocab_train, ner_vocab_train, histories, "./simple.train.emission.parameters.pkl")
+    optimizer = Adam(model.parameters(), lr=Config.LEARNING_RATE, weight_decay=Config.WEIGHT_DECAY)
+    criterion = nn.CrossEntropyLoss(label_smoothing=Config.LABEL_SMOOTHING)
 
-    fig = plt.figure()
-    plt.plot(histories["dev_loss"], label="Dev loss", c="orange")
-    plt.plot(histories["train_loss"], label="Train loss", c="blue")
+    trainer = ModelTrainer(model, optimizer, criterion, Config.BATCH_SIZE)
+    history = trainer.train(X_train, features_train, y_train, X_dev, features_dev, y_dev, Config.NB_EPOCHS)
+
+    save(model, optimizer, criterion, form_vocab_train, ner_vocab_train, history, Config.BATCH_SIZE,
+         Config.MODEL_NAME)
+
+    plt.plot(history["dev_loss"], label="Dev loss", color="orange")
+    plt.plot(history["train_loss"], label="Train loss", color="blue")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
     plt.legend()
-    plt.title("RNN for NER training loss")
+    plt.title("NER Model Training Loss")
     plt.show()
-    fig.savefig("./RNN for NER training loss", dpi=fig.dpi)
-
-
-
