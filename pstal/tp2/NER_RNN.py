@@ -66,8 +66,8 @@ class NER_RNN_with_features(BaseNERModel):
     def __init__(self, d_in, d_emb, d_features, d_out, d_hidden):
         super().__init__(d_in, d_emb, d_out, d_hidden)
         self.d_features = d_features
-        self.gru = nn.GRU(input_size=d_emb + d_features, hidden_size=d_hidden,
-                          bidirectional=True, batch_first=True, num_layers=2, dropout=0.1)
+        self.gru = nn.GRU(input_size=d_emb + d_features, hidden_size=d_hidden, bidirectional=True, batch_first=True, num_layers=2,
+                          dropout=0.1)  # Bidirectional GRU
 
     def forward(self, x, features):
         x = self.embedding(x)
@@ -140,14 +140,14 @@ class ModelTrainer:
 
 class Config:
     """Configuration settings for model training."""
-    D_EMB = 128
+    D_EMB = 120
     D_HIDDEN = 32
-    BATCH_SIZE = 128
-    NB_EPOCHS = 50
+    BATCH_SIZE = 32
+    NB_EPOCHS = 15
     MAX_LEN = 50
     LEARNING_RATE = 0.001
-    WEIGHT_DECAY = 1e-5
-    LABEL_SMOOTHING = 0.0005
+    WEIGHT_DECAY = 0 #1e-5
+    LABEL_SMOOTHING = 0.00005
     FEATURE_FUNCTIONS = [
         first_letter_uppercase,
         all_letters_uppercase,
@@ -156,6 +156,7 @@ class Config:
         is_noun,
         is_propn
     ]
+    MODEL_NAME = "./rnn_model2b.parameters.pkl"
 
 
 if __name__ == "__main__":
@@ -163,7 +164,8 @@ if __name__ == "__main__":
     sequoia_dev_path = os.path.join(project_path, "pstal/sequoia/sequoia-ud.parseme.frsemcor.simple.dev")
 
     vocab = {"PAD_ID": 0, "UNK_ID": 1}
-    tag_vocab = {"PAD_ID": 0}
+    tag_vocab = {}
+
 
     X_train, features_train, y_train, form_vocab_train, ner_vocab_train = extract_ner(
         sequoia_train_path, vocab, tag_vocab, update_vocab=True, max_len=Config.MAX_LEN
@@ -185,6 +187,8 @@ if __name__ == "__main__":
     # model = NER_RNN_with_features(len(form_vocab_train), Config.D_EMB, len(Config.FEATURE_FUNCTIONS), len(ner_vocab_train), Config.D_HIDDEN)
     model = NER_RNN(len(form_vocab_train), Config.D_EMB, len(ner_vocab_train), Config.D_HIDDEN)
 
+    print(ner_vocab_train)
+
     optimizer = Adam(model.parameters(), lr=Config.LEARNING_RATE, weight_decay=Config.WEIGHT_DECAY)
     criterion = nn.CrossEntropyLoss(label_smoothing=Config.LABEL_SMOOTHING)
 
@@ -192,7 +196,7 @@ if __name__ == "__main__":
     history = trainer.train(X_train, features_train, y_train, X_dev, features_dev, y_dev, Config.NB_EPOCHS)
 
     save(model, optimizer, criterion, form_vocab_train, ner_vocab_train, history, Config.BATCH_SIZE,
-         "./rnn_model.parameters.pkl")
+         Config.MODEL_NAME)
 
     plt.plot(history["dev_loss"], label="Dev loss", color="orange")
     plt.plot(history["train_loss"], label="Train loss", color="blue")

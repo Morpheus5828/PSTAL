@@ -126,16 +126,16 @@
 # text = Aux États-Unis, le traité de l'OMPI est déjà entré en vigueur au moyen du Digital Millenium Corporate Act et cette mesure législative a permis de sauvegarder l'équilibre délicat de l'OMPI.
 1	À	à	ADP	_	_	3	case	_	_	*	*	*
 2	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	3	det	_	_	*	*	*
-3	États-Unis	États-Unis	PROPN	_	Gender=Masc|Number=Plur	12	obl:mod	_	_	*	Institution	1:PROD
+3	États-Unis	États-Unis	PROPN	_	Gender=Masc|Number=Plur	12	obl:mod	_	_	*	Institution	1:LOC
 4	,	,	PUNCT	_	_	12	punct	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	traité	traité	NOUN	_	Gender=Masc|Number=Sing	12	nsubj	_	_	*	*	*
-7	de	de	ADP	_	_	9	case	_	_	*	*	*
-8	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	9	det	_	_	*	*	*
-9	OMPI	OMPI	PROPN	_	Number=Sing	6	nmod	_	_	*	Institution	2:PROD
+6	traité	traité	NOUN	_	Gender=Masc|Number=Sing	12	nsubj	_	_	*	*	2:PROD
+7	de	de	ADP	_	_	9	case	_	_	*	*	2
+8	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	9	det	_	_	*	*	2
+9	OMPI	OMPI	PROPN	_	Number=Sing	6	nmod	_	_	*	Institution	2
 10	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux:tense	_	_	*	*	*
 11	déjà	déjà	ADV	_	_	12	advmod	_	_	*	*	*
-12	entré	entrer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	1:_|MWE-VID|_	*	3:PROD
+12	entré	entrer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	1:_|MWE-VID|_	*	*
 13	en	en	ADP	_	_	14	case	_	_	1;2:_|MWE|INSERT	*	*
 14	vigueur	vigueur	NOUN	_	Gender=Fem|Number=Sing	12	obl:arg	_	_	1;2	*	*
 15	à	à	ADP	_	_	17	case	_	_	3:_|MWE|DET	*	*
@@ -143,8 +143,8 @@
 17	moyen	moyen	NOUN	_	Gender=Masc|Number=Sing	12	obl:mod	_	_	3	*	*
 18	de	de	ADP	_	_	20	case	_	_	*	*	*
 19	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	20	det	_	_	*	*	*
-20	Digital	Digital	X	_	Foreign=Yes	17	nmod	_	_	*	*	4:PROD
-21	Millenium	Millenium	X	_	Foreign=Yes	20	flat:foreign	_	_	*	*	*
+20	Digital	Digital	X	_	Foreign=Yes	17	nmod	_	_	*	*	3:ORG
+21	Millenium	Millenium	X	_	Foreign=Yes	20	flat:foreign	_	_	*	*	3
 22	Corporate	Corporate	X	_	Foreign=Yes	20	flat:foreign	_	_	*	*	*
 23	Act	Act	X	_	Foreign=Yes	20	flat:foreign	_	_	*	*	*
 24	et	et	CCONJ	_	_	29	cc	_	_	*	*	*
@@ -159,8 +159,8 @@
 33	équilibre	équilibre	NOUN	_	Gender=Masc|Number=Sing	31	obj	_	_	*	State	*
 34	délicat	délicat	ADJ	_	Gender=Masc|Number=Sing	33	amod	_	_	*	*	*
 35	de	de	ADP	_	_	37	case	_	_	*	*	*
-36	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	37	det	_	_	*	*	*
-37	OMPI	OMPI	PROPN	_	Number=Sing	33	nmod	_	_	*	Institution	5:PROD
+36	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	37	det	_	_	*	*	4:ORG
+37	OMPI	OMPI	PROPN	_	Number=Sing	33	nmod	_	_	*	Institution	4
 38	.	.	PUNCT	_	_	12	punct	_	_	*	*	*
 
 # sent_id = Europar.550_00054
@@ -279,7 +279,7 @@
 15	sur	sur	ADP	_	_	17	case	_	_	*	*	*
 16	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	17	det	_	_	*	*	*
 17	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Act	*
-18	EQUAL	EQUAL	PROPN	_	_	17	nmod	_	_	*	Institution	1:ORG
+18	EQUAL	EQUAL	PROPN	_	_	17	nmod	_	_	*	Institution	*
 19	car	car	CCONJ	_	_	21	cc	_	_	*	*	*
 20	je	il	PRON	_	Number=Sing|Person=1	21	nsubj	_	_	*	*	*
 21	pense	penser	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	6	conj	_	_	*	*	*
@@ -363,7 +363,7 @@
 9	adviendra	advenir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	6	acl:relcl	_	_	*	*	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	Kosovo	Kosovo	PROPN	_	_	9	obl:arg	_	_	*	Institution	1:ORG
+12	Kosovo	Kosovo	PROPN	_	_	9	obl:arg	_	_	*	Institution	1:LOC
 13	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 # sent_id = Europar.550_00095
@@ -373,12 +373,12 @@
 3	ai	avoir	AUX	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	6	aux:tense	_	_	*	*	*
 4	pas	pas	ADV	_	_	5	advmod	_	_	*	*	*
 5	encore	encore	ADV	_	_	6	advmod	_	_	*	*	*
-6	lu	lire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	1:ORG
+6	lu	lire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 7	ni	ni	CCONJ	_	_	8	cc	_	_	*	*	*
 8	entendu	entendre	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	6	conj	_	_	*	*	*
 9	que	que	SCONJ	_	_	15	mark	_	_	*	*	*
 10	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-11	Conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Institution	2:ORG
+11	Conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	15	nsubj	_	_	*	Institution	1:ORG
 12	s'	se	PRON	_	Person=3|Reflex=Yes	15	expl:comp	_	_	*	*	*
 13	y	y	PRON	_	Person=3	15	iobj	_	_	*	*	*
 14	soit	être	AUX	_	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	15	aux:tense	_	_	*	*	*
@@ -530,7 +530,7 @@
 3	également	également	ADV	_	_	2	advmod	_	_	*	*	*
 4	que	que	SCONJ	_	_	11	mark	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	Conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	11	nsubj	_	_	*	Institution	1:ORG
+6	Conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	11	nsubj	_	_	*	Institution	*
 7	de	de	ADP	_	_	8	case	_	_	*	*	*
 8	ministres	ministre	NOUN	_	Gender=Masc|Number=Plur	6	nmod	_	_	*	Person	*
 9	ne	ne	ADV	_	Polarity=Neg	11	advmod	_	_	*	*	*
@@ -609,7 +609,7 @@
 19	troupes	troupe	NOUN	_	Gender=Fem|Number=Plur	17	obj	_	_	*	Person	*
 20	de	de	ADP	_	_	22	case	_	_	*	*	*
 21	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	22	det	_	_	*	*	*
-22	KFOR	KFOR	PROPN	_	Gender=Fem|Number=Sing	19	nmod	_	_	*	Institution	1:ORG
+22	KFOR	KFOR	PROPN	_	Gender=Fem|Number=Sing	19	nmod	_	_	*	Institution	*
 23	en	en	ADP	_	_	24	case	_	_	3	*	*
 24	paix	paix	NOUN	_	Gender=Fem|Number=Sing	17	xcomp	_	_	3	*	*
 25	.	.	PUNCT	_	_	5	punct	_	_	*	*	*
@@ -660,7 +660,7 @@
 10	concerne	concerner	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	fixed	_	_	1	*	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	taxe	taxe	NOUN	_	Gender=Fem|Number=Sing	3	obl:mod	_	_	*	Possession	*
-13	proposée	proposer	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	12	acl	_	_	*	*	1:ORG
+13	proposée	proposer	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	12	acl	_	_	*	*	*
 14	sur	sur	ADP	_	_	16	case	_	_	*	*	*
 15	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	16	det	_	_	*	*	*
 16	carburants	carburant	NOUN	_	Gender=Masc|Number=Plur	12	nmod	_	_	*	Substance	*
@@ -695,21 +695,21 @@
 45	sein	sein	NOUN	_	Gender=Masc|Number=Sing	39	nmod	_	_	4	*	*
 46	de	de	ADP	_	_	48	case	_	_	*	*	*
 47	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	48	det	_	_	*	*	*
-48	Union	Union	PROPN	_	Number=Sing	45	nmod	_	_	*	*	2:ORG
-49	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	48	amod	_	_	*	*	2
-50	?	?	PUNCT	_	_	1	punct	_	_	*	*	*
+48	Union	Union	PROPN	_	Number=Sing	45	nmod	_	_	*	*	1:ORG
+49	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	48	amod	_	_	*	*	1
+50	?	?	PUNCT	_	_	1	punct	_	_	*	*	1
 
 # sent_id = Europar.550_00154
 # text = Y a-t-il des circonstances dans lesquelles la Commission chercherait à utiliser le vote à la majorité qualifiée pour l'un de ces sujets ?
 1	Y	y	PRON	_	Person=3	2	expl:comp	_	_	1:_|MWE-VID|_	*	*
 2	a	avoir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	1	*	*
-3	-t-il	il	PRON	_	Gender=Masc|Number=Sing|Person=3	2	expl:subj	_	_	1	*	1:ORG
+3	-t-il	il	PRON	_	Gender=Masc|Number=Sing|Person=3	2	expl:subj	_	_	1	*	*
 4	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	5	det	_	_	*	*	*
 5	circonstances	circonstance	NOUN	_	Gender=Fem|Number=Plur	2	obj	_	_	*	State	*
 6	dans	dans	ADP	_	_	7	case	_	_	*	*	*
 7	lesquelles	lequel	PRON	_	Gender=Fem|Number=Plur|PronType=Rel	10	obl:mod	_	_	*	*	*
 8	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det	_	_	*	*	*
-9	Commission	commission	NOUN	_	Gender=Fem|Number=Sing	10	nsubj	_	_	*	Institution	2:ORG
+9	Commission	commission	NOUN	_	Gender=Fem|Number=Sing	10	nsubj	_	_	*	Institution	1:ORG
 10	chercherait	chercher	VERB	_	Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	acl:relcl	_	_	*	*	*
 11	à	à	ADP	_	_	12	mark	_	_	*	*	*
 12	utiliser	utiliser	VERB	_	VerbForm=Inf	10	xcomp	_	_	*	*	*
@@ -804,22 +804,22 @@
 4	exemple	exemple	NOUN	_	Gender=Masc|Number=Sing	5	obl:mod	_	_	1	*	*
 5	introduit	introduire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 6	en	en	ADP	_	_	7	case	_	_	*	*	*
-7	commission	commission	NOUN	_	Gender=Fem|Number=Sing	5	obl:mod	_	_	*	Institution	*
-8	de	de	ADP	_	_	10	case	_	_	*	*	*
-9	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	10	det	_	_	*	*	*
-10	environnement	environnement	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Object	*
-11	,	,	PUNCT	_	_	14	punct	_	_	*	*	*
-12	de	de	ADP	_	_	14	case	_	_	*	*	*
-13	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	_	_	*	*	*
-14	santé	santé	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	2:_|MWE|LEX	Act	*
-15	publique	public	ADJ	_	Gender=Fem|Number=Sing	14	amod	_	_	2	*	*
+7	commission	commission	NOUN	_	Gender=Fem|Number=Sing	5	obl:mod	_	_	*	Institution	1:ORG
+8	de	de	ADP	_	_	10	case	_	_	*	*	1
+9	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	10	det	_	_	*	*	1
+10	environnement	environnement	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Object	1
+11	,	,	PUNCT	_	_	14	punct	_	_	*	*	1
+12	de	de	ADP	_	_	14	case	_	_	*	*	1
+13	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	_	_	*	*	1
+14	santé	santé	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	2:_|MWE|LEX	Act	1
+15	publique	public	ADJ	_	Gender=Fem|Number=Sing	14	amod	_	_	2	*	1
 16	et	et	CCONJ	_	_	19	cc	_	_	*	*	*
 17	de	de	ADP	_	_	19	case	_	_	*	*	*
 18	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	det	_	_	*	*	*
 19	politique	politique	NOUN	_	Gender=Fem|Number=Sing	10	conj	_	_	*	Act	*
 20	de	de	ADP	_	_	22	case	_	_	*	*	*
 21	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	22	det	_	_	*	*	*
-22	consommateurs	consommateur	NOUN	_	Gender=Masc|Number=Plur	19	nmod	_	_	*	Person	1:ORG
+22	consommateurs	consommateur	NOUN	_	Gender=Masc|Number=Plur	19	nmod	_	_	*	Person	*
 23	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	24	det	_	_	*	*	*
 24	proposition	proposition	NOUN	_	Gender=Fem|Number=Sing	5	obj	_	_	*	Cognition	*
 25	concernant	concerner	VERB	_	Tense=Pres|VerbForm=Part	24	acl	_	_	*	*	*
@@ -911,7 +911,7 @@
 28	droit	droit	NOUN	_	Gender=Masc|Number=Sing	7	obl:arg	_	_	*	Attribute	*
 29	à	à	ADP	_	_	31	case	_	_	*	*	*
 30	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	31	det	_	_	*	*	*
-31	vie	vie	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	3:_|MWE|LEX	*	*
+31	vie	vie	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	3:_|MWE|LEX	*	1:PROD
 32	privée	privé	ADJ	_	Gender=Fem|Number=Sing	31	amod	_	_	3	*	*
 33	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
@@ -977,9 +977,9 @@
 38	Mères	Mères	PROPN	_	_	28	nmod	_	_	*	Person	*
 39	de	de	ADP	_	_	41	case	_	_	*	*	*
 40	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	41	det	_	_	*	*	*
-41	place	place	NOUN	_	Gender=Fem|Number=Sing	38	nmod	_	_	*	Artifact	*
-42	de	de	ADP	_	_	43	case	_	_	*	*	*
-43	Mai	Mai	NOUN	_	Gender=Fem|Number=Sing	41	nmod	_	_	*	Time	*
+41	place	place	NOUN	_	Gender=Fem|Number=Sing	38	nmod	_	_	*	Artifact	1:LOC
+42	de	de	ADP	_	_	43	case	_	_	*	*	1
+43	Mai	Mai	NOUN	_	Gender=Fem|Number=Sing	41	nmod	_	_	*	Time	1
 44	.	.	PUNCT	_	_	4	punct	_	_	*	*	*
 
 # sent_id = Europar.550_00208
@@ -1225,12 +1225,12 @@
 4	moindre	moindre	ADJ	_	Number=Sing	5	amod	_	_	*	*	*
 5	preuve	preuve	NOUN	_	Gender=Fem|Number=Sing	2	obj	_	_	*	Cognition	*
 6	,	,	PUNCT	_	_	8	punct	_	_	*	*	*
-7	Washington	Washington	PROPN	_	Gender=Masc|Number=Sing	8	nsubj	_	_	*	Institution	1:ORG
+7	Washington	Washington	PROPN	_	Gender=Masc|Number=Sing	8	nsubj	_	_	*	Institution	*
 8	continue	continuer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 9	d'	de	ADP	_	_	10	mark	_	_	*	*	*
 10	accuser	accuser	VERB	_	VerbForm=Inf	8	xcomp	_	_	*	*	*
 11	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	Irak	Irak	PROPN	_	Gender=Masc|Number=Sing	10	obj	_	_	*	Institution	2:ORG
+12	Irak	Irak	PROPN	_	Gender=Masc|Number=Sing	10	obj	_	_	*	Institution	1:ORG
 13	de	de	ADP	_	_	14	mark	_	_	*	*	*
 14	fabriquer	fabriquer	VERB	_	VerbForm=Inf	10	xcomp	_	_	*	*	*
 15	secrètement	secrètement	ADV	_	_	14	advmod	_	_	*	*	*
@@ -1326,7 +1326,7 @@
 20	comité	comité	NOUN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	*	*
 21	de	de	ADP	_	_	23	case	_	_	*	*	*
 22	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	23	det	_	_	*	*	*
-23	droits	droit	NOUN	_	Gender=Masc|Number=Plur	20	nmod	_	_	1:_|MWE|LEX	*	1:ORG
+23	droits	droit	NOUN	_	Gender=Masc|Number=Plur	20	nmod	_	_	1:_|MWE|LEX	*	*
 24	de	de	ADP	_	_	26	case	_	_	1	*	*
 25	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	26	det	_	_	1	*	*
 26	homme	homme	NOUN	_	Gender=Masc|Number=Sing	23	nmod	_	_	1	*	*
@@ -1359,7 +1359,7 @@
 15	de	de	ADP	_	_	17	case	_	_	*	*	*
 16	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
 17	Parlement	parlement	NOUN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	*	1:ORG
-18	européen	européen	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	*	*	*
+18	européen	européen	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	*	*	1
 19	,	,	PUNCT	_	_	21	punct	_	_	*	*	*
 20	vous	se	PRON	_	Number=Plur|Person=2|Reflex=Yes	21	expl:comp	_	_	3:_|MWE-IRV|_	*	*
 21	adressiez	adresser	VERB	_	Mood=Ind|Number=Plur|Person=2|Tense=Imp|VerbForm=Fin	7	dislocated	_	_	3	*	*
@@ -1383,7 +1383,7 @@
 39	cet	ce	DET	_	Gender=Masc|Number=Sing|PronType=Dem	40	det	_	_	*	*	*
 40	homme	homme	NOUN	_	Gender=Masc|Number=Sing	37	nmod	_	_	*	Person	*
 41	d'	de	ADP	_	_	42	case	_	_	4:_|MWE|ZERO	*	*
-42	honneur	honneur	NOUN	_	Gender=Masc|Number=Sing	40	nmod	_	_	4	*	*
+42	honneur	honneur	NOUN	_	Gender=Masc|Number=Sing	40	nmod	_	_	4	*	2:PROD
 43	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
 # sent_id = Europar.550_00280
@@ -1591,7 +1591,7 @@
 2	était	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	5	cop	_	_	*	*	*
 3	également	également	ADV	_	_	5	advmod	_	_	*	*	*
 4	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	det	_	_	*	*	*
-5	réussite	réussite	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	1:ORG
+5	réussite	réussite	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
 6	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 7	et	et	CCONJ	_	_	11	cc	_	_	*	*	*
 8	je	il	PRON	_	Number=Sing|Person=1	11	nsubj	_	_	*	*	*
@@ -1612,12 +1612,12 @@
 23	évident	évident	ADJ	_	Gender=Masc|Number=Sing	5	advcl	_	_	*	*	*
 24	que	que	SCONJ	_	_	35	mark	_	_	*	*	*
 25	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	26	det	_	_	*	*	*
-26	Union	Union	PROPN	_	Number=Sing	35	nsubj	_	_	*	*	2:ORG
-27	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	26	amod	_	_	*	*	2
+26	Union	Union	PROPN	_	Number=Sing	35	nsubj	_	_	*	*	1:ORG
+27	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	26	amod	_	_	*	*	1
 28	,	,	PUNCT	_	_	26	punct	_	_	*	*	*
 29	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	30	det	_	_	*	*	*
-30	Commission	commission	NOUN	_	Gender=Fem|Number=Sing	26	appos	_	_	*	*	3:ORG
-31	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	30	amod	_	_	*	*	3
+30	Commission	commission	NOUN	_	Gender=Fem|Number=Sing	26	appos	_	_	*	*	2:ORG
+31	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	30	amod	_	_	*	*	2
 32	,	,	PUNCT	_	_	26	punct	_	_	*	*	*
 33	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	35	aux:tense	_	_	*	*	*
 34	enfin	enfin	ADV	_	_	35	advmod	_	_	*	*	*
@@ -1625,7 +1625,7 @@
 36	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	37	det	_	_	*	*	*
 37	initiative	initiative	NOUN	_	Gender=Fem|Number=Sing	35	obj	_	_	2	Act	*
 38	,	,	PUNCT	_	_	23	punct	_	_	*	*	*
-39	tandis	tandis	ADV	_	_	43	mark	_	ExtPos=SCONJ	3:PRON|MWE|CRAN	*	4:ORG
+39	tandis	tandis	ADV	_	_	43	mark	_	ExtPos=SCONJ	3:PRON|MWE|CRAN	*	*
 40	qu'	que	SCONJ	_	_	39	fixed	_	_	3	*	*
 41	elle	il	PRON	_	Gender=Fem|Number=Sing|Person=3	43	nsubj	_	_	*	*	*
 42	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	43	aux:tense	_	_	*	*	*
@@ -1654,8 +1654,8 @@
 10	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	11	det	_	_	*	*	*
 11	Banque	banque	NOUN	_	Gender=Fem|Number=Sing	8	obl:agent	_	_	*	Institution	1:ORG
 12	européenne	européen	ADJ	_	Gender=Fem|Number=Sing	11	amod	_	_	*	*	1
-13	d'	de	ADP	_	_	14	case	_	_	*	*	*
-14	investissement	investissement	NOUN	_	Gender=Masc|Number=Sing	11	nmod	_	_	*	Act	*
+13	d'	de	ADP	_	_	14	case	_	_	*	*	1
+14	investissement	investissement	NOUN	_	Gender=Masc|Number=Sing	11	nmod	_	_	*	Act	1
 15	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 16	qui	qui	PRON	_	PronType=Rel	18	nsubj:pass	_	_	*	*	*
 17	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	aux:pass	_	_	*	*	*
@@ -1840,7 +1840,7 @@
 3	qui	qui	PRON	_	_	1	fixed	_	_	1	*	*
 4	concerne	concerner	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	fixed	_	_	1	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	*	1:PROD
+6	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	*	*
 7	Kuckelkorn	Kuckelkorn	PROPN	_	_	6	nmod	_	_	*	Person	*
 8	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 9	je	il	PRON	_	Number=Sing|Person=1	10	nsubj	_	_	*	*	*
@@ -2133,7 +2133,7 @@
 8	rapidement	rapidement	ADV	_	_	5	advmod	_	_	*	*	*
 9	à	à	ADP	_	_	11	case	_	_	*	*	*
 10	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-11	Zimbabwe	Zimbabwe	PROPN	_	Gender=Masc|Number=Sing	5	obl:arg	_	_	*	Institution	*
+11	Zimbabwe	Zimbabwe	PROPN	_	Gender=Masc|Number=Sing	5	obl:arg	_	_	*	Institution	1:LOC
 12	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 13	si	si	SCONJ	_	_	15	advmod	_	ExtPos=ADV	1:ADV|MWE|IRREG	*	*
 14	possible	possible	ADJ	_	Number=Sing	13	fixed	_	_	1	*	*
@@ -2270,7 +2270,7 @@
 15	de	de	ADP	_	_	17	case	_	_	*	*	*
 16	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
 17	Parlement	parlement	NOUN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	*	1:ORG
-18	européen	européen	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	*	*	*
+18	européen	européen	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	*	*	1
 19	et	et	CCONJ	_	_	21	cc	_	_	*	*	*
 20	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	21	det	_	_	*	*	*
 21	présidents	président	NOUN	_	Gender=Masc|Number=Plur	14	conj	_	_	*	Person	*
@@ -2292,9 +2292,9 @@
 37	années	année	NOUN	_	Gender=Fem|Number=Plur	32	obl:mod	_	_	*	Time	*
 38	par	par	ADP	_	_	40	case	_	_	*	*	*
 39	mes	son	DET	_	Number=Plur|Poss=Yes	40	det	_	_	*	*	*
-40	prédécesseurs	prédécesseur	NOUN	_	Gender=Masc|Number=Plur	32	obl:agent	_	_	*	Person	*
-41	Enrique	Enrique	PROPN	_	Gender=Masc|Number=Sing	40	nmod	_	_	*	*	*
-42	Barón	Barón	PROPN	_	_	41	flat:name	_	_	*	*	2:PERS
+40	prédécesseurs	prédécesseur	NOUN	_	Gender=Masc|Number=Plur	32	obl:agent	_	_	*	Person	2:PERS
+41	Enrique	Enrique	PROPN	_	Gender=Masc|Number=Sing	40	nmod	_	_	*	*	2
+42	Barón	Barón	PROPN	_	_	41	flat:name	_	_	*	*	2
 43	Crespo	Crespo	PROPN	_	_	41	flat:name	_	_	*	*	2
 44	,	,	PUNCT	_	_	45	punct	_	_	*	*	*
 45	Klaus	Klaus	PROPN	_	Gender=Masc|Number=Sing	41	conj	_	_	*	*	*
@@ -2326,7 +2326,7 @@
 16	entrer	entrer	VERB	_	VerbForm=Inf	14	acl	_	_	*	*	*
 17	dans	dans	ADP	_	_	19	case	_	_	*	*	*
 18	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	19	det	_	_	*	*	*
-19	maison	maison	NOUN	_	Gender=Fem|Number=Sing	16	obl:arg	_	_	*	Institution	1:ORG
+19	maison	maison	NOUN	_	Gender=Fem|Number=Sing	16	obl:arg	_	_	*	Institution	*
 20	commune	commun	ADJ	_	Gender=Fem|Number=Sing	19	amod	_	_	*	*	*
 21	solide	solide	ADJ	_	Number=Sing	19	amod	_	_	*	*	*
 22	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
@@ -2349,7 +2349,7 @@
 39	majorité	majorité	NOUN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	Quantity	*
 40	de	de	ADP	_	_	42	case	_	_	*	*	*
 41	notre	son	DET	_	Number=Sing|Poss=Yes	42	det	_	_	*	*	*
-42	Assemblée	assemblée	NOUN	_	Gender=Fem|Number=Sing	39	nmod	_	_	*	Institution	2:ORG
+42	Assemblée	assemblée	NOUN	_	Gender=Fem|Number=Sing	39	nmod	_	_	*	Institution	1:ORG
 43	.	.	PUNCT	_	_	11	punct	_	_	*	*	*
 
 # sent_id = Europar.550_00500
@@ -2390,7 +2390,7 @@
 34	devise	devise	NOUN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Cognition	*
 35	pour	pour	ADP	_	_	37	case	_	_	*	*	*
 36	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	37	det	_	_	*	*	*
-37	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Institution	2:ORG
+37	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Institution	2:LOC
 38	et	et	CCONJ	_	_	55	cc	_	_	*	*	*
 39	que	que	SCONJ	_	_	55	mark	_	_	*	*	*
 40	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	41	det	_	_	*	*	*
@@ -2549,7 +2549,7 @@
 6	organisée	organiser	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	5	acl	_	_	*	*	*
 7	par	par	ADP	_	_	8	case	_	_	*	*	*
 8	M.	monsieur	NOUN	_	Gender=Masc|Number=Sing	6	obl:agent	_	_	*	Person	*
-9	Brie	Brie	PROPN	_	Gender=Masc|Number=Sing	8	flat:name	_	_	*	Person	1:PERS
+9	Brie	Brie	PROPN	_	Gender=Masc|Number=Sing	8	flat:name	_	_	*	Person	*
 10	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
 11	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	12	det	_	_	*	*	*
 12	partisans	partisan	NOUN	_	Gender=Masc|Number=Plur	8	conj	_	_	*	Person	*
@@ -2575,7 +2575,7 @@
 32	de	de	ADP	_	_	33	case	_	_	*	*	*
 33	Brandebourg	Brandebourg	PROPN	_	Gender=Masc|Number=Sing	31	nmod	_	_	*	Institution	*
 34	à	à	ADP	_	_	35	case	_	_	*	*	*
-35	Berlin	Berlin	PROPN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Institution	2:PROD
+35	Berlin	Berlin	PROPN	_	Gender=Fem|Number=Sing	31	nmod	_	_	*	Institution	1:LOC
 36	pour	pour	ADP	_	_	37	mark	_	_	*	*	*
 37	protester	protester	VERB	_	VerbForm=Inf	24	advcl	_	_	*	*	*
 38	contre	contre	ADP	_	_	40	case	_	_	*	*	*
@@ -2673,7 +2673,7 @@
 13	et	et	CCONJ	_	_	16	cc	_	_	*	*	*
 14	l'	le	PRON	_	Number=Sing|Person=3	16	obj	_	_	*	*	*
 15	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	16	aux:tense	_	_	*	*	*
-16	chargé	charger	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	7	conj	_	_	*	*	1:ORG
+16	chargé	charger	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	7	conj	_	_	*	*	*
 17	de	de	ADP	_	_	19	mark	_	_	*	*	*
 18	faire	faire	AUX	_	VerbForm=Inf	19	aux:caus	_	_	*	*	*
 19	établir	établir	VERB	_	VerbForm=Inf	16	xcomp	_	_	*	*	*
@@ -2699,7 +2699,7 @@
 39	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	40	det	_	_	*	*	*
 40	amendes	amende	NOUN	_	Gender=Fem|Number=Plur	37	nmod	_	_	2:_|MWE|LEX	*	*
 41	de	de	ADP	_	_	42	case	_	_	2	*	*
-42	police	police	NOUN	_	Gender=Fem|Number=Sing	40	nmod	_	_	2	*	2:ORG
+42	police	police	NOUN	_	Gender=Fem|Number=Sing	40	nmod	_	_	2	*	*
 43	1999	1999	NUM	_	NumType=Card	40	nummod	_	_	*	Time	*
 44	.	.	PUNCT	_	_	7	punct	_	_	*	*	*
 
@@ -2722,12 +2722,12 @@
 15	inaugurée	inaugurer	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	11	acl:relcl	_	_	*	*	*
 16	par	par	ADP	_	_	17	case	_	_	*	*	*
 17	Roger	Roger	PROPN	_	Gender=Masc|Number=Sing	15	obl:agent	_	_	*	*	1:ORG
-18	Thiriot	Thiriot	PROPN	_	_	17	flat:name	_	_	*	*	*
+18	Thiriot	Thiriot	PROPN	_	_	17	flat:name	_	_	*	*	1
 19	,	,	PUNCT	_	_	17	punct	_	_	*	*	*
 20	président	président	NOUN	_	Gender=Masc|Number=Sing	17	appos	_	_	*	Person	*
 21	de	de	ADP	_	_	23	case	_	_	*	*	*
 22	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	23	det	_	_	*	*	*
-23	Association	association	NOUN	_	Gender=Fem|Number=Sing	20	nmod	_	_	*	Institution	2:ORG
+23	Association	association	NOUN	_	Gender=Fem|Number=Sing	20	nmod	_	_	*	Institution	*
 24	d'	de	ADP	_	_	25	case	_	_	*	*	*
 25	insertion	insertion	NOUN	_	Gender=Fem|Number=Sing	23	nmod	_	_	*	Act	*
 26	de	de	ADP	_	_	28	case	_	_	*	*	*
@@ -2910,7 +2910,7 @@
 # sent_id = annodis.er_00084
 # text = Photos Jacques FISSIER
 1	Photos	photo	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Artifact	*
-2	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	*	1:PERS
+2	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	*	1:ORG
 3	FISSIER	FISSIER	PROPN	_	_	2	flat:name	_	_	*	*	1
 
 # sent_id = annodis.er_00088
@@ -2942,8 +2942,8 @@
 25	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det	_	_	*	*	*
 26	présidence	présidence	NOUN	_	Gender=Fem|Number=Sing	19	obl:mod	_	_	*	Act	*
 27	de	de	ADP	_	_	28	case	_	_	*	*	*
-28	Claude	Claude	PROPN	_	Number=Sing	26	nmod	_	_	*	*	*
-29	Simon	Simon	PROPN	_	Gender=Masc|Number=Sing	28	flat:name	_	_	*	*	2:PERS
+28	Claude	Claude	PROPN	_	Number=Sing	26	nmod	_	_	*	*	2:ORG
+29	Simon	Simon	PROPN	_	Gender=Masc|Number=Sing	28	flat:name	_	_	*	*	2
 30	.	.	PUNCT	_	_	7	punct	_	_	*	*	*
 
 # sent_id = annodis.er_00103
@@ -3048,7 +3048,7 @@
 13	à	à	ADP	_	_	15	case	_	_	*	*	*
 14	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	15	det	_	_	*	*	*
 15	centre	centre	NOUN	_	Gender=Masc|Number=Sing	11	obl:mod	_	_	*	*	1:ORG
-16	Marie-Marvingt	Marie-Marvingt	PROPN	_	_	15	nmod	_	_	*	Person	*
+16	Marie-Marvingt	Marie-Marvingt	PROPN	_	_	15	nmod	_	_	*	Person	1
 17	et	et	CCONJ	_	_	21	cc	_	_	*	*	*
 18	jusqu'	jusque	ADP	_	_	21	case	_	_	*	*	*
 19	à	à	ADP	_	_	21	case	_	_	*	*	*
@@ -3073,8 +3073,8 @@
 
 # sent_id = annodis.er_00134
 # text = Le Petit Prince au programme des élèves de Jules-Romains
-1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-2	Petit	petit	ADJ	_	Gender=Masc|Number=Sing	3	amod	_	_	*	*	1:PROD
+1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	1:PROD
+2	Petit	petit	ADJ	_	Gender=Masc|Number=Sing	3	amod	_	_	*	*	1
 3	Prince	Prince	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1
 4	à	à	ADP	_	_	6	case	_	_	1:_|MWE|DET	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
@@ -3083,7 +3083,7 @@
 8	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	9	det	_	_	*	*	*
 9	élèves	élève	NOUN	_	Number=Plur	6	nmod	_	_	*	Person	*
 10	de	de	ADP	_	_	11	case	_	_	*	*	*
-11	Jules-Romains	Jules-Romains	PROPN	_	_	9	nmod	_	_	*	Institution	*
+11	Jules-Romains	Jules-Romains	PROPN	_	_	9	nmod	_	_	*	Institution	2:ORG
 
 # sent_id = annodis.er_00137
 # text = à travers cette oeuvre, les élèves de CM2 de la classe de Mme Galotte ont abordé la compréhension du texte.
@@ -3152,7 +3152,7 @@
 20	promotion	promotion	NOUN	_	Gender=Fem|Number=Sing	18	obj:agent	_	_	*	Act	*
 21	de	de	ADP	_	_	23	case	_	_	*	*	*
 22	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	23	det	_	_	*	*	*
-23	Office	office	NOUN	_	Gender=Masc|Number=Sing	20	nmod	_	_	1:_|MWE|LEX	*	2:ORG
+23	Office	office	NOUN	_	Gender=Masc|Number=Sing	20	nmod	_	_	1:_|MWE|LEX	*	2:LOC
 24	de	de	ADP	_	_	25	case	_	_	1	*	*
 25	tourisme	tourisme	NOUN	_	Gender=Masc|Number=Sing	23	nmod	_	_	1	*	*
 26	avec	avec	ADP	_	_	29	case	_	_	*	*	*
@@ -3161,11 +3161,11 @@
 29	classement	classement	NOUN	_	Gender=Masc|Number=Sing	18	obl:arg	_	_	*	Cognition	*
 30	de	de	ADP	_	_	32	case	_	_	*	*	*
 31	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	32	det	_	_	*	*	*
-32	hôtel-restaurant	hôtel-restaurant	NOUN	_	Number=Sing	29	nmod	_	_	2:NOUN|MWE|SYNT	Institution	*
-33	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	34	det	_	_	*	*	*
-34	Relais	relais	NOUN	_	Gender=Masc|Number=Sing	32	nmod	_	_	*	Institution	*
+32	hôtel-restaurant	hôtel-restaurant	NOUN	_	Number=Sing	29	nmod	_	_	2:NOUN|MWE|SYNT	Institution	3:LOC
+33	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	34	det	_	_	*	*	3
+34	Relais	relais	NOUN	_	Gender=Masc|Number=Sing	32	nmod	_	_	*	Institution	3
 35	à	à	ADP	_	_	36	case	_	_	*	*	*
-36	Arc-et-Senans	Arc-et-Senans	PROPN	_	Gender=Masc|Number=Sing	32	nmod	_	_	*	Institution	*
+36	Arc-et-Senans	Arc-et-Senans	PROPN	_	Gender=Masc|Number=Sing	32	nmod	_	_	*	Institution	4:LOC
 37	.	.	PUNCT	_	_	18	punct	_	_	*	*	*
 
 # sent_id = annodis.er_00157
@@ -3195,7 +3195,7 @@
 23	et	et	CCONJ	_	_	24	cc	_	_	*	*	*
 24	installés	installer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	20	conj	_	_	*	*	*
 25	à	à	ADP	_	_	26	case	_	_	*	*	*
-26	Arc-et-Senans	Arc-et-Senans	PROPN	_	Gender=Masc|Number=Sing	24	obl:arg	_	_	*	Institution	*
+26	Arc-et-Senans	Arc-et-Senans	PROPN	_	Gender=Masc|Number=Sing	24	obl:arg	_	_	*	Institution	1:LOC
 27	depuis	depuis	ADP	_	_	30	case	_	_	*	*	*
 28	maintenant	maintenant	ADV	_	_	30	advmod	_	_	*	*	*
 29	treize	treize	NUM	_	NumType=Card	30	nummod	_	_	*	*	*
@@ -3215,9 +3215,9 @@
 9	classement	classement	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	Office	office	NOUN	_	Gender=Masc|Number=Sing	9	nmod	_	_	1:_|MWE|LEX	*	*
-13	de	de	ADP	_	_	14	case	_	_	1	*	*
-14	tourisme	tourisme	NOUN	_	Gender=Masc|Number=Sing	12	nmod	_	_	1	*	*
+12	Office	office	NOUN	_	Gender=Masc|Number=Sing	9	nmod	_	_	1:_|MWE|LEX	*	1:ORG
+13	de	de	ADP	_	_	14	case	_	_	1	*	1
+14	tourisme	tourisme	NOUN	_	Gender=Masc|Number=Sing	12	nmod	_	_	1	*	1
 15	d'	de	ADP	_	_	16	case	_	_	*	*	*
 16	Arc-et-Senans	Arc-et-Senans	PROPN	_	Gender=Masc|Number=Sing	12	nmod	_	_	*	Institution	*
 17	qui	qui	PRON	_	PronType=Rel	18	nsubj	_	_	*	*	*
@@ -3237,9 +3237,9 @@
 31	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	32	det	_	_	*	*	*
 32	offices	offices	NOUN	_	Gender=Masc|Number=Plur	18	obl:mod	_	_	*	Institution	*
 33	de	de	ADP	_	_	34	case	_	_	*	*	*
-34	Besançon	Besançon	PROPN	_	_	32	nmod	_	_	*	Institution	*
+34	Besançon	Besançon	PROPN	_	_	32	nmod	_	_	*	Institution	2:LOC
 35	et	et	CCONJ	_	_	36	cc	_	_	*	*	*
-36	Montbéliard	Montbéliard	PROPN	_	_	34	conj	_	_	*	Institution	1:LOC
+36	Montbéliard	Montbéliard	PROPN	_	_	34	conj	_	_	*	Institution	3:LOC
 37	.	.	PUNCT	_	_	9	punct	_	_	*	*	*
 
 # sent_id = annodis.er_00161
@@ -3252,8 +3252,8 @@
 6	grave	grave	ADJ	_	Number=Sing	7	amod	_	_	*	*	*
 7	maladie	maladie	NOUN	_	Gender=Fem|Number=Sing	1	obl:arg	_	_	1	State	*
 8	,	,	PUNCT	_	_	13	punct	_	_	*	*	*
-9	Suzanne	Suzanne	PROPN	_	Gender=Fem|Number=Sing	13	nsubj	_	_	*	*	1:PERS
-10	Sequin	Sequin	PROPN	_	_	9	flat:name	_	_	*	*	1
+9	Suzanne	Suzanne	PROPN	_	Gender=Fem|Number=Sing	13	nsubj	_	_	*	*	*
+10	Sequin	Sequin	PROPN	_	_	9	flat:name	_	_	*	*	*
 11	s'	se	PRON	_	Person=3|Reflex=Yes	13	expl:comp	_	_	2:_|MWE-IRV|_	*	*
 12	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux:tense	_	_	*	*	*
 13	éteinte	éteindre	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	2	*	*
@@ -3263,7 +3263,7 @@
 17	centre	centre	NOUN	_	Gender=Masc|Number=Sing	13	obl:mod	_	_	3:_|MWE|LEX	*	*
 18	hospitalier	hospitalier	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	3	*	*
 19	de	de	ADP	_	_	20	case	_	_	*	*	*
-20	Bar-le-Duc	Bar-le-Duc	PROPN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	Institution	*
+20	Bar-le-Duc	Bar-le-Duc	PROPN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	Institution	1:LOC
 21	,	,	PUNCT	_	_	17	punct	_	_	*	*	*
 22	où	où	PRON	_	PronType=Rel	26	iobj	_	_	*	*	*
 23	elle	il	PRON	_	Gender=Fem|Number=Sing|Person=3	26	nsubj:pass	_	_	*	*	*
@@ -3420,8 +3420,8 @@
 
 # sent_id = annodis.er_00274
 # text = Car EFI, mise en redressement judiciaire en 1998 avec un plan de continuation de dix ans, devait déjà impérativement régler une partie des sommes dues à ses créanciers en juin dernier.
-1	Car	car	CCONJ	_	_	19	cc	_	_	*	*	*
-2	EFI	EFI	PROPN	_	_	19	nsubj	_	_	*	Institution	1:ORG
+1	Car	car	CCONJ	_	_	19	cc	_	_	*	*	1:ORG
+2	EFI	EFI	PROPN	_	_	19	nsubj	_	_	*	Institution	1
 3	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 4	mise	mettre	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	2	acl	_	_	*	*	*
 5	en	en	ADP	_	_	6	case	_	_	*	*	*
@@ -3549,7 +3549,7 @@
 1	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	Fédération	fédération	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	1:ORG
 3	nationale	national	ADJ	_	Gender=Fem|Number=Sing	2	amod	_	_	*	*	1
-4	de	de	ADP	_	_	6	case	_	_	*	*	*
+4	de	de	ADP	_	_	6	case	_	_	*	*	1
 5	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	6	det	_	_	*	*	*
 6	fils	fils	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	*	Person	*
 7	de	de	ADP	_	_	8	case	_	_	*	*	*
@@ -3745,7 +3745,7 @@
 24	guerre	guerre	NOUN	_	Gender=Fem|Number=Sing	22	nmod	_	_	3	*	*
 25	à	à	ADP	_	_	27	case	_	_	*	*	*
 26	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	27	det	_	_	*	*	*
-27	Kosovo	Kosovo	PROPN	_	_	22	nmod	_	_	*	Institution	3:ORG
+27	Kosovo	Kosovo	PROPN	_	_	22	nmod	_	_	*	Institution	3:LOC
 28	,	,	PUNCT	_	_	31	punct	_	_	*	*	*
 29	s'	se	PRON	_	Person=3|Reflex=Yes	31	expl:comp	_	_	4:_|MWE-IRV|_	*	*
 30	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	31	aux:tense	_	_	*	*	*
@@ -3762,10 +3762,10 @@
 41	)	)	PUNCT	_	_	36	punct	_	_	*	*	*
 42	pour	pour	ADP	_	_	44	case	_	_	*	*	*
 43	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	44	det	_	_	*	*	*
-44	ex-Yougoslavie	ex-Yougoslavie	PROPN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	*	*
-45	de	de	ADP	_	_	47	case	_	_	*	*	*
-46	La	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	47	det	_	_	*	*	*
-47	Haye	Haye	PROPN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	*	*
+44	ex-Yougoslavie	ex-Yougoslavie	PROPN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	*	5:LOC
+45	de	de	ADP	_	_	47	case	_	_	*	*	5
+46	La	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	47	det	_	_	*	*	5
+47	Haye	Haye	PROPN	_	Gender=Fem|Number=Sing	36	nmod	_	_	*	*	5
 48	.	.	PUNCT	_	_	31	punct	_	_	*	*	*
 
 # sent_id = annodis.er_00352
@@ -3895,7 +3895,7 @@
 7	avait	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	10	aux:tense	_	_	*	*	*
 8	d'	de	ADP	_	_	9	case	_	_	1:_|MWE|MORPHO	*	*
 9	ailleurs	ailleurs	ADV	_	_	10	obl:mod	_	_	1	*	*
-10	reçu	recevoir	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	1:ORG
+10	reçu	recevoir	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	médaille	médaille	NOUN	_	Gender=Fem|Number=Sing	10	obj	_	_	2:_|MWE|LEX	*	*
 13	de	de	ADP	_	_	15	case	_	_	2	*	*
@@ -3938,7 +3938,7 @@
 6	réunissaient	réunir	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_	*	*	*
 7	samedi	samedi	NOUN	_	Gender=Masc|Number=Sing	6	obl:mod	_	_	*	Time	*
 8	,	,	PUNCT	_	_	6	punct	_	_	*	*	*
-9	rue	rue	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	Artifact	1:ORG
+9	rue	rue	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	Artifact	1:LOC
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	Justice	Justice	NOUN	_	Gender=Fem|Number=Sing	9	nmod	_	_	*	Institution	*
@@ -3954,8 +3954,8 @@
 22	de	de	ADP	_	_	24	case	_	_	*	*	*
 23	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	24	det	_	_	*	*	*
 24	Jardiniers	jardinier	NOUN	_	Gender=Masc|Number=Plur	21	nmod	_	_	*	*	2:ORG
-25	de	de	ADP	_	_	26	case	_	_	*	*	*
-26	France	France	PROPN	_	Gender=Fem|Number=Sing	24	nmod	_	_	*	Institution	3:ORG
+25	de	de	ADP	_	_	26	case	_	_	*	*	2
+26	France	France	PROPN	_	Gender=Fem|Number=Sing	24	nmod	_	_	*	Institution	2
 27	de	de	ADP	_	_	28	case	_	_	*	*	*
 28	Maxéville	Maxéville	PROPN	_	_	21	nmod	_	_	*	Institution	*
 29	,	,	PUNCT	_	_	6	punct	_	_	*	*	*
@@ -4030,7 +4030,7 @@
 34	associations	association	NOUN	_	Gender=Fem|Number=Plur	31	nmod	_	_	*	Institution	*
 35	à	à	ADP	_	_	37	case	_	_	*	*	*
 36	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	37	det	_	_	*	*	*
-37	Zénith	Zénith	PROPN	_	_	31	nmod	_	_	*	Institution	*
+37	Zénith	Zénith	PROPN	_	_	31	nmod	_	_	*	Institution	1:LOC
 38	,	,	PUNCT	_	_	31	punct	_	_	*	*	*
 39	où	où	PRON	_	PronType=Rel	43	iobj	_	_	*	*	*
 40	2.000	2.000	NUM	_	NumType=Card	41	nummod	_	_	*	*	*
@@ -4059,8 +4059,8 @@
 16	de	de	ADP	_	_	18	case	_	_	1	*	*
 17	les	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	18	det	_	_	*	*	*
 18	portes	porte	NOUN	_	Gender=Fem|Number=Plur	15	obl:arg	_	_	2:_|MWE|LEX	*	*
-19	ouvertes	ouvert	ADJ	_	Gender=Fem|Number=Plur	18	amod	_	_	2	*	1:PERS
-20	organisées	organiser	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	18	acl	_	_	*	*	1
+19	ouvertes	ouvert	ADJ	_	Gender=Fem|Number=Plur	18	amod	_	_	2	*	*
+20	organisées	organiser	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	18	acl	_	_	*	*	*
 21	en	en	ADP	_	_	22	case	_	_	*	*	*
 22	juin	juin	NOUN	_	Gender=Masc|Number=Sing	20	obl:mod	_	_	*	Time	*
 23	dans	dans	ADP	_	_	26	case	_	_	*	*	*
@@ -4093,7 +4093,7 @@
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	voyage	voyage	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Act	*
 3	d'	de	ADP	_	_	4	case	_	_	*	*	*
-4	Arturo	Arturo	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Person	1:PERS
+4	Arturo	Arturo	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Person	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	corbeau	corbeau	NOUN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Animal	*
 
@@ -4292,7 +4292,7 @@
 24	ainsi	ainsi	ADV	_	_	27	cc	_	ExtPos=CCONJ	2:CCONJ|MWE|IRREG	*	*
 25	que	que	SCONJ	_	_	24	fixed	_	_	2	*	*
 26	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	27	det	_	_	*	*	*
-27	Samu	Samu	NOUN	_	Gender=Masc|Number=Sing	12	conj	_	_	*	Institution	*
+27	Samu	Samu	NOUN	_	Gender=Masc|Number=Sing	12	conj	_	_	*	Institution	1:ORG
 28	de	de	ADP	_	_	30	case	_	_	*	*	*
 29	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	30	det	_	_	*	*	*
 30	Haut-Rhin	Haut-Rhin	PROPN	_	Gender=Masc|Number=Sing	27	nmod	_	_	*	Institution	*
@@ -4301,7 +4301,7 @@
 33	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	34	det	_	_	*	*	*
 34	Territoire	territoire	NOUN	_	Gender=Masc|Number=Sing	30	conj	_	_	*	*	*
 35	de	de	ADP	_	_	36	case	_	_	*	*	*
-36	Belfort	Belfort	PROPN	_	Gender=Masc|Number=Sing	34	nmod	_	_	*	Institution	1:LOC
+36	Belfort	Belfort	PROPN	_	Gender=Masc|Number=Sing	34	nmod	_	_	*	Institution	2:LOC
 37	.	.	PUNCT	_	_	8	punct	_	_	*	*	*
 
 # sent_id = annodis.er_00499
@@ -4341,7 +4341,7 @@
 1	De	de	ADP	_	_	2	case	_	_	1:_|MWE|ZERO	*	*
 2	retour	retour	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	1	*	*
 3	à	à	ADP	_	_	4	case	_	_	*	*	*
-4	Bethoncourt	Bethoncourt	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	*
+4	Bethoncourt	Bethoncourt	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	1:LOC
 5	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 6	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	8	det	_	_	*	*	*
 7	trois	trois	NUM	_	NumType=Card	8	nummod	_	_	*	*	*
@@ -4373,7 +4373,7 @@
 15	de	de	ADP	_	_	18	case	_	_	*	*	*
 16	sa	son	DET	_	Gender=Fem|Number=Sing|Poss=Yes	18	det	_	_	*	*	*
 17	chère	cher	ADJ	_	Gender=Fem|Number=Sing	18	amod	_	_	*	*	*
-18	Italie	Italie	PROPN	_	Gender=Fem|Number=Sing	7	obl:arg	_	_	*	Institution	*
+18	Italie	Italie	PROPN	_	Gender=Fem|Number=Sing	7	obl:arg	_	_	*	Institution	1:LOC
 19	(	(	PUNCT	_	_	18	punct	_	_	*	*	*
 20	Cesano	Cesano	PROPN	_	_	18	nmod	_	_	*	Institution	*
 21	)	)	PUNCT	_	_	18	punct	_	_	*	*	*
@@ -4397,7 +4397,7 @@
 3	-ce	ce	PRON	_	Number=Sing|Person=3	1	expl:subj	_	_	*	*	*
 4	que	que	SCONJ	_	_	5	mark	_	_	*	*	*
 5	Angiox	Angiox	PROPN	_	_	1	dislocated	_	_	*	Substance	1:PROD
-6	?	?	PUNCT	_	_	1	punct	_	_	*	*	*
+6	?	?	PUNCT	_	_	1	punct	_	_	*	*	1
 
 # sent_id = emea-fr-dev_00014
 # text = Angiox est utilisé pour traiter les patients adultes souffrant de "syndrome coronaire aigu" (SCA, réduction du flux sanguin vers le coeur), comme un angor instable (douleurs thoraciques de gravité variable) ou un infarctus du myocarde (crise cardiaque) sans "sus-décalage du segment ST" (relevé anormal à l'électrocardiogramme ou ECG).
@@ -4941,8 +4941,8 @@
 20	de	de	ADP	_	_	24	case	_	_	*	*	*
 21	355	355	NUM	_	NumType=Card	24	nummod	_	_	*	*	*
 22	+/-	+/-	ADP	_	_	23	case	_	_	*	*	*
-23	81	81	NUM	_	NumType=Card	21	nmod	_	_	*	*	*
-24	secondes	seconde	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Time	*
+23	81	81	NUM	_	NumType=Card	21	nmod	_	_	*	*	1:PROD
+24	secondes	seconde	NOUN	_	Gender=Fem|Number=Plur	0	root	_	_	*	Time	1
 25	.	.	PUNCT	_	_	24	punct	_	_	*	*	*
 
 # sent_id = emea-fr-dev_00150
@@ -5047,9 +5047,9 @@
 7	selon	selon	ADP	_	_	9	case	_	_	*	*	*
 8	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	9	det	_	_	*	*	*
 9	critères	critère	NOUN	_	Gender=Masc|Number=Plur	6	obl:mod	_	_	*	Cognition	*
-10	ACUITY	ACUITY	PROPN	_	_	9	nmod	_	_	*	Cognition	1:EVE
+10	ACUITY	ACUITY	PROPN	_	_	9	nmod	_	_	*	Cognition	*
 11	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
-12	TIMI	TIMI	PROPN	_	_	10	conj	_	_	*	Cognition	2:EVE
+12	TIMI	TIMI	PROPN	_	_	10	conj	_	_	*	Cognition	1:EVE
 13	décrits	décrire	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	9	acl	_	_	*	*	*
 14	en	en	ADP	_	_	15	case	_	_	*	*	*
 15	notes	note	NOUN	_	Gender=Fem|Number=Plur	13	obl:mod	_	_	*	Cognition	*
@@ -5079,8 +5079,8 @@
 # text = L'étude clinique REPLACE-2 (ICP)
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	étude	étude	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	1:_|MWE|LEX	*	*
-3	clinique	clinique	ADJ	_	Number=Sing	2	amod	_	_	1	*	*
-4	REPLACE-2	REPLACE-2	PROPN	_	_	2	nmod	_	_	*	Cognition	*
+3	clinique	clinique	ADJ	_	Number=Sing	2	amod	_	_	1	*	1:PROD
+4	REPLACE-2	REPLACE-2	PROPN	_	_	2	nmod	_	_	*	Cognition	1
 5	(	(	PUNCT	_	_	2	punct	_	_	*	*	*
 6	ICP	ICP	NOUN	_	_	2	appos	_	_	*	Act	*
 7	)	)	PUNCT	_	_	2	punct	_	_	*	*	*
@@ -5209,7 +5209,7 @@
 
 # sent_id = emea-fr-dev_00293
 # text = Angiox contient de la bivalirudine, un inhibiteur direct et spécifique de la thrombine, qui se lie à la fois au site catalytique et à l'exosite de liaison des anions de la thrombine en phase liquide et liée aux caillots.
-1	Angiox	Angiox	PROPN	_	_	2	nsubj	_	_	*	*	*
+1	Angiox	Angiox	PROPN	_	_	2	nsubj	_	_	*	*	1:PROD
 2	contient	contenir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 3	de	de	ADP	_	_	5	det	_	ExtPos=DET	1:DET|MWE|IRREG	*	*
 4	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	fixed	_	_	1	*	*
@@ -5307,7 +5307,7 @@
 26	pool	pool	NOUN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	Substance	*
 27	de	de	ADP	_	_	29	case	_	_	*	*	*
 28	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	29	det	_	_	*	*	*
-29	organisme	organisme	NOUN	_	Gender=Masc|Number=Sing	26	nmod	_	_	*	Body	*
+29	organisme	organisme	NOUN	_	Gender=Masc|Number=Sing	26	nmod	_	_	*	Body	1:LOC
 30	.	.	PUNCT	_	_	10	punct	_	_	*	*	*
 
 # sent_id = emea-fr-dev_00336
@@ -5412,7 +5412,7 @@
 3	d'	de	ADP	_	_	4	case	_	_	*	*	*
 4	élimination	élimination	NOUN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	Act	*
 5	et	et	CCONJ	_	_	6	cc	_	_	*	*	*
-6	manipulation	manipulation	NOUN	_	Gender=Fem|Number=Sing	4	conj	_	_	*	Act	*
+6	manipulation	manipulation	NOUN	_	Gender=Fem|Number=Sing	4	conj	_	_	*	Act	1:ORG
 
 # sent_id = emea-fr-dev_00394
 # text = Les solutions contenant des particules ne doivent pas être utilisées.
@@ -5747,7 +5747,7 @@
 # sent_id = emea-fr-dev_00551
 # text = - Essoufflements
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Essoufflements	essoufflement	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Feeling	*
+2	Essoufflements	essoufflement	NOUN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Feeling	1:PROD
 
 # sent_id = emea-fr-dev_00560
 # text = La solution doit être claire à légèrement opalescente, incolore à légèrement
@@ -5762,7 +5762,7 @@
 9	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 10	incolore	incolore	ADJ	_	Number=Sing	5	conj	_	_	*	*	*
 11	à	à	ADP	_	_	12	case	_	_	*	*	*
-12	légèrement	légèrement	ADV	_	_	10	obl:mod	_	_	*	*	*
+12	légèrement	légèrement	ADV	_	_	10	obl:mod	_	_	*	*	1:LOC
 
 # sent_id = emea-fr-test_00008
 # text = Aclasta est utilisé pour le traitement des maladies suivantes : l'ostéoporose (maladie qui fragilise les os) tant chez les femmes ménopausées que chez les hommes.
@@ -5904,7 +5904,7 @@
 17	de	de	ADP	_	_	18	case	_	_	*	*	*
 18	fractures	fracture	NOUN	_	Gender=Fem|Number=Plur	16	nmod	_	_	*	Object	*
 19	par	par	ADP	_	_	20	case	_	_	2:_|MWE|INSERT	*	*
-20	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	12	obl:mod	_	_	2	*	2:PROD
+20	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	12	obl:mod	_	_	2	*	*
 21	à	à	ADP	_	_	23	case	_	_	*	*	*
 22	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	23	det	_	_	*	*	*
 23	placebo	placebo	NOUN	_	Gender=Masc|Number=Sing	20	nmod	_	_	*	Substance	*
@@ -6457,7 +6457,7 @@
 25	17,9	17,9	NUM	_	NumType=Card	26	nummod	_	_	*	*	*
 26	jours	jour	NOUN	_	Gender=Masc|Number=Plur	3	obl:arg	_	_	*	Time	*
 27	par	par	ADP	_	_	28	case	_	_	2:_|MWE|LEX	*	*
-28	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	3	obl:mod	_	_	2	*	2:PROD
+28	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	3	obl:mod	_	_	2	*	*
 29	à	à	ADP	_	_	31	case	_	_	*	*	*
 30	11,3	11,3	NUM	_	NumType=Card	31	nummod	_	_	*	*	*
 31	jours	jour	NOUN	_	Gender=Masc|Number=Plur	28	nmod	_	_	*	Time	*
@@ -6496,7 +6496,7 @@
 25	2,9	2,9	NUM	_	NumType=Card	26	nummod	_	_	*	*	*
 26	jours	jour	NOUN	_	Gender=Masc|Number=Plur	4	obl:arg	_	_	*	Time	*
 27	par	par	ADP	_	_	28	case	_	_	2:_|MWE|LEX	*	*
-28	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	4	obl:mod	_	_	2	*	2:PROD
+28	rapport	rapport	NOUN	_	Gender=Masc|Number=Sing	4	obl:mod	_	_	2	*	*
 29	à	à	ADP	_	_	31	case	_	_	*	*	*
 30	0,5	0,5	NUM	_	NumType=Card	31	nummod	_	_	*	*	*
 31	jours	jour	NOUN	_	Gender=Masc|Number=Plur	28	nmod	_	_	*	Time	*
@@ -6592,12 +6592,12 @@
 1	Dans	dans	ADP	_	_	3	case	_	_	*	*	*
 2	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	3	det	_	_	*	*	*
 3	étude	étude	NOUN	_	Gender=Fem|Number=Sing	12	obl:mod	_	_	*	Cognition	*
-4	HORIZON-RFT	HORIZON-RFT	PROPN	_	_	3	nmod	_	_	*	Cognition	*
+4	HORIZON-RFT	HORIZON-RFT	PROPN	_	_	3	nmod	_	_	*	Cognition	1:EVE
 5	,	,	PUNCT	_	_	12	punct	_	_	*	*	*
 6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_	*	*	*
 7	traitement	traitement	NOUN	_	Gender=Masc|Number=Sing	12	nsubj	_	_	*	Act	*
 8	par	par	ADP	_	_	9	case	_	_	*	*	*
-9	Aclasta	Aclasta	PROPN	_	_	7	nmod	_	_	*	Substance	1:PROD
+9	Aclasta	Aclasta	PROPN	_	_	7	nmod	_	_	*	Substance	2:PROD
 10	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux:tense	_	_	*	*	*
 11	significativement	significativement	ADV	_	_	12	advmod	_	_	*	*	*
 12	augmenté	augmenter	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
@@ -6660,9 +6660,9 @@
 12	chez	chez	ADP	_	_	14	case	_	_	*	*	*
 13	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	14	det	_	_	*	*	*
 14	hommes	homme	NOUN	_	Gender=Masc|Number=Plur	11	obl:mod	_	_	*	Person	*
-15	traités	traiter	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	14	acl	_	_	*	*	1:PROD
+15	traités	traiter	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	14	acl	_	_	*	*	*
 16	par	par	ADP	_	_	17	case	_	_	*	*	*
-17	Aclasta	Aclasta	PROPN	_	_	15	obl:mod	_	_	*	Substance	2:PROD
+17	Aclasta	Aclasta	PROPN	_	_	15	obl:mod	_	_	*	Substance	1:PROD
 18	versus	vs	ADP	_	_	20	case	_	_	*	*	*
 19	8,7	8,7	NUM	_	NumType=Card	20	nummod	_	_	*	*	*
 20	%	%	NOUN	_	Gender=Masc	11	obl:mod	_	_	*	Quantity	*
@@ -6734,7 +6734,7 @@
 7	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det	_	_	*	*	*
 8	maladie	maladie	NOUN	_	Gender=Fem|Number=Sing	5	nmod	_	_	1:_|MWE|LEX	*	*
 9	de	de	ADP	_	_	10	case	_	_	1	*	*
-10	Paget	Paget	PROPN	_	Gender=Fem|Number=Sing	8	nmod	_	_	1	Person	1:PERS
+10	Paget	Paget	PROPN	_	Gender=Fem|Number=Sing	8	nmod	_	_	1	Person	*
 
 # sent_id = emea-fr-test_00292
 # text = Des perfusions uniques et multiples de 5 et 15 minutes avec 2, 4, 8 et 16 mg d'acide zolédronique chez 64 patients ont généré les données pharmacocinétiques suivantes, qui se sont révélées indépendantes de la dose.
@@ -6924,7 +6924,7 @@
 # text = Maladie de Paget
 1	Maladie	maladie	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	1:_|MWE|LEX	*	*
 2	de	de	ADP	_	_	3	case	_	_	1	*	*
-3	Paget	Paget	PROPN	_	Gender=Fem|Number=Sing	1	nmod	_	_	1	Person	1:PERS
+3	Paget	Paget	PROPN	_	Gender=Fem|Number=Sing	1	nmod	_	_	1	Person	*
 
 # sent_id = emea-fr-test_00418
 # text = Si la maladie n'est pas traitée, les os se déforment, deviennent douloureux et peuvent se casser.
@@ -7417,12 +7417,12 @@
 # sent_id = frwiki_50.1000_00002
 # text = L'affaire des caporaux de Souain, fusillés pour l'exemple, est un des cas parmi les plus flagrants et les plus médiatisés de l'injustice militaire durant la Première Guerre mondiale.
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
-2	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	15	nsubj	_	_	*	Event	1:EVE
-3	de	de	ADP	_	_	5	case	_	_	*	*	*
-4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	caporaux	caporal	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	*	Person	*
-6	de	de	ADP	_	_	7	case	_	_	*	*	*
-7	Souain	Souain	PROPN	_	_	5	nmod	_	_	*	Institution	*
+2	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	15	nsubj	_	_	*	Event	1:PROD
+3	de	de	ADP	_	_	5	case	_	_	*	*	1
+4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	1
+5	caporaux	caporal	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	*	Person	1
+6	de	de	ADP	_	_	7	case	_	_	*	*	1
+7	Souain	Souain	PROPN	_	_	5	nmod	_	_	*	Institution	1
 8	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 9	fusillés	fusiller	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	5	acl	_	_	*	*	*
 10	pour	pour	ADP	_	_	12	case	_	_	1:_|MWE|DET	*	*
@@ -7450,7 +7450,7 @@
 32	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	34	det	_	_	*	*	*
 33	Première	premier	ADJ	_	Gender=Fem|Number=Sing|NumType=Ord	34	amod	_	_	*	*	2:EVE
 34	Guerre	guerre	NOUN	_	Gender=Fem|Number=Sing	18	nmod	_	_	*	Act	2
-35	mondiale	mondial	ADJ	_	Gender=Fem|Number=Sing	34	amod	_	_	*	*	*
+35	mondiale	mondial	ADJ	_	Gender=Fem|Number=Sing	34	amod	_	_	*	*	2
 36	.	.	PUNCT	_	_	15	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00010
@@ -7480,7 +7480,7 @@
 23	:	:	PUNCT	_	_	10	punct	_	_	*	*	*
 24	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	25	det	_	_	*	*	*
 25	général	général	NOUN	_	Gender=Masc|Number=Sing	34	nsubj	_	_	*	Person	*
-26	Réveilhac	Réveilhac	PROPN	_	_	25	flat:name	_	_	*	Person	1:PERS
+26	Réveilhac	Réveilhac	PROPN	_	_	25	flat:name	_	_	*	Person	*
 27	,	,	PUNCT	_	_	25	punct	_	_	*	*	*
 28	ordonnateur	ordonnateur	NOUN	_	Gender=Masc|Number=Sing	25	appos	_	_	*	Person	*
 29	de	de	ADP	_	_	31	case	_	_	*	*	*
@@ -7546,7 +7546,7 @@
 
 # sent_id = frwiki_50.1000_00022
 # text = Maupas, marié, avait 2 enfants ;
-1	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	5	nsubj	_	_	*	Person	1:PERS
+1	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	5	nsubj	_	_	*	Person	*
 2	,	,	PUNCT	_	_	1	punct	_	_	*	*	*
 3	marié	marié	ADJ	_	Gender=Masc|Number=Sing	1	amod	_	_	*	*	*
 4	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
@@ -7583,7 +7583,7 @@
 24	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	25	det	_	_	*	*	*
 25	caporaux	caporal	NOUN	_	Gender=Masc|Number=Plur	22	nmod	_	_	*	Person	*
 26	de	de	ADP	_	_	27	case	_	_	*	*	*
-27	Souain	Souain	PROPN	_	_	25	nmod	_	_	*	Institution	*
+27	Souain	Souain	PROPN	_	_	25	nmod	_	_	*	Institution	1:LOC
 28	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00039
@@ -7646,10 +7646,10 @@
 7	nom	nom	NOUN	_	Gender=Masc|Number=Sing	5	obj	_	_	1	*	*
 8	de	de	ADP	_	_	10	case	_	_	*	*	*
 9	"	"	PUNCT	_	_	10	punct	_	_	*	*	*
-10	Blanche	Blanche	PROPN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	*	1:PERS
+10	Blanche	Blanche	PROPN	_	Gender=Fem|Number=Sing	7	nmod	_	_	*	*	1:PROD
 11	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
-12	Théophile	Théophile	PROPN	_	Gender=Masc|Number=Sing	10	conj	_	_	*	*	2:PERS
-13	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	10	flat:name	_	_	*	*	2
+12	Théophile	Théophile	PROPN	_	Gender=Masc|Number=Sing	10	conj	_	_	*	*	*
+13	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	10	flat:name	_	_	*	*	*
 14	"	"	PUNCT	_	_	10	punct	_	_	*	*	*
 15	depuis	depuis	ADP	_	_	16	case	_	_	*	*	*
 16	1998	1998	NUM	_	NumType=Card	5	obl:mod	_	_	*	Time	*
@@ -7664,17 +7664,17 @@
 5	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	honneur	honneur	NOUN	_	Gender=Masc|Number=Sing	2	appos	_	_	*	Attribute	*
 7	de	de	ADP	_	_	8	case	_	_	*	*	*
-8	Théo	Théo	PROPN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	Person	*
+8	Théo	Théo	PROPN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	Person	1:LOC
 9	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	12	det	_	_	*	*	*
 12	caporaux	caporal	NOUN	_	Gender=Masc|Number=Plur	8	conj	_	_	*	Person	*
 13	de	de	ADP	_	_	14	case	_	_	*	*	*
-14	Souain	Souain	PROPN	_	_	12	nmod	_	_	*	Institution	*
+14	Souain	Souain	PROPN	_	_	12	nmod	_	_	*	Institution	2:LOC
 15	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 16	écrit	écrire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	2	acl	_	_	*	*	*
 17	par	par	ADP	_	_	18	case	_	_	*	*	*
-18	Jacqueline	Jacqueline	PROPN	_	Gender=Fem|Number=Sing	16	obl:agent	_	_	*	*	1:PERS
+18	Jacqueline	Jacqueline	PROPN	_	Gender=Fem|Number=Sing	16	obl:agent	_	_	*	*	*
 19	Laisné	Laisné	PROPN	_	_	18	flat:name	_	_	*	*	*
 20	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 21	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	22	det	_	_	*	*	*
@@ -7684,8 +7684,8 @@
 25	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det	_	_	*	*	*
 26	suite	suite	NOUN	_	Gender=Fem|Number=Sing	24	obj	_	_	1	*	*
 27	de	de	ADP	_	_	28	case	_	_	*	*	*
-28	Blanche	Blanche	PROPN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	*	2:PERS
-29	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	28	flat:name	_	_	*	*	2
+28	Blanche	Blanche	PROPN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	*	*
+29	Maupas	Maupas	PROPN	_	Gender=Masc|Number=Sing	28	flat:name	_	_	*	*	*
 30	dans	dans	ADP	_	_	32	case	_	_	*	*	*
 31	son	son	DET	_	Number=Sing|Poss=Yes	32	det	_	_	*	*	*
 32	école	école	NOUN	_	Gender=Fem|Number=Sing	26	nmod	_	_	*	Institution	*
@@ -7702,7 +7702,7 @@
 
 # sent_id = frwiki_50.1000_00058
 # text = Affaire
-1	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
+1	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	1:EVE
 
 # sent_id = frwiki_50.1000_00065
 # text = Le journal L'Évènement du jeudi du 28 décembre 1989 a même titré "Dracula était communiste."
@@ -7741,7 +7741,7 @@
 # sent_id = frwiki_50.1000_00107
 # text = - Propagande
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Propagande	propagande	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	*
+2	Propagande	propagande	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	1:PROD
 
 # sent_id = frwiki_50.1000_00108
 # text = Références
@@ -7756,15 +7756,15 @@
 5	Maggie	Maggie	PROPN	_	Gender=Fem|Number=Sing	3	dep	_	_	*	*	*
 6	O'Kane	O'Kane	PROPN	_	_	5	flat:name	_	_	*	*	*
 7	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
-8	This	This	X	_	Foreign=Yes	3	dep	_	_	*	*	*
-9	time	time	X	_	Foreign=Yes	8	flat:foreign	_	_	*	*	*
+8	This	This	X	_	Foreign=Yes	3	dep	_	_	*	*	1:ORG
+9	time	time	X	_	Foreign=Yes	8	flat:foreign	_	_	*	*	1
 10	I	I	X	_	Foreign=Yes	8	flat:foreign	_	_	*	*	*
 11	'	'	PUNCT	_	_	8	punct	_	_	*	*	*
 12	m	m	X	_	Foreign=Yes	8	flat:foreign	_	_	*	*	*
 13	scared	scared	X	_	Foreign=Yes	8	flat:foreign	_	_	*	*	*
 14	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
-15	The	The	X	_	Foreign=Yes	3	dep	_	_	*	*	1:PROD
-16	Guardian	Guardian	X	_	Foreign=Yes	15	flat:foreign	_	_	*	*	*
+15	The	The	X	_	Foreign=Yes	3	dep	_	_	*	*	2:PROD
+16	Guardian	Guardian	X	_	Foreign=Yes	15	flat:foreign	_	_	*	*	2
 17	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 18	December	December	NOUN	_	_	3	dep	_	_	*	Time	*
 19	5	5	NUM	_	NumType=Card	18	nummod	_	_	*	*	*
@@ -7781,13 +7781,13 @@
 5	Ian	Ian	PROPN	_	Gender=Masc|Number=Sing	3	dep	_	_	*	*	*
 6	Urbina	Urbina	PROPN	_	_	5	flat:name	_	_	*	*	*
 7	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
-8	HBO	HBO	PROPN	_	_	3	dep	_	_	*	Institution	*
-9	adds	adds	X	_	Foreign=Yes	8	dep	_	_	*	*	*
-10	disclaimer	disclaimer	X	_	Foreign=Yes	8	dep	_	_	*	*	*
-11	to	to	X	_	Foreign=Yes	8	dep	_	_	*	*	*
-12	Gulf	Gulf	X	_	Foreign=Yes	8	dep	_	_	*	*	*
-13	War	War	X	_	Foreign=Yes	8	dep	_	_	*	*	*
-14	movie	movie	X	_	Foreign=Yes	8	dep	_	_	*	*	*
+8	HBO	HBO	PROPN	_	_	3	dep	_	_	*	Institution	1:PERS
+9	adds	adds	X	_	Foreign=Yes	8	dep	_	_	*	*	1
+10	disclaimer	disclaimer	X	_	Foreign=Yes	8	dep	_	_	*	*	1
+11	to	to	X	_	Foreign=Yes	8	dep	_	_	*	*	1
+12	Gulf	Gulf	X	_	Foreign=Yes	8	dep	_	_	*	*	1
+13	War	War	X	_	Foreign=Yes	8	dep	_	_	*	*	1
+14	movie	movie	X	_	Foreign=Yes	8	dep	_	_	*	*	1
 15	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 16	Asia	Asia	PROPN	_	Number=Sing	3	dep	_	_	*	Institution	*
 17	Times	Times	PROPN	_	_	16	flat:name	_	_	*	*	*
@@ -7819,7 +7819,7 @@
 17	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	18	det	_	_	*	*	*
 18	Croix-Rouge	Croix-Rouge	PROPN	_	Gender=Fem|Number=Sing	10	obl:mod	_	_	*	*	*
 19	de	de	ADP	_	_	20	case	_	_	*	*	*
-20	Centrafrique	Centrafrique	PROPN	_	_	18	nmod	_	_	*	Institution	1:ORG
+20	Centrafrique	Centrafrique	PROPN	_	_	18	nmod	_	_	*	Institution	*
 21	alors	alors	ADV	_	_	30	mark	_	ExtPos=SCONJ	1:PRON|MWE|LEX	*	*
 22	que	que	SCONJ	_	_	21	fixed	_	_	1	*	*
 23	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	24	det	_	_	*	*	*
@@ -7829,7 +7829,7 @@
 27	francs	franc	NOUN	_	Gender=Masc|Number=Plur	24	appos	_	_	*	Possession	*
 28	)	)	PUNCT	_	_	24	punct	_	_	*	*	*
 29	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	30	aux:pass	_	_	*	*	*
-30	versé	verser	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	10	advcl	_	_	*	*	2:ORG
+30	versé	verser	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	10	advcl	_	_	*	*	*
 31	à	à	ADP	_	_	33	case	_	_	*	*	*
 32	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	33	det	_	_	*	*	*
 33	oeuvres	oeuvres	NOUN	_	Gender=Fem|Number=Plur	30	obl:arg	_	_	2:_|MWE|LEX	*	*
@@ -7846,7 +7846,7 @@
 3	,	,	PUNCT	_	_	6	punct	_	_	*	*	*
 4	cette	ce	DET	_	Gender=Fem|Number=Sing|PronType=Dem	5	det	_	_	*	*	*
 5	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	6	nsubj	_	_	*	Event	*
-6	pourrait	pouvoir	VERB	_	Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	1:ORG
+6	pourrait	pouvoir	VERB	_	Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 7	être	être	AUX	_	VerbForm=Inf	8	cop	_	_	*	*	*
 8	une	un	PRON	_	Gender=Fem|Number=Sing	6	xcomp	_	_	*	*	*
 9	de	de	ADP	_	_	11	case	_	_	*	*	*
@@ -7856,20 +7856,20 @@
 13	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	_	_	*	*	*
 14	défaite	défaite	NOUN	_	Gender=Fem|Number=Sing	11	nmod	_	_	*	Event	*
 15	de	de	ADP	_	_	16	case	_	_	*	*	*
-16	Valéry	Valéry	PROPN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	*	2:PERS
-17	Giscard	Giscard	PROPN	_	_	16	flat:name	_	_	*	*	2
-18	d'	de	ADP	_	_	19	case	_	_	*	*	*
-19	Estaing	Estaing	PROPN	_	Gender=Masc|Number=Sing	16	nmod	_	_	*	*	*
+16	Valéry	Valéry	PROPN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	*	1:PERS
+17	Giscard	Giscard	PROPN	_	_	16	flat:name	_	_	*	*	1
+18	d'	de	ADP	_	_	19	case	_	_	*	*	1
+19	Estaing	Estaing	PROPN	_	Gender=Masc|Number=Sing	16	nmod	_	_	*	*	1
 20	face	face	NOUN	_	Gender=Fem|Number=Sing	23	case	_	ExtPos=ADP	1:ADP|MWE|IRREG	*	*
 21	à	à	ADP	_	_	20	fixed	_	_	1	*	*
 22	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	23	det	_	_	*	*	*
 23	candidat	candidat	NOUN	_	Gender=Masc|Number=Sing	14	nmod	_	_	*	Person	*
 24	de	de	ADP	_	_	26	case	_	_	*	*	*
 25	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	26	det	_	_	*	*	*
-26	parti	parti	NOUN	_	Gender=Masc|Number=Sing	23	nmod	_	_	*	*	*
-27	socialiste	socialiste	ADJ	_	Number=Sing	26	amod	_	_	*	*	*
-28	François	François	PROPN	_	Gender=Masc|Number=Sing	23	appos	_	_	*	*	3:ORG
-29	Mitterrand	Mitterrand	PROPN	_	_	28	flat:name	_	_	*	*	4:PERS
+26	parti	parti	NOUN	_	Gender=Masc|Number=Sing	23	nmod	_	_	*	*	2:ORG
+27	socialiste	socialiste	ADJ	_	Number=Sing	26	amod	_	_	*	*	3:PERS
+28	François	François	PROPN	_	Gender=Masc|Number=Sing	23	appos	_	_	*	*	3
+29	Mitterrand	Mitterrand	PROPN	_	_	28	flat:name	_	_	*	*	3
 30	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00144
@@ -7969,7 +7969,7 @@
 # sent_id = frwiki_50.1000_00171
 # text = En France
 1	En	en	ADP	_	_	2	case	_	_	*	*	*
-2	France	France	PROPN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	1:LOC
+2	France	France	PROPN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	1:ORG
 
 # sent_id = frwiki_50.1000_00175
 # text = Wikipédia : ébauche histoire.
@@ -7984,10 +7984,10 @@
 1	Histoire	histoire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Cognition	*
 2	de	de	ADP	_	_	4	case	_	_	*	*	*
 3	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det	_	_	*	*	*
-4	République	République	PROPN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	*	*
-5	de	de	ADP	_	_	7	case	_	_	*	*	*
-6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_	*	*	*
-7	Congo	Congo	PROPN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	*	*
+4	République	République	PROPN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	*	1:LOC
+5	de	de	ADP	_	_	7	case	_	_	*	*	1
+6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_	*	*	1
+7	Congo	Congo	PROPN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	*	1
 
 # sent_id = frwiki_50.1000_00179
 # text = Histoire
@@ -8006,7 +8006,7 @@
 9	Richelieu	Richelieu	PROPN	_	_	6	nmod	_	_	*	Person	*
 10	et	et	CCONJ	_	_	12	cc	_	_	*	*	*
 11	s'	se	PRON	_	Person=3|Reflex=Yes	12	expl:comp	_	_	1:_|MWE-IRV|_	*	*
-12	opposait	opposer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	conj	_	_	1	*	1:PERS
+12	opposait	opposer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	conj	_	_	1	*	*
 13	fermement	fermement	ADV	_	_	12	advmod	_	_	*	*	*
 14	à	à	ADP	_	_	16	case	_	_	*	*	*
 15	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	det	_	_	*	*	*
@@ -8026,40 +8026,40 @@
 # sent_id = frwiki_50.1000_00197
 # text = - Satanisme
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Satanisme	satanisme	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
+2	Satanisme	satanisme	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	1:PROD
 
 # sent_id = frwiki_50.1000_00200
 # text = L'affaire des emplois fictifs de la Mairie de Paris, ou "affaire des emplois fictifs du RPR", instruite par le juge Patrick Desmure, concerne sept employés permanents du RPR, dont le salaire a été payé par la mairie de Paris.
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	32	nsubj	_	_	*	Event	1:EVE
-3	de	de	ADP	_	_	5	case	_	_	*	*	*
-4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	emplois	emploi	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	1:_|MWE|LEX	State	*
-6	fictifs	fictif	ADJ	_	Gender=Masc|Number=Plur	5	amod	_	_	1	*	*
-7	de	de	ADP	_	_	9	case	_	_	*	*	*
-8	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det	_	_	*	*	*
-9	Mairie	mairie	NOUN	_	Gender=Fem|Number=Sing	5	nmod	_	_	*	*	2:ORG
-10	de	de	ADP	_	_	11	case	_	_	*	*	*
-11	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	9	nmod	_	_	*	Institution	3:ORG
+3	de	de	ADP	_	_	5	case	_	_	*	*	1
+4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	1
+5	emplois	emploi	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	1:_|MWE|LEX	State	1
+6	fictifs	fictif	ADJ	_	Gender=Masc|Number=Plur	5	amod	_	_	1	*	1
+7	de	de	ADP	_	_	9	case	_	_	*	*	1
+8	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det	_	_	*	*	1
+9	Mairie	mairie	NOUN	_	Gender=Fem|Number=Sing	5	nmod	_	_	*	*	1
+10	de	de	ADP	_	_	11	case	_	_	*	*	1
+11	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	9	nmod	_	_	*	Institution	1
 12	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 13	ou	ou	CCONJ	_	_	15	cc	_	_	*	*	*
 14	"	"	PUNCT	_	_	15	punct	_	_	*	*	*
-15	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	conj	_	_	*	Event	4:EVE
-16	de	de	ADP	_	_	18	case	_	_	*	*	*
-17	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	18	det	_	_	*	*	*
-18	emplois	emploi	NOUN	_	Gender=Masc|Number=Plur	15	nmod	_	_	*	State	*
-19	fictifs	fictif	ADJ	_	Gender=Masc|Number=Plur	18	amod	_	_	*	*	*
-20	de	de	ADP	_	_	22	case	_	_	*	*	*
-21	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
-22	RPR	RPR	PROPN	_	_	18	nmod	_	_	*	Institution	5:ORG
+15	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	conj	_	_	*	Event	2:EVE
+16	de	de	ADP	_	_	18	case	_	_	*	*	2
+17	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	18	det	_	_	*	*	2
+18	emplois	emploi	NOUN	_	Gender=Masc|Number=Plur	15	nmod	_	_	*	State	2
+19	fictifs	fictif	ADJ	_	Gender=Masc|Number=Plur	18	amod	_	_	*	*	2
+20	de	de	ADP	_	_	22	case	_	_	*	*	2
+21	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	2
+22	RPR	RPR	PROPN	_	_	18	nmod	_	_	*	Institution	2
 23	"	"	PUNCT	_	_	15	punct	_	_	*	*	*
 24	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 25	instruite	instruire	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	2	acl	_	_	*	*	*
 26	par	par	ADP	_	_	28	case	_	_	*	*	*
 27	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	28	det	_	_	*	*	*
 28	juge	juge	NOUN	_	Gender=Masc|Number=Sing	25	obl:agent	_	_	*	Person	*
-29	Patrick	Patrick	PROPN	_	Gender=Masc|Number=Sing	28	appos	_	_	*	*	6:PERS
-30	Desmure	Desmure	PROPN	_	_	29	flat:name	_	_	*	*	6
+29	Patrick	Patrick	PROPN	_	Gender=Masc|Number=Sing	28	appos	_	_	*	*	*
+30	Desmure	Desmure	PROPN	_	_	29	flat:name	_	_	*	*	*
 31	,	,	PUNCT	_	_	32	punct	_	_	*	*	*
 32	concerne	concerner	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 33	sept	sept	NUM	_	NumType=Card	34	nummod	_	_	*	*	*
@@ -8067,7 +8067,7 @@
 35	permanents	permanent	ADJ	_	Gender=Masc|Number=Plur	34	amod	_	_	*	*	*
 36	de	de	ADP	_	_	38	case	_	_	*	*	*
 37	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	38	det	_	_	*	*	*
-38	RPR	RPR	PROPN	_	_	34	nmod	_	_	*	Institution	7:ORG
+38	RPR	RPR	PROPN	_	_	34	nmod	_	_	*	Institution	3:ORG
 39	,	,	PUNCT	_	_	34	punct	_	_	*	*	*
 40	dont	dont	PRON	_	PronType=Rel	42	nmod	_	_	*	*	*
 41	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	42	det	_	_	*	*	*
@@ -8077,9 +8077,9 @@
 45	payé	payer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	34	acl:relcl	_	_	*	*	*
 46	par	par	ADP	_	_	48	case	_	_	*	*	*
 47	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	48	det	_	_	*	*	*
-48	mairie	mairie	NOUN	_	Gender=Fem|Number=Sing	45	obl:agent	_	_	*	*	8:ORG
-49	de	de	ADP	_	_	50	case	_	_	*	*	*
-50	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	48	nmod	_	_	*	Institution	9:ORG
+48	mairie	mairie	NOUN	_	Gender=Fem|Number=Sing	45	obl:agent	_	_	*	*	4:ORG
+49	de	de	ADP	_	_	50	case	_	_	*	*	4
+50	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	48	nmod	_	_	*	Institution	4
 51	.	.	PUNCT	_	_	32	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00203
@@ -8113,12 +8113,12 @@
 10	Procureur	procureur	NOUN	_	Gender=Masc|Number=Sing	20	nsubj	_	_	1:_|MWE|LEX	*	*
 11	de	de	ADP	_	_	13	case	_	_	1	*	*
 12	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det	_	_	1	*	*
-13	République	république	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	1	*	*
-14	de	de	ADP	_	_	15	case	_	_	*	*	*
-15	Nanterre	Nanterre	PROPN	_	Gender=Masc|Number=Sing	10	nmod	_	_	*	Institution	*
+13	République	république	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	1	*	1:ORG
+14	de	de	ADP	_	_	15	case	_	_	*	*	1
+15	Nanterre	Nanterre	PROPN	_	Gender=Masc|Number=Sing	10	nmod	_	_	*	Institution	1
 16	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
-17	Yves	Yves	PROPN	_	Gender=Masc|Number=Sing	10	appos	_	_	*	*	1:PERS
-18	Bot	Bot	PROPN	_	_	17	flat:name	_	_	*	*	1
+17	Yves	Yves	PROPN	_	Gender=Masc|Number=Sing	10	appos	_	_	*	*	2:ORG
+18	Bot	Bot	PROPN	_	_	17	flat:name	_	_	*	*	2
 19	,	,	PUNCT	_	_	20	punct	_	_	*	*	*
 20	explique	expliquer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 21	que	que	SCONJ	_	_	25	mark	_	_	*	*	*
@@ -8130,11 +8130,11 @@
 27	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	28	det	_	_	*	*	*
 28	encontre	encontre	NOUN	_	Gender=Fem|Number=Sing	25	obl:mod	_	_	2	*	*
 29	de	de	ADP	_	_	30	case	_	_	*	*	*
-30	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	28	nmod	_	_	*	*	2:PERS
-31	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	30	flat:name	_	_	*	*	2
-32	de	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	34	det	_	_	*	*	*
-33	fortes	fort	ADJ	_	Gender=Fem|Number=Plur	34	amod	_	_	*	*	*
-34	présomptions	présomption	NOUN	_	Gender=Fem|Number=Plur	25	obj:agent	_	_	*	Feeling	*
+30	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	28	nmod	_	_	*	*	3:PERS
+31	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	30	flat:name	_	_	*	*	3
+32	de	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	34	det	_	_	*	*	3
+33	fortes	fort	ADJ	_	Gender=Fem|Number=Plur	34	amod	_	_	*	*	3
+34	présomptions	présomption	NOUN	_	Gender=Fem|Number=Plur	25	obj:agent	_	_	*	Feeling	3
 35	sur	sur	ADP	_	_	37	case	_	_	*	*	*
 36	sa	son	DET	_	Gender=Fem|Number=Sing|Poss=Yes	37	det	_	_	*	*	*
 37	participation	participation	NOUN	_	Gender=Fem|Number=Sing	34	nmod	_	_	*	Act	*
@@ -8165,10 +8165,10 @@
 3	général	général	ADJ	_	Gender=Masc|Number=Sing	2	amod	_	_	1;2	*	*
 4	à	à	ADP	_	_	6	case	_	_	2	*	*
 5	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det	_	_	2	*	*
-6	Cour	cour	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	2;3:_|MWE|LEX	*	1:PERS
-7	de	de	ADP	_	_	8	case	_	_	2;3	*	*
-8	cassation	cassation	NOUN	_	Gender=Fem|Number=Sing	6	nmod	_	_	2;3	*	2:PERS
-9	Jean-François	Jean-François	PROPN	_	_	2	appos	_	_	*	*	2
+6	Cour	cour	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	2;3:_|MWE|LEX	*	1:ORG
+7	de	de	ADP	_	_	8	case	_	_	2;3	*	1
+8	cassation	cassation	NOUN	_	Gender=Fem|Number=Sing	6	nmod	_	_	2;3	*	1
+9	Jean-François	Jean-François	PROPN	_	_	2	appos	_	_	*	*	*
 10	Burgelin	Burgelin	PROPN	_	_	9	flat:name	_	_	*	*	*
 11	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 12	par	par	ADP	_	_	13	case	_	_	4:_|MWE|LEX	*	*
@@ -8207,11 +8207,11 @@
 # text = - Affaire des HLM de Paris
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
 2	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	1:EVE
-3	de	de	ADP	_	_	5	case	_	_	*	*	*
-4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	HLM	HLM	NOUN	_	Number=Plur	2	nmod	_	_	*	Institution	*
-6	de	de	ADP	_	_	7	case	_	_	*	*	*
-7	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	5	nmod	_	_	*	Institution	*
+3	de	de	ADP	_	_	5	case	_	_	*	*	1
+4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	1
+5	HLM	HLM	NOUN	_	Number=Plur	2	nmod	_	_	*	Institution	1
+6	de	de	ADP	_	_	7	case	_	_	*	*	1
+7	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	5	nmod	_	_	*	Institution	1
 
 # sent_id = frwiki_50.1000_00225
 # text = Affaire des faux chargés de mission
@@ -8246,7 +8246,7 @@
 
 # sent_id = frwiki_50.1000_00261
 # text = Parmi elles figurent notamment l'ancien maire du 3e arrondissement, Jacques Dominati, ses deux fils, Laurent et Philippe, ainsi que l'ancien bras droit de Jean Tiberi à la fédération RPR de Paris, Guy Legris, également impliqué dans l'affaire du Crédit municipal de Paris.
-1	Parmi	parmi	ADP	_	_	2	case	_	_	*	*	1:PERS
+1	Parmi	parmi	ADP	_	_	2	case	_	_	*	*	*
 2	elles	soi	PRON	_	Gender=Fem|Number=Plur|Person=3|PronType=Prs	3	obl:arg	_	_	*	*	*
 3	figurent	figurer	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 4	notamment	notamment	ADV	_	_	3	advmod	_	_	*	*	*
@@ -8255,19 +8255,19 @@
 7	maire	maire	NOUN	_	Gender=Masc|Number=Sing	3	nsubj	_	_	*	Person	*
 8	de	de	ADP	_	_	11	case	_	_	*	*	*
 9	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det	_	_	*	*	*
-10	3e	3e	ADJ	_	NumType=Ord	11	amod	_	_	*	*	2:LOC
-11	arrondissement	arrondissement	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Institution	2
+10	3e	3e	ADJ	_	NumType=Ord	11	amod	_	_	*	*	1:LOC
+11	arrondissement	arrondissement	NOUN	_	Gender=Masc|Number=Sing	7	nmod	_	_	*	Institution	1
 12	,	,	PUNCT	_	_	7	punct	_	_	*	*	*
-13	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	7	appos	_	_	*	*	3:PERS
-14	Dominati	Dominati	PROPN	_	_	13	flat:name	_	_	*	*	3
+13	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	7	appos	_	_	*	*	*
+14	Dominati	Dominati	PROPN	_	_	13	flat:name	_	_	*	*	*
 15	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 16	ses	son	DET	_	Number=Plur|Poss=Yes	18	det	_	_	*	*	*
 17	deux	deux	NUM	_	NumType=Card	18	nummod	_	_	*	*	*
 18	fils	fils	NOUN	_	Gender=Masc|Number=Plur	7	conj	_	_	*	Person	*
 19	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
-20	Laurent	Laurent	PROPN	_	Gender=Masc|Number=Sing	18	appos	_	_	*	Person	4:PERS
+20	Laurent	Laurent	PROPN	_	Gender=Masc|Number=Sing	18	appos	_	_	*	Person	*
 21	et	et	CCONJ	_	_	22	cc	_	_	*	*	*
-22	Philippe	Philippe	PROPN	_	Gender=Masc|Number=Sing	20	conj	_	_	*	Person	5:PERS
+22	Philippe	Philippe	PROPN	_	Gender=Masc|Number=Sing	20	conj	_	_	*	Person	*
 23	,	,	PUNCT	_	_	7	punct	_	_	*	*	*
 24	ainsi	ainsi	ADV	_	_	28	cc	_	ExtPos=CCONJ	1:CCONJ|MWE|IRREG	*	*
 25	que	que	SCONJ	_	_	24	fixed	_	_	1	*	*
@@ -8276,29 +8276,29 @@
 28	bras	bras	NOUN	_	Gender=Masc|Number=Sing	7	conj	_	_	2:_|MWE|LEX	*	*
 29	droit	droit	ADJ	_	Gender=Masc|Number=Sing	28	amod	_	_	2	*	*
 30	de	de	ADP	_	_	31	case	_	_	*	*	*
-31	Jean	Jean	PROPN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	*	6:PERS
-32	Tiberi	Tiberi	PROPN	_	_	31	flat:name	_	_	*	*	6
+31	Jean	Jean	PROPN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	*	2:PERS
+32	Tiberi	Tiberi	PROPN	_	_	31	flat:name	_	_	*	*	2
 33	à	à	ADP	_	_	35	case	_	_	*	*	*
 34	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	35	det	_	_	*	*	*
-35	fédération	fédération	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	Institution	*
-36	RPR	RPR	NOUN	_	_	35	nmod	_	_	*	Institution	7:ORG
-37	de	de	ADP	_	_	38	case	_	_	*	*	*
-38	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	35	nmod	_	_	*	Institution	8:ORG
+35	fédération	fédération	NOUN	_	Gender=Fem|Number=Sing	28	nmod	_	_	*	Institution	3:ORG
+36	RPR	RPR	NOUN	_	_	35	nmod	_	_	*	Institution	3
+37	de	de	ADP	_	_	38	case	_	_	*	*	3
+38	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	35	nmod	_	_	*	Institution	3
 39	,	,	PUNCT	_	_	28	punct	_	_	*	*	*
-40	Guy	Guy	PROPN	_	Gender=Masc|Number=Sing	28	appos	_	_	*	*	9:PERS
-41	Legris	Legris	PROPN	_	_	40	flat:name	_	_	*	*	9
+40	Guy	Guy	PROPN	_	Gender=Masc|Number=Sing	28	appos	_	_	*	*	4:ORG
+41	Legris	Legris	PROPN	_	_	40	flat:name	_	_	*	*	*
 42	,	,	PUNCT	_	_	28	punct	_	_	*	*	*
 43	également	également	ADV	_	_	44	advmod	_	_	*	*	*
 44	impliqué	impliquer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	28	acl	_	_	*	*	*
 45	dans	dans	ADP	_	_	47	case	_	_	*	*	*
 46	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	47	det	_	_	*	*	*
-47	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	44	obl:arg	_	_	*	Event	10:EVE
+47	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	44	obl:arg	_	_	*	Event	*
 48	de	de	ADP	_	_	50	case	_	_	*	*	*
 49	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	50	det	_	_	*	*	*
-50	Crédit	crédit	NOUN	_	Gender=Masc|Number=Sing	47	nmod	_	_	*	Act	*
-51	municipal	municipal	ADJ	_	Gender=Masc|Number=Sing	50	amod	_	_	*	*	*
-52	de	de	ADP	_	_	53	case	_	_	*	*	*
-53	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	50	nmod	_	_	*	Institution	11:ORG
+50	Crédit	crédit	NOUN	_	Gender=Masc|Number=Sing	47	nmod	_	_	*	Act	5:EVE
+51	municipal	municipal	ADJ	_	Gender=Masc|Number=Sing	50	amod	_	_	*	*	5
+52	de	de	ADP	_	_	53	case	_	_	*	*	5
+53	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	50	nmod	_	_	*	Institution	5
 54	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00264
@@ -8329,8 +8329,8 @@
 10	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	aux:tense	_	_	*	*	*
 11	requis	requérir	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 12	contre	contre	ADP	_	_	13	case	_	_	*	*	*
-13	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	*	*	2:PERS
-14	Dominati	Dominati	PROPN	_	_	13	flat:name	_	_	*	*	2
+13	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	*	*	*
+14	Dominati	Dominati	PROPN	_	_	13	flat:name	_	_	*	*	*
 15	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	16	det	_	_	*	*	*
 16	peine	peine	NOUN	_	Gender=Fem|Number=Sing	11	obj	_	_	*	Act	*
 17	de	de	ADP	_	_	19	case	_	_	*	*	*
@@ -8354,7 +8354,7 @@
 
 # sent_id = frwiki_50.1000_00286
 # text = Affaire
-1	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	*
+1	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Event	1:EVE
 
 # sent_id = frwiki_50.1000_00293
 # text = Dans la pratique, la direction du G.O. (le Conseil de l'Ordre) fait passer une circulaire aux vénérables maîtres (présidents) de chaque loge de cette obédience pour leur demander de rassembler à leur niveau le plus d'informations possibles sur les officiers des garnisons de leurs villes ou départements.
@@ -8395,7 +8395,7 @@
 35	leur	lui	PRON	_	Number=Plur|Person=3	36	iobj	_	_	*	*	*
 36	demander	demander	VERB	_	VerbForm=Inf	18	advcl	_	_	*	*	*
 37	de	de	ADP	_	_	38	mark	_	_	*	*	*
-38	rassembler	rassembler	VERB	_	VerbForm=Inf	36	xcomp	_	_	*	*	2:ORG
+38	rassembler	rassembler	VERB	_	VerbForm=Inf	36	xcomp	_	_	*	*	*
 39	à	à	ADP	_	_	41	case	_	_	3:_|MWE|LEX	*	*
 40	leur	son	DET	_	Number=Sing|Poss=Yes	41	det	_	_	*	*	*
 41	niveau	niveau	NOUN	_	Gender=Masc|Number=Sing	38	obl:mod	_	_	3	*	*
@@ -8466,11 +8466,11 @@
 45	Raymond	Raymond	PROPN	_	Gender=Masc|Number=Sing	44	flat:name	_	_	*	*	*
 46	Poincaré	Poincaré	PROPN	_	_	45	flat:name	_	_	*	*	*
 47	,	,	PUNCT	_	_	48	punct	_	_	*	*	*
-48	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	45	conj	_	_	*	*	1:PERS
-49	Deschanel	Deschanel	PROPN	_	_	48	flat:name	_	_	*	*	1
+48	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	45	conj	_	_	*	*	*
+49	Deschanel	Deschanel	PROPN	_	_	48	flat:name	_	_	*	*	*
 50	ou	ou	CCONJ	_	_	51	cc	_	_	*	*	*
-51	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	45	conj	_	_	*	*	2:PERS
-52	Doumer	Doumer	PROPN	_	_	51	flat:name	_	_	*	*	2
+51	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	45	conj	_	_	*	*	1:PROD
+52	Doumer	Doumer	PROPN	_	_	51	flat:name	_	_	*	*	*
 53	,	,	PUNCT	_	_	51	punct	_	_	*	*	*
 54	qui	qui	PRON	_	PronType=Rel	55	nsubj	_	_	*	*	*
 55	démissionnera	démissionner	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	51	acl:relcl	_	_	*	*	*
@@ -8479,8 +8479,8 @@
 58	temps	temps	NOUN	_	Gender=Masc|Number=Sing	55	obl:mod	_	_	*	Time	*
 59	de	de	ADP	_	_	62	case	_	_	*	*	*
 60	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	62	det	_	_	*	*	*
-61	Grand	grand	ADJ	_	Gender=Masc|Number=Sing	62	amod	_	_	*	*	3:ORG
-62	Orient	Orient	PROPN	_	_	55	obl:arg	_	_	*	*	*
+61	Grand	grand	ADJ	_	Gender=Masc|Number=Sing	62	amod	_	_	*	*	2:ORG
+62	Orient	Orient	PROPN	_	_	55	obl:arg	_	_	*	*	2
 63	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00310
@@ -8490,7 +8490,7 @@
 3	morales	moral	ADJ	_	Gender=Fem|Number=Plur	2	amod	_	_	*	*	*
 4	de	de	ADP	_	_	6	case	_	_	*	*	*
 5	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	6	det	_	_	*	*	*
-6	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Event	*
+6	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Event	1:EVE
 
 # sent_id = frwiki_50.1000_00317
 # text = Tentative d'analyse et de conclusion
@@ -8519,8 +8519,8 @@
 10	de	de	ADP	_	_	11	case	_	_	*	*	*
 11	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	9	nmod	_	_	*	Institution	1:PROD
 12	(	(	PUNCT	_	_	6	punct	_	_	*	*	*
-13	contrat	contrat	NOUN	_	Gender=Masc|Number=Sing	6	appos	_	_	*	*	*
-14	Bravo	Bravo	PROPN	_	_	13	nmod	_	_	*	*	2:PROD
+13	contrat	contrat	NOUN	_	Gender=Masc|Number=Sing	6	appos	_	_	*	*	2:PROD
+14	Bravo	Bravo	PROPN	_	_	13	nmod	_	_	*	*	2
 15	)	)	PUNCT	_	_	6	punct	_	_	*	*	*
 16	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	17	aux:pass	_	_	*	*	*
 17	signé	signer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	1	*	*
@@ -8537,7 +8537,7 @@
 1	Réseau	réseau	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Person	*
 2	C	C	NOUN	_	_	1	nmod	_	_	*	Attribute	*
 3	(	(	PUNCT	_	_	1	punct	_	_	*	*	*
-4	Alfred	Alfred	PROPN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	*	1:PERS
+4	Alfred	Alfred	PROPN	_	Gender=Masc|Number=Sing	1	nmod	_	_	*	*	1:ORG
 5	Sirven	Sirven	PROPN	_	_	4	flat:name	_	_	*	*	1
 6	)	)	PUNCT	_	_	1	punct	_	_	*	*	*
 
@@ -8599,11 +8599,11 @@
 4	juillet	juillet	NOUN	_	Gender=Masc|Number=Sing	3	nmod	_	_	*	*	*
 5	1991	1991	NUM	_	NumType=Card	4	nmod	_	_	*	Time	*
 6	,	,	PUNCT	_	_	13	punct	_	_	*	*	*
-7	Alfred	Alfred	PROPN	_	Gender=Masc|Number=Sing	13	nsubj	_	_	*	*	1:PERS
+7	Alfred	Alfred	PROPN	_	Gender=Masc|Number=Sing	13	nsubj	_	_	*	*	1:ORG
 8	Sirven	Sirven	PROPN	_	_	7	flat:name	_	_	*	*	1
 9	et	et	CCONJ	_	_	10	cc	_	_	*	*	*
-10	Christine	Christine	PROPN	_	Gender=Fem|Number=Sing	7	conj	_	_	*	*	2:PERS
-11	Deviers-Joncour	Deviers-Joncour	PROPN	_	_	10	flat:name	_	_	*	*	2
+10	Christine	Christine	PROPN	_	Gender=Fem|Number=Sing	7	conj	_	_	*	*	*
+11	Deviers-Joncour	Deviers-Joncour	PROPN	_	_	10	flat:name	_	_	*	*	*
 12	avaient	avoir	AUX	_	Mood=Ind|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	13	aux:tense	_	_	*	*	*
 13	mis	mettre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 14	en	en	ADP	_	_	15	case	_	_	1:_|MWE|LEX	*	*
@@ -8622,13 +8622,13 @@
 # sent_id = frwiki_50.1000_00404
 # text = - Ex-directeur adjoint chez Thomson-CSF, Alain Fribourg a assuré aux juges avoir "toujours considéré à l'époque que c'était le parti au pouvoir à Taïwan qui bénéficiait pour une bonne partie de ce que l'on versait à M. Wang".
 1	-	-	PUNCT	_	_	10	punct	_	_	*	*	*
-2	Ex-directeur	ex-directeur	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Person	*
-3	adjoint	adjoint	ADJ	_	Gender=Masc|Number=Sing	2	amod	_	_	*	*	*
+2	Ex-directeur	ex-directeur	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Person	1:PROD
+3	adjoint	adjoint	ADJ	_	Gender=Masc|Number=Sing	2	amod	_	_	*	*	1
 4	chez	chez	ADP	_	_	5	case	_	_	*	*	*
-5	Thomson-CSF	Thomson-CSF	PROPN	_	_	2	nmod	_	_	*	Institution	1:ORG
+5	Thomson-CSF	Thomson-CSF	PROPN	_	_	2	nmod	_	_	*	Institution	2:ORG
 6	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
-7	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	10	nsubj	_	_	*	*	2:PERS
-8	Fribourg	Fribourg	PROPN	_	Gender=Masc|Number=Sing	7	flat:name	_	_	*	*	2
+7	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	10	nsubj	_	_	*	*	*
+8	Fribourg	Fribourg	PROPN	_	Gender=Masc|Number=Sing	7	flat:name	_	_	*	*	*
 9	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	aux:tense	_	_	*	*	*
 10	assuré	assurer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 11	à	à	ADP	_	_	13	case	_	_	*	*	*
@@ -8650,7 +8650,7 @@
 27	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	28	det	_	_	2	*	*
 28	pouvoir	pouvoir	NOUN	_	Gender=Masc|Number=Sing	25	nmod	_	_	2	*	*
 29	à	à	ADP	_	_	30	case	_	_	*	*	*
-30	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	28	nmod	_	_	*	Institution	3:ORG
+30	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	28	nmod	_	_	*	Institution	3:LOC
 31	qui	qui	PRON	_	PronType=Rel	32	nsubj	_	_	*	*	*
 32	bénéficiait	bénéficier	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	25	advcl:cleft	_	_	*	*	*
 33	pour	pour	ADP	_	_	36	case	_	_	*	*	*
@@ -8664,7 +8664,7 @@
 41	versait	verser	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	38	acl:relcl	_	_	*	*	*
 42	à	à	ADP	_	_	43	case	_	_	*	*	*
 43	M.	monsieur	NOUN	_	Gender=Masc|Number=Sing	41	obl:arg	_	_	*	Person	*
-44	Wang	Wang	PROPN	_	_	43	flat:name	_	_	*	Person	4:PERS
+44	Wang	Wang	PROPN	_	_	43	flat:name	_	_	*	Person	4:ORG
 45	"	"	PUNCT	_	_	17	punct	_	_	*	*	*
 46	.	.	PUNCT	_	_	10	punct	_	_	*	*	*
 
@@ -8694,8 +8694,8 @@
 2	Audition	audition	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Act	*
 3	de	de	ADP	_	_	4	case	_	_	*	*	*
 4	M.	monsieur	NOUN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Person	*
-5	Joël	Joël	PROPN	_	Gender=Masc|Number=Sing	4	flat:name	_	_	*	*	*
-6	Bucher	Bucher	PROPN	_	_	4	flat:name	_	_	*	*	*
+5	Joël	Joël	PROPN	_	Gender=Masc|Number=Sing	4	flat:name	_	_	*	*	1:PERS
+6	Bucher	Bucher	PROPN	_	_	4	flat:name	_	_	*	*	1
 7	,	,	PUNCT	_	_	4	punct	_	_	*	*	*
 8	ancien	ancien	ADJ	_	Gender=Masc|Number=Sing	9	amod	_	_	*	*	*
 9	directeur	directeur	NOUN	_	Gender=Masc|Number=Sing	4	appos	_	_	1:_|MWE|LEX	*	*
@@ -8703,14 +8703,14 @@
 11	adjoint	adjoint	ADJ	_	Gender=Masc|Number=Sing	9	amod	_	_	*	*	*
 12	de	de	ADP	_	_	14	case	_	_	*	*	*
 13	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	_	_	*	*	*
-14	Société	Société	PROPN	_	Gender=Fem|Number=Sing	9	nmod	_	_	*	*	1:ORG
-15	générale	général	ADJ	_	Gender=Fem|Number=Sing	14	amod	_	_	*	*	*
+14	Société	Société	PROPN	_	Gender=Fem|Number=Sing	9	nmod	_	_	*	*	2:ORG
+15	générale	général	ADJ	_	Gender=Fem|Number=Sing	14	amod	_	_	*	*	2
 16	à	à	ADP	_	_	17	case	_	_	*	*	*
-17	Taiwan	Taiwan	PROPN	_	_	14	nmod	_	_	*	Institution	2:ORG
+17	Taiwan	Taiwan	PROPN	_	_	14	nmod	_	_	*	Institution	3:LOC
 18	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 19	par	par	ADP	_	_	21	case	_	_	*	*	*
 20	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	21	det	_	_	*	*	*
-21	mission	mission	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Person	*
+21	mission	mission	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Person	4:LOC
 22	parlementaire	parlementaire	ADJ	_	Number=Sing	21	amod	_	_	*	*	*
 23	sur	sur	ADP	_	_	25	case	_	_	*	*	*
 24	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	25	det	_	_	*	*	*
@@ -8734,7 +8734,7 @@
 42	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	43	det	_	_	*	*	*
 43	capitaux	capitaux	NOUN	_	Gender=Masc|Number=Plur	40	nmod	_	_	*	Possession	*
 44	en	en	ADP	_	_	45	case	_	_	*	*	*
-45	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	40	nmod	_	_	*	Institution	3:ORG
+45	Europe	Europe	PROPN	_	Gender=Fem|Number=Sing	40	nmod	_	_	*	Institution	5:LOC
 46	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 47	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	48	det	_	_	*	*	*
 48	22	22	NUM	_	NumType=Card	2	nmod	_	_	*	Time	*
@@ -8745,11 +8745,11 @@
 53	5	5	NUM	_	NumType=Card	52	parataxis	_	_	*	*	*
 54	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
 55	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	57	det	_	_	*	*	*
-56	Grand	grand	ADJ	_	Gender=Masc|Number=Sing	57	amod	_	_	2:_|MWE|LEX	*	4:ORG
+56	Grand	grand	ADJ	_	Gender=Masc|Number=Sing	57	amod	_	_	2:_|MWE|LEX	*	6:ORG
 57	Duché	duché	NOUN	_	Gender=Masc|Number=Sing	2	parataxis	_	_	2	Institution	*
 58	de	de	ADP	_	_	60	case	_	_	*	*	*
 59	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	60	det	_	_	*	*	*
-60	Luxembourg	Luxembourg	PROPN	_	Gender=Masc|Number=Sing	57	nmod	_	_	*	Institution	5:ORG
+60	Luxembourg	Luxembourg	PROPN	_	Gender=Masc|Number=Sing	57	nmod	_	_	*	Institution	7:LOC
 61	)	)	PUNCT	_	_	2	punct	_	_	*	*	*
 62	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
@@ -8829,8 +8829,8 @@
 14	ministre	ministre	NOUN	_	Gender=Masc|Number=Sing	24	nsubj	_	_	1:_|MWE|LEX	*	*
 15	de	de	ADP	_	_	17	case	_	_	1	*	*
 16	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	17	det	_	_	1	*	*
-17	Economie	économie	NOUN	_	Gender=Fem|Number=Sing	14	nmod	_	_	1	*	1:PERS
-18	Thierry	Thierry	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	1
+17	Economie	économie	NOUN	_	Gender=Fem|Number=Sing	14	nmod	_	_	1	*	*
+18	Thierry	Thierry	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	*
 19	Breton	Breton	PROPN	_	_	18	flat:name	_	_	*	*	*
 20	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	24	aux:tense	_	_	*	*	*
 21	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	23	det	_	_	*	*	*
@@ -8846,12 +8846,12 @@
 31	douanes	douanes	NOUN	_	Gender=Masc|Number=Plur	28	nmod	_	_	*	Institution	*
 32	dans	dans	ADP	_	_	34	case	_	_	*	*	*
 33	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	34	det	_	_	*	*	*
-34	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	26	obl:mod	_	_	*	Event	2:EVE
-35	de	de	ADP	_	_	37	case	_	_	*	*	*
-36	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	37	det	_	_	*	*	*
-37	frégates	frégate	NOUN	_	Gender=Fem|Number=Plur	34	nmod	_	_	*	Artifact	*
-38	de	de	ADP	_	_	39	case	_	_	*	*	*
-39	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	37	nmod	_	_	*	Institution	*
+34	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	26	obl:mod	_	_	*	Event	1:EVE
+35	de	de	ADP	_	_	37	case	_	_	*	*	1
+36	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	37	det	_	_	*	*	1
+37	frégates	frégate	NOUN	_	Gender=Fem|Number=Plur	34	nmod	_	_	*	Artifact	1
+38	de	de	ADP	_	_	39	case	_	_	*	*	1
+39	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	37	nmod	_	_	*	Institution	1
 40	.	.	PUNCT	_	_	24	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00458
@@ -8864,18 +8864,18 @@
 6	,	,	PUNCT	_	_	23	punct	_	_	*	*	*
 7	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	8	det	_	_	*	*	*
 8	juges	juge	NOUN	_	Gender=Masc|Number=Plur	23	nsubj	_	_	*	Person	*
-9	Renaud	Renaud	PROPN	_	Gender=Masc|Number=Sing	8	flat:name	_	_	*	*	1:ORG
+9	Renaud	Renaud	PROPN	_	Gender=Masc|Number=Sing	8	flat:name	_	_	*	*	1:PERS
 10	van	van	X	_	Foreign=Yes	9	dep	_	_	*	*	1
-11	Ruymbeke	Ruymbeke	PROPN	_	_	9	flat:name	_	_	*	*	*
-12	et	et	CCONJ	_	_	13	cc	_	_	*	*	*
-13	Xavière	Xavière	PROPN	_	_	9	conj	_	_	*	*	2:PERS
-14	Simeoni	Simeoni	PROPN	_	_	13	flat:name	_	_	*	*	2
+11	Ruymbeke	Ruymbeke	PROPN	_	_	9	flat:name	_	_	*	*	1
+12	et	et	CCONJ	_	_	13	cc	_	_	*	*	1
+13	Xavière	Xavière	PROPN	_	_	9	conj	_	_	*	*	1
+14	Simeoni	Simeoni	PROPN	_	_	13	flat:name	_	_	*	*	1
 15	(	(	PUNCT	_	_	13	punct	_	_	*	*	*
 16	qui	qui	PRON	_	PronType=Rel	17	nsubj	_	_	*	*	*
-17	remplace	remplacer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	acl:relcl	_	_	*	*	3:PERS
-18	Dominique	Dominique	PROPN	_	Number=Sing	17	obj	_	_	*	*	3
-19	de	de	ADP	_	_	20	case	_	_	*	*	*
-20	Talancé	Talancé	PROPN	_	_	18	nmod	_	_	*	*	4:ORG
+17	remplace	remplacer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	acl:relcl	_	_	*	*	2:PERS
+18	Dominique	Dominique	PROPN	_	Number=Sing	17	obj	_	_	*	*	2
+19	de	de	ADP	_	_	20	case	_	_	*	*	2
+20	Talancé	Talancé	PROPN	_	_	18	nmod	_	_	*	*	2
 21	)	)	PUNCT	_	_	13	punct	_	_	*	*	*
 22	ont	avoir	AUX	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	23	aux:tense	_	_	*	*	*
 23	adressé	adresser	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	1:_|MWE-LVC.full|_	*	*
@@ -8890,8 +8890,8 @@
 32	défense	défense	NOUN	_	Gender=Fem|Number=Sing	31	nmod	_	_	2	*	*
 33	à	à	ADP	_	_	35	case	_	_	*	*	*
 34	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	35	det	_	_	*	*	*
-35	ministère	ministère	NOUN	_	Gender=Masc|Number=Sing	23	obl:arg	_	_	*	Institution	5:ORG
-36	de	de	ADP	_	_	38	case	_	_	*	*	*
+35	ministère	ministère	NOUN	_	Gender=Masc|Number=Sing	23	obl:arg	_	_	*	Institution	3:ORG
+36	de	de	ADP	_	_	38	case	_	_	*	*	3
 37	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	38	det	_	_	*	*	*
 38	Économie	Économie	NOUN	_	Number=Sing	35	nmod	_	_	*	Act	*
 39	et	et	CCONJ	_	_	42	cc	_	_	*	*	*
@@ -8904,17 +8904,17 @@
 46	à	à	ADP	_	_	47	mark	_	_	*	*	*
 47	saisir	saisir	VERB	_	VerbForm=Inf	45	xcomp	_	_	*	*	*
 48	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	49	det	_	_	*	*	*
-49	commission	commission	NOUN	_	Gender=Fem|Number=Sing	47	obj	_	_	*	Institution	*
-50	consultative	consultatif	ADJ	_	Gender=Fem|Number=Sing	49	amod	_	_	*	*	*
-51	de	de	ADP	_	_	53	case	_	_	*	*	*
-52	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	53	det	_	_	*	*	*
-53	secret	secret	NOUN	_	Gender=Masc|Number=Sing	49	nmod	_	_	*	Cognition	*
-54	de	de	ADP	_	_	56	case	_	_	*	*	*
-55	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	56	det	_	_	*	*	*
+49	commission	commission	NOUN	_	Gender=Fem|Number=Sing	47	obj	_	_	*	Institution	4:ORG
+50	consultative	consultatif	ADJ	_	Gender=Fem|Number=Sing	49	amod	_	_	*	*	4
+51	de	de	ADP	_	_	53	case	_	_	*	*	4
+52	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	53	det	_	_	*	*	4
+53	secret	secret	NOUN	_	Gender=Masc|Number=Sing	49	nmod	_	_	*	Cognition	4
+54	de	de	ADP	_	_	56	case	_	_	*	*	4
+55	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	56	det	_	_	*	*	4
 56	défense	défense	NOUN	_	Gender=Fem|Number=Sing	49	nmod	_	_	3:_|MWE|LEX	Act	*
-57	nationale	national	ADJ	_	Gender=Fem|Number=Sing	56	amod	_	_	3	*	6:ORG
+57	nationale	national	ADJ	_	Gender=Fem|Number=Sing	56	amod	_	_	3	*	*
 58	(	(	PUNCT	_	_	49	punct	_	_	*	*	*
-59	CCSDN	CCSDN	PROPN	_	_	49	appos	_	_	*	Institution	7:ORG
+59	CCSDN	CCSDN	PROPN	_	_	49	appos	_	_	*	Institution	5:ORG
 60	)	)	PUNCT	_	_	49	punct	_	_	*	*	*
 61	.	.	PUNCT	_	_	23	punct	_	_	*	*	*
 
@@ -8926,8 +8926,8 @@
 4	,	,	PUNCT	_	_	11	punct	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	juge	juge	NOUN	_	Gender=Masc|Number=Sing	11	nsubj	_	_	*	Person	*
-7	genevois	genevois	ADJ	_	Gender=Masc	6	amod	_	_	*	*	1:PERS
-8	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	6	appos	_	_	*	*	1
+7	genevois	genevois	ADJ	_	Gender=Masc	6	amod	_	_	*	*	*
+8	Paul	Paul	PROPN	_	Gender=Masc|Number=Sing	6	appos	_	_	*	*	*
 9	Perraudin	Perraudin	PROPN	_	_	8	flat:name	_	_	*	*	*
 10	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	aux:tense	_	_	*	*	*
 11	bloqué	bloquer	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
@@ -8948,8 +8948,8 @@
 26	intermédiaire	intermédiaire	NOUN	_	Number=Sing	22	nmod	_	_	*	Person	*
 27	taiwanais	taiwanais	ADJ	_	Gender=Masc|Number=Sing	26	amod	_	_	*	*	*
 28	,	,	PUNCT	_	_	26	punct	_	_	*	*	*
-29	Andrew	Andrew	PROPN	_	Gender=Masc|Number=Sing	26	appos	_	_	*	*	2:PERS
-30	Wang	Wang	PROPN	_	_	29	flat:name	_	_	*	*	2
+29	Andrew	Andrew	PROPN	_	Gender=Masc|Number=Sing	26	appos	_	_	*	*	*
+30	Wang	Wang	PROPN	_	_	29	flat:name	_	_	*	*	*
 31	,	,	PUNCT	_	_	26	punct	_	_	*	*	*
 32	73	73	NUM	_	NumType=Card	33	nummod	_	_	*	*	*
 33	ans	an	NOUN	_	Gender=Masc|Number=Plur	26	nmod	_	_	*	Time	*
@@ -8960,7 +8960,7 @@
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	enquête	enquête	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Act	*
 3	à	à	ADP	_	_	4	case	_	_	*	*	*
-4	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	1:LOC
+4	Taïwan	Taïwan	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	1:ORG
 
 # sent_id = frwiki_50.1000_00494
 # text = - L'actuelle direction de Thales, présidée par Denis Ranque, dit n'être pas concernée par l'enquête, et s'est désolidarisée d'Alain Gomez, PDG de Thomson CSF au moment des faits.
@@ -8969,12 +8969,12 @@
 3	actuelle	actuel	ADJ	_	Gender=Fem|Number=Sing	4	amod	_	_	*	*	*
 4	direction	direction	NOUN	_	Gender=Fem|Number=Sing	13	nsubj	_	_	*	Institution	*
 5	de	de	ADP	_	_	6	case	_	_	*	*	*
-6	Thales	Thales	PROPN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Institution	1:ORG
+6	Thales	Thales	PROPN	_	Gender=Masc|Number=Sing	4	nmod	_	_	*	Institution	*
 7	,	,	PUNCT	_	_	4	punct	_	_	*	*	*
 8	présidée	présider	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	4	acl	_	_	*	*	*
 9	par	par	ADP	_	_	10	case	_	_	*	*	*
-10	Denis	Denis	PROPN	_	Gender=Masc|Number=Sing	8	obl:agent	_	_	*	*	2:PERS
-11	Ranque	Ranque	PROPN	_	_	10	flat:name	_	_	*	*	2
+10	Denis	Denis	PROPN	_	Gender=Masc|Number=Sing	8	obl:agent	_	_	*	*	*
+11	Ranque	Ranque	PROPN	_	_	10	flat:name	_	_	*	*	*
 12	,	,	PUNCT	_	_	13	punct	_	_	*	*	*
 13	dit	dire	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 14	n'	ne	ADV	_	Polarity=Neg	17	advmod	_	_	*	*	*
@@ -8990,13 +8990,13 @@
 24	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	25	aux:tense	_	_	*	*	*
 25	désolidarisée	désolidariser	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	13	conj	_	_	1	*	*
 26	d'	de	ADP	_	_	27	case	_	_	*	*	*
-27	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	25	obl:arg	_	_	*	*	3:PERS
-28	Gomez	Gomez	PROPN	_	_	27	flat:name	_	_	*	*	*
+27	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	25	obl:arg	_	_	*	*	1:PERS
+28	Gomez	Gomez	PROPN	_	_	27	flat:name	_	_	*	*	1
 29	,	,	PUNCT	_	_	27	punct	_	_	*	*	*
 30	PDG	PDG	NOUN	_	Gender=Masc|Number=Sing	27	appos	_	_	*	Person	*
 31	de	de	ADP	_	_	32	case	_	_	*	*	*
-32	Thomson	Thomson	PROPN	_	_	30	nmod	_	_	*	*	4:ORG
-33	CSF	CSF	PROPN	_	_	32	flat:name	_	_	*	*	*
+32	Thomson	Thomson	PROPN	_	_	30	nmod	_	_	*	*	2:ORG
+33	CSF	CSF	PROPN	_	_	32	flat:name	_	_	*	*	2
 34	à	à	ADP	_	_	36	case	_	_	*	*	*
 35	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	36	det	_	_	*	*	*
 36	moment	moment	NOUN	_	Gender=Masc|Number=Sing	30	nmod	_	_	*	Time	*
@@ -9008,8 +9008,8 @@
 # sent_id = frwiki_50.1000_00506
 # text = - Jacques Morisson : Capitaine de vaisseau de la marine française, il était négociateur du volet technique de la vente des frégates à Taiwan.
 1	-	-	PUNCT	_	_	15	punct	_	_	*	*	*
-2	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	15	obl:mod	_	_	*	*	1:PERS
-3	Morisson	Morisson	PROPN	_	_	2	flat:name	_	_	*	*	1
+2	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	15	obl:mod	_	_	*	*	*
+3	Morisson	Morisson	PROPN	_	_	2	flat:name	_	_	*	*	*
 4	:	:	PUNCT	_	_	2	punct	_	_	*	*	*
 5	Capitaine	capitaine	NOUN	_	Gender=Masc|Number=Sing	2	appos	_	_	1:_|MWE|LEX	*	*
 6	de	de	ADP	_	_	7	case	_	_	1	*	*
@@ -9033,7 +9033,7 @@
 24	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	25	det	_	_	*	*	*
 25	frégates	frégate	NOUN	_	Gender=Fem|Number=Plur	22	nmod	_	_	*	Artifact	*
 26	à	à	ADP	_	_	27	case	_	_	*	*	*
-27	Taiwan	Taiwan	PROPN	_	_	25	nmod	_	_	*	Institution	2:LOC
+27	Taiwan	Taiwan	PROPN	_	_	25	nmod	_	_	*	Institution	1:LOC
 28	.	.	PUNCT	_	_	15	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00514
@@ -9045,8 +9045,8 @@
 5	financier	financier	ADJ	_	Gender=Masc|Number=Sing	4	amod	_	_	*	*	*
 6	de	de	ADP	_	_	8	case	_	_	*	*	*
 7	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	8	det	_	_	*	*	*
-8	opération	opération	NOUN	_	Gender=Fem|Number=Sing	4	nmod	_	_	*	*	*
-9	Bravo	Bravo	PROPN	_	_	8	nmod	_	_	*	*	*
+8	opération	opération	NOUN	_	Gender=Fem|Number=Sing	4	nmod	_	_	*	*	1:PROD
+9	Bravo	Bravo	PROPN	_	_	8	nmod	_	_	*	*	1
 10	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00519
@@ -9099,7 +9099,7 @@
 
 # sent_id = frwiki_50.1000_00560
 # text = République de Chine
-1	République	République	PROPN	_	Gender=Fem|Number=Sing	0	root	_	_	*	*	1:LOC
+1	République	République	PROPN	_	Gender=Fem|Number=Sing	0	root	_	_	*	*	1:PROD
 2	de	de	ADP	_	_	3	case	_	_	*	*	1
 3	Chine	Chine	PROPN	_	Gender=Fem|Number=Sing	1	nmod	_	_	*	*	1
 
@@ -9120,7 +9120,7 @@
 9	100 000	100 000	DET	_	_	10	det	_	_	*	*	*
 10	francs	franc	NOUN	_	Gender=Masc|Number=Plur	7	appos	_	_	*	Possession	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	page	page	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Artifact	1:PROD
+12	page	page	NOUN	_	Gender=Fem|Number=Sing	10	nmod	_	_	*	Artifact	*
 13	(	(	PUNCT	_	_	10	punct	_	_	*	*	*
 14	15 000	15 000	NOUN	_	NumType=Card	10	appos	_	_	*	Quantity	*
 15	)	)	PUNCT	_	_	10	punct	_	_	*	*	*
@@ -9141,8 +9141,8 @@
 30	journal	journal	NOUN	_	Gender=Masc|Number=Sing	27	appos	_	_	*	Institution	*
 31	électoral	électoral	ADJ	_	Gender=Masc|Number=Sing	30	amod	_	_	*	*	*
 32	de	de	ADP	_	_	33	case	_	_	*	*	*
-33	Didier	Didier	PROPN	_	Gender=Masc|Number=Sing	30	nmod	_	_	*	*	2:PERS
-34	Schuller	Schuller	PROPN	_	_	33	flat:name	_	_	*	*	2
+33	Didier	Didier	PROPN	_	Gender=Masc|Number=Sing	30	nmod	_	_	*	*	1:PERS
+34	Schuller	Schuller	PROPN	_	_	33	flat:name	_	_	*	*	1
 35	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00567
@@ -9154,15 +9154,15 @@
 5	:	:	PUNCT	_	_	19	punct	_	_	*	*	*
 6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_	*	*	*
 7	Dr	Docteur	NOUN	_	Gender=Masc|Number=Sing	19	nsubj:pass	_	_	*	Person	*
-8	Jean-Pierre	Jean-Pierre	PROPN	_	_	7	flat:name	_	_	*	*	1:PERS
+8	Jean-Pierre	Jean-Pierre	PROPN	_	_	7	flat:name	_	_	*	*	*
 9	Maréchal	Maréchal	PROPN	_	_	7	flat:name	_	_	*	*	*
 10	,	,	PUNCT	_	_	7	punct	_	_	*	*	*
 11	beau-père	beau-père	NOUN	_	Gender=Masc|Number=Sing	7	appos	_	_	1:NOUN|MWE|IRREG	Person	*
 12	de	de	ADP	_	_	14	case	_	_	*	*	*
 13	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det	_	_	*	*	*
 14	juge	juge	NOUN	_	Gender=Masc|Number=Sing	11	nmod	_	_	*	Person	*
-15	Eric	Eric	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	2:PERS
-16	Halphen	Halphen	PROPN	_	_	15	flat:name	_	_	*	*	2
+15	Eric	Eric	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	1:PERS
+16	Halphen	Halphen	PROPN	_	_	15	flat:name	_	_	*	*	1
 17	,	,	PUNCT	_	_	19	punct	_	_	*	*	*
 18	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	19	aux:pass	_	_	*	*	*
 19	mis	mettre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	2:_|MWE-VID|_	*	*
@@ -9184,7 +9184,7 @@
 2	enquêteurs	enquêteur	NOUN	_	Gender=Masc|Number=Plur	3	nsubj	_	_	*	Person	*
 3	placent	placer	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 4	sous	sous	ADP	_	_	5	case	_	_	*	*	*
-5	scellés	scellé	NOUN	_	Gender=Masc|Number=Plur	3	obl:arg	_	_	*	Artifact	*
+5	scellés	scellé	NOUN	_	Gender=Masc|Number=Plur	3	obl:arg	_	_	*	Artifact	1:LOC
 6	170	170	NUM	_	NumType=Card	7	nummod	_	_	*	*	*
 7	cartons	carton	NOUN	_	Gender=Masc|Number=Plur	3	obj	_	_	*	Artifact	*
 8	de	de	ADP	_	_	9	case	_	_	*	*	*
@@ -9230,8 +9230,8 @@
 16	,	,	PUNCT	_	_	15	punct	_	_	*	*	*
 17	puis	puis	CCONJ	_	_	19	cc	_	_	*	*	*
 18	en	en	ADP	_	_	19	case	_	_	*	*	*
-19	République	République	PROPN	_	_	15	conj	_	_	*	*	*
-20	Dominicaine	dominicain	ADJ	_	Gender=Fem|Number=Sing	19	amod	_	_	*	*	*
+19	République	République	PROPN	_	_	15	conj	_	_	*	*	2:ORG
+20	Dominicaine	dominicain	ADJ	_	Gender=Fem|Number=Sing	19	amod	_	_	*	*	2
 
 # sent_id = frwiki_50.1000_00583
 # text = - février 2005 : Didier Schuller et Patrick Balkany sont renvoyés devant le tribunal correctionnel de Créteil aux côtés de huit autres prévenus.
@@ -9242,8 +9242,8 @@
 5	Didier	Didier	PROPN	_	Gender=Masc|Number=Sing	11	nsubj:pass	_	_	*	*	1:PERS
 6	Schuller	Schuller	PROPN	_	_	5	flat:name	_	_	*	*	1
 7	et	et	CCONJ	_	_	8	cc	_	_	*	*	*
-8	Patrick	Patrick	PROPN	_	Gender=Masc|Number=Sing	5	conj	_	_	*	*	2:PERS
-9	Balkany	Balkany	PROPN	_	_	8	flat:name	_	_	*	*	2
+8	Patrick	Patrick	PROPN	_	Gender=Masc|Number=Sing	5	conj	_	_	*	*	*
+9	Balkany	Balkany	PROPN	_	_	8	flat:name	_	_	*	*	*
 10	sont	être	AUX	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	11	aux:pass	_	_	*	*	*
 11	renvoyés	renvoyer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	*	*	*
 12	devant	devant	ADP	_	_	14	case	_	_	*	*	*
@@ -9251,7 +9251,7 @@
 14	tribunal	tribunal	NOUN	_	Gender=Masc|Number=Sing	11	obl:arg	_	_	1:_|MWE|LEX	*	*
 15	correctionnel	correctionnel	ADJ	_	Gender=Masc|Number=Sing	14	amod	_	_	1	*	*
 16	de	de	ADP	_	_	17	case	_	_	*	*	*
-17	Créteil	Créteil	PROPN	_	_	14	nmod	_	_	*	Institution	3:LOC
+17	Créteil	Créteil	PROPN	_	_	14	nmod	_	_	*	Institution	2:LOC
 18	à	à	ADP	_	_	20	case	_	_	2:_|MWE|DET	*	*
 19	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	20	det	_	_	2	*	*
 20	côtés	côté	NOUN	_	Gender=Masc|Number=Plur	11	obl:mod	_	_	2	*	*
@@ -9328,7 +9328,7 @@
 # sent_id = frwiki_50.1000_00596
 # text = - Hauts-de-Seine
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Hauts-de-Seine	Hauts-de-Seine	PROPN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Institution	*
+2	Hauts-de-Seine	Hauts-de-Seine	PROPN	_	Gender=Masc|Number=Plur	0	root	_	_	*	Institution	1:LOC
 
 # sent_id = frwiki_50.1000_00606
 # text = Nicolas Sarkozy est alors le ministre du budget du gouvernement Balladur.
@@ -9343,8 +9343,8 @@
 9	budget	budget	NOUN	_	Gender=Masc|Number=Sing	6	nmod	_	_	1	*	*
 10	de	de	ADP	_	_	12	case	_	_	*	*	*
 11	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det	_	_	*	*	*
-12	gouvernement	gouvernement	NOUN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	*	*
-13	Balladur	Balladur	PROPN	_	_	12	nmod	_	_	*	Person	2:ORG
+12	gouvernement	gouvernement	NOUN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	*	2:ORG
+13	Balladur	Balladur	PROPN	_	_	12	nmod	_	_	*	Person	2
 14	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00610
@@ -9368,7 +9368,7 @@
 17	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	18	det	_	_	*	*	*
 18	conviction	conviction	NOUN	_	Gender=Fem|Number=Sing	15	obj	_	_	*	Cognition	*
 19	que	que	SCONJ	_	_	24	mark	_	_	*	*	*
-20	Jean-Claude	Jean-Claude	PROPN	_	_	24	nsubj	_	_	*	*	2:PERS
+20	Jean-Claude	Jean-Claude	PROPN	_	_	24	nsubj	_	_	*	*	2:ORG
 21	Méry	Méry	PROPN	_	_	20	flat:name	_	_	*	*	2
 22	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	24	cop	_	_	*	*	*
 23	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	24	det	_	_	*	*	*
@@ -9408,8 +9408,8 @@
 2	ce	ce	PRON	_	_	1	fixed	_	_	1	*	*
 3	qui	qui	PRON	_	_	1	fixed	_	_	1	*	*
 4	concerne	concerner	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	fixed	_	_	1	*	*
-5	Robert	Robert	PROPN	_	Gender=Masc|Number=Sing	23	obl:mod	_	_	*	*	1:PERS
-6	Pandraud	Pandraud	PROPN	_	_	5	flat:name	_	_	*	*	1
+5	Robert	Robert	PROPN	_	Gender=Masc|Number=Sing	23	obl:mod	_	_	*	*	*
+6	Pandraud	Pandraud	PROPN	_	_	5	flat:name	_	_	*	*	*
 7	,	,	PUNCT	_	_	5	punct	_	_	*	*	*
 8	qui	qui	PRON	_	PronType=Rel	11	nsubj	_	_	*	*	*
 9	avait	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	11	aux:tense	_	_	*	*	*
@@ -9418,8 +9418,8 @@
 12	à	à	ADP	_	_	14	case	_	_	2:_|MWE|LEX	*	*
 13	plusieurs	plusieurs	DET	_	Number=Plur	14	det	_	_	*	*	*
 14	reprises	reprise	NOUN	_	Gender=Fem|Number=Plur	11	obl:mod	_	_	2	*	*
-15	Francis	Francis	PROPN	_	Number=Sing	11	obj	_	_	*	*	2:PERS
-16	Poullain	Poullain	PROPN	_	_	15	flat:name	_	_	*	*	2
+15	Francis	Francis	PROPN	_	Number=Sing	11	obj	_	_	*	*	1:PERS
+16	Poullain	Poullain	PROPN	_	_	15	flat:name	_	_	*	*	1
 17	,	,	PUNCT	_	_	23	punct	_	_	*	*	*
 18	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	19	det	_	_	*	*	*
 19	fonds	fonds	NOUN	_	Gender=Masc|Number=Plur	23	nsubj:pass	_	_	*	Possession	*
@@ -9428,8 +9428,8 @@
 22	été	être	AUX	_	Tense=Past|VerbForm=Part	23	aux:pass	_	_	*	*	*
 23	transmis	transmettre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	*	*	*
 24	par	par	ADP	_	_	25	case	_	_	*	*	*
-25	Rémy	Rémy	PROPN	_	Gender=Masc|Number=Sing	23	obl:agent	_	_	*	*	3:PERS
-26	Halbwax	Halbwax	PROPN	_	_	25	flat:name	_	_	*	*	3
+25	Rémy	Rémy	PROPN	_	Gender=Masc|Number=Sing	23	obl:agent	_	_	*	*	2:PERS
+26	Halbwax	Halbwax	PROPN	_	_	25	flat:name	_	_	*	*	2
 27	,	,	PUNCT	_	_	25	punct	_	_	*	*	*
 28	ancien	ancien	ADJ	_	Gender=Masc|Number=Sing	29	amod	_	_	*	*	*
 29	policier	policier	NOUN	_	Gender=Masc|Number=Sing	25	appos	_	_	*	Person	*
@@ -9438,9 +9438,9 @@
 
 # sent_id = frwiki_50.1000_00632
 # text = RH : 190 500 ;
-1	RH	RH	PROPN	_	_	0	root	_	_	*	Person	1:PERS
+1	RH	RH	PROPN	_	_	0	root	_	_	*	Person	*
 2	:	:	PUNCT	_	_	1	punct	_	_	*	*	*
-3	190 500	190 500	NOUN	_	NumType=Card	1	nmod	_	_	*	Possession	*
+3	190 500	190 500	NOUN	_	NumType=Card	1	nmod	_	_	*	Possession	1:LOC
 4	;	;	PUNCT	_	_	1	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00637
@@ -9458,8 +9458,8 @@
 # sent_id = frwiki_50.1000_00638
 # text = Selon Le Monde du 25 janvier 2006, on lui reproche d'avoir perçu près de 40 millions de francs en trois ans, en échange d'informations livrées aux entreprises sur les marchés de l'OPAC.
 1	Selon	selon	ADP	_	_	3	case	_	_	*	*	*
-2	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-3	Monde	Monde	PROPN	_	Gender=Masc|Number=Sing	12	obl:mod	_	_	*	*	1:PROD
+2	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	1:PROD
+3	Monde	Monde	PROPN	_	Gender=Masc|Number=Sing	12	obl:mod	_	_	*	*	1
 4	de	de	ADP	_	_	6	case	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	25	25	NUM	_	NumType=Card	3	nmod	_	_	*	Time	*
@@ -9505,8 +9505,8 @@
 3	novembre	novembre	NOUN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	*	*
 4	1994	1994	NUM	_	NumType=Card	3	nmod	_	_	*	Time	*
 5	:	:	PUNCT	_	_	9	punct	_	_	*	*	*
-6	Rémy	Rémy	PROPN	_	Gender=Masc|Number=Sing	9	nsubj:pass	_	_	*	*	1:PERS
-7	Halbwax	Halbwax	PROPN	_	_	6	flat:name	_	_	*	*	1
+6	Rémy	Rémy	PROPN	_	Gender=Masc|Number=Sing	9	nsubj:pass	_	_	*	*	*
+7	Halbwax	Halbwax	PROPN	_	_	6	flat:name	_	_	*	*	*
 8	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux:pass	_	_	*	*	*
 9	mis	mettre	VERB	_	Gender=Masc|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	_	1:_|MWE-VID|_	*	*
 10	en	en	ADP	_	_	11	case	_	_	1	*	*
@@ -9520,7 +9520,7 @@
 3	novembre	novembre	NOUN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	*	*
 4	1994	1994	NUM	_	NumType=Card	3	nmod	_	_	*	Time	*
 5	:	:	PUNCT	_	_	18	punct	_	_	*	*	*
-6	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	18	nsubj:pass	_	_	*	*	1:PERS
+6	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	18	nsubj:pass	_	_	*	*	1:ORG
 7	Roussin	Roussin	PROPN	_	_	6	flat:name	_	_	*	*	1
 8	,	,	PUNCT	_	_	6	punct	_	_	*	*	*
 9	ancien	ancien	ADJ	_	Gender=Masc|Number=Sing	10	amod	_	_	*	*	*
@@ -9545,7 +9545,7 @@
 4	début	début	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Time	*
 5	de	de	ADP	_	_	7	case	_	_	*	*	*
 6	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	7	det	_	_	*	*	*
-7	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	4	nmod	_	_	*	*	1:EVE
+7	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	4	nmod	_	_	*	*	*
 8	Schuller-Maréchal	Schuller-Maréchal	PROPN	_	_	7	nmod	_	_	*	Person	*
 9	.	.	PUNCT	_	_	4	punct	_	_	*	*	*
 
@@ -9578,7 +9578,7 @@
 25	direction	direction	NOUN	_	Gender=Fem|Number=Sing	23	nmod	_	_	2	*	*
 26	de	de	ADP	_	_	28	case	_	_	*	*	*
 27	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	28	det	_	_	*	*	*
-28	Hauts-de-Seine	Hauts-de-Seine	PROPN	_	Gender=Masc|Number=Plur	25	nmod	_	_	*	*	*
+28	Hauts-de-Seine	Hauts-de-Seine	PROPN	_	Gender=Masc|Number=Plur	25	nmod	_	_	*	*	1:LOC
 29	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00658
@@ -9602,7 +9602,7 @@
 17	à	à	ADP	_	_	19	case	_	_	*	*	*
 18	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	19	det	_	_	*	*	*
 19	hôtel	hôtel	NOUN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	Institution	*
-20	Mercure	Mercure	PROPN	_	_	19	nmod	_	_	*	Institution	*
+20	Mercure	Mercure	PROPN	_	_	19	nmod	_	_	*	Institution	1:LOC
 21	de	de	ADP	_	_	22	case	_	_	*	*	*
 22	Nogent-sur-Marne	Nogent-sur-Marne	PROPN	_	Gender=Masc|Number=Sing	19	nmod	_	_	*	Institution	*
 23	:	:	PUNCT	_	_	4	punct	_	_	*	*	*
@@ -9636,7 +9636,7 @@
 7	en	en	ADP	_	_	8	case	_	_	1	*	*
 8	examen	examen	NOUN	_	Gender=Masc|Number=Sing	6	nmod	_	_	1	*	*
 9	de	de	ADP	_	_	10	case	_	_	*	*	*
-10	Robert	Robert	PROPN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	*	1:PERS
+10	Robert	Robert	PROPN	_	Gender=Masc|Number=Sing	6	nmod	_	_	*	*	1:ORG
 11	Pandraud	Pandraud	PROPN	_	_	10	flat:name	_	_	*	*	1
 12	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 13	membre	membre	NOUN	_	Gender=Masc|Number=Sing	10	appos	_	_	*	Person	*
@@ -9646,7 +9646,7 @@
 17	conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	13	nmod	_	_	2:_|MWE|LEX	*	*
 18	régional	régional	ADJ	_	Gender=Masc|Number=Sing	17	amod	_	_	2	*	*
 19	d'	de	ADP	_	_	20	case	_	_	*	*	*
-20	Ile-de-France	Ile-de-France	PROPN	_	_	17	nmod	_	_	*	Institution	*
+20	Ile-de-France	Ile-de-France	PROPN	_	_	17	nmod	_	_	*	Institution	3:ORG
 21	.	.	PUNCT	_	_	6	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00666
@@ -9666,8 +9666,8 @@
 3	de	de	ADP	_	_	5	case	_	_	1	*	*
 4	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det	_	_	1	*	*
 5	justice	justice	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	1	*	*
-6	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	2	appos	_	_	*	*	1:PERS
-7	Toubon	Toubon	PROPN	_	_	6	flat:name	_	_	*	*	1
+6	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	2	appos	_	_	*	*	*
+7	Toubon	Toubon	PROPN	_	_	6	flat:name	_	_	*	*	*
 8	envoie	envoyer	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 9	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	10	det	_	_	*	*	*
 10	hélicoptère	hélicoptère	NOUN	_	Gender=Masc|Number=Sing	8	obj	_	_	*	Artifact	*
@@ -9685,15 +9685,15 @@
 22	République	république	NOUN	_	Gender=Fem|Number=Sing	19	nmod	_	_	2	*	*
 23	de	de	ADP	_	_	25	case	_	_	*	*	*
 24	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	25	det	_	_	*	*	*
-25	Essonne	Essonne	PROPN	_	Gender=Fem|Number=Sing	19	nmod	_	_	*	Institution	*
-26	chargé	charger	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	19	acl	_	_	*	*	2:PERS
+25	Essonne	Essonne	PROPN	_	Gender=Fem|Number=Sing	19	nmod	_	_	*	Institution	1:LOC
+26	chargé	charger	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	19	acl	_	_	*	*	*
 27	d'	de	ADP	_	_	28	mark	_	_	*	*	*
 28	éviter	éviter	VERB	_	VerbForm=Inf	26	xcomp	_	_	*	*	*
 29	des	un	DET	_	Definite=Ind|Number=Plur|PronType=Art	30	det	_	_	*	*	*
 30	ennuis	ennui	NOUN	_	Gender=Masc|Number=Plur	28	obj	_	_	*	Event	*
 31	à	à	ADP	_	_	32	case	_	_	*	*	*
-32	Xavière	Xavière	PROPN	_	_	28	obl:arg	_	_	*	*	3:PERS
-33	Tiberi	Tiberi	PROPN	_	_	32	flat:name	_	_	*	*	3
+32	Xavière	Xavière	PROPN	_	_	28	obl:arg	_	_	*	*	2:PERS
+33	Tiberi	Tiberi	PROPN	_	_	32	flat:name	_	_	*	*	2
 34	.	.	PUNCT	_	_	8	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00694
@@ -9750,7 +9750,7 @@
 15	général	général	ADJ	_	Gender=Masc|Number=Sing	14	amod	_	_	2	*	*
 16	de	de	ADP	_	_	18	case	_	_	*	*	*
 17	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	18	det	_	_	*	*	*
-18	Office	office	NOUN	_	Number=Sing	14	nmod	_	_	3:_|MWE|LEX	*	1:PERS
+18	Office	office	NOUN	_	Number=Sing	14	nmod	_	_	3:_|MWE|LEX	*	1:ORG
 19	public	public	ADJ	_	Gender=Masc|Number=Sing	18	amod	_	_	3	*	*
 20	HLM	HLM	NOUN	_	_	18	nmod	_	_	3	*	*
 21	de	de	ADP	_	_	22	case	_	_	*	*	*
@@ -9759,7 +9759,7 @@
 24	élu	élu	NOUN	_	Gender=Masc|Number=Sing	14	conj	_	_	*	Person	*
 25	corrézien	corrézien	ADJ	_	Gender=Masc|Number=Sing	24	amod	_	_	*	*	*
 26	,	,	PUNCT	_	_	14	punct	_	_	*	*	*
-27	Georges	Georges	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	3:PERS
+27	Georges	Georges	PROPN	_	Gender=Masc|Number=Sing	14	appos	_	_	*	*	*
 28	Pérol	Pérol	PROPN	_	_	27	flat:name	_	_	*	*	*
 29	,	,	PUNCT	_	_	14	punct	_	_	*	*	*
 30	qui	qui	PRON	_	PronType=Rel	31	nsubj	_	_	*	*	*
@@ -9846,14 +9846,14 @@
 21	loges	loge	NOUN	_	Gender=Fem|Number=Plur	18	obl:arg	_	_	1:_|MWE|LEX	*	*
 22	maçonniques	maçonnique	ADJ	_	Number=Plur	21	amod	_	_	1	*	*
 23	:	:	PUNCT	_	_	18	punct	_	_	*	*	*
-24	Jean-Claude	Jean-Claude	PROPN	_	_	18	obl:mod	_	_	*	*	1:PERS
+24	Jean-Claude	Jean-Claude	PROPN	_	_	18	obl:mod	_	_	*	*	1:ORG
 25	Méry	Méry	PROPN	_	_	24	flat:name	_	_	*	*	1
 26	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
 27	Jacky	Jacky	PROPN	_	_	18	obl:mod	_	_	*	*	2:PERS
 28	Chaisaz	Chaisaz	PROPN	_	_	27	flat:name	_	_	*	*	2
-29	,	,	PUNCT	_	_	18	punct	_	_	*	*	*
-30	Didier	Didier	PROPN	_	Gender=Masc|Number=Sing	18	obl:mod	_	_	*	*	3:PERS
-31	Schuller	Schuller	PROPN	_	_	30	flat:name	_	_	*	*	3
+29	,	,	PUNCT	_	_	18	punct	_	_	*	*	2
+30	Didier	Didier	PROPN	_	Gender=Masc|Number=Sing	18	obl:mod	_	_	*	*	2
+31	Schuller	Schuller	PROPN	_	_	30	flat:name	_	_	*	*	2
 32	(	(	PUNCT	_	_	18	punct	_	_	*	*	*
 33	loge	loge	NOUN	_	Gender=Fem|Number=Sing	18	obl:mod	_	_	*	*	*
 34	Silence	Silence	PROPN	_	_	33	nmod	_	_	*	*	*
@@ -9866,8 +9866,8 @@
 # sent_id = frwiki_50.1000_00718
 # text = - Le Monde du 22 septembre 2000
 1	-	-	PUNCT	_	_	3	punct	_	_	*	*	*
-2	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	*
-3	Monde	Monde	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PROD
+2	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	_	_	*	*	1:PROD
+3	Monde	Monde	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1
 4	de	de	ADP	_	_	6	case	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	22	22	NUM	_	NumType=Card	3	nmod	_	_	*	Time	*
@@ -9888,23 +9888,23 @@
 # text = L'affaire des marchés publics d'Île-de-France ou Affaire des marchés truqués des lycées d'Île-de-France est un dossier emblématique des dérives du financement des partis politiques dans les années 1990.
 1	L'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	2	det	_	_	*	*	*
 2	affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	22	nsubj	_	_	*	Event	1:EVE
-3	de	de	ADP	_	_	5	case	_	_	*	*	*
-4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	*
-5	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	1:_|MWE|LEX	Possession	*
-6	publics	public	ADJ	_	Gender=Masc|Number=Plur	5	amod	_	_	1	*	*
-7	d'	de	ADP	_	_	8	case	_	_	*	*	*
-8	Île-de-France	Île-de-France	PROPN	_	_	5	nmod	_	_	*	Institution	*
+3	de	de	ADP	_	_	5	case	_	_	*	*	1
+4	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	5	det	_	_	*	*	1
+5	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	2	nmod	_	_	1:_|MWE|LEX	Possession	1
+6	publics	public	ADJ	_	Gender=Masc|Number=Plur	5	amod	_	_	1	*	1
+7	d'	de	ADP	_	_	8	case	_	_	*	*	1
+8	Île-de-France	Île-de-France	PROPN	_	_	5	nmod	_	_	*	Institution	1
 9	ou	ou	CCONJ	_	_	10	cc	_	_	*	*	*
 10	Affaire	affaire	NOUN	_	Gender=Fem|Number=Sing	2	conj	_	_	*	Event	2:EVE
-11	de	de	ADP	_	_	13	case	_	_	*	*	*
-12	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	13	det	_	_	*	*	*
-13	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Possession	*
-14	truqués	truquer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	13	acl	_	_	*	*	*
-15	de	de	ADP	_	_	17	case	_	_	*	*	*
-16	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	17	det	_	_	*	*	*
-17	lycées	lycée	NOUN	_	Gender=Masc|Number=Plur	13	nmod	_	_	*	Institution	*
-18	d'	de	ADP	_	_	19	case	_	_	*	*	*
-19	Île-de-France	Île-de-France	PROPN	_	_	17	nmod	_	_	*	Institution	*
+11	de	de	ADP	_	_	13	case	_	_	*	*	2
+12	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	13	det	_	_	*	*	2
+13	marchés	marché	NOUN	_	Gender=Masc|Number=Plur	10	nmod	_	_	*	Possession	2
+14	truqués	truquer	VERB	_	Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part	13	acl	_	_	*	*	2
+15	de	de	ADP	_	_	17	case	_	_	*	*	2
+16	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	17	det	_	_	*	*	2
+17	lycées	lycée	NOUN	_	Gender=Masc|Number=Plur	13	nmod	_	_	*	Institution	2
+18	d'	de	ADP	_	_	19	case	_	_	*	*	2
+19	Île-de-France	Île-de-France	PROPN	_	_	17	nmod	_	_	*	Institution	2
 20	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	22	cop	_	_	*	*	*
 21	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
 22	dossier	dossier	NOUN	_	Gender=Masc|Number=Sing	0	root	_	_	*	Cognition	*
@@ -9950,8 +9950,8 @@
 21	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	22	det	_	_	*	*	*
 22	président	président	NOUN	_	Gender=Masc|Number=Sing	24	nsubj	_	_	*	Person	*
 23	était	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	24	cop	_	_	*	*	*
-24	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	15	conj	_	_	*	*	2:PERS
-25	Giraud	Giraud	PROPN	_	_	24	flat:name	_	_	*	*	2
+24	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	15	conj	_	_	*	*	2:ORG
+25	Giraud	Giraud	PROPN	_	_	24	flat:name	_	_	*	*	*
 26	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	27	aux:tense	_	_	*	*	*
 27	engagé	engager	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	_	_	*	*	*
 28	,	,	PUNCT	_	_	27	punct	_	_	*	*	*
@@ -10043,13 +10043,13 @@
 19	alors	alors	ADV	_	_	20	advmod	_	_	*	*	*
 20	dirigé	diriger	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	17	acl	_	_	*	*	*
 21	par	par	ADP	_	_	22	case	_	_	*	*	*
-22	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	20	obl:agent	_	_	*	*	2:PERS
-23	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	22	flat:name	_	_	*	*	2
+22	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	20	obl:agent	_	_	*	*	*
+23	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	22	flat:name	_	_	*	*	*
 24	,	,	PUNCT	_	_	22	punct	_	_	*	*	*
 25	secondé	seconder	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	22	acl	_	_	*	*	*
 26	par	par	ADP	_	_	27	case	_	_	*	*	*
-27	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	25	obl:agent	_	_	*	*	3:PERS
-28	Roussin	Roussin	PROPN	_	_	27	flat:name	_	_	*	*	3
+27	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	25	obl:agent	_	_	*	*	2:ORG
+28	Roussin	Roussin	PROPN	_	_	27	flat:name	_	_	*	*	2
 29	.	.	PUNCT	_	_	14	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00734
@@ -10084,7 +10084,7 @@
 28	,	,	PUNCT	_	_	29	punct	_	_	*	*	*
 29	Suez	Suez	PROPN	_	Gender=Masc|Number=Sing	23	conj	_	_	*	Institution	*
 30	et	et	CCONJ	_	_	31	cc	_	_	*	*	*
-31	Générale	Générale	PROPN	_	_	23	conj	_	_	*	*	*
+31	Générale	Générale	PROPN	_	_	23	conj	_	_	*	*	1:ORG
 32	de	de	ADP	_	_	34	case	_	_	*	*	*
 33	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	34	det	_	_	*	*	*
 34	eaux	eau	NOUN	_	Gender=Fem|Number=Plur	31	nmod	_	_	*	Substance	*
@@ -10097,7 +10097,7 @@
 # sent_id = frwiki_50.1000_00736
 # text = - Michel Roussin, ex-bras droit de Jacques Chirac à la mairie de Paris.
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PERS
+2	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:ORG
 3	Roussin	Roussin	PROPN	_	_	2	flat:name	_	_	*	*	1
 4	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 5	ex-bras	ex-bras	NOUN	_	Gender=Masc|Number=Sing	2	appos	_	_	1:_|MWE|LEX	*	*
@@ -10108,8 +10108,8 @@
 10	à	à	ADP	_	_	12	case	_	_	*	*	*
 11	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det	_	_	*	*	*
 12	mairie	mairie	NOUN	_	Gender=Fem|Number=Sing	5	nmod	_	_	*	*	3:ORG
-13	de	de	ADP	_	_	14	case	_	_	*	*	*
-14	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	12	nmod	_	_	*	Institution	4:ORG
+13	de	de	ADP	_	_	14	case	_	_	*	*	3
+14	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	12	nmod	_	_	*	Institution	3
 15	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00740
@@ -10128,19 +10128,19 @@
 12	en	en	ADP	_	_	13	case	_	_	*	*	*
 13	1986	1986	NUM	_	NumType=Card	6	obl:mod	_	_	*	Time	*
 14	à	à	ADP	_	_	15	case	_	_	*	*	*
-15	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	6	obl:arg	_	_	*	*	1:PERS
-16	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	15	flat:name	_	_	*	*	1
+15	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	6	obl:arg	_	_	*	*	*
+16	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	15	flat:name	_	_	*	*	*
 17	en	en	ADP	_	_	18	case	_	_	*	*	*
 18	présence	présence	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	State	*
 19	de	de	ADP	_	_	20	case	_	_	*	*	*
-20	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	*	2:PERS
-21	Roussin	Roussin	PROPN	_	_	20	flat:name	_	_	*	*	2
+20	Michel	Michel	PROPN	_	Gender=Masc|Number=Sing	18	nmod	_	_	*	*	1:ORG
+21	Roussin	Roussin	PROPN	_	_	20	flat:name	_	_	*	*	1
 22	.	.	PUNCT	_	_	3	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00744
 # text = - Gérard Longuet
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Gérard	Gérard	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PERS
+2	Gérard	Gérard	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:ORG
 3	Longuet	Longuet	PROPN	_	_	2	flat:name	_	_	*	*	1
 
 # sent_id = frwiki_50.1000_00751
@@ -10153,8 +10153,8 @@
 6	de	de	ADP	_	_	8	case	_	_	*	*	*
 7	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det	_	_	*	*	*
 8	Cour	cour	NOUN	_	Gender=Fem|Number=Sing	5	nmod	_	_	*	*	1:ORG
-9	de	de	ADP	_	_	10	case	_	_	*	*	*
-10	cassation	cassation	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Act	2:ORG
+9	de	de	ADP	_	_	10	case	_	_	*	*	1
+10	cassation	cassation	NOUN	_	Gender=Fem|Number=Sing	8	nmod	_	_	*	Act	1
 11	,	,	PUNCT	_	_	15	punct	_	_	*	*	*
 12	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	13	det	_	_	*	*	*
 13	tribunaux	tribunal	NOUN	_	Gender=Masc|Number=Plur	15	nsubj	_	_	*	Institution	*
@@ -10171,8 +10171,8 @@
 24	en	en	ADP	_	_	25	case	_	_	*	*	*
 25	espèces	espèce	NOUN	_	Gender=Fem|Number=Plur	23	obl:mod	_	_	*	Artifact	*
 26	par	par	ADP	_	_	27	case	_	_	*	*	*
-27	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	23	obl:agent	_	_	*	*	3:PERS
-28	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	27	flat:name	_	_	*	*	3
+27	Jacques	Jacques	PROPN	_	Gender=Masc|Number=Sing	23	obl:agent	_	_	*	*	*
+28	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	27	flat:name	_	_	*	*	*
 29	pour	pour	ADP	_	_	31	case	_	_	*	*	*
 30	plusieurs	plusieurs	DET	_	Number=Plur	31	det	_	_	*	*	*
 31	millions	million	NOUN	_	Gender=Masc|Number=Plur|NumType=Card	23	obl:mod	_	_	*	Quantity	*
@@ -10204,8 +10204,8 @@
 57	dont	dont	PRON	_	PronType=Rel	59	nmod	_	_	*	*	*
 58	sa	son	DET	_	Gender=Fem|Number=Sing|Poss=Yes	59	det	_	_	*	*	*
 59	fille	fille	NOUN	_	Gender=Fem|Number=Sing	49	acl:relcl	_	_	*	Person	*
-60	Claude	Claude	PROPN	_	Number=Sing	59	appos	_	_	*	*	*
-61	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	60	flat:name	_	_	*	*	4:ORG
+60	Claude	Claude	PROPN	_	Number=Sing	59	appos	_	_	*	*	2:PERS
+61	Chirac	Chirac	PROPN	_	Gender=Masc|Number=Sing	60	flat:name	_	_	*	*	2
 62	.	.	PUNCT	_	_	15	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00760
@@ -10234,7 +10234,7 @@
 # sent_id = frwiki_50.1000_00771
 # text = - Jean-François Donzel, élu écologiste dissident de Génération écologie, a été condamné à un an de prison ferme (trois ans de prison dont deux avec sursis).
 1	-	-	PUNCT	_	_	14	punct	_	_	*	*	*
-2	Jean-François	Jean-François	PROPN	_	_	14	nsubj:pass	_	_	*	*	1:ORG
+2	Jean-François	Jean-François	PROPN	_	_	14	nsubj:pass	_	_	*	*	*
 3	Donzel	Donzel	PROPN	_	_	2	flat:name	_	_	*	*	*
 4	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 5	élu	élu	NOUN	_	Gender=Masc|Number=Sing	2	appos	_	_	*	Person	*
@@ -10309,7 +10309,7 @@
 # sent_id = frwiki_50.1000_00789
 # text = - Gérard Longuet
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Gérard	Gérard	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PERS
+2	Gérard	Gérard	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:ORG
 3	Longuet	Longuet	PROPN	_	_	2	flat:name	_	_	*	*	1
 
 # sent_id = frwiki_50.1000_00795
@@ -10364,7 +10364,7 @@
 4	de	de	ADP	_	_	6	case	_	_	*	*	*
 5	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	_	_	*	*	*
 6	Conseil	conseil	NOUN	_	Gender=Masc|Number=Sing	3	nmod	_	_	1:_|MWE|LEX	*	1:ORG
-7	d'	de	ADP	_	_	8	case	_	_	1	*	*
+7	d'	de	ADP	_	_	8	case	_	_	1	*	1
 8	administration	administration	NOUN	_	Gender=Fem|Number=Sing	6	nmod	_	_	1	*	*
 9	de	de	ADP	_	_	11	case	_	_	*	*	*
 10	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	11	det	_	_	*	*	*
@@ -10373,7 +10373,7 @@
 13	dont	dont	PRON	_	PronType=Rel	14	iobj	_	_	*	*	*
 14	faisait	faire	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	3	acl:relcl	_	_	2:_|MWE-VID|_	*	*
 15	partie	partie	NOUN	_	Gender=Fem|Number=Sing	14	obj	_	_	2	*	*
-16	Moggi	Moggi	PROPN	_	_	14	nsubj	_	_	*	Person	3:ORG
+16	Moggi	Moggi	PROPN	_	_	14	nsubj	_	_	*	Person	*
 17	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 18	démissionnent	démissionner	VERB	_	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_	*	*	*
 19	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	20	det	_	_	*	*	*
@@ -10410,7 +10410,7 @@
 21	et	et	CCONJ	_	_	23	cc	_	_	*	*	*
 22	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	23	det	_	_	*	*	*
 23	Lazio	Lazio	PROPN	_	Gender=Fem|Number=Sing	20	conj	_	_	*	*	2:ORG
-24	Rome	Rome	PROPN	_	Gender=Masc|Number=Sing	23	flat:name	_	_	*	*	*
+24	Rome	Rome	PROPN	_	Gender=Masc|Number=Sing	23	flat:name	_	_	*	*	2
 25	reléguées	reléguer	VERB	_	Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part	20	acl	_	_	*	*	*
 26	avec	avec	ADP	_	_	32	case	_	_	*	*	*
 27	respectivement	respectivement	ADV	_	_	32	advmod	_	_	*	*	*
@@ -10438,17 +10438,17 @@
 
 # sent_id = frwiki_50.1000_00842
 # text = Philippe Rochot, Georges Hansen, Aurel Cornéa et Jean-Louis Normandin.
-1	Philippe	Philippe	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PERS
-2	Rochot	Rochot	PROPN	_	_	1	flat:name	_	_	*	*	1
+1	Philippe	Philippe	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	*
+2	Rochot	Rochot	PROPN	_	_	1	flat:name	_	_	*	*	*
 3	,	,	PUNCT	_	_	4	punct	_	_	*	*	*
-4	Georges	Georges	PROPN	_	Gender=Masc|Number=Sing	1	conj	_	_	*	*	2:PERS
-5	Hansen	Hansen	PROPN	_	_	4	flat:name	_	_	*	*	2
+4	Georges	Georges	PROPN	_	Gender=Masc|Number=Sing	1	conj	_	_	*	*	1:PROD
+5	Hansen	Hansen	PROPN	_	_	4	flat:name	_	_	*	*	1
 6	,	,	PUNCT	_	_	7	punct	_	_	*	*	*
 7	Aurel	Aurel	PROPN	_	Gender=Masc|Number=Sing	1	conj	_	_	*	*	*
 8	Cornéa	Cornéa	PROPN	_	_	7	flat:name	_	_	*	*	*
 9	et	et	CCONJ	_	_	10	cc	_	_	*	*	*
-10	Jean-Louis	Jean-Louis	PROPN	_	_	1	conj	_	_	*	*	3:PERS
-11	Normandin	Normandin	PROPN	_	_	10	flat:name	_	_	*	*	3
+10	Jean-Louis	Jean-Louis	PROPN	_	_	1	conj	_	_	*	*	*
+11	Normandin	Normandin	PROPN	_	_	10	flat:name	_	_	*	*	*
 12	.	.	PUNCT	_	_	1	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00858
@@ -10516,11 +10516,11 @@
 36	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	37	det	_	_	*	*	*
 37	golfe	golfe	NOUN	_	Gender=Masc|Number=Sing	34	nmod	_	_	*	*	*
 38	d'	de	ADP	_	_	39	case	_	_	*	*	*
-39	Ajaccio	Ajaccio	PROPN	_	Gender=Masc|Number=Sing	37	nmod	_	_	*	Institution	2:ORG
+39	Ajaccio	Ajaccio	PROPN	_	Gender=Masc|Number=Sing	37	nmod	_	_	*	Institution	2:LOC
 40	en	en	ADP	_	_	41	case	_	_	*	*	*
-41	Corse	Corse	PROPN	_	Gender=Fem|Number=Sing	39	nmod	_	_	*	Institution	*
+41	Corse	Corse	PROPN	_	Gender=Fem|Number=Sing	39	nmod	_	_	*	Institution	3:LOC
 42	(	(	PUNCT	_	_	41	punct	_	_	*	*	*
-43	France	France	PROPN	_	Gender=Fem|Number=Sing	41	nmod	_	_	*	Institution	3:ORG
+43	France	France	PROPN	_	Gender=Fem|Number=Sing	41	nmod	_	_	*	Institution	4:ORG
 44	)	)	PUNCT	_	_	41	punct	_	_	*	*	*
 45	.	.	PUNCT	_	_	7	punct	_	_	*	*	*
 
@@ -10528,7 +10528,7 @@
 # text = - Henri Mazères, colonel de gendarmerie : 30 mois dont 6 mois fermes
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
 2	Henri	Henri	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	*
-3	Mazères	Mazères	PROPN	_	_	2	flat:name	_	_	*	*	1:PERS
+3	Mazères	Mazères	PROPN	_	_	2	flat:name	_	_	*	*	*
 4	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 5	colonel	colonel	NOUN	_	Gender=Masc|Number=Sing	2	appos	_	_	*	Person	*
 6	de	de	ADP	_	_	7	case	_	_	*	*	*
@@ -10570,12 +10570,12 @@
 3	les	le	DET	_	Definite=Def|Number=Plur|PronType=Art	4	det	_	_	*	*	*
 4	commentaires	commentaire	NOUN	_	Gender=Masc|Number=Plur	15	obl:mod	_	_	*	Cognition	*
 5	les	le	PRON	_	Number=Plur|Person=3	6	obj	_	_	*	*	*
-6	accompagnant	accompagner	VERB	_	Tense=Pres|VerbForm=Part	4	acl	_	_	*	*	1:ORG
+6	accompagnant	accompagner	VERB	_	Tense=Pres|VerbForm=Part	4	acl	_	_	*	*	*
 7	dans	dans	ADP	_	_	9	case	_	_	*	*	*
 8	leur	son	DET	_	Number=Sing|Poss=Yes	9	det	_	_	*	*	*
 9	publication	publication	NOUN	_	Gender=Fem|Number=Sing	6	obl:mod	_	_	*	Act	*
 10	par	par	ADP	_	_	11	case	_	_	*	*	*
-11	Reuters	Reuters	PROPN	_	_	9	nmod	_	_	*	Institution	2:ORG
+11	Reuters	Reuters	PROPN	_	_	9	nmod	_	_	*	Institution	*
 12	,	,	PUNCT	_	_	15	punct	_	_	*	*	*
 13	il	il	PRON	_	Number=Sing|Person=3	15	expl:subj	_	_	2:_|MWE-VID|_	*	*
 14	y	y	PRON	_	Person=3	15	expl:comp	_	_	2	*	*
@@ -10610,7 +10610,7 @@
 43	"	"	PUNCT	_	_	44	punct	_	_	*	*	*
 44	immeuble	immeuble	NOUN	_	Gender=Masc|Number=Sing	40	obj	_	_	*	Artifact	*
 45	de	de	ADP	_	_	46	case	_	_	*	*	*
-46	Beyrouth	Beyrouth	PROPN	_	Gender=Masc|Number=Sing	44	nmod	_	_	*	Institution	*
+46	Beyrouth	Beyrouth	PROPN	_	Gender=Masc|Number=Sing	44	nmod	_	_	*	Institution	1:LOC
 47	détruit	détruire	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	44	acl	_	_	*	*	*
 48	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	49	det	_	_	*	*	*
 49	nuit	nuit	NOUN	_	Gender=Fem|Number=Sing	47	obl:mod	_	_	*	Time	*
@@ -10645,7 +10645,7 @@
 16	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	17	det	_	_	*	*	*
 17	quartier	quartier	NOUN	_	Gender=Masc|Number=Sing	15	obj	_	_	*	Part	*
 18	de	de	ADP	_	_	19	case	_	_	*	*	*
-19	Beyrouth	Beyrouth	PROPN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	Institution	*
+19	Beyrouth	Beyrouth	PROPN	_	Gender=Masc|Number=Sing	17	nmod	_	_	*	Institution	1:LOC
 20	ayant	avoir	AUX	_	Tense=Pres|VerbForm=Part	21	aux:tense	_	_	*	*	*
 21	subi	subir	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	17	acl	_	_	1:_|MWE-LVC.full|_	*	*
 22	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	23	det	_	_	*	*	*
@@ -10657,7 +10657,7 @@
 # text = Réaction de Reuters
 1	Réaction	réaction	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Act	*
 2	de	de	ADP	_	_	3	case	_	_	*	*	*
-3	Reuters	Reuters	PROPN	_	_	1	nmod	_	_	*	Institution	1:ORG
+3	Reuters	Reuters	PROPN	_	_	1	nmod	_	_	*	Institution	1:PROD
 
 # sent_id = frwiki_50.1000_00919
 # text = Références
@@ -10676,11 +10676,11 @@
 2	^	^	PUNCT	_	_	4	punct	_	_	*	*	*
 3	"	"	PUNCT	_	_	4	punct	_	_	*	*	*
 4	Reuters	Reuters	PROPN	_	_	0	root	_	_	*	Institution	1:PROD
-5	admits	admits	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-6	to	to	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-7	more	more	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-8	image	image	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-9	manipulation	manipulation	X	_	Foreign=Yes	4	dep	_	_	*	*	*
+5	admits	admits	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+6	to	to	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+7	more	more	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+8	image	image	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+9	manipulation	manipulation	X	_	Foreign=Yes	4	dep	_	_	*	*	1
 10	"	"	PUNCT	_	_	4	punct	_	_	*	*	*
 11	.	.	PUNCT	_	_	4	punct	_	_	*	*	*
 12	Ynetnews	Ynetnews	PROPN	_	_	4	nmod	_	_	*	Cognition	2:PROD
@@ -10692,12 +10692,12 @@
 2	^	^	PUNCT	_	_	4	punct	_	_	*	*	*
 3	"	"	PUNCT	_	_	4	punct	_	_	*	*	*
 4	Reuters	Reuters	PROPN	_	_	0	root	_	_	*	*	1:PROD
-5	withdraws	withdraws	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-6	all	all	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-7	photos	photo	NOUN	_	Gender=Fem|Number=Plur	4	nmod	_	_	*	*	*
-8	by	by	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-9	Lebanese	Lebanese	X	_	Foreign=Yes	4	dep	_	_	*	*	*
-10	freelance	freelance	X	_	Foreign=Yes	4	dep	_	_	*	*	*
+5	withdraws	withdraws	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+6	all	all	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+7	photos	photo	NOUN	_	Gender=Fem|Number=Plur	4	nmod	_	_	*	*	1
+8	by	by	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+9	Lebanese	Lebanese	X	_	Foreign=Yes	4	dep	_	_	*	*	1
+10	freelance	freelance	X	_	Foreign=Yes	4	dep	_	_	*	*	1
 11	"	"	PUNCT	_	_	4	punct	_	_	*	*	*
 12	,	,	PUNCT	_	_	4	punct	_	_	*	*	*
 13	Reuters	Reuters	PROPN	_	_	4	nmod	_	_	*	Cognition	2:PROD
@@ -10738,13 +10738,13 @@
 18	modifications	modification	NOUN	_	Gender=Fem|Number=Plur	15	nmod	_	_	*	Cognition	*
 19	)	)	PUNCT	_	_	7	punct	_	_	*	*	*
 20	par	par	ADP	_	_	21	case	_	_	*	*	*
-21	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	3	nmod	_	_	*	*	1:PERS
-22	Korkos	Korkos	PROPN	_	_	21	flat:name	_	_	*	*	1
+21	Alain	Alain	PROPN	_	Gender=Masc|Number=Sing	3	nmod	_	_	*	*	*
+22	Korkos	Korkos	PROPN	_	_	21	flat:name	_	_	*	*	*
 23	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 24	La	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	25	det	_	_	*	*	*
 25	Boite	Boite	PROPN	_	Gender=Fem|Number=Sing	3	nmod	_	_	*	*	*
 26	à	à	ADP	_	_	27	case	_	_	*	*	*
-27	Images	image	NOUN	_	Gender=Fem|Number=Plur	25	nmod	_	_	*	Cognition	*
+27	Images	image	NOUN	_	Gender=Fem|Number=Plur	25	nmod	_	_	*	Cognition	1:LOC
 28	,	,	PUNCT	_	_	3	punct	_	_	*	*	*
 29	8	8	NUM	_	NumType=Card	3	nmod	_	_	*	Time	*
 30	septembre	septembre	NOUN	_	Gender=Masc|Number=Sing	29	nmod	_	_	*	*	*
@@ -10771,7 +10771,7 @@
 17	perte	perte	NOUN	_	Gender=Fem|Number=Sing	13	obl:mod	_	_	*	Event	*
 18	de	de	ADP	_	_	20	case	_	_	*	*	*
 19	l'	le	DET	_	Definite=Def|Number=Sing|PronType=Art	20	det	_	_	*	*	*
-20	Indochine	Indochine	PROPN	_	Number=Sing	17	nmod	_	_	*	Institution	*
+20	Indochine	Indochine	PROPN	_	Number=Sing	17	nmod	_	_	*	Institution	1:LOC
 21	et	et	CCONJ	_	_	23	cc	_	_	*	*	*
 22	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	23	det	_	_	*	*	*
 23	climat	climat	NOUN	_	Gender=Masc|Number=Sing	17	conj	_	_	*	State	*
@@ -10800,7 +10800,7 @@
 46	suites	suite	NOUN	_	Gender=Fem|Number=Plur	43	obj	_	_	3	Event	*
 47	judiciaires	judiciaire	ADJ	_	Number=Plur	46	amod	_	_	*	*	*
 48	en	en	ADP	_	_	49	case	_	_	*	*	*
-49	France	France	PROPN	_	Gender=Fem|Number=Sing	43	obl:mod	_	_	*	Institution	1:LOC
+49	France	France	PROPN	_	Gender=Fem|Number=Sing	43	obl:mod	_	_	*	Institution	2:LOC
 50	.	.	PUNCT	_	_	13	punct	_	_	*	*	*
 
 # sent_id = frwiki_50.1000_00953
@@ -10842,7 +10842,7 @@
 27	de	de	ADP	_	_	28	mark	_	_	4	*	*
 28	décourager	décourager	VERB	_	VerbForm=Inf	5	advcl	_	_	*	*	*
 29	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	30	det	_	_	*	*	*
-30	spéculation	spéculation	NOUN	_	Gender=Fem|Number=Sing	28	obj	_	_	*	Act	*
+30	spéculation	spéculation	NOUN	_	Gender=Fem|Number=Sing	28	obj	_	_	*	Act	1:LOC
 31	monétaire	monétaire	ADJ	_	Number=Sing	30	amod	_	_	*	*	*
 32	et	et	CCONJ	_	_	34	cc	_	_	*	*	*
 33	d'	de	ADP	_	_	34	mark	_	_	*	*	*
@@ -10858,8 +10858,8 @@
 # sent_id = frwiki_50.1000_00973
 # text = Selon Bernard B. Fall, ce trafic fut l'une des sources de profit dans le cadre d'une colonisation dont le bilan général s'avéra très négatif pour le budget national.
 1	Selon	selon	ADP	_	_	2	case	_	_	*	*	*
-2	Bernard	Bernard	PROPN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	*	1:PERS
-3	B.	B.	PROPN	_	_	2	flat:name	_	_	*	*	1
+2	Bernard	Bernard	PROPN	_	Gender=Masc|Number=Sing	10	obl:mod	_	_	*	*	*
+3	B.	B.	PROPN	_	_	2	flat:name	_	_	*	*	*
 4	Fall	Fall	PROPN	_	_	2	flat:name	_	_	*	*	*
 5	,	,	PUNCT	_	_	10	punct	_	_	*	*	*
 6	ce	ce	DET	_	Gender=Masc|Number=Sing|PronType=Dem	7	det	_	_	*	*	*
@@ -10900,21 +10900,21 @@
 # sent_id = frwiki_50.1000_00980
 # text = - Yves Gras, "Histoire de la Guerre d'Indochine", Plon, Paris, 1979.
 1	-	-	PUNCT	_	_	2	punct	_	_	*	*	*
-2	Yves	Yves	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:PERS
+2	Yves	Yves	PROPN	_	Gender=Masc|Number=Sing	0	root	_	_	*	*	1:ORG
 3	Gras	Gras	PROPN	_	Gender=Masc|Number=Sing	2	flat:name	_	_	*	*	1
 4	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 5	"	"	PUNCT	_	_	6	punct	_	_	*	*	*
 6	Histoire	histoire	NOUN	_	Gender=Fem|Number=Sing	2	nmod	_	_	*	Cognition	*
 7	de	de	ADP	_	_	9	case	_	_	*	*	*
 8	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det	_	_	*	*	*
-9	Guerre	guerre	NOUN	_	Gender=Fem|Number=Sing	6	nmod	_	_	*	Act	*
-10	d'	de	ADP	_	_	11	case	_	_	*	*	*
-11	Indochine	Indochine	PROPN	_	_	9	nmod	_	_	*	Institution	*
-12	"	"	PUNCT	_	_	6	punct	_	_	*	*	*
+9	Guerre	guerre	NOUN	_	Gender=Fem|Number=Sing	6	nmod	_	_	*	Act	2:PROD
+10	d'	de	ADP	_	_	11	case	_	_	*	*	2
+11	Indochine	Indochine	PROPN	_	_	9	nmod	_	_	*	Institution	2
+12	"	"	PUNCT	_	_	6	punct	_	_	*	*	2
 13	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
-14	Plon	Plon	PROPN	_	_	2	nmod	_	_	*	Institution	*
+14	Plon	Plon	PROPN	_	_	2	nmod	_	_	*	Institution	3:PROD
 15	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
-16	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	2:PROD
+16	Paris	Paris	PROPN	_	Gender=Masc|Number=Sing	2	nmod	_	_	*	Institution	4:LOC
 17	,	,	PUNCT	_	_	2	punct	_	_	*	*	*
 18	1979	1979	NUM	_	NumType=Card	2	nummod	_	_	*	Time	*
 19	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
@@ -10935,6 +10935,6 @@
 # sent_id = frwiki_50.1000_00995
 # text = Quatrième République.
 1	Quatrième	quatrième	ADJ	_	Number=Sing|NumType=Ord	2	amod	_	_	*	*	*
-2	République	république	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	*
+2	République	république	NOUN	_	Gender=Fem|Number=Sing	0	root	_	_	*	Institution	1:ORG
 3	.	.	PUNCT	_	_	2	punct	_	_	*	*	*
 
